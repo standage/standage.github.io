@@ -16,7 +16,8 @@ RELATIVE_URLS = True
 DEFAULT_PAGINATION = 10
 CACHE_CONTENT = False
 
-# Page/category config
+# Blog/page/category config
+ARTICLE_EXCLUDES = ['.ipynb_checkpoints']
 DISPLAY_CATEGORIES_ON_MENU = False
 INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'

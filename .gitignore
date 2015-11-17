@@ -2,3 +2,5 @@
 *.pyc
 *.swp
 output/
+content/.ipynb_checkpoints/
+content/scratch/
