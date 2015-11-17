@@ -1,5 +1,682 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/notebook.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-11-17T00:00:00-05:00</updated><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:notebook-test.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/notebook.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-11-17T00:00:00-05:00</updated><entry><title>Cleanup: supplementary tables for our genome paper</title><link href="https://standage.github.io/cleanup-supplementary-tables-for-our-genome-paper.html" rel="alternate"></link><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:cleanup-supplementary-tables-for-our-genome-paper.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/.ansibold{font-weight:700}.ansiblack{}.ansired{color:#8b0000}.ansigreen{6400}.ansiyellow{color:#c4a000}.ansiblue{8b}.ansipurple{color:#9400d3}.ansicyan{color:#4682b4}.ansigray{color:gray}.ansibgblack{background-}.ansibgred{background-color:red}.ansibggreen{background-color:green}.ansibgyellow{background-color:#ff0}.ansibgblue{background-f}.ansibgpurple{background-color:#ff00ff}.ansibgcyan{background-ff}.ansibggray{background-color:gray}div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;border-radius:2px;box-sizing:border-box;-moz-box-sizing:border-box;border-width:thin;border-style:solid;width:100%;padding:5px;margin:0;outline:0}div.cell.selected{border-color:#ababab}@media print{div.cell.selected{border-color:transparent}}.edit_mode div.cell.selected{border-color:green}.prompt{min-width:14ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}@-moz-document url-prefix(){div.inner_cell{overflow-x:hidden}}div.input_area{border:1px solid #cfcfcf;border-radius:2px;background:#f7f7f7;line-height:1.21429em}div.prompt:empty{padding-top:0;padding-bottom:0}div.unrecognized_cell{padding:5px 5px 5px 0;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.unrecognized_cell .inner_cell{border-radius:2px;padding:5px;font-weight:700;color:red;border:1px solid #cfcfcf;background:#eaeaea}div.unrecognized_cell .inner_cell a,div.unrecognized_cell .inner_cell a:hover{color:inherit;text-decoration:none}@media (max-width:540px){.prompt{text-align:left}div.unrecognized_cell&gt;div.prompt{display:none}}div.code_cell{}div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.input{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.input_prompt{color:navy;border-top:1px solid transparent}div.input_area&gt;div.highlight{margin:.4em;border:none;padding:0;background-color:transparent}div.input_area&gt;div.highlight&gt;pre{margin:0;border:none;padding:0;background-color:transparent}.CodeMirror{line-height:1.21429em;font-size:14px;height:auto;background:0 0}.CodeMirror-scroll{overflow-y:hidden;overflow-x:auto}.CodeMirror-lines{padding:.4em}.CodeMirror-linenumber{padding:0 8px 0 4px}.CodeMirror-gutters{border-bottom-left-radius:2px;border-top-left-radius:2px}.CodeMirror pre{padding:0;border:0;border-radius:0}.highlight-base,.highlight-variable{}.highlight-variable-2{color:#1a1a1a}.highlight-variable-3{color:#333}.highlight-string{color:#BA2121}.highlight-comment{color:#408080;font-style:italic}.highlight-number{80}.highlight-atom{color:#88F}.highlight-keyword{color:green;font-weight:700}.highlight-builtin{color:green}.highlight-error{color:red}.highlight-operator{color:#A2F;font-weight:700}.highlight-meta{color:#A2F}.highlight-def{f}.highlight-string-2{color:#f50}.highlight-qualifier{color:#555}.highlight-bracket{color:#997}.highlight-tag{color:#170}.highlight-attribute{c}.highlight-header{f}.highlight-quote{90}.highlight-link{c}.cm-s-ipython span.cm-keyword{color:green;font-weight:700}.cm-s-ipython span.cm-atom{color:#88F}.cm-s-ipython span.cm-number{80}.cm-s-ipython span.cm-def{f}.cm-s-ipython span.cm-variable{}.cm-s-ipython span.cm-operator{color:#A2F;font-weight:700}.cm-s-ipython span.cm-variable-2{color:#1a1a1a}.cm-s-ipython span.cm-variable-3{color:#333}.cm-s-ipython span.cm-comment{color:#408080;font-style:italic}.cm-s-ipython span.cm-string{color:#BA2121}.cm-s-ipython span.cm-string-2{color:#f50}.cm-s-ipython span.cm-meta{color:#A2F}.cm-s-ipython span.cm-qualifier{color:#555}.cm-s-ipython span.cm-builtin{color:green}.cm-s-ipython span.cm-bracket{color:#997}.cm-s-ipython span.cm-tag{color:#170}.cm-s-ipython span.cm-attribute{c}.cm-s-ipython span.cm-header{f}.cm-s-ipython span.cm-quote{90}.cm-s-ipython span.cm-link{c}.cm-s-ipython span.cm-error{color:red}.cm-s-ipython span.cm-tab{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=')right no-repeat}div.output_wrapper{display:-webkit-box;-webkit-box-align:stretch;display:-moz-box;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;z-index:1}div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:2px;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.8);box-shadow:inset 0 2px 8px rgba(0,0,0,.8);display:block}div.output_collapsed{margin:0;padding:0;display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.out_prompt_overlay{height:100%;padding:0 .4em;position:absolute;border-radius:2px}div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000;box-shadow:inset 0 0 1px #000;background:rgba(240,240,240,.5)}div.output_prompt{color:#8b0000}div.output_area{padding:0;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}div.output_area .MathJax_Display{text-align:left!important}div.output_area div.output_area img,div.output_area svg{max-width:100%;height:auto}div.output_area img.unconfined,div.output_area svg.unconfined{max-width:none}.output{display:-webkit-box;-webkit-box-orient:vertical;display:-moz-box;-moz-box-orient:vertical;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}@media (max-width:540px){div.output_area{-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}}div.output_area pre{margin:0;padding:0;border:0;vertical-align:baseline;background-color:transparent;border-radius:0}div.output_subarea{overflow-x:auto;padding:.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1;max-width:calc(100% - 14ex)}div.output_text{text-align:left;line-height:1.21429em}div.output_stderr{background:#fdd}div.output_latex{text-align:left}div.output_javascript:empty{padding:0}.js-error{color:#8b0000}div.raw_input_container{font-family:monospace;padding-top:5px}span.raw_input_prompt{}input.raw_input{font-family:inherit;font-size:inherit;color:inherit;width:auto;vertical-align:baseline;padding:0 .25em;margin:0 .25em}input.raw_input:focus{box-shadow:none}p.p-space{margin-bottom:10px}div.output_unrecognized{padding:5px;font-weight:700;color:red}div.output_unrecognized a,div.output_unrecognized a:hover{color:inherit;text-decoration:none}.rendered_html{}.rendered_html :link,.rendered_html :visited,.rendered_html h1:first-child{margin-top:.538em}.rendered_html h2:first-child{margin-top:.636em}.rendered_html h3:first-child{margin-top:.777em}.rendered_html h4:first-child,.rendered_html h5:first-child,.rendered_html h6:first-child{margin-top:1em}.rendered_html *+ol,.rendered_html *+ul{margin-top:1em}.rendered_html *+table{margin-top:1em}.rendered_html *+p{margin-top:1em}.rendered_html *+img{margin-top:1em}div.text_cell{display:-webkit-box;-webkit-box-orient:horizontal;display:-moz-box;-moz-box-orient:horizontal;display:box;box-orient:horizontal;box-align:stretch;display:flex;flex-direction:row;align-items:stretch}@media (max-width:540px){div.text_cell&gt;div.prompt{display:none}}div.text_cell_render{outline:0;resize:none;width:inherit;border-style:none;padding:.5em .5em .5em .4em;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}a.anchor-link:link{text-decoration:none;padding:0 20px;visibility:hidden}h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible}.text_cell.rendered .input_area{display:none}.text_cell.rendered .text_cell.unrendered .text_cell_render{display:none}.cm-header-1,.cm-header-2,.cm-header-3,.cm-header-4,.cm-header-5,.cm-header-6{font-weight:700;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}.cm-header-1{font-size:185.7%}.cm-header-2{font-size:157.1%}.cm-header-3{font-size:128.6%}.cm-header-4{font-size:110%}.cm-header-5,.cm-header-6{font-size:100%;font-style:italic}&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We submitted a genome paper to &lt;em&gt;Genome Biology&lt;/em&gt; over the weekend.
+I'm going through our repository and tidying things up, and I realized I have not had a chance to record my notes on several of the supplemental tables providing a comparison of genome features across seven species.
+I'll go ahead and do so here.&lt;/p&gt;
+&lt;p&gt;The data files were retrieved from &lt;a href="http://brendelgroup.github.io/HymHub/"&gt;HymHub&lt;/a&gt;, and the &lt;code&gt;mlr&lt;/code&gt; program was obtained from &lt;a href="https://github.com/johnkerl/miller.git"&gt;johnkerl/miller&lt;/a&gt;.
+The &lt;code&gt;mlr&lt;/code&gt; program did not work with these examples when installed with Homebrew or downloaded from the latest release on GitHub, so compiled and used v1.0.1.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Table-S6:-gene-model-characteristics"&gt;Table S6: gene model characteristics&lt;a class="anchor-link" href="#Table-S6:-gene-model-characteristics"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Here we're looking at gene models across the seven species, and in particular the distribution of gene length, exon count, and nucleotide composition. First we report the length distribution: the mean, median, min, and max gene lengths (in base pairs).&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;do&lt;/span&gt;
+    ./mlr --csv --fs tab stats1 -a mean,p50,min,max &lt;span class="se"&gt;\&lt;/span&gt;
+        -f Length scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Length_mean	Length_p50	Length_min	Length_max
+13139.399587	3557.000000	105.000000	904366.000000
+Length_mean	Length_p50	Length_min	Length_max
+15409.717188	3774.000000	276.000000	674837.000000
+Length_mean	Length_p50	Length_min	Length_max
+12699.426876	3843.000000	210.000000	760915.000000
+Length_mean	Length_p50	Length_min	Length_max
+11682.565722	3739.000000	205.000000	580610.000000
+Length_mean	Length_p50	Length_min	Length_max
+4796.884429	2778.000000	204.000000	86971.000000
+Length_mean	Length_p50	Length_min	Length_max
+3704.335009	1819.000000	150.000000	214391.000000
+Length_mean	Length_p50	Length_min	Length_max
+9917.481742	2979.000000	105.000000	600051.000000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The header is duplicated for each file, so let's get rid of that with the tail command.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;do&lt;/span&gt;
+    ./mlr --csv --fs tab stats1 -a mean,p50,min,max &lt;span class="se"&gt;\&lt;/span&gt;
+        -f Length scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;13139.399587	3557.000000	105.000000	904366.000000
+15409.717188	3774.000000	276.000000	674837.000000
+12699.426876	3843.000000	210.000000	760915.000000
+11682.565722	3739.000000	205.000000	580610.000000
+4796.884429	2778.000000	204.000000	86971.000000
+3704.335009	1819.000000	150.000000	214391.000000
+9917.481742	2979.000000	105.000000	600051.000000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now we can add back in our own header, and include the species label on each row.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
+    ./mlr --csv --fs tab stats1 -a mean,p50,min,max &lt;span class="se"&gt;\&lt;/span&gt;
+        -f Length scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Species	Mean	Median	Min	Max
+Amel	13139.399587	3557.000000	105.000000	904366.000000
+Bter	15409.717188	3774.000000	276.000000	674837.000000
+Hsal	12699.426876	3843.000000	210.000000	760915.000000
+Cflo	11682.565722	3739.000000	205.000000	580610.000000
+Pdom	4796.884429	2778.000000	204.000000	86971.000000
+Pcan	3704.335009	1819.000000	150.000000	214391.000000
+Nvit	9917.481742	2979.000000	105.000000	600051.000000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Ok, this looks much better.&lt;/p&gt;
+&lt;p&gt;We've been using &lt;code&gt;-f Length&lt;/code&gt; to specify which field from our data tables to compute these statistics for.
+In addition to length, we also want to compute these statistics for exon count and nucleotide composition (&lt;code&gt;ExonCount&lt;/code&gt; and &lt;code&gt;GCContent&lt;/code&gt; in the data tables, respectively).
+Rather than retyping the command two more times, let's just wrap the command in another loop and iterate over each field.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; field in Length ExonCount GCContent
+&lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;span class="nb"&gt;    echo&lt;/span&gt; &lt;span class="nv"&gt;$field&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+    &lt;span class="k"&gt;do&lt;/span&gt;
+        &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
+        ./mlr --csv --fs tab stats1 -a mean,p50,min,max &lt;span class="se"&gt;\&lt;/span&gt;
+            -f &lt;span class="nv"&gt;$field&lt;/span&gt; scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+            &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+    &lt;span class="k"&gt;done&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+Length
+Species	Mean	Median	Min	Max
+Amel	13139.399587	3557.000000	105.000000	904366.000000
+Bter	15409.717188	3774.000000	276.000000	674837.000000
+Hsal	12699.426876	3843.000000	210.000000	760915.000000
+Cflo	11682.565722	3739.000000	205.000000	580610.000000
+Pdom	4796.884429	2778.000000	204.000000	86971.000000
+Pcan	3704.335009	1819.000000	150.000000	214391.000000
+Nvit	9917.481742	2979.000000	105.000000	600051.000000
+
+ExonCount
+Species	Mean	Median	Min	Max
+Amel	6.920201	5.000000	1.000000	134.000000
+Bter	7.058179	6.000000	1.000000	165.000000
+Hsal	6.890956	5.000000	1.000000	76.000000
+Cflo	6.990243	6.000000	1.000000	121.000000
+Pdom	6.593339	5.000000	1.000000	138.000000
+Pcan	4.662955	3.000000	1.000000	134.000000
+Nvit	6.507029	5.000000	1.000000	73.000000
+
+GCContent
+Species	Mean	Median	Min	Max
+Amel	0.290806	0.272000	0.130000	0.713000
+Bter	0.337557	0.329000	0.209000	0.643000
+Hsal	0.406654	0.399000	0.216000	0.697000
+Cflo	0.335391	0.326000	0.193000	0.704000
+Pdom	0.308482	0.300000	0.173000	0.620000
+Pcan	0.344893	0.322000	0.087000	0.729000
+Nvit	0.403433	0.397000	0.204000	0.739000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Great.
+This doesn't get the data into &lt;em&gt;exactly&lt;/em&gt; the same format as the table, but it's close enough that it requires only a few minutes of copy/paste work to compose the final table.
+Had we been using LaTeX to typeset the supplement, I might have taken a few more minutes to completely automate the construction of the table, but since we're using Word anyway :( I figured this would be sufficient.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Table-S7-S8:-exon-and-intron-characteristics"&gt;Table S7-S8: exon and intron characteristics&lt;a class="anchor-link" href="#Table-S7-S8:-exon-and-intron-characteristics"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We'll use the same basic approach for computing summary stats for exon and intron characteristics that we did for entire gene models.
+There are two differences, however.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First, exon count only makes sense at the gene level, so we don't compute this for exons and introns.&lt;/li&gt;
+&lt;li&gt;Second, some of the annotated exons and introns are extremely short, which really distorts the summary statistics for nucleotide composition.
+Although outliers may be interesting (if indeed they are annotated correctly), here we are simply trying to get a feel for how different, on average, these genomic features are across species.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With respect to this second point, we first compute the 5% and 95% length quantiles over a large number of related species, and then use these values to filter exons and introns before computing summary statistics for nucleotide composition.
+We also make sure that exons and introns contain no more than 25% ambiguous nucleotide calls.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;./mlr --csv --fs tab stats1 -a p5,p95 -f Length scratch/data/exons.tsv
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Length_p5	Length_p95
+65.000000	1078.000000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Let's capture these values and store them in variables so we can use them for subsequent commands.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;./mlr --csv --fs tab stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 1&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;./mlr --csv --fs tab stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 2&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; 5% quantile: &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;95% quantile: &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt; 5% quantile: 65.000000
+95% quantile: 1078.000000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now let's feed these in to the filter command.
+We have to be careful to escape field names and shell variables, since both begin with the dollar sign prefix.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;do&lt;/span&gt;
+    ./mlr --csv --fs tab filter &lt;span class="se"&gt;\&lt;/span&gt;
+          &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+          scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.exons.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; ./mlr --csv --fs tab stats1 -a mean,p50,min,max -f GCContent
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.372308	0.355000	0.074000	0.801000
+GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.400649	0.393000	0.137000	0.733000
+GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.462224	0.460000	0.126000	0.798000
+GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.417514	0.409000	0.162000	0.747000
+GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.367585	0.362000	0.040000	0.726000
+GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.378159	0.372000	0.045000	0.746000
+GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
+0.457260	0.449000	0.149000	0.791000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We need a bit of cleanup, similar to what we did before.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
+    ./mlr --csv --fs tab filter &lt;span class="se"&gt;\&lt;/span&gt;
+          &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+          scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.exons.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; ./mlr --csv --fs tab stats1 -a mean,p50,min,max -f GCContent &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;Species	Mean	Median	Min	Max
+Amel	0.372308	0.355000	0.074000	0.801000
+Bter	0.400649	0.393000	0.137000	0.733000
+Hsal	0.462224	0.460000	0.126000	0.798000
+Cflo	0.417514	0.409000	0.162000	0.747000
+Pdom	0.367585	0.362000	0.040000	0.726000
+Pcan	0.378159	0.372000	0.045000	0.746000
+Nvit	0.457260	0.449000	0.149000	0.791000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now let's wrap it all up and bring it together to produce the final versions of Table S7-S8.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; featuretype in exons introns
+&lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;span class="nb"&gt;    echo&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$featuretype&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;[:lower:]&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[:upper:]&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;=====&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;=====&amp;quot;&lt;/span&gt;
+
+    &lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;span class="nb"&gt;    echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Length&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+    &lt;span class="k"&gt;do&lt;/span&gt;
+        &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
+        ./mlr --csv --fs tab stats1 -a mean,p50,min,max &lt;span class="se"&gt;\&lt;/span&gt;
+              -f Length scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+            &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+    &lt;span class="k"&gt;done&lt;/span&gt;
+    
+    &lt;span class="nb"&gt;echo&lt;/span&gt;
+&lt;span class="nb"&gt;    echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;GCContent&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+    &lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;./mlr --csv --fs tab stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 1&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;./mlr --csv --fs tab stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 2&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+    &lt;span class="k"&gt;do&lt;/span&gt;
+        &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
+        ./mlr --csv --fs tab filter &lt;span class="se"&gt;\&lt;/span&gt;
+              &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+              scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="se"&gt;\&lt;/span&gt;
+            &lt;span class="p"&gt;|&lt;/span&gt; ./mlr --csv --fs tab stats1 -a mean,p50,min,max -f GCContent &lt;span class="se"&gt;\&lt;/span&gt;
+            &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+
+=====EXONS=====
+
+Length
+Species	Mean	Median	Min	Max
+Amel	360.827403	210.000000	1.000000	15394.000000
+Bter	389.777202	210.000000	2.000000	14946.000000
+Hsal	339.726871	206.000000	2.000000	18463.000000
+Cflo	324.612978	206.000000	2.000000	12042.000000
+Pdom	276.922780	189.000000	1.000000	10835.000000
+Pcan	320.499481	201.000000	2.000000	11283.000000
+Nvit	352.794270	216.000000	1.000000	16428.000000
+
+GCContent
+Species	Mean	Median	Min	Max
+Amel	0.372308	0.355000	0.074000	0.801000
+Bter	0.400649	0.393000	0.137000	0.733000
+Hsal	0.462224	0.460000	0.126000	0.798000
+Cflo	0.417514	0.409000	0.162000	0.747000
+Pdom	0.367585	0.362000	0.040000	0.726000
+Pcan	0.378159	0.372000	0.045000	0.746000
+Nvit	0.457260	0.449000	0.149000	0.791000
+
+
+=====INTRONS=====
+
+Length
+Species	Mean	Median	Min	Max
+Amel	1803.647537	126.000000	29.000000	557153.000000
+Bter	2089.895993	129.000000	1.000000	564389.000000
+Hsal	1758.448638	193.000000	30.000000	564989.000000
+Cflo	1571.713577	201.000000	30.000000	465607.000000
+Pdom	531.175157	109.000000	4.000000	48311.000000
+Pcan	603.356998	106.000000	21.000000	94316.000000
+Nvit	1410.000103	89.000000	30.000000	431041.000000
+
+GCContent
+Species	Mean	Median	Min	Max
+Amel	0.193362	0.167000	0.018000	0.734000
+Bter	0.264278	0.253000	0.045000	0.688000
+Hsal	0.345122	0.336000	0.031000	0.944000
+Cflo	0.240256	0.229000	0.000000	0.765000
+Pdom	0.220876	0.211000	0.013000	0.742000
+Pcan	0.225167	0.215000	0.039000	0.707000
+Nvit	0.316285	0.302000	0.056000	0.812000
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;That's it!&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</summary><category term="wasp"></category><category term="publication"></category><category term="mlr"></category></entry><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:notebook-test.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
