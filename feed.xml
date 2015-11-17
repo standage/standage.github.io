@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 06 Nov 2015 00:00:00 -0500</lastBuildDate><item><title>Notebook test</title><link>https://standage.github.io/notebook-test.html</link><description>&lt;style type="text/css"&gt;/*!
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Tue, 17 Nov 2015 00:00:00 -0500</lastBuildDate><item><title>Notebook test</title><link>https://standage.github.io/notebook-test.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -3504,4 +3504,4 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Fri, 06 Nov 2015 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2015-11-06:notebook-test.html</guid><category>python</category></item><item><title>My First Review</title><link>https://standage.github.io/my-first-review.html</link><description>&lt;p&gt;Following is a review of my favorite mechanical keyboard.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dude Sweet</dc:creator><pubDate>Tue, 03 Nov 2015 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2015-11-03:my-first-review.html</guid><category>review</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Tue, 17 Nov 2015 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2015-11-17:notebook-test.html</guid><category>meta</category><category>iloci</category></item><item><title>Hello, world!</title><link>https://standage.github.io/hello-world.html</link><description>&lt;p&gt;Seed content for my new notebook.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel Standage</dc:creator><pubDate>Mon, 16 Nov 2015 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2015-11-16:hello-world.html</guid><category>meta</category></item></channel></rss>

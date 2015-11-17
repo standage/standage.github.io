@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='page'>
+		<div class="page-header"><h1>Setup</h1></div>
+		<div><p>More details coming soon.
+For now, linkfest.</p>
+<ul>
+<li><a href="http://blog.getpelican.com/">Pelican</a> static site generator, because Python</li>
+<li><a href="https://github.com/getpelican/pelican-themes">Bootstrap theme</a> for Pelican<ul>
+<li>mods detailed below, here's an explanatory <a href="https://github.com/getpelican/pelican/issues/816">link</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/danielfrg/pelican-ipynb">pelican-ipynb plugin</a> for integrating Jupyter/IPython notebooks (<a href="http://danielfrg.com/blog/2013/03/08/pelican-ipython-notebook-plugin/">more here</a>)</li>
+</ul>
+<div class="highlight"><pre><span class="gh">diff -r bootstrap/static/bootstrap.min.css ../pelican-themes/bootstrap/static/bootstrap.min.css</span>
+78c78
+&lt; p{font-size:13px;font-weight:normal;line-height:18px;margin-bottom:9px;}p small{font-size:11px;}
+<span class="gd">---</span>
+&gt; p{font-size:13px;font-weight:normal;line-height:18px;margin-bottom:9px;}p small{font-size:11px;color:#bfbfbf;}
+91c91
+&lt; li{line-height:18px;}
+<span class="gd">---</span>
+&gt; li{line-height:18px;color:#808080;}
+<span class="gh">diff -r bootstrap/static/local.css ../pelican-themes/bootstrap/static/local.css</span>
+14,18d13
+&lt; .well ul {
+&lt;   list-style-type: none;
+&lt;   margin-left: 0;
+&lt; }
+&lt; 
+41d35
+&lt; .social a[href*=&#39;stackexchange.com&#39;]:before {content: url(&#39;./images/icons/stackoverflow.png&#39;); margin-right: 2px; vertical-align: -3px;}
+<span class="gh">diff -r bootstrap/templates/archives.html ../pelican-themes/bootstrap/templates/archives.html</span>
+2c2
+&lt; {% block title %}Notebook &lt;small&gt;[archive]&lt;/small&gt;{% endblock %}
+<span class="gd">---</span>
+&gt; {% block title %}{{ SITENAME }} &lt;small&gt;[archive]&lt;/small&gt;{% endblock %}
+<span class="gh">diff -r bootstrap/templates/base.html ../pelican-themes/bootstrap/templates/base.html</span>
+55,60c55,57
+&lt;               {% if DISPLAY_CATEGORIES_ON_MENU %}
+&lt;                   {% for cat, null in categories %}
+&lt;                       &lt;li {% if cat == category %}class=&quot;active&quot;{% endif %}&gt;&lt;a href=&quot;{{ SITEURL }}/{{ cat.url }}&quot;&gt;{{ cat }}&lt;/a&gt;&lt;/li&gt;
+&lt;                   {% endfor %}
+&lt;               {% endif %}
+&lt;               &lt;li&gt;&lt;a href=&quot;{{ SITEURL }}/notebook.html&quot;&gt;Notebook&lt;/a&gt;&lt;/li&gt;
+<span class="gd">---</span>
+&gt;               {% for cat, null in categories %}
+&gt;                   &lt;li {% if cat == category %}class=&quot;active&quot;{% endif %}&gt;&lt;a href=&quot;{{ SITEURL }}/{{ cat.url }}&quot;&gt;{{ cat }}&lt;/a&gt;&lt;/li&gt;
+&gt;               {% endfor %}
+62c59
+&lt;           &lt;p class=&quot;pull-right&quot;&gt;&lt;a href=&quot;{{ SITEURL }}/archives.html&quot;&gt;[archives]&lt;/a&gt; &lt;a href=&quot;{{ SITEURL }}/categories.html&quot;&gt;[categories]&lt;/a&gt; &lt;a href=&quot;{{ SITEURL }}/tags.html&quot;&gt;[tags]&lt;/a&gt;&lt;/p&gt;
+<span class="gd">---</span>
+&gt;           &lt;p class=&quot;pull-right&quot;&gt;&lt;a href=&quot;{{ SITEURL }}/archives.html&quot;&gt;[archives]&lt;/a&gt; &lt;a href=&quot;{{ SITEURL }}/tags.html&quot;&gt;[tags]&lt;/a&gt;&lt;/p&gt;
+70,77c67
+&lt;           &lt;img src=&quot;http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180&quot; alt=&quot;Daniel Standage&quot; /&gt;
+&lt;           &lt;h3&gt;{{ AUTHOR }}&lt;/h3&gt;
+&lt;           &lt;p&gt;
+&lt;               {% for addr in ADDRESS %}
+&lt;               {{ addr }}&lt;br /&gt;
+&lt;               {% endfor %}
+&lt;           &lt;/p&gt;
+&lt;           &lt;h3&gt;Affiliations&lt;/h3&gt;
+<span class="gd">---</span>
+&gt;           &lt;h3&gt;Blogroll&lt;/h3&gt;
+94c84
+&lt;           {% block indextitle %}&lt;div class=&quot;page-header&quot;&gt;&lt;h1&gt;{% block title %} Notebook {% endblock %}&lt;/h1&gt;&lt;/div&gt;{% endblock %}
+<span class="gd">---</span>
+&gt;           {% block indextitle %}&lt;div class=&quot;page-header&quot;&gt;&lt;h1&gt;{% block title %} {{ self.windowtitle() }} {% endblock %}&lt;/h1&gt;&lt;/div&gt;{% endblock %}
+97,102c87,88
+&lt;         &lt;p&gt;
+&lt;           &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;&lt;img src=&quot;{{ SITEURL }}/images/cc-by-88x31.png&quot; alt=&quot;CC BY 4.0&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;           &amp;copy; 2015 {{ AUTHOR }}.&lt;br /&gt;
+&lt;           Unless otherwise noted, all content on this site is posted under a &lt;a href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;CC BY license&lt;/a&gt;.&lt;/p&gt;
+&lt;         &lt;p&gt;&lt;/p&gt;
+&lt;         &lt;p&gt;This site is powered by &lt;a href=&quot;http://getpelican.com/&quot;&gt;Pelican&lt;/a&gt;, its theme based on &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Twitter Bootstrap&lt;/a&gt;.&lt;/p&gt;
+<span class="gd">---</span>
+&gt;         &lt;p&gt;Powered by &lt;a href=&quot;http://getpelican.com/&quot;&gt;Pelican&lt;/a&gt;. Theme based on &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Twitter Bootstrap&lt;/a&gt;.&lt;/p&gt;
+&gt;         &lt;p&gt;&amp;copy; {{ AUTHOR }}&lt;/p&gt;
+<span class="gh">diff -r bootstrap/templates/categories.html ../pelican-themes/bootstrap/templates/categories.html</span>
+2c2
+&lt; {% block title %}Notebook &lt;small&gt;[categories]&lt;/small&gt;{% endblock %}
+<span class="gd">---</span>
+&gt; {% block title %}{{ SITENAME }} &lt;small&gt;[categories]&lt;/small&gt;{% endblock %}
+<span class="gh">diff -r bootstrap/templates/category.html ../pelican-themes/bootstrap/templates/category.html</span>
+2c2
+&lt; {% block title %}Notebook &lt;small&gt;{{ category }}&lt;/small&gt;{% endblock %}
+\ No newline at end of file
+<span class="gd">---</span>
+&gt; {% block title %}{{ SITENAME }} &lt;small&gt;{{ category }}&lt;/small&gt;{% endblock %}
+\ No newline at end of file
+<span class="gh">diff -r bootstrap/templates/index.html ../pelican-themes/bootstrap/templates/index.html</span>
+4,5d3
+&lt; &lt;p&gt;Psst! I&#39;ve posted details about my notebook setup &lt;a href=&quot;{{ SITEURL }}/pages/setup.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt; 
+<span class="gh">diff -r bootstrap/templates/metadata.html ../pelican-themes/bootstrap/templates/metadata.html</span>
+1c1
+&lt; Permalink: &lt;a class=&quot;more&quot; href=&quot;{{ SITEURL }}/{{ article.url }}&quot;&gt;{{ article.locale_date }}&lt;/a&gt;
+<span class="gd">---</span>
+&gt; Permalink: &lt;a class=&quot;more&quot; href=&quot;{{ SITEURL }}/{{ article.url }}&quot;&gt;{{ article.date }}&lt;/a&gt;
+<span class="gh">diff -r bootstrap/templates/tag.html ../pelican-themes/bootstrap/templates/tag.html</span>
+2c2
+&lt; {% block title %}Notebook &lt;small&gt;{{ tag }}&lt;/small&gt;{% endblock %}
+\ No newline at end of file
+<span class="gd">---</span>
+&gt; {% block title %}{{ SITENAME }} &lt;small&gt;{{ tag }}&lt;/small&gt;{% endblock %}
+\ No newline at end of file
+<span class="gh">diff -r bootstrap/templates/tags.html ../pelican-themes/bootstrap/templates/tags.html</span>
+2c2
+&lt; {% block title %}Notebook &lt;small&gt;[tags]&lt;/small&gt;{% endblock %}
+<span class="gd">---</span>
+&gt; {% block title %}{{ SITENAME }} &lt;small&gt;[tags]&lt;/small&gt;{% endblock %}
+</pre></div></div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

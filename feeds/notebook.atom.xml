@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/notebook.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-11-06T00:00:00-05:00</updated><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><updated>2015-11-06T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-06:notebook-test.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/notebook.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-11-17T00:00:00-05:00</updated><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:notebook-test.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -3504,4 +3504,4 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category></entry></feed>
+</summary><category term="meta"></category><category term="iloci"></category></entry></feed>
