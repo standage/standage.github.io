@@ -7,12 +7,14 @@ AUTHOR = 'Daniel S. Standage'
 SITENAME = 'Daniel Standage'
 TIMEZONE = 'America/Indiana/Indianapolis'
 DEFAULT_LANG = 'en'
+DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 
 PATH = 'content'
 THEME = 'bootstrap'
 SITEURL = 'http://standage.github.io'
 RELATIVE_URLS = True
 DEFAULT_PAGINATION = 10
+CACHE_CONTENT = False
 
 # Page/category config
 DISPLAY_CATEGORIES_ON_MENU = False
@@ -43,11 +45,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-
-
-
+# Plugin config
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['ipynb']
 IPYNB_USE_META_SUMMARY = True
-
-LOAD_CONTENT_CACHE = False
