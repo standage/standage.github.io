@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+	<meta name="description" content="">
+	<meta name="author" content="{{ AUTHOR }}">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="{{ SITEURL }}/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
+	<link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	{% if FEED_ALL_ATOM %}
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+	{% endif %}
+
+	{% if FEED_ATOM %}
+        <link href="{{ FEED_ATOM }}" rel="alternate" title="{{ SITENAME }}" type="application/atom+xml">
+	{% endif %}
+
+	{% if FEED_ALL_RSS %}
+	<link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+	{% endif %}
+
+	{% if FEED_RSS %}
+        <link href="{{ FEED_RSS }}" rel="alternate" title="{{ SITENAME }}" type="application/rss+xml">
+	{% endif %}
+
+	{% include "analytics.html" %}
+	{% include "disqus.html" %}
+</head>
+<body>
+	{% include "facebook.html" %}
+	{% include "github.html" %}
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+			<ul class="nav">
+				{% for title, link in MENUITEMS %}
+					<li><a href="{{ link }}">{{ title }}</a></li>
+				{% endfor %}
+				{% if DISPLAY_PAGES_ON_MENU %}
+					{% for page in PAGES %}
+						<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+					{% endfor %}
+				{% endif %}
+				{% if DISPLAY_CATEGORIES_ON_MENU %}
+					{% for cat, null in categories %}
+						<li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+					{% endfor %}
+				{% endif %}
+				<li><a href="{{ SITEURL }}/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="{{ SITEURL }}/archives.html">[archives]</a> <a href="{{ SITEURL }}/categories.html">[categories]</a> <a href="{{ SITEURL }}/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>{{ AUTHOR }}</h3>
+			<p>
+				{% for addr in ADDRESS %}
+				{{ addr }}<br />
+				{% endfor %}
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				{% for name, link in LINKS %}
+				<li><a href="{{ link }}">{{ name }}</a></li>
+				{% endfor %}
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				{% for name, link in SOCIAL %}
+				<li><a href="{{ link }}">{{ name }}</a></li>
+				{% endfor %}
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+			{% block indextitle %}<div class="page-header"><h1>{% block title %} Notebook {% endblock %}</h1></div>{% endblock %}
+			{% block content %}{% endblock %}
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="{{ SITEURL }}/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015 {{ AUTHOR }}.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
