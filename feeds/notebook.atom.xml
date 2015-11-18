@@ -676,7 +676,7 @@ Nvit	0.316285	0.302000	0.056000	0.812000
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="wasp"></category><category term="publication"></category><category term="mlr"></category></entry><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:notebook-test.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+</summary><category term="wasp"></category><category term="publication"></category><category term="mlr"></category><category term="bash"></category></entry><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:notebook-test.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *

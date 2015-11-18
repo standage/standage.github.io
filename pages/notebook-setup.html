@@ -70,16 +70,51 @@
 	  </div>
 	  <div class="content">
 	<div class='page'>
-		<div class="page-header"><h1>Setup</h1></div>
-		<div><p>More details coming soon.
-For now, linkfest.</p>
+		<div class="page-header"><h1>Notebook Setup</h1></div>
+		<div><p>Over the last several years I've used a motley assortment of blogs, wikis, and web-hosted documents to keep records of my research activities, mostly for personal reference but also occasionally to share with colleagues and collaborators.
+This lab notebook is the latest iteration of my effort to streamline the documentation of my research.
+It is built on my laptop using the static site generator <a href="http://blog.getpelican.com/">Pelican</a>, and hosted on <a href="http://pages.github.com">GitHub Pages</a>.
+I've included some details on my setup below.</p>
+<h2>Why the new setup?</h2>
+<p>I discuss this question at length <a href="https://standage.github.io/new-lab-notebook-setup-my-motivation.html">in this post</a>, but in brief I wanted a solution that offers the following.</p>
 <ul>
-<li><a href="http://blog.getpelican.com/">Pelican</a> static site generator, because Python</li>
+<li>A one-stop shop for all my research notes, scribbles, commands, notebooks, and blog posts.</li>
+<li>Support for formatting content with Markdown.</li>
+<li>Support for embedded JavaScript.</li>
+<li>More accessibility and control over the content.</li>
+</ul>
+<p>Static site generators, with which I had become acquainted in the last couple of years, seemed well-suited for my needs.</p>
+<h2>Why Pelican? Why not Jekyll?</h2>
+<p>Because Python.</p>
+<h2>Seriously, why?</h2>
+<p>I'm joking of course, this is actually a fair question.
+Jekyll far outstrips Pelican in terms of popularity and name recognition, no doubt because of its privileged integration with <a href="http://pages.github.com">GitHub Pages</a>.
+The popularity is nothing to sniff at: it means a lot more digital ink is spilled writing questions and answers about Jekyll on sites like <a href="http://stackoverflow.com">StackOverflow</a>, making it much more likely to find a quick solution to basic troubleshooting issues with a simple Google search.
+The privileged integration with GitHub is also a very nice feature: they handle the Markdown-to-HTML conversion on their back end, so you just have to worry about the raw content. </p>
+<p>That said, the reasons I decided to go with Pelican instead of Jekyll have a lot to do Python vs Ruby.</p>
+<ul>
+<li>I suspected (and later confirmed) that integrating IPython/Jupyter notebooks is much more straightforward with a Python-based platform than a Ruby-based one.
+  This was a big selling point for me, since I really want to make these a bigger part of my research record.</li>
+<li>Heaven forbid I should ever have to write a plugin or extension for <em>any</em> static site generator, but if for some reason I decided this was a good idea, I would much rather do it in Python than have to slop something together in Ruby.
+  And just to be clear, when I say <em>slop</em> I refer to my inexperience with Ruby, not to its inferiority to Python or any other language (I've never written a single line of Ruby, so I wouldn't know).</li>
+<li>Maybe I'm mistaken on the following points, but I get the sense that Ruby is a slow language, and that its performance is not improving as quickly as many had hoped and expected, and that the Rails web framework (Ruby's biggest selling point) is losing popularity to JavaScript-based web back ends.
+  Performance probably won't be a big deal for a small blog/notebook that I pre-generate on my laptop, but looking forward 5-10 years from now my predictions for the Python ecosystem and community are brighter than those of Ruby.</li>
+</ul>
+<h2>Okay, so what's the setup?</h2>
+<h3>Pelican</h3>
+<ul>
+<li>Installation was trivial: <code>pip install pelican</code> and I was ready to go.</li>
+<li>Creating a new site is trivial: <code>pelican-quickstart</code> creates a basic scaffolding for the site.</li>
+<li>It took a bit of work to refine the site configuration, but (unless I've forgotten something) all of my changes are restricted to the <code>pelicanconf.py</code> configuration file, which is ideal.</li>
+</ul>
+<h3>Bootstrap theme</h3>
+<ul>
+<li>Installation was easy with <code>git clone</code>.</li>
+<li>Some modifications were required. TODO document this.</li>
 <li><a href="https://github.com/getpelican/pelican-themes">Bootstrap theme</a> for Pelican<ul>
 <li>mods detailed below, here's an explanatory <a href="https://github.com/getpelican/pelican/issues/816">link</a></li>
 </ul>
 </li>
-<li><a href="https://github.com/danielfrg/pelican-ipynb">pelican-ipynb plugin</a> for integrating Jupyter/IPython notebooks (<a href="http://danielfrg.com/blog/2013/03/08/pelican-ipython-notebook-plugin/">more here</a>)</li>
 </ul>
 <div class="highlight"><pre><span class="gh">diff -r bootstrap/static/bootstrap.min.css ../pelican-themes/bootstrap/static/bootstrap.min.css</span>
 78c78
@@ -178,7 +213,38 @@ For now, linkfest.</p>
 &lt; {% block title %}Notebook &lt;small&gt;[tags]&lt;/small&gt;{% endblock %}
 <span class="gd">---</span>
 &gt; {% block title %}{{ SITENAME }} &lt;small&gt;[tags]&lt;/small&gt;{% endblock %}
-</pre></div></div>
+</pre></div>
+
+
+<h3>pelican-ipynb plugin</h3>
+<p>https://github.com/danielfrg/pelican-ipynb</p>
+<ul>
+<li>TODO: document installation</li>
+<li>
+<p>TODO: track changes if any</p>
+</li>
+<li>
+<p>Setup</p>
+<ul>
+<li>Pelican setup<ul>
+<li>trivial installation (pip)</li>
+<li>fairly straightforward</li>
+<li>most (if not all) changes made by me are restricted to the config file, which is ideal</li>
+</ul>
+</li>
+<li>Bootstrap theme<ul>
+<li>easy installation (github clone)</li>
+<li>adsf</li>
+</ul>
+</li>
+<li>pelican-ipynb plugin<ul>
+<li>trivial installation (pip, add to config)</li>
+<li>not changes required! (verify...)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div>
 	</div>
 		<footer>
 		  <p>
