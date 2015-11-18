@@ -51,6 +51,7 @@ That said, the reasons I decided to go with Pelican instead of Jekyll have a lot
 
 - Installation was easy with `git clone`.
 - Some modifications were required. TODO document this.
+- disqus http vs https
 - [Bootstrap theme](https://github.com/getpelican/pelican-themes) for Pelican
     - mods detailed below, here's an explanatory [link](https://github.com/getpelican/pelican/issues/816)
 ```diff
