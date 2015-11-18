@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Tue, 17 Nov 2015 00:00:00 -0500</lastBuildDate><item><title>Cleanup: supplementary tables for our genome paper</title><link>https://standage.github.io/cleanup-supplementary-tables-for-our-genome-paper.html</link><description>&lt;style type="text/css"&gt;/*!
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 18 Nov 2015 00:00:00 -0500</lastBuildDate><item><title>Group meeting feedback</title><link>https://standage.github.io/group-meeting-feedback.html</link><description>&lt;ul&gt;
+&lt;li&gt;Taylor&lt;ul&gt;
+&lt;li&gt;we might want to be more careful about terminology clashes&lt;ul&gt;
+&lt;li&gt;we use piLoci and miLoci to refer to protein-coding iLoci and merged iLoci, respectively&lt;/li&gt;
+&lt;li&gt;in molecular genetics the pi- and mi- prefixes are often associated with piwi and microRNAs, respectively&lt;/li&gt;
+&lt;li&gt;it may not be a big deal, but it's something to consider&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;yeast is arguably the best annotated eukaryotic genome, should really investigate its organization&lt;/li&gt;
+&lt;li&gt;effect of TEs?&lt;/li&gt;
+&lt;li&gt;annotated UTR length and delta parameter&lt;ul&gt;
+&lt;li&gt;different deltas for upstream and downstream could be useful in some contexts&lt;/li&gt;
+&lt;li&gt;might think about how/whether UTR length could influence delta gene-by-gene&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Volker&lt;ul&gt;
+&lt;li&gt;did a project a few years ago&lt;ul&gt;
+&lt;li&gt;found pairs of genes with opposite orientation (i.e. &lt;code&gt;&amp;lt;--  --&amp;gt;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;looked for palidromic motifs in the intergenic space&lt;/li&gt;
+&lt;li&gt;could be potentially interesting to investigate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;read up on r-scans (maybe &lt;a href="http://www.sciencemag.org/content/257/5066/39.abstract"&gt;this&lt;/a&gt; is a good starting point)&lt;/li&gt;
+&lt;li&gt;likes the idea of simulation&lt;ul&gt;
+&lt;li&gt;keep genome &lt;em&gt;content&lt;/em&gt; constant, but modulate &lt;em&gt;organization&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;randomly place giLoci in genomic sequence (don't allow overlaps)&lt;/li&gt;
+&lt;li&gt;compare miLocus/iiLocus summary stats&lt;ul&gt;
+&lt;li&gt;length distributions&lt;/li&gt;
+&lt;li&gt;miLocus gene counts&lt;/li&gt;
+&lt;li&gt;r-scans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Wed, 18 Nov 2015 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2015-11-18:group-meeting-feedback.html</guid><category>group meeting</category><category>iloci</category></item><item><title>Cleanup: supplementary tables for our genome paper</title><link>https://standage.github.io/cleanup-supplementary-tables-for-our-genome-paper.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
