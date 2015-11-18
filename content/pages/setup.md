@@ -1,16 +1,58 @@
-Title: Setup
+Title: Notebook Setup
 Category: blog
 tags: meta
 status: hidden
 
-More details coming soon.
-For now, linkfest.
+Over the last several years I've used a motley assortment of blogs, wikis, and web-hosted documents to keep records of my research activities, mostly for personal reference but also occasionally to share with colleagues and collaborators.
+This lab notebook is the latest iteration of my effort to streamline the documentation of my research.
+It is built on my laptop using the static site generator [Pelican][], and hosted on [GitHub Pages][].
+I've included some details on my setup below.
 
-- [Pelican](http://blog.getpelican.com/) static site generator, because Python
+## Why the new setup?
+
+I discuss this question at length [in this post]({filename}/2015-11-17-setup-motivation.md), but in brief I wanted a solution that offers the following.
+
+- A one-stop shop for all my research notes, scribbles, commands, notebooks, and blog posts.
+- Support for formatting content with Markdown.
+- Support for embedded JavaScript.
+- More accessibility and control over the content.
+
+Static site generators, with which I had become acquainted in the last couple of years, seemed well-suited for my needs.
+
+## Why Pelican? Why not Jekyll?
+
+Because Python.
+
+## Seriously, why?
+
+I'm joking of course, this is actually a fair question.
+Jekyll far outstrips Pelican in terms of popularity and name recognition, no doubt because of its privileged integration with [GitHub Pages][].
+The popularity is nothing to sniff at: it means a lot more digital ink is spilled writing questions and answers about Jekyll on sites like [StackOverflow][], making it much more likely to find a quick solution to basic troubleshooting issues with a simple Google search.
+The privileged integration with GitHub is also a very nice feature: they handle the Markdown-to-HTML conversion on their back end, so you just have to worry about the raw content. 
+
+That said, the reasons I decided to go with Pelican instead of Jekyll have a lot to do Python vs Ruby.
+
+- I suspected (and later confirmed) that integrating IPython/Jupyter notebooks is much more straightforward with a Python-based platform than a Ruby-based one.
+  This was a big selling point for me, since I really want to make these a bigger part of my research record.
+- Heaven forbid I should ever have to write a plugin or extension for *any* static site generator, but if for some reason I decided this was a good idea, I would much rather do it in Python than have to slop something together in Ruby.
+  And just to be clear, when I say *slop* I refer to my inexperience with Ruby, not to its inferiority to Python or any other language (I've never written a single line of Ruby, so I wouldn't know).
+- Maybe I'm mistaken on the following points, but I get the sense that Ruby is a slow language, and that its performance is not improving as quickly as many had hoped and expected, and that the Rails web framework (Ruby's biggest selling point) is losing popularity to JavaScript-based web back ends.
+  Performance probably won't be a big deal for a small blog/notebook that I pre-generate on my laptop, but looking forward 5-10 years from now my predictions for the Python ecosystem and community are brighter than those of Ruby.
+
+## Okay, so what's the setup?
+
+### Pelican
+
+- Installation was trivial: `pip install pelican` and I was ready to go.
+- Creating a new site is trivial: `pelican-quickstart` creates a basic scaffolding for the site.
+- It took a bit of work to refine the site configuration, but (unless I've forgotten something) all of my changes are restricted to the `pelicanconf.py` configuration file, which is ideal.
+
+### Bootstrap theme
+
+- Installation was easy with `git clone`.
+- Some modifications were required. TODO document this.
 - [Bootstrap theme](https://github.com/getpelican/pelican-themes) for Pelican
     - mods detailed below, here's an explanatory [link](https://github.com/getpelican/pelican/issues/816)
-- [pelican-ipynb plugin](https://github.com/danielfrg/pelican-ipynb) for integrating Jupyter/IPython notebooks ([more here](http://danielfrg.com/blog/2013/03/08/pelican-ipython-notebook-plugin/))
-
 ```diff
 diff -r bootstrap/static/bootstrap.min.css ../pelican-themes/bootstrap/static/bootstrap.min.css
 78c78
@@ -110,3 +152,27 @@ diff -r bootstrap/templates/tags.html ../pelican-themes/bootstrap/templates/tags
 ---
 > {% block title %}{{ SITENAME }} <small>[tags]</small>{% endblock %}
 ```
+
+### pelican-ipynb plugin
+
+https://github.com/danielfrg/pelican-ipynb
+
+- TODO: document installation
+- TODO: track changes if any
+
+- Setup
+    - Pelican setup
+        - trivial installation (pip)
+        - fairly straightforward
+        - most (if not all) changes made by me are restricted to the config file, which is ideal
+    - Bootstrap theme
+        - easy installation (github clone)
+        - adsf
+    - pelican-ipynb plugin
+        - trivial installation (pip, add to config)
+        - not changes required! (verify...)
+
+
+[Pelican]: http://blog.getpelican.com/
+[GitHub Pages]: http://pages.github.com
+[StackOverflow]: http://stackoverflow.com

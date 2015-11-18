@@ -15,6 +15,7 @@ SITEURL = 'http://standage.github.io'
 RELATIVE_URLS = True
 DEFAULT_PAGINATION = 10
 CACHE_CONTENT = False
+DISQUS_SITENAME = 'standage-github-io'
 
 # Blog/page/category config
 ARTICLE_EXCLUDES = ['.ipynb_checkpoints']
