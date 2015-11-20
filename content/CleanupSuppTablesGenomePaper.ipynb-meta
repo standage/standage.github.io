@@ -2,4 +2,8 @@ Title: Cleanup: supplementary tables for our genome paper
 Date: 2015-11-17
 Category: notebook
 Tags: wasp; publication; mlr; bash
-Summary: Cleaning up my notes for producing supplementary tables for a recently submitted genome paper.
+Summary: We submitted a genome paper to Genome Biology over the weekend. I'm going
+    through our repository and tidying things up, and I realized I have not had
+    a chance to record my notes on several of the supplemental tables providing
+    a comparison of genome features across seven species. I'll go ahead and do
+    so here.
