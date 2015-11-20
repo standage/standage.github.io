@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-11-18T00:00:00-05:00</updated><entry><title>Group meeting feedback</title><link href="https://standage.github.io/group-meeting-feedback.html" rel="alternate"></link><updated>2015-11-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-18:group-meeting-feedback.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-11-19T00:00:00-05:00</updated><entry><title>A model invited speaker</title><link href="https://standage.github.io/a-model-invited-speaker.html" rel="alternate"></link><updated>2015-11-19T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-19:a-model-invited-speaker.html</id><summary type="html">&lt;p&gt;Today I had the privilege of attending an excellent departmental seminar from an invited speaker.
+I've seen plenty of great seminars in grad school but I've also experienced my fair share of seminars that were...less than phenomenal.
+The content of the talk was interesting, and the speaker's presentation was engaging, but there were a couple of things on top of that really made the difference.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The speaker did not try to cram too much in&lt;/strong&gt;. It was clear from his intro, the talk itself, and his answers to questions, that there was &lt;em&gt;plenty&lt;/em&gt; more he could have covered.
+  It was refreshing that he didn't feel obligated to cover every single research project he's working on, though.
+  It almost seems some speakers feel obligated to have 2 or 3 sections to their talk, and invariably they take 45 minutes to get through the first section, and rush through the second section, leaving 30 seconds for questions after a rushed recap.
+  Anyone with questions has to stay longer, and those that can't stay miss out on the interaction.
+  Don't be &lt;em&gt;that speaker&lt;/em&gt;, Daniel.
+  Embrace focus and depth, rather than the lack of focus that comes with too much breadth.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The speaker was respectful of time&lt;/strong&gt;. I never saw him once check the clock or look for the time (he probably did so very subtly), but when he came to the end of his talk it did not feel rushed.
+  He took the time he needed to make his points, and tie it all together, and ended at the 45 minute mark.
+  There were plenty of questions, and since he didn't push his presentation to the very end of his time slot, pretty much everyone in the auditorium stuck around and stayed engaged for the questions.
+  There was time for questions, and follow up questions, and some good discussion, and even after 15 minutes worth of &lt;em&gt;that&lt;/em&gt; we had just barely come to the end of the seminar's hour-long time slot.
+  The speakers and audience just don't get that kind of engaging experience if the speaker doesn't manage his/her time well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Just a couple of things to keep in mind when I am fortunate enough to give research talks.&lt;/p&gt;</summary><category term="speaking"></category><category term="academics"></category></entry><entry><title>Group meeting feedback</title><link href="https://standage.github.io/group-meeting-feedback.html" rel="alternate"></link><updated>2015-11-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-18:group-meeting-feedback.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Taylor&lt;ul&gt;
 &lt;li&gt;we might want to be more careful about terminology clashes&lt;ul&gt;
 &lt;li&gt;we use piLoci and miLoci to refer to protein-coding iLoci and merged iLoci, respectively&lt;/li&gt;
