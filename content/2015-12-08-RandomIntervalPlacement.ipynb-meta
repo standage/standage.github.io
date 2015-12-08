@@ -1,0 +1,7 @@
+Title: Some notes on random gene distribution
+Date: 2015-12-08
+Category: notebook
+Tags: iloci; intervals; python; genome architecture
+Summary: I've been looking at statistics of gene spacing, but as of yet have
+    not compared these to benchmarks of "randomly" distributed genes. Here I
+    sketch out a few rough notes on the topic.
