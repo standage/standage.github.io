@@ -1,0 +1,6 @@
+Title: Random gene distribution: follow up
+Date: 2015-12-10
+Category: notebook
+Tags: iloci; intervals; python; genome architecture
+Summary: I recently sketched out some notes on random placement of genomic
+    intervals. Here I show a more concrete implementation

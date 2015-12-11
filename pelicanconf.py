@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import glob
 
 # Basic config
 AUTHOR = 'Daniel S. Standage'
@@ -19,7 +20,7 @@ DISQUS_SITENAME = 'standage-github-io'
 SUMMARY_MAX_LENGTH = 100
 
 # Blog/page/category config
-ARTICLE_EXCLUDES = ['.ipynb_checkpoints']
+IGNORE_FILES = ['.ipynb_checkpoints']
 DISPLAY_CATEGORIES_ON_MENU = False
 INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'

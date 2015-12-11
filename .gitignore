@@ -3,4 +3,5 @@
 *.swp
 output/
 content/.ipynb_checkpoints/
+content/*/.ipynb_checkpoints/
 content/scratch/
