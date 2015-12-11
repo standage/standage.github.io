@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-11T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup.html" rel="alternate"></link><updated>2015-12-11T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-11:reading-roundup.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128026"&gt;This PLoS ONE paper about stable identifiers for genome projects&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When working on an ongoing genome sequencing and assembly project, it is rather inconvenient when gene identifiers change from one build of the assembly to the next.
+The gene labelling system described here, UniqTag, addresses this common challenge.
+UniqTag assigns a unique identifier to each gene that is a representative &lt;em&gt;k&lt;/em&gt;-mer, a string of length &lt;em&gt;k&lt;/em&gt;, selected from the sequence of that gene.
+Unlike serial numbers, these identifiers are stable between different assemblies and annotations of the same data without requiring that previous annotations be lifted over by sequence alignment.
+We assign UniqTag identifiers to ten builds of the Ensembl human genome spanning eight years to demonstrate this stability.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Manuscript completely reproducible (automated) using &lt;a href="https://github.com/sjackman/uniqtag-paper"&gt;this repository&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://rik.smith-unna.com/command_line_bootcamp"&gt;This web app for learning the shell in your browser!&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The bootcamp tutorial text was adapted from &lt;a href="http://rescuedbycode.com/linux-bootcamp"&gt;the original&lt;/a&gt; by &lt;a href="http://www.keithbradnam.com/"&gt;Keith Bradnam&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes.html"&gt;This checklist of common spreadsheat mistakes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Excel is an arguably horrible tool for data management, but it's a starting place for many scientists.
+Great guidelines on how to make the spreadsheet a lot less of a frustrating experience.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://michaeltomasson.wordpress.com/2015/12/03/one-reason-you-didnt-get-that-grant-is-because-theranos"&gt;This quote on academic salesmanship&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Once upon a time, I assumed that excellent work would transcend the need for clever marketing and charismatic presentation to sell it to the proper audience, but the longer I work in science, the more I see examples of necessary hard work labeled as incremental and dismissed and attention lavished on the well constructed story.
+The veracity of which appears secondary, or is assumed.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.genomebiology.com/2015/16/1/274"&gt;This from &lt;em&gt;Genome Biology&lt;/em&gt; on self-serving motivations for reproducible research&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;And so, my fellow scientists: ask not what you can do for reproducibility; ask what reproducibility can do for you!
+Here, I present five reasons why working reproducibly pays off in the long run and is in the self-interest of every ambitious, career-oriented scientist.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.carlboettiger.info/2013/06/03/DOI-citable.html"&gt;This quote about DOIs and citability&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So what do we mean when we say a DOI makes something ‘citable?’
+If this is shorthand for the properties we would want in something citable: persistent identifier, archival content, machine-readable metadata, than we should start to recognize other things that share these features.
+Further innovation requires valuing the features the DOI provides, not simply a “brand name” researchers recognize.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://twitter.com/darylginn/status/669457664276094976"&gt;This tweet on software debugging :-)&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote class="twitter-tweet" lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;The 5 stages of debugging:&amp;#10;&amp;#10;1. What?&amp;#10;2. Why?&amp;#10;3. How?&amp;#10;4. Impossible.&amp;#10;5. Oh.&lt;/p&gt;&amp;mdash; daryl (@darylginn) &lt;a href="https://twitter.com/darylginn/status/669457664276094976"&gt;November 25, 2015&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</summary><category term="debugging"></category></entry></feed>
