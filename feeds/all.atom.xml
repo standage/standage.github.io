@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-11T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup.html" rel="alternate"></link><updated>2015-12-11T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-11:reading-roundup.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128026"&gt;This PLoS ONE paper about stable identifiers for genome projects&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-14T00:00:00-05:00</updated><entry><title>Filter stderr while piping in UNIX</title><link href="https://standage.github.io/filter-stderr-while-piping-in-unix.html" rel="alternate"></link><updated>2015-12-14T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-14:filter-stderr-while-piping-in-unix.html</id><summary type="html">&lt;p&gt;I've written before about &lt;a href="https://biowize.wordpress.com/2013/10/11/commands-in-place-of-program-arguments/"&gt;process substitutions in the shell&lt;/a&gt;.
+This has become a core technique I use almost on a daily basis in my data work in the shell.
+It has many uses, but I want to highlight a particular one here.&lt;/p&gt;
+&lt;h2&gt;Use case&lt;/h2&gt;
+&lt;p&gt;Imagine you have a shell script with the following commands&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; second_command one two three &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; third_command --abc xyz &lt;span class="se"&gt;\&lt;/span&gt;
+    &amp;gt; outfile.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Each of these commands will print to stderr in case of a warning or an error.
+However, &lt;code&gt;second_command&lt;/code&gt; prints an irrelevant warning (&lt;code&gt;cannot find "foo"&lt;/code&gt;) message over and over again, filling up the terminal with thousands of lines of noise and making it more difficult to find warnings or error messages we might actually care about.
+How can we filter the stderr of &lt;code&gt;second_command&lt;/code&gt; so that the &lt;code&gt;cannot find "foo"&lt;/code&gt; messages are ignored, but all other messages still show up?&lt;/p&gt;
+&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;p&gt;Process substitutions can be used not only as pseudo input files using the &lt;code&gt;&amp;lt;()&lt;/code&gt; syntax, but also as pseudo output files using the &lt;code&gt;&amp;gt;()&lt;/code&gt; syntax.
+If we redirect a program's output to a process, we can then filter the data within that process, like so.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;some_program &amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Extending this to stderr requires only two changes.
+First, we replace &lt;code&gt;&amp;gt;&lt;/code&gt; with &lt;code&gt;2&amp;gt;&lt;/code&gt; so that we are redirecting the correct output stream.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Secondly, we add &lt;code&gt;1&amp;gt;&amp;amp;2&lt;/code&gt; to the end of the process so that its stdout is redirected back to stderr, which is where the data was intended to go in the first place (cue Ghostbusters quote about not crossing the streams).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Putting this all together and going back to our original use case, we can remove the unwanted &lt;code&gt;cannot find "foo"&lt;/code&gt; messages from our terminal like so.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; second_command one two three 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;grep &lt;span class="s1"&gt;&amp;#39;cannot find &amp;quot;foo&amp;quot;&amp;#39;&lt;/span&gt; 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; third_command --abc xyz &lt;span class="se"&gt;\&lt;/span&gt;
+    &amp;gt; outfile.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's it!&lt;/p&gt;</summary><category term="shell"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup.html" rel="alternate"></link><updated>2015-12-11T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-11:reading-roundup.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128026"&gt;This PLoS ONE paper about stable identifiers for genome projects&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;When working on an ongoing genome sequencing and assembly project, it is rather inconvenient when gene identifiers change from one build of the assembly to the next.
 The gene labelling system described here, UniqTag, addresses this common challenge.
@@ -34,7 +75,7 @@ Further innovation requires valuing the features the DOI provides, not simply a 
 &lt;h2&gt;&lt;a href="https://twitter.com/darylginn/status/669457664276094976"&gt;This tweet on software debugging :-)&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote class="twitter-tweet" lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;The 5 stages of debugging:&amp;#10;&amp;#10;1. What?&amp;#10;2. Why?&amp;#10;3. How?&amp;#10;4. Impossible.&amp;#10;5. Oh.&lt;/p&gt;&amp;mdash; daryl (@darylginn) &lt;a href="https://twitter.com/darylginn/status/669457664276094976"&gt;November 25, 2015&lt;/a&gt;&lt;/blockquote&gt;
 
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</summary><category term="debugging"></category></entry><entry><title>Random gene distribution: follow up</title><link href="https://standage.github.io/random-gene-distribution-follow-up.html" rel="alternate"></link><updated>2015-12-10T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-10:random-gene-distribution-follow-up.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</summary><category term="debugging"></category><category term="reproducibility"></category><category term="academics"></category><category term="shell"></category></entry><entry><title>Random gene distribution: follow up</title><link href="https://standage.github.io/random-gene-distribution-follow-up.html" rel="alternate"></link><updated>2015-12-10T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-10:random-gene-distribution-follow-up.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *

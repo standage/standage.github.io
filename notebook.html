@@ -73,11 +73,33 @@
 <p>Psst! I've posted some details about my notebook setup <a href="https://standage.github.io/pages/notebook-setup.html">here</a>.</p>
 
 <div class='article'>
+	<h2><a href="https://standage.github.io/filter-stderr-while-piping-in-unix.html">Filter stderr while piping in UNIX</a></h2>
+	<div class="well small">Permalink: <a class="more" href="https://standage.github.io/filter-stderr-while-piping-in-unix.html">2015-12-14</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/noteboopk.html">noteboopk</a>
+tags: <a href="https://standage.github.io/tag/shell.html">shell</a> </div>
+	<div class="summary"><p>I've written before about <a href="https://biowize.wordpress.com/2013/10/11/commands-in-place-of-program-arguments/">process substitutions in the shell</a>.
+This has become a core technique I use almost on a daily basis in my data work in the shell.
+It has many uses, but I want to highlight a particular one here.</p>
+<h2>Use case</h2>
+<p>Imagine you have a shell script with the following commands</p>
+<div class="highlight"><pre>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
+    <span class="p">|</span> second_command one two three <span class="se">\</span>
+    <span class="p">|</span> third_command --abc xyz <span class="se">\</span>
+    &gt; outfile.txt
+</pre></div>
+
+
+<p>Each of these commands will print to stderr in case of a warning or an error.
+However, <code>second_command</code> prints an irrelevant warning (<code>cannot find "foo"</code>) message over and ...</p> <a class="btn primary xsmall" href="https://standage.github.io/filter-stderr-while-piping-in-unix.html">more…</a>
+	</div>
+</div>	
+<div class='article'>
 	<h2><a href="https://standage.github.io/reading-roundup.html">Reading roundup</a></h2>
 	<div class="well small">Permalink: <a class="more" href="https://standage.github.io/reading-roundup.html">2015-12-11</a>
 by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
  in <a href="https://standage.github.io/category/roundup.html">roundup</a>
-tags: <a href="https://standage.github.io/tag/debugging.html">debugging</a> </div>
+tags: <a href="https://standage.github.io/tag/debugging.html">debugging</a> <a href="https://standage.github.io/tag/reproducibility.html">reproducibility</a> <a href="https://standage.github.io/tag/academics.html">academics</a> <a href="https://standage.github.io/tag/shell.html">shell</a> </div>
 	<div class="summary"><p>Roundup of links to interesting reads from the last couple of weeks.</p> <a class="btn primary xsmall" href="https://standage.github.io/reading-roundup.html">more…</a>
 	</div>
 </div>	
@@ -171,16 +193,15 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 	<div class="summary"><p>Testing Jupyter notebook integration!</p> <a class="btn primary xsmall" href="https://standage.github.io/notebook-test.html">more…</a>
 	</div>
 </div>	
-<div class='article'>
-	<h2><a href="https://standage.github.io/hello-world.html">Hello, world!</a></h2>
-	<div class="well small">Permalink: <a class="more" href="https://standage.github.io/hello-world.html">2015-11-16</a>
-by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
- in <a href="https://standage.github.io/category/blog.html">blog</a>
-tags: <a href="https://standage.github.io/tag/meta.html">meta</a> </div>
-	<div class="summary"><p>Seed content for my new notebook.</p> <a class="btn primary xsmall" href="https://standage.github.io/hello-world.html">more…</a>
-	</div>
-</div>	
 
+<div class="pagination">
+<ul>
+		<li class="prev disabled"><a href="#">&larr; Previous</a></li>
+		<li class="active"><a href="https://standage.github.io/notebook.html">1</a></li>
+		<li class=""><a href="https://standage.github.io/notebook2.html">2</a></li>
+		<li class="next"><a href="https://standage.github.io/notebook2.html">Next &rarr;</a></li>
+</ul>
+</div>
 
 		<footer>
 		  <p>
