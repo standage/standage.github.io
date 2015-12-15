@@ -1,5 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-14T00:00:00-05:00</updated><entry><title>Filter stderr while piping in UNIX</title><link href="https://standage.github.io/filter-stderr-while-piping-in-unix.html" rel="alternate"></link><updated>2015-12-14T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-14:filter-stderr-while-piping-in-unix.html</id><summary type="html">&lt;p&gt;I've written before about &lt;a href="https://biowize.wordpress.com/2013/10/11/commands-in-place-of-program-arguments/"&gt;process substitutions in the shell&lt;/a&gt;.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-15T00:00:00-05:00</updated><entry><title>Shell pipelines in Python</title><link href="https://standage.github.io/shell-pipelines-in-python.html" rel="alternate"></link><updated>2015-12-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-15:shell-pipelines-in-python.html</id><summary type="html">&lt;p&gt;The UNIX shell is an indispensible tool for project organization and data management in bioinformatics.
+I spend &lt;em&gt;a lot&lt;/em&gt; of time in the shell, and having picked up on a lot of time-saving techniques over the years it might just be my favorite computing environment.&lt;/p&gt;
+&lt;p&gt;The shell has its limitations, however.
+Piping, the very feature that gives the shell its amazing power and flexibility, can also lead to some pretty gruesome syntax.
+Debugging shell code is tough, the error handling is rudimentary, and good luck finding a good framework for automated tests.
+In short, the shell is great for interactive computing and automating simple tasks, but when it comes to workflows requiring more fine-grained control, a language like Python is often a better choice.&lt;/p&gt;
+&lt;p&gt;Here I provide a Python translation of several shell commands.&lt;/p&gt;
+&lt;h2&gt;Simplest case&lt;/h2&gt;
+&lt;p&gt;You don't typically get much bioinformatics work done with a single command without arguments.
+Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you haven't hard coded these in your script, have you?!?!).
+But just for sake of completeness, it's very straightforward to execute shell commands this way in Python.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ls
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Python equivalent is as follows.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There is even the simpler &lt;code&gt;call&lt;/code&gt; function...&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;...but for most situations I find the &lt;code&gt;check_call&lt;/code&gt; more useful, since it will halt the Python code immediately if the subprocess returns a non-zero status.&lt;/p&gt;
+&lt;h2&gt;Command with arguments&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ls -lhp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Commands with arguments cannot simply be dropped in to the &lt;code&gt;check_call&lt;/code&gt; command as-is.
+The following code will fail.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ls -lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There are two ways you can fix this: the convenient (and wrong and insecure) way...&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ls -lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;...and The Right Way.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The convenience of the first method comes at the cost of security: the &lt;code&gt;shell=True&lt;/code&gt; setting introduces vulnerability to &lt;a href="https://security.openstack.org/guidelines/dg_use-subprocess-securely.html"&gt;shell injections&lt;/a&gt;.
+This isn't the type of thing you expect to encounter much in the research setting, but it's an important consideration nonetheless, and exceptions should be made with caution.&lt;/p&gt;
+&lt;p&gt;This example is pretty silly, since you'll probably never need to call the &lt;code&gt;ls&lt;/code&gt; command from Python.
+Let's do a different example you're much more likely to encounter in bioinformatics.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;blastx -db /opt/ncbi/nr -query tsa.fasta &lt;span class="se"&gt;\&lt;/span&gt;
+       -evalue 1e-4 -num_threads &lt;span class="nv"&gt;$numthreads&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+       -out tsa-vs-nr.blastx
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Python equivalent is as follows.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;blastx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-db&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;/opt/ncbi/nr&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-query&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;tsa.fasta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s"&gt;&amp;#39;-evalue&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;1e-4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-num_threads&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;numthreads&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+           &lt;span class="s"&gt;&amp;#39;-out&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;tsa-vs-nr.blastx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Redirect stdin and stdout&lt;/h2&gt;
+&lt;p&gt;Many programs and commands allow you to specify input and output files as arguments, as in the &lt;code&gt;blastx&lt;/code&gt; command above.
+However, sometimes your only options are &lt;code&gt;stdin&lt;/code&gt; and/or &lt;code&gt;stdout&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sed s/^scaffold_/PcanScaf/ &amp;lt; pcan-in.gff3 &amp;gt; pcan-out.gff3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here is the Python equivalent.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pcan-in.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pcan-out.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;outstream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;sed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;s/^scaffold_/PcanScaf/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;outstream&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;The main event: pipelines&lt;/h2&gt;
+&lt;p&gt;Handling input and output for single commands is great and all, but the real power of the shell is piping commands together like so.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;grep -v &lt;span class="s1"&gt;$&amp;#39;\tintron\t&amp;#39;&lt;/span&gt; loci.gff3 &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; pmrna --locus --accession --map&lt;span class="o"&gt;=&lt;/span&gt;map.txt &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; canon-gff3 --outfile&lt;span class="o"&gt;=&lt;/span&gt;locus.mrnas.gff3 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Unless we want to introduce security vulnerabilities, we cannot simply run these command with a single &lt;code&gt;check_call&lt;/code&gt; command.
+For this use case, we want to use the &lt;code&gt;Popen&lt;/code&gt; constructor and the &lt;code&gt;communicate&lt;/code&gt; method.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;pmrnaproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pmrna&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--locus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--accession&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--map=map.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                             &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;canonproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;canon-gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--outfile=locus.mrnas.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;pmrnaproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;canonproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;communicate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If needed, it is trivial to capture the terminal output like so.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;pmrnaproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pmrna&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--locus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--accession&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--map=map.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                             &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;canonproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;canon-gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;--outfile=locus.mrnas.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;pmrnaproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                             &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                             &lt;span class="n"&gt;stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stderr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;canonproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;communicate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;stderr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c"&gt;# process the terminal warnings&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Coda&lt;/h2&gt;
+&lt;p&gt;That's it!&lt;/p&gt;
+&lt;p&gt;Python's &lt;code&gt;subprocess&lt;/code&gt; module is pretty powerful, and allows even slicker interactions with the shell, such as printing text to a pipeline of shell commands.
+However, writing to and reading from a pipeline simultaneously can get tricky and is prone to deadlocks.
+I will not cover this here, but the Internet is full of blog posts and StackOverflow threads discussing the intricacies of the &lt;code&gt;subprocess&lt;/code&gt; for these more complicated use cases.&lt;/p&gt;</summary><category term="shell"></category><category term="python"></category></entry><entry><title>Filter stderr while piping in UNIX</title><link href="https://standage.github.io/filter-stderr-while-piping-in-unix.html" rel="alternate"></link><updated>2015-12-14T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-14:filter-stderr-while-piping-in-unix.html</id><summary type="html">&lt;p&gt;I've written before about &lt;a href="https://biowize.wordpress.com/2013/10/11/commands-in-place-of-program-arguments/"&gt;process substitutions in the shell&lt;/a&gt;.
 This has become a core technique I use almost on a daily basis in my data work in the shell.
 It has many uses, but I want to highlight a particular one here.&lt;/p&gt;
 &lt;h2&gt;Use case&lt;/h2&gt;
