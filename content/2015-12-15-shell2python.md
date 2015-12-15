@@ -137,7 +137,7 @@ canonproc = subprocess.Popen(['canon-gff3', '--outfile=locus.mrnas.gff3'],
                              stdout=subprocess.PIPE,
                              stderr=subprocess.PIPE)
 stdout, stderr = canonproc.communicate()
-for line in stderr.split('\t'):
+for line in stderr.split('\n'):
     # process the terminal warnings
 ```
 
