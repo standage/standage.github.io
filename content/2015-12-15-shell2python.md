@@ -1,7 +1,7 @@
 Title: Shell pipelines in Python
 Date: 2015-12-15
 Author: Daniel S. Standage
-Category: notebook
+Category: blog
 Tags: shell; python
 
 The UNIX shell is an indispensible tool for project organization and data management in bioinformatics.
@@ -17,7 +17,7 @@ Here I provide a Python translation of several shell commands.
 ## Simplest case
 
 You don't typically get much bioinformatics work done with a single command without arguments.
-Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you haven't hard coded these in your script, have you?!?!).
+Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you don't have these hard coded in a script, do you?!?!).
 But just for sake of completeness, it's very straightforward to execute shell commands this way in Python.
 
 ```bash
@@ -110,7 +110,7 @@ grep -v $'\tintron\t' loci.gff3 \
     | canon-gff3 --outfile=locus.mrnas.gff3 
 ```
 
-Unless we want to introduce security vulnerabilities, we cannot simply run these command with a single `check_call` command.
+Unless we want to introduce security vulnerabilities, we cannot simply run these commands with a single call to the `check_call` function.
 For this use case, we want to use the `Popen` constructor and the `communicate` method.
 
 ```python

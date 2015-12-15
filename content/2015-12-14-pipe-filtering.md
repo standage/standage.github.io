@@ -1,8 +1,9 @@
 Title: Filter stderr while piping in UNIX
 Date: 2015-12-14
 Author: Daniel S. Standage
-Category: noteboop
+Category: blog
 Tags: shell
+Summary: Nifty trick for filtering stderr in the middle of a shell pipeline.
 
 I've written before about [process substitutions in the shell](https://biowize.wordpress.com/2013/10/11/commands-in-place-of-program-arguments/).
 This has become a core technique I use almost on a daily basis in my data work in the shell.
