@@ -1,7 +1,7 @@
 Title: Filter stderr while piping in UNIX
 Date: 2015-12-14
 Author: Daniel S. Standage
-Category: noteboopk
+Category: noteboop
 Tags: shell
 
 I've written before about [process substitutions in the shell](https://biowize.wordpress.com/2013/10/11/commands-in-place-of-program-arguments/).
