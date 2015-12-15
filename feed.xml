@@ -8,7 +8,7 @@ In short, the shell is great for interactive computing and automating simple tas
 &lt;p&gt;Here I provide a Python translation of several shell commands.&lt;/p&gt;
 &lt;h2&gt;Simplest case&lt;/h2&gt;
 &lt;p&gt;You don't typically get much bioinformatics work done with a single command without arguments.
-Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you haven't hard coded these in your script, have you?!?!).
+Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you don't have these hard coded in a script, do you?!?!).
 But just for sake of completeness, it's very straightforward to execute shell commands this way in Python.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;ls
 &lt;/pre&gt;&lt;/div&gt;
@@ -85,7 +85,7 @@ However, sometimes your only options are &lt;code&gt;stdin&lt;/code&gt; and/or &
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Unless we want to introduce security vulnerabilities, we cannot simply run these command with a single &lt;code&gt;check_call&lt;/code&gt; command.
+&lt;p&gt;Unless we want to introduce security vulnerabilities, we cannot simply run these commands with a single call to the &lt;code&gt;check_call&lt;/code&gt; function.
 For this use case, we want to use the &lt;code&gt;Popen&lt;/code&gt; constructor and the &lt;code&gt;communicate&lt;/code&gt; method.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                              &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

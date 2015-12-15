@@ -81,7 +81,7 @@
 		<div class="page-header"><h1>Shell pipelines in Python</h1></div>
 		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/shell-pipelines-in-python.html">2015-12-15</a>
 by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
- in <a href="https://standage.github.io/category/notebook.html">notebook</a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
 tags: <a href="https://standage.github.io/tag/shell.html">shell</a> <a href="https://standage.github.io/tag/python.html">python</a> </div>
 		<div><p>The UNIX shell is an indispensible tool for project organization and data management in bioinformatics.
 I spend <em>a lot</em> of time in the shell, and having picked up on a lot of time-saving techniques over the years it might just be my favorite computing environment.</p>
@@ -92,7 +92,7 @@ In short, the shell is great for interactive computing and automating simple tas
 <p>Here I provide a Python translation of several shell commands.</p>
 <h2>Simplest case</h2>
 <p>You don't typically get much bioinformatics work done with a single command without arguments.
-Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you haven't hard coded these in your script, have you?!?!).
+Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you don't have these hard coded in a script, do you?!?!).
 But just for sake of completeness, it's very straightforward to execute shell commands this way in Python.</p>
 <div class="highlight"><pre>ls
 </pre></div>
@@ -169,7 +169,7 @@ However, sometimes your only options are <code>stdin</code> and/or <code>stdout<
 </pre></div>
 
 
-<p>Unless we want to introduce security vulnerabilities, we cannot simply run these command with a single <code>check_call</code> command.
+<p>Unless we want to introduce security vulnerabilities, we cannot simply run these commands with a single call to the <code>check_call</code> function.
 For this use case, we want to use the <code>Popen</code> constructor and the <code>communicate</code> method.</p>
 <div class="highlight"><pre><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;grep&#39;</span><span class="p">,</span> <span class="s">&#39;-v&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">intron</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;loci.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
