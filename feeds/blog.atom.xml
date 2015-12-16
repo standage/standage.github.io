@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-15T00:00:00-05:00</updated><entry><title>Shell pipelines in Python</title><link href="https://standage.github.io/shell-pipelines-in-python.html" rel="alternate"></link><updated>2015-12-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-15:shell-pipelines-in-python.html</id><summary type="html">&lt;p&gt;The UNIX shell is an indispensible tool for project organization and data management in bioinformatics.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-16T00:00:00-05:00</updated><entry><title>Misconceptions about research software</title><link href="https://standage.github.io/misconceptions-about-research-software.html" rel="alternate"></link><updated>2015-12-16T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-16:misconceptions-about-research-software.html</id><summary type="html">&lt;p&gt;I stumbled across &lt;a href="https://www.quora.com/I-have-5-years-of-working-experience-but-I-still-code-very-slow-How-can-I-code-faster-What-should-I-learn"&gt;the following question&lt;/a&gt; the other day in an email digest from Quora.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have 5 years of working experience, but I still code very slow.
+How can I code faster? What should I learn?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Most of the responses don't answer the question directly, but instead make the point that speed is a very poor metric by which to measure quality or productivity in software engineering.
+Carefully designing, documenting, implementing, and testing code requires considerable time and resources upfront, but not nearly as much time and resources as is required in later stages to maintain or fix code that was written quickly and sloppily.&lt;/p&gt;
+&lt;p&gt;In this case, I think the &lt;a href="http://meta.stackexchange.com/a/146514/151867"&gt;OP&lt;/a&gt; fell into the trap of thinking that writing code is just about writing code.
+In reality, code is just a projection of a programmer's conceptual model of something onto a representation that a computer can interpret and execute.
+If your initial conceptual model is clear, your code will be clear and easy to write.
+If your initial conceptual model is fuzzy, you'll probably end up taking the long way to a workable solution, leaving lots of crufty code in your wake.
+Research software engineering is so much more than just "writing code".&lt;/p&gt;
+&lt;p&gt;In the ideal situation (i.e., with a clear and accurate mathematical model in hand, and with informed choices about which algorithms and data structures provide an efficient computational solution), writing the actual code is almost an afterthought.
+Once the model is nailed down, the programmer has quite a bit of technical freedom when it comes to implementation and testing, but the precise details of implementation are of little interest compared to the results produced by the software.&lt;/p&gt;
+&lt;p&gt;In the real world, I get the impression that most programmers and programmer-scientists rarely achieve this ideal, and end up developing and refining their models &lt;em&gt;as they write the code&lt;/em&gt;.
+I think some of this has to do with lack of discipline, which each scientist has to address on a personal level.
+I think it also has to do with lack of training, of which I think we could be doing much better job as a field.&lt;/p&gt;
+&lt;p&gt;But I think the notion (all too common in academics) that research software engineering is a technical exercise ("just writing code") rather than an intellectual one is particularly problematic.
+It's problematic for those that create the software, who all too often jump head-first into &lt;em&gt;writing code&lt;/em&gt; without having done the proper modeling and design upfront.
+It's problematic for those in a position to supervise or evaluate or fund research, who all too often trivialize software because it's "just writing code".&lt;/p&gt;
+&lt;p&gt;A few months ago the bioinformatics twittersphere/blogosphere got caught up in a great discussion on the purpose of software in academic research.
+I was able to dig through some old notes and find a link to &lt;a href="http://phdops.kblin.org/software-dev-intellectual-contribution.html"&gt;an excellent blog post&lt;/a&gt; which provides links to lots of good reading on the topic.
+I particularly like the analogy he made between experiments (design vs execution) and software (design vs implementation).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Software development in science is often compared to conductiong [sic] experimental work, and because most people argue that experimental work is a means to an end, that is not a primary product of science.
+So, by analogy, neither should software development be.
+The actual &lt;em&gt;scientific&lt;/em&gt; contribution is designing the experiment in the first place.
+Now, the analogy has one slight problem here, and I'm tempted to blame that problem on the pretty shoddy practices around software development in science, people have written about this before.
+Mainly, people seem to assume that &lt;strong&gt;implementing&lt;/strong&gt; the software is all there is for software development.
+I humbly disagree.
+I would argue that the analogy with wet lab work would be that &lt;strong&gt;designing experiments&lt;/strong&gt; is like &lt;strong&gt;designing software&lt;/strong&gt;, and &lt;strong&gt;conducting experiments&lt;/strong&gt; is like &lt;strong&gt;implementing software&lt;/strong&gt;.
+Now if we follow the general agreement that designing experiments is a valuable intellectual input to the scientific endeavour, by analogy so should designing software.
+So, the answer the question I asked in the topic of the post "Is software development in science an intellectual contribution?" would be "Yes, parts of it at least".&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I agree: the design of research software should be treated as a valid intellectual contribution in the academic science enterprise, and credit should be rendered accordingly.&lt;/p&gt;</summary><category term="software"></category><category term="academics"></category><category term="credit"></category></entry><entry><title>Shell pipelines in Python</title><link href="https://standage.github.io/shell-pipelines-in-python.html" rel="alternate"></link><updated>2015-12-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-15:shell-pipelines-in-python.html</id><summary type="html">&lt;p&gt;The UNIX shell is an indispensible tool for project organization and data management in bioinformatics.
 I spend &lt;em&gt;a lot&lt;/em&gt; of time in the shell, and having picked up on a lot of time-saving techniques over the years it might just be my favorite computing environment.&lt;/p&gt;
 &lt;p&gt;The shell has its limitations, however.
 Piping, the very feature that gives the shell its amazing power and flexibility, can also lead to some pretty gruesome syntax.

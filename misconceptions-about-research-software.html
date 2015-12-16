@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "misconceptions-about-research-software.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Misconceptions about research software</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/misconceptions-about-research-software.html">2015-12-16</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/software.html">software</a> <a href="https://standage.github.io/tag/academics.html">academics</a> <a href="https://standage.github.io/tag/credit.html">credit</a> </div>
+		<div><p>I stumbled across <a href="https://www.quora.com/I-have-5-years-of-working-experience-but-I-still-code-very-slow-How-can-I-code-faster-What-should-I-learn">the following question</a> the other day in an email digest from Quora.</p>
+<blockquote>
+<p>I have 5 years of working experience, but I still code very slow.
+How can I code faster? What should I learn?</p>
+</blockquote>
+<p>Most of the responses don't answer the question directly, but instead make the point that speed is a very poor metric by which to measure quality or productivity in software engineering.
+Carefully designing, documenting, implementing, and testing code requires considerable time and resources upfront, but not nearly as much time and resources as is required in later stages to maintain or fix code that was written quickly and sloppily.</p>
+<p>In this case, I think the <a href="http://meta.stackexchange.com/a/146514/151867">OP</a> fell into the trap of thinking that writing code is just about writing code.
+In reality, code is just a projection of a programmer's conceptual model of something onto a representation that a computer can interpret and execute.
+If your initial conceptual model is clear, your code will be clear and easy to write.
+If your initial conceptual model is fuzzy, you'll probably end up taking the long way to a workable solution, leaving lots of crufty code in your wake.
+Research software engineering is so much more than just "writing code".</p>
+<p>In the ideal situation (i.e., with a clear and accurate mathematical model in hand, and with informed choices about which algorithms and data structures provide an efficient computational solution), writing the actual code is almost an afterthought.
+Once the model is nailed down, the programmer has quite a bit of technical freedom when it comes to implementation and testing, but the precise details of implementation are of little interest compared to the results produced by the software.</p>
+<p>In the real world, I get the impression that most programmers and programmer-scientists rarely achieve this ideal, and end up developing and refining their models <em>as they write the code</em>.
+I think some of this has to do with lack of discipline, which each scientist has to address on a personal level.
+I think it also has to do with lack of training, of which I think we could be doing much better job as a field.</p>
+<p>But I think the notion (all too common in academics) that research software engineering is a technical exercise ("just writing code") rather than an intellectual one is particularly problematic.
+It's problematic for those that create the software, who all too often jump head-first into <em>writing code</em> without having done the proper modeling and design upfront.
+It's problematic for those in a position to supervise or evaluate or fund research, who all too often trivialize software because it's "just writing code".</p>
+<p>A few months ago the bioinformatics twittersphere/blogosphere got caught up in a great discussion on the purpose of software in academic research.
+I was able to dig through some old notes and find a link to <a href="http://phdops.kblin.org/software-dev-intellectual-contribution.html">an excellent blog post</a> which provides links to lots of good reading on the topic.
+I particularly like the analogy he made between experiments (design vs execution) and software (design vs implementation).</p>
+<blockquote>
+<p>Software development in science is often compared to conductiong [sic] experimental work, and because most people argue that experimental work is a means to an end, that is not a primary product of science.
+So, by analogy, neither should software development be.
+The actual <em>scientific</em> contribution is designing the experiment in the first place.
+Now, the analogy has one slight problem here, and I'm tempted to blame that problem on the pretty shoddy practices around software development in science, people have written about this before.
+Mainly, people seem to assume that <strong>implementing</strong> the software is all there is for software development.
+I humbly disagree.
+I would argue that the analogy with wet lab work would be that <strong>designing experiments</strong> is like <strong>designing software</strong>, and <strong>conducting experiments</strong> is like <strong>implementing software</strong>.
+Now if we follow the general agreement that designing experiments is a valuable intellectual input to the scientific endeavour, by analogy so should designing software.
+So, the answer the question I asked in the topic of the post "Is software development in science an intellectual contribution?" would be "Yes, parts of it at least".</p>
+</blockquote>
+<p>I agree: the design of research software should be treated as a valid intellectual contribution in the academic science enterprise, and credit should be rendered accordingly.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
