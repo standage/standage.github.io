@@ -18,7 +18,7 @@ See my [curriculum vitae]({filename}cv.md) for additional details about my educa
 
 ## Teaching
 
-My approach to teaching mirrors the way I personally learn: teach fundamental principles with very basic tasks, and then provide space to extend those principles and synthesize new knowledge, building on those basics.
+My approach to teaching mirrors the way I personally learn: teach fundamental principles with very basic exercises, and then provide space to extend those principles and synthesize new knowledge, building on the basics.
 I have been involved in a teaching capacity in variety of courses and workshops, with content ranging from computational genomics to basic biology to scientific computing.
 
 See my [teaching statement]({filename}teaching.md) for additional details on my teaching and training activities.

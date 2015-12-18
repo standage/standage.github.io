@@ -46,15 +46,26 @@ That said, the reasons I decided to go with Pelican instead of Jekyll have a lot
 - Installation was trivial: `pip install pelican` and I was ready to go.
 - Creating a new site is trivial: `pelican-quickstart` creates a basic scaffolding for the site.
 - It took a bit of work to refine the site configuration, but (unless I've forgotten something) all of my changes are restricted to the `pelicanconf.py` configuration file, which is ideal.
+- Had to change the `ghp-import` interpreter for `make github` to work: see [this](https://github.com/davisp/ghp-import/issues/49).
 
 ### Bootstrap theme
 
+- [https://github.com/getpelican/pelican-themes](https://github.com/getpelican/pelican-themes)
 - Installation was easy with `git clone`.
-- Some modifications were required. TODO document this.
-- disqus http vs https
-- ghp-import: shebang python3 mac
-- [Bootstrap theme](https://github.com/getpelican/pelican-themes) for Pelican
-    - mods detailed below, here's an explanatory [link](https://github.com/getpelican/pelican/issues/816)
+- Some defaults did not work well out-of-the-box and needed to be modified.
+    - The disqus plugin attempts to load over HTTP by default, which is a problem when viewing the blog over HTTPS.
+      Modifying the theme to load over HTTPS fixed this.
+    - Changing the `DEFAULT_DATE_FORMAT` setting in the Pelican config file did not have the desired effect.
+      It turns out the date format was hard-coded into the Bootstrap theme, and I had to replace it with `{{ article.locale_date }}` (see [this](https://github.com/getpelican/pelican/issues/816)).
+- Made various adjustments to the theme (see below).
+
+### pelican-ipynb plugin
+
+- [https://github.com/danielfrg/pelican-ipynb](https://github.com/danielfrg/pelican-ipynb)
+- Installation was trivial (as documented), and no changes were required
+
+## Appendix: theme changes
+
 ```diff
 diff -r bootstrap/static/bootstrap.min.css ../pelican-themes/bootstrap/static/bootstrap.min.css
 78c78
@@ -154,25 +165,6 @@ diff -r bootstrap/templates/tags.html ../pelican-themes/bootstrap/templates/tags
 ---
 > {% block title %}{{ SITENAME }} <small>[tags]</small>{% endblock %}
 ```
-
-### pelican-ipynb plugin
-
-https://github.com/danielfrg/pelican-ipynb
-
-- TODO: document installation
-- TODO: track changes if any
-
-- Setup
-    - Pelican setup
-        - trivial installation (pip)
-        - fairly straightforward
-        - most (if not all) changes made by me are restricted to the config file, which is ideal
-    - Bootstrap theme
-        - easy installation (github clone)
-        - adsf
-    - pelican-ipynb plugin
-        - trivial installation (pip, add to config)
-        - not changes required! (verify...)
 
 
 [Pelican]: http://blog.getpelican.com/
