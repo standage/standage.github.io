@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-11T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup.html" rel="alternate"></link><updated>2015-12-11T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-11:reading-roundup.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128026"&gt;This PLoS ONE paper about stable identifiers for genome projects&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-18T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2015-12-18.html" rel="alternate"></link><updated>2015-12-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-18:reading-roundup-2015-12-18.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.nature.com/articles/srep18087"&gt;This paper about a single nucleotide exon in &lt;em&gt;Arabidopsis&lt;/em&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Here we report that the &lt;em&gt;Anaphase Promoting Complex subunit 11 (APC11)&lt;/em&gt; gene in &lt;em&gt;Arabidopsis thaliana&lt;/em&gt; carries a constitutive single-nucleotide exon.
+&lt;em&gt;In vivo&lt;/em&gt; transcription and translation assays performed using &lt;em&gt;APC11-Green Fluorescence Protein (GFP)&lt;/em&gt; fusion constructs revealed that intron splicing surrounding the single-nucleotide exon is effective in both &lt;em&gt;Arabidopsis&lt;/em&gt; and rice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://phdops.kblin.org/software-dev-intellectual-contribution.html"&gt;This (older) post about academic software...&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;...which spurred some of &lt;a href="https://standage.github.io/misconceptions-about-research-software.html"&gt;my own writing&lt;/a&gt; this week.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I would argue that the analogy with wet lab work would be that &lt;strong&gt;designing experiments&lt;/strong&gt; is like &lt;strong&gt;designing software&lt;/strong&gt;, and &lt;strong&gt;conducting experiments&lt;/strong&gt; is like &lt;strong&gt;implementing software&lt;/strong&gt;.
+Now if we follow the general agreement that designing experiments is a valuable intellectual input to the scientific endeavour, by analogy so should designing software.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.theatlantic.com/technology/archive/2015/12/the-moral-failure-of-computer-science/420012/"&gt;This interview about computer scientists needing to speaking out about cryptography&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Waddell&lt;/strong&gt;: In your paper, you compare the debate over nuclear science in the 1950s to the current debate over cryptography.
+Nuclear weapons are one of the most obvious threats to humanity today—do you think surveillance presents a similar type of danger?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rogaway&lt;/strong&gt;: I do. It’s of a different nature, obviously.
+The threat is more indirect and more subtle.
+So with nuclear warfare, there was this visually compelling and frightening risk of going up in a mushroom cloud.
+And with the transition to a state of total surveillance, what we have is just the slow forfeiture of democracy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://jcoynester.wordpress.com/2015/12/13/why-i-dont-know-how-plos-will-respond-to-authors-refusal-to-release-data"&gt;This long read on whether PLOS will enforce their data sharing policy&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;King’s College London doesn’t want to release data to James Coyne from a study of chronic fatigue syndrome.
+See if the absurd reasons make your blood boil as much as ours:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The university considers that there is a lack of value or serious purpose to your request.
+The university also considers that there is improper motive behind the request.
+The university considers that this request has caused and could further cause harassment and distress to staff.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;</summary><category term="debugging"></category><category term="reproducibility"></category><category term="academics"></category><category term="shell"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup.html" rel="alternate"></link><updated>2015-12-11T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-11:reading-roundup.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128026"&gt;This PLoS ONE paper about stable identifiers for genome projects&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;When working on an ongoing genome sequencing and assembly project, it is rather inconvenient when gene identifiers change from one build of the assembly to the next.
 The gene labelling system described here, UniqTag, addresses this common challenge.

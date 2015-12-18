@@ -106,18 +106,27 @@ The privileged integration with GitHub is also a very nice feature: they handle 
 <li>Installation was trivial: <code>pip install pelican</code> and I was ready to go.</li>
 <li>Creating a new site is trivial: <code>pelican-quickstart</code> creates a basic scaffolding for the site.</li>
 <li>It took a bit of work to refine the site configuration, but (unless I've forgotten something) all of my changes are restricted to the <code>pelicanconf.py</code> configuration file, which is ideal.</li>
+<li>Had to change the <code>ghp-import</code> interpreter for <code>make github</code> to work: see <a href="https://github.com/davisp/ghp-import/issues/49">this</a>.</li>
 </ul>
 <h3>Bootstrap theme</h3>
 <ul>
+<li><a href="https://github.com/getpelican/pelican-themes">https://github.com/getpelican/pelican-themes</a></li>
 <li>Installation was easy with <code>git clone</code>.</li>
-<li>Some modifications were required. TODO document this.</li>
-<li>disqus http vs https</li>
-<li>ghp-import: shebang python3 mac</li>
-<li><a href="https://github.com/getpelican/pelican-themes">Bootstrap theme</a> for Pelican<ul>
-<li>mods detailed below, here's an explanatory <a href="https://github.com/getpelican/pelican/issues/816">link</a></li>
+<li>Some defaults did not work well out-of-the-box and needed to be modified.<ul>
+<li>The disqus plugin attempts to load over HTTP by default, which is a problem when viewing the blog over HTTPS.
+  Modifying the theme to load over HTTPS fixed this.</li>
+<li>Changing the <code>DEFAULT_DATE_FORMAT</code> setting in the Pelican config file did not have the desired effect.
+  It turns out the date format was hard-coded into the Bootstrap theme, and I had to replace it with <code>{{ article.locale_date }}</code> (see <a href="https://github.com/getpelican/pelican/issues/816">this</a>).</li>
 </ul>
 </li>
+<li>Made various adjustments to the theme (see below).</li>
 </ul>
+<h3>pelican-ipynb plugin</h3>
+<ul>
+<li><a href="https://github.com/danielfrg/pelican-ipynb">https://github.com/danielfrg/pelican-ipynb</a></li>
+<li>Installation was trivial (as documented), and no changes were required</li>
+</ul>
+<h2>Appendix: theme changes</h2>
 <div class="highlight"><pre><span class="gh">diff -r bootstrap/static/bootstrap.min.css ../pelican-themes/bootstrap/static/bootstrap.min.css</span>
 78c78
 &lt; p{font-size:13px;font-weight:normal;line-height:18px;margin-bottom:9px;}p small{font-size:11px;}
@@ -215,38 +224,7 @@ The privileged integration with GitHub is also a very nice feature: they handle 
 &lt; {% block title %}Notebook &lt;small&gt;[tags]&lt;/small&gt;{% endblock %}
 <span class="gd">---</span>
 &gt; {% block title %}{{ SITENAME }} &lt;small&gt;[tags]&lt;/small&gt;{% endblock %}
-</pre></div>
-
-
-<h3>pelican-ipynb plugin</h3>
-<p>https://github.com/danielfrg/pelican-ipynb</p>
-<ul>
-<li>TODO: document installation</li>
-<li>
-<p>TODO: track changes if any</p>
-</li>
-<li>
-<p>Setup</p>
-<ul>
-<li>Pelican setup<ul>
-<li>trivial installation (pip)</li>
-<li>fairly straightforward</li>
-<li>most (if not all) changes made by me are restricted to the config file, which is ideal</li>
-</ul>
-</li>
-<li>Bootstrap theme<ul>
-<li>easy installation (github clone)</li>
-<li>adsf</li>
-</ul>
-</li>
-<li>pelican-ipynb plugin<ul>
-<li>trivial installation (pip, add to config)</li>
-<li>not changes required! (verify...)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div>
+</pre></div></div>
 	</div>
 		<footer>
 		  <p>
