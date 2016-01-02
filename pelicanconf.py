@@ -9,6 +9,7 @@ SITENAME = 'Daniel Standage'
 TIMEZONE = 'America/Indiana/Indianapolis'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
+FOOTER_YEARS = '2015-2016'
 
 PATH = 'content'
 THEME = 'bootstrap'
