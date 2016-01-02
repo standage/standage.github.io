@@ -1,5 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2015-12-18T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2015-12-18.html" rel="alternate"></link><updated>2015-12-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-18:reading-roundup-2015-12-18.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.nature.com/articles/srep18087"&gt;This paper about a single nucleotide exon in &lt;em&gt;Arabidopsis&lt;/em&gt;&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-01-02T00:00:00-05:00</updated><entry><title>New year reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-02.html" rel="alternate"></link><updated>2016-01-02T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-02:reading-roundup-2016-01-02.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sasconfidential.com/2016/01/02/academic-scattering/"&gt;This eye-opening post about relationships in academics...&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;...and the disproportionate pressure on women who hope to have children.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I doubt any selection committee would admit on-record to thinking a family-free candidate is “perfect”.
+Nonetheless, the traditional academic career structure is built around an assumption of mobility that is hard to maintain with any kind of relationships or dependents.
+I’m still trying to figure out if I can manage to keep a pet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://news.ycombinator.com/item?id=10822376"&gt;This thread on Hacker News about video-based MOOCs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I've participated in two MOOCs, but didn't complete either.
+I have mixed feelings about the use of video to present the material.
+In some cases, I could easily do without it.
+But in other cases I think it was helpful.
+Also, the types of autodidacts (many/most with a strong technical background already) that thrive in MOOCs may not need/want video as much as the average learner that would really benefit the most from a free or low-cost course.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As of 2016, I realised that video based courses in Coursera and Udemy are not ideal and are a drain on efficiency.
+You cannot skim through content in videos and you are constantly wondering what you will miss if you forward the video.
+You will have to adjust to lecturer's speed rather than choose your own speed.
+You cannot listen to videos in noisy environments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.ncbi.nlm.nih.gov/m/pubmed/26711672/"&gt;This study on whether mom's kisses really do make owies feel better&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;BACKGROUND: The practice of maternal kissing of minor injuries of childhood (boo-boos), though widely endorsed and practised, has never been demonstrated to be of benefit to children.&lt;/p&gt;
+&lt;p&gt;OBJECTIVE: To determine the efficacy, if any, of maternal kissing of boo-boos in toddlers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.theguardian.com/environment/2016/jan/01/poachers-using-science-papers-to-target-newly-discovered-species"&gt;This piece from The Guardian about one case in which data sharing can be harmful&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;But earlier this year, an announcement in the &lt;a href="http://www.mapress.com/zootaxa/"&gt;Zootaxa&lt;/a&gt; academic journal that two new species of large gecko &lt;a href="http://dx.doi.org/10.11646/zootaxa.3980.1.4"&gt;had been found in southern China&lt;/a&gt; contained a strange omission: the species’ whereabouts.&lt;/p&gt;
+&lt;p&gt;“Due to the popularity of this genus as novelty pets, and recurring cases of scientific descriptions driving herpetofauna to near-extinction by commercial collectors, we do not disclose the collecting localities of these restricted-range species in this publication,” the paper said.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://ecoevoevoeco.blogspot.ca/2016/01/resolution-i-will-get-faculty-position.html"&gt;This blog post on getting a faculty position&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now, I know what you are thinking – “Yuk, I don’t want a job at the University of Southwestern Northern Nunavut.”
+Neither do I, but here is the important thing to remember: &lt;strong&gt;You are not marrying your institution – you are dating it&lt;/strong&gt;.
+If you don’t like it, you can leave – at any time and for any reason.
+The key is to get yourself into a job where you can prove your abilities as an independent researcher, get your start-up money, get a grant, do some teaching, and so on.
+That can happen at nearly any university in nearly any state or country.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.sciencemag.org/content/351/6268/14.full"&gt;This (paywalled?!?!) article about the NHGRI possibly terminating funding for several model organism databases&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NHGRI Director Eric Green says that nothing has been decided and that rumors that his institute plans to phase out all of its funding are incorrect.
+But he and other NIH leaders are searching for ways to make the databases more efficient, and are urging databases to consider charging for use.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.ncbi.nlm.nih.gov/books/NBK131777/"&gt;This latest BLAST+ release note from NCBI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;With the upgrade from version 2.2.x to 2.3.x they have added provisional support for SAM output format.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://biorxiv.org/content/early/2015/12/28/035493"&gt;This pre-print on amplification bias in RNA-seq&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Need to read!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Computationally, read duplicates are defined via their mapping position, which does not distinguish PCR from natural duplicates that are bound to occur for highly transcribed RNAs.
+Hence, it is unclear how to treat duplicate reads and how important it is to reduce PCR amplification experimentally.
+Here, we generate and analyse RNA-Seq datasets that were prepared with three different protocols (Smart-Seq, TruSeq and UMI-seq).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://donmelton.com/2015/12/21/what-the-new-video-compression-strategy-from-netflix-means-for-apple-and-amazon/"&gt;This blog post on Netflix's new video compression strategy&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The tl;dr of it all is simply that Netflix plans on scaling bitrates up and down based on the complexity of their video.
+So, slightly higher bitrates for busy action blockbusters and possibly lower bitrates for relatively static, flat cartoons.&lt;/p&gt;
+&lt;p&gt;Basically what we’ve all been doing for years with variable bitrate (VBR) encoding.
+But they’re trying to control that variance a lot more than an encoder like x264 typically allows.
+In fact, as near as I can tell, Netflix still plans on encoding everything with a constant bitrate (CBR), but they want to be really particular about the target number.&lt;/p&gt;
+&lt;p&gt;To do that, Netflix will transcode every one of their videos a bazillion times at different resolutions and at different bitrates, finally selecting the smallest one for a particular title that doesn’t suck visually.
+Seriously, their algorithm for all of this is quite clever.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://github.com/tesseract-ocr/tesseract"&gt;This open-source OCR engine on GitHub&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Found over Christmas break while chatting to family about OCR.
+By the way, it's available in &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt;!&lt;/p&gt;</summary><category term="academics"></category><category term="work-life balance"></category><category term="moocs"></category><category term="funding"></category><category term="rnaseq"></category><category term="ocr"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2015-12-18.html" rel="alternate"></link><updated>2015-12-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-18:reading-roundup-2015-12-18.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.nature.com/articles/srep18087"&gt;This paper about a single nucleotide exon in &lt;em&gt;Arabidopsis&lt;/em&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Here we report that the &lt;em&gt;Anaphase Promoting Complex subunit 11 (APC11)&lt;/em&gt; gene in &lt;em&gt;Arabidopsis thaliana&lt;/em&gt; carries a constitutive single-nucleotide exon.
 &lt;em&gt;In vivo&lt;/em&gt; transcription and translation assays performed using &lt;em&gt;APC11-Green Fluorescence Protein (GFP)&lt;/em&gt; fusion constructs revealed that intron splicing surrounding the single-nucleotide exon is effective in both &lt;em&gt;Arabidopsis&lt;/em&gt; and rice.&lt;/p&gt;
