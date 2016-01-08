@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 02 Jan 2016 00:00:00 -0500</lastBuildDate><item><title>New year reading roundup</title><link>https://standage.github.io/reading-roundup-2016-01-02.html</link><description>&lt;h2&gt;&lt;a href="http://sasconfidential.com/2016/01/02/academic-scattering/"&gt;This eye-opening post about relationships in academics...&lt;/a&gt;&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 08 Jan 2016 00:00:00 -0500</lastBuildDate><item><title>Reading roundup</title><link>https://standage.github.io/reading-roundup-2016-01-08.html</link><description>&lt;h2&gt;&lt;a href="http://www.bloombergview.com/articles/2016-01-05/academic-publishing-is-all-about-status"&gt;This Bloomberg piece on academic publishing and the economics of status&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This trend will be familiar to anyone who has looked at admission rates to top universities.
+Despite ever-rising tuition costs and the growth of much-cheaper online alternatives, the highest-status universities keep getting more selective.
+The best way to understand this, I think, is to see both academic journals and top universities less as purveyors of information or knowledge than as dispensers of status.
+Information may want to be free, but status will always be scarce.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://ivory.idyll.org/blog/2016-sustaining-research-software-development.html"&gt;This blog post on sustaining research software&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Software is fast becoming a &lt;em&gt;sine qua non&lt;/em&gt; in research, and researchers and funding agencies have been trying with increasing urgency to figure out how to support sustainable software development.
+There's a whole NSF program devoted to sustainable research software, and I think it's fair to say that one of the main subsurface goals of the BD2K program is to tackle the question of software (PSA: data isn't much use without software).
+The USDA and bio bits of DOE are also running smack into the problem that the research programs they fund are utterly dependent on software, yet investments in software are often secondary and rarely yield software that is usable past the end of the grant.
+It turns out that software development for research is a rather intransigent beast.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://biorxiv.org/content/early/2015/11/16/031930.abstract"&gt;This preprint on the state of software in (evolutionary) biology&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A topic that has received little attention in this context is the code quality of widely used codes.
+Unfortunately, the majority of users tend to blindly trust software and the results it produces.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://drhagen.com/blog/the-missing-11th-of-the-month/"&gt;This interesting analysis of references to dates and a suprising effect from OCR&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So where did the rest of the missing 11th go?
+Well, starting in the 1860s, the Google algorithm starts to make a rather peculiar error—it misreads 11th as nth.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.theguardian.com/science/blog/2015/nov/26/why-combining-science-and-showmanship-risks-the-future-of-research"&gt;This Guardian article on showmanship in science&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For many years, medicine, dinosaurs, space travel, and human origins have all been highly visible and widely entertaining scientific topics.
+And for many years, we have relied on evaluation by editorial and professional peer review in scientific journals, evaluative reporting by science journalists, and individual judgment of educated citizens to place new scientific claims into proper perspective.
+?Under those conditions, the trend toward science showmanship was arguably tolerable because it usually rested on a foundation of solid science.
+When it doesn’t, it becomes bad reality TV that pleases sponsors but shouldn’t be confused for knowledge about process or result.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://gist.github.com/matsen/37521f504a14aede644d"&gt;This gist describing "sane git diffs for Jupyter notebook"&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Since Jupyter notebooks are stored in JSON format, this converts them to Markdown for diffs you can actually interpret.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://github.com/idoerg/authorator"&gt;This Python package for managing large authors lists in LaTeX files&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; hope I never have to use something like this!&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://pgbovine.net/research-group-dynamics.htm"&gt;This blog post on research group dynamics&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A study at Google found five key dynamics that make for successful teams within the company: psychological safety, dependability, structure &amp;amp; clarity, meaning of work, and impact of work.
+These findings can be adapted to improving research group dynamics in academia.&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Fri, 08 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-08:reading-roundup-2016-01-08.html</guid></item><item><title>New year reading roundup</title><link>https://standage.github.io/reading-roundup-2016-01-02.html</link><description>&lt;h2&gt;&lt;a href="http://sasconfidential.com/2016/01/02/academic-scattering/"&gt;This eye-opening post about relationships in academics...&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;...and the disproportionate pressure on women who hope to have children.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I doubt any selection committee would admit on-record to thinking a family-free candidate is “perfect”.
