@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-01-08T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-08.html" rel="alternate"></link><updated>2016-01-08T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-08:reading-roundup-2016-01-08.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.bloombergview.com/articles/2016-01-05/academic-publishing-is-all-about-status"&gt;This Bloomberg piece on academic publishing and the economics of status&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-01-15T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-15.html" rel="alternate"></link><updated>2016-01-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-15:reading-roundup-2016-01-15.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Written as a Jupyter notebook nonetheless!&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://chronicle.com/article/It-s-Just-a-Job-Right-/234794"&gt;This piece on academic "quit lit"&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;There were some good parts, but honestly I'm not sure what point this guy's trying to make.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scholars want to pursue their research, unencumbered by headaches and heartache, and they want to communicate the results of their scholarship to the brightest and most interested students around.
+Is that so much to ask?&lt;/p&gt;
+&lt;p&gt;Yes. It is.
+At least if the person asking is an adult.
+Before grad school, I worked for a talented screenwriter.
+I watched her career get trod upon by Hollywood executives with stupid suggestions and even stupider commands.
+Likewise, a friend’s father had his law career stifled by office politics and collegial jealousy.
+The fact is that no profession is perfect.
+Young architects dream of erecting museums but spend more time redesigning kitchens.
+Even the "dream" professions are not immune: Aren’t movie stars always complaining about having to answer inane questions in pointless interviews?&lt;/p&gt;
+&lt;p&gt;The great irony is that so many of the academics who complain about the corporatization of universities run off to get corporate jobs, where all the problems these scholars link to corporatizing trends — one would presume — would be present.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://github.com/chriskiehl/Gooey"&gt;This Python module for slapping a GUI on any program&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gooey is attached to your code via a simple decorator on whichever method has your argparse declarations (usually &lt;code&gt;main&lt;/code&gt;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;from gooey import Gooey
+
+@Gooey      &amp;lt;--- all it takes! :)
+def main():
+    parser = ArgumentParser(...)
+# rest of code
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;&lt;a href="http://webdemo.myscript.com/#/demo/equation"&gt;This cool little web app that converts handwritten equations into LaTeX&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;It's pretty good as far as I can tell.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://hopejahrensurecanwrite.com/2013/10/23/3-ways-to-be-an-ally/"&gt;This eye-opening piece on harrassment in academics&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Holy language warning, Batman!
+Be prepared for a lot of f-bombs and other unsavory words...but then again she's shedding some much-needed light on an unsavory topic.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What I learned from the internet is that nothing upsets my male colleagues more than the pernicious sexual harassment that has been happening right under their noses for years.
+“What kind of world are we living in?” they wail, “And what can I do about it?”
+Ever since I can remember, I’ve actually been a woman, and so maybe I can offer some constructive advice.
+You can thank me later.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.jide.com/en/remixos-for-pc"&gt;This splash page for Remix OS for desktop architectures&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Built on the Android-x86 project, Remix OS for PC unlocks our next phase of development for Remix OS and introduces a whole new range of versatility to how and where you can Remix.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Android on desktop?
+Definitely something to watch.&lt;/p&gt;</summary><category term="python"></category><category term="academics"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-08.html" rel="alternate"></link><updated>2016-01-08T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-08:reading-roundup-2016-01-08.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.bloombergview.com/articles/2016-01-05/academic-publishing-is-all-about-status"&gt;This Bloomberg piece on academic publishing and the economics of status&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This trend will be familiar to anyone who has looked at admission rates to top universities.
 Despite ever-rising tuition costs and the growth of much-cheaper online alternatives, the highest-status universities keep getting more selective.
@@ -38,7 +84,7 @@ When it doesn’t, it becomes bad reality TV that pleases sponsors but shouldn�
 &lt;blockquote&gt;
 &lt;p&gt;A study at Google found five key dynamics that make for successful teams within the company: psychological safety, dependability, structure &amp;amp; clarity, meaning of work, and impact of work.
 These findings can be adapted to improving research group dynamics in academia.&lt;/p&gt;
-&lt;/blockquote&gt;</summary></entry><entry><title>New year reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-02.html" rel="alternate"></link><updated>2016-01-02T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-02:reading-roundup-2016-01-02.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sasconfidential.com/2016/01/02/academic-scattering/"&gt;This eye-opening post about relationships in academics...&lt;/a&gt;&lt;/h2&gt;
+&lt;/blockquote&gt;</summary><category term="publishing"></category><category term="software"></category><category term="academics"></category><category term="jupyter"></category></entry><entry><title>New year reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-02.html" rel="alternate"></link><updated>2016-01-02T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-02:reading-roundup-2016-01-02.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sasconfidential.com/2016/01/02/academic-scattering/"&gt;This eye-opening post about relationships in academics...&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;...and the disproportionate pressure on women who hope to have children.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I doubt any selection committee would admit on-record to thinking a family-free candidate is “perfect”.
