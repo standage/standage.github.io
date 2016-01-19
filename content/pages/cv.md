@@ -26,6 +26,7 @@ navorder: 01
 
 ### Publications
 
+- **Standage DS**, Berens AJ, Glastad KM, Severin AJ, Brendel VP, Toth AL (2016) Genome, transcriptome, and methylome sequencing of a primitively eusocial wasp reveal a greatly reduced DNA methylation system in a social insect. *Molecular Ecology*, *in press.*
 - Duvick JP, **Standage DS**, Merchant N, Brendel VP (2015) xGDBvm: A Web GUI-driven workflow for annotating eukaryotic genomes in the cloud. *Manuscript in review*.
 - **Standage DS**, Brendel VP (2012) ParsEval: parallel comparison and analysis of gene structure annotations. *BMC Bioinformatics*, **13**:187, [doi:10.1186/1471-2105-13-187](http://dx.doi.org/10.1186/1471-2105-13-187).
 - Doyle EL, Booher NJ, **Standage DS**, Voytas DF, Brendel VP, VanDyk JK, Bogdanove AJ (2012) TAL Effector-Nucleotide Targeter (TALE-NT) 2.0: Tools for TAL effector design and target prediction. *Nucleic Acids Research*, **40** (W1): W117-W122, [doi:10.1093/nar/gks608](http://dx.doi.org/10.1093/nar/gks608).
@@ -37,7 +38,7 @@ navorder: 01
 
 ### Posters
 
-- **Standage DS**, Brendel VP, Toth AL. Genome sequence and annotation of the primitively social paper wasp *Polistes dominula*. Presented at Notre Dame Arthropod Genomics Conference, June 2013. *Manuscript submitted*.
+- **Standage DS**, Brendel VP, Toth AL. Genome sequence and annotation of the primitively social paper wasp *Polistes dominula*. Presented at Notre Dame Arthropod Genomics Conference, June 2013.
 - Brendel VP, **Standage DS**. mRNAmarkup: quality control and annotation of de novo transcriptome assemblies. Presented at CSHL Genome Informatics meeting, November 2013. *Manuscript in preparation*.
 
 ## Research Experience
