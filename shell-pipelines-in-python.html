@@ -99,12 +99,12 @@ But just for sake of completeness, it's very straightforward to execute shell co
 
 
 <p>The Python equivalent is as follows.</p>
-<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s">&#39;ls&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>There is even the simpler <code>call</code> function...</p>
-<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s">&#39;ls&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -116,17 +116,17 @@ But just for sake of completeness, it's very straightforward to execute shell co
 
 <p>Commands with arguments cannot simply be dropped in to the <code>check_call</code> command as-is.
 The following code will fail.</p>
-<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s">&#39;ls -lhp&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls -lhp&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>There are two ways you can fix this: the convenient (and wrong and insecure) way...</p>
-<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s">&#39;ls -lhp&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls -lhp&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 
 
 <p>...and The Right Way.</p>
-<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s">&#39;ls&#39;</span><span class="p">,</span> <span class="s">&#39;-lhp&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="s1">&#39;-lhp&#39;</span><span class="p">])</span>
 </pre></div>
 
 
@@ -135,15 +135,15 @@ This isn't the type of thing you expect to encounter much in the research settin
 <p>This example is pretty silly, since you'll probably never need to call the <code>ls</code> command from Python.
 Let's do a different example you're much more likely to encounter in bioinformatics.</p>
 <div class="highlight"><pre>blastx -db /opt/ncbi/nr -query tsa.fasta <span class="se">\</span>
-       -evalue 1e-4 -num_threads <span class="nv">$numthreads</span> <span class="se">\</span>
+       -evalue 1e-4 -num_threads $numthreads <span class="se">\</span>
        -out tsa-vs-nr.blastx
 </pre></div>
 
 
 <p>The Python equivalent is as follows.</p>
-<div class="highlight"><pre><span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;blastx&#39;</span><span class="p">,</span> <span class="s">&#39;-db&#39;</span><span class="p">,</span> <span class="s">&#39;/opt/ncbi/nr&#39;</span><span class="p">,</span> <span class="s">&#39;-query&#39;</span><span class="p">,</span> <span class="s">&#39;tsa.fasta&#39;</span><span class="p">,</span>
-           <span class="s">&#39;-evalue&#39;</span><span class="p">,</span> <span class="s">&#39;1e-4&#39;</span><span class="p">,</span> <span class="s">&#39;-num_threads&#39;</span><span class="p">,</span> <span class="n">numthreads</span><span class="p">,</span>
-           <span class="s">&#39;-out&#39;</span><span class="p">,</span> <span class="s">&#39;tsa-vs-nr.blastx&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blastx&#39;</span><span class="p">,</span> <span class="s1">&#39;-db&#39;</span><span class="p">,</span> <span class="s1">&#39;/opt/ncbi/nr&#39;</span><span class="p">,</span> <span class="s1">&#39;-query&#39;</span><span class="p">,</span> <span class="s1">&#39;tsa.fasta&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;-evalue&#39;</span><span class="p">,</span> <span class="s1">&#39;1e-4&#39;</span><span class="p">,</span> <span class="s1">&#39;-num_threads&#39;</span><span class="p">,</span> <span class="n">numthreads</span><span class="p">,</span>
+           <span class="s1">&#39;-out&#39;</span><span class="p">,</span> <span class="s1">&#39;tsa-vs-nr.blastx&#39;</span><span class="p">]</span>
 <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
 </pre></div>
 
@@ -156,8 +156,8 @@ However, sometimes your only options are <code>stdin</code> and/or <code>stdout<
 
 
 <p>Here is the Python equivalent.</p>
-<div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;pcan-in.gff3&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">instream</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;pcan-out.gff3&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outstream</span><span class="p">:</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s">&#39;sed&#39;</span><span class="p">,</span> <span class="s">&#39;s/^scaffold_/PcanScaf/&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">instream</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">outstream</span><span class="p">)</span>
+<div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pcan-in.gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">instream</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pcan-out.gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outstream</span><span class="p">:</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s1">&#39;sed&#39;</span><span class="p">,</span> <span class="s1">&#39;s/^scaffold_/PcanScaf/&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">instream</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">outstream</span><span class="p">)</span>
 </pre></div>
 
 
@@ -171,30 +171,30 @@ However, sometimes your only options are <code>stdin</code> and/or <code>stdout<
 
 <p>Unless we want to introduce security vulnerabilities, we cannot simply run these commands with a single call to the <code>check_call</code> function.
 For this use case, we want to use the <code>Popen</code> constructor and the <code>communicate</code> method.</p>
-<div class="highlight"><pre><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;grep&#39;</span><span class="p">,</span> <span class="s">&#39;-v&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">intron</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;loci.gff3&#39;</span><span class="p">],</span>
+<div class="highlight"><pre><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">intron</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;loci.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-<span class="n">pmrnaproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;pmrna&#39;</span><span class="p">,</span> <span class="s">&#39;--locus&#39;</span><span class="p">,</span> <span class="s">&#39;--accession&#39;</span><span class="p">,</span> <span class="s">&#39;--map=map.txt&#39;</span><span class="p">],</span>
+<span class="n">pmrnaproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;pmrna&#39;</span><span class="p">,</span> <span class="s1">&#39;--locus&#39;</span><span class="p">,</span> <span class="s1">&#39;--accession&#39;</span><span class="p">,</span> <span class="s1">&#39;--map=map.txt&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">grepproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-<span class="n">canonproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;canon-gff3&#39;</span><span class="p">,</span> <span class="s">&#39;--outfile=locus.mrnas.gff3&#39;</span><span class="p">],</span>
+<span class="n">canonproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;canon-gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;--outfile=locus.mrnas.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">pmrnaproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
 <span class="n">canonproc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
 </pre></div>
 
 
 <p>If needed, it is trivial to capture the terminal output like so.</p>
-<div class="highlight"><pre><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;grep&#39;</span><span class="p">,</span> <span class="s">&#39;-v&#39;</span><span class="p">,</span> <span class="s">&#39;</span><span class="se">\t</span><span class="s">intron</span><span class="se">\t</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;loci.gff3&#39;</span><span class="p">],</span>
+<div class="highlight"><pre><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">intron</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;loci.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-<span class="n">pmrnaproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;pmrna&#39;</span><span class="p">,</span> <span class="s">&#39;--locus&#39;</span><span class="p">,</span> <span class="s">&#39;--accession&#39;</span><span class="p">,</span> <span class="s">&#39;--map=map.txt&#39;</span><span class="p">],</span>
+<span class="n">pmrnaproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;pmrna&#39;</span><span class="p">,</span> <span class="s1">&#39;--locus&#39;</span><span class="p">,</span> <span class="s1">&#39;--accession&#39;</span><span class="p">,</span> <span class="s1">&#39;--map=map.txt&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">grepproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-<span class="n">canonproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s">&#39;canon-gff3&#39;</span><span class="p">,</span> <span class="s">&#39;--outfile=locus.mrnas.gff3&#39;</span><span class="p">],</span>
+<span class="n">canonproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;canon-gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;--outfile=locus.mrnas.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">pmrnaproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
                              <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">canonproc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stderr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
-    <span class="c"># process the terminal warnings</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stderr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="c1"># process the terminal warnings</span>
 </pre></div>
 
 

@@ -94,8 +94,10 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -187,11 +189,11 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">iiloci</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">iiloci</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">iiloci</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s">&#39;Seqid&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">row</span><span class="p">[</span><span class="s">&#39;Seqid&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">iiloci</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">iiloci</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Seqid&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Seqid&#39;</span><span class="p">]:</span>
             <span class="n">iiloci</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
         <span class="n">iiloci</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">iiloci</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
-            <span class="n">aggregate_length</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s">&#39;iiLocusLen&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">iiloci</span><span class="p">])</span>
+            <span class="n">aggregate_length</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;iiLocusLen&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">iiloci</span><span class="p">])</span>
             <span class="k">yield</span> <span class="n">aggregate_length</span>
             <span class="n">iiloci</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
 </pre></div>
@@ -206,7 +208,7 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s">&#39;ilens.tsv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;ilens.tsv&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -219,7 +221,7 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pdom</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s">&#39;Pdom&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">pdom</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Pdom&#39;</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">agglens</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">n_adj_iiloci</span><span class="p">(</span><span class="n">pdom</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">agglens</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -1353,7 +1355,7 @@ RU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">amel</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s">&#39;Amel&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">amel</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Amel&#39;</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">agglens</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">n_adj_iiloci</span><span class="p">(</span><span class="n">amel</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">agglens</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -2429,7 +2431,7 @@ kgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AMHiXlPb/U5QAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ador</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s">&#39;Ador&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">ador</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Ador&#39;</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">agglens</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">n_adj_iiloci</span><span class="p">(</span><span class="n">ador</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">agglens</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>

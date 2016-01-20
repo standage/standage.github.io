@@ -90,7 +90,7 @@ I've included some details on my setup below.</p>
 <p>I'm joking of course, this is actually a fair question.
 Jekyll far outstrips Pelican in terms of popularity and name recognition, no doubt because of its privileged integration with <a href="http://pages.github.com">GitHub Pages</a>.
 The popularity is nothing to sniff at: it means a lot more digital ink is spilled writing questions and answers about Jekyll on sites like <a href="http://stackoverflow.com">StackOverflow</a>, making it much more likely to find a quick solution to basic troubleshooting issues with a simple Google search.
-The privileged integration with GitHub is also a very nice feature: they handle the Markdown-to-HTML conversion on their back end, so you just have to worry about the raw content. </p>
+The privileged integration with GitHub is also a very nice feature: they handle the Markdown-to-HTML conversion on their back end, so you just have to worry about the raw content.</p>
 <p>That said, the reasons I decided to go with Pelican instead of Jekyll have a lot to do Python vs Ruby.</p>
 <ul>
 <li>I suspected (and later confirmed) that integrating IPython/Jupyter notebooks is much more straightforward with a Python-based platform than a Ruby-based one.
@@ -142,7 +142,7 @@ The privileged integration with GitHub is also a very nice feature: they handle 
 &lt;   list-style-type: none;
 &lt;   margin-left: 0;
 &lt; }
-&lt; 
+&lt;
 41d35
 &lt; .social a[href*=&#39;stackexchange.com&#39;]:before {content: url(&#39;./images/icons/stackoverflow.png&#39;); margin-right: 2px; vertical-align: -3px;}
 <span class="gh">diff -r bootstrap/templates/archives.html ../pelican-themes/bootstrap/templates/archives.html</span>
@@ -206,7 +206,7 @@ The privileged integration with GitHub is also a very nice feature: they handle 
 <span class="gh">diff -r bootstrap/templates/index.html ../pelican-themes/bootstrap/templates/index.html</span>
 4,5d3
 &lt; &lt;p&gt;Psst! I&#39;ve posted details about my notebook setup &lt;a href=&quot;{{ SITEURL }}/pages/setup.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt; 
+&lt;
 <span class="gh">diff -r bootstrap/templates/metadata.html ../pelican-themes/bootstrap/templates/metadata.html</span>
 1c1
 &lt; Permalink: &lt;a class=&quot;more&quot; href=&quot;{{ SITEURL }}/{{ article.url }}&quot;&gt;{{ article.locale_date }}&lt;/a&gt;
