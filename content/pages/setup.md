@@ -10,7 +10,7 @@ I've included some details on my setup below.
 
 ## Why the new setup?
 
-I discuss this question at length [in this post]({filename}/2015-11-17-setup-motivation.md), but in brief I wanted a solution that offers the following.
+I discuss this question at length [in this post]({filename}/2015/2015-11-17-setup-motivation.md), but in brief I wanted a solution that offers the following.
 
 - A one-stop shop for all my research notes, scribbles, commands, notebooks, and blog posts.
 - Support for formatting content with Markdown.
@@ -28,7 +28,7 @@ Because Python.
 I'm joking of course, this is actually a fair question.
 Jekyll far outstrips Pelican in terms of popularity and name recognition, no doubt because of its privileged integration with [GitHub Pages][].
 The popularity is nothing to sniff at: it means a lot more digital ink is spilled writing questions and answers about Jekyll on sites like [StackOverflow][], making it much more likely to find a quick solution to basic troubleshooting issues with a simple Google search.
-The privileged integration with GitHub is also a very nice feature: they handle the Markdown-to-HTML conversion on their back end, so you just have to worry about the raw content. 
+The privileged integration with GitHub is also a very nice feature: they handle the Markdown-to-HTML conversion on their back end, so you just have to worry about the raw content.
 
 That said, the reasons I decided to go with Pelican instead of Jekyll have a lot to do Python vs Ruby.
 
@@ -82,7 +82,7 @@ diff -r bootstrap/static/local.css ../pelican-themes/bootstrap/static/local.css
 < 	list-style-type: none;
 < 	margin-left: 0;
 < }
-< 
+<
 41d35
 < .social a[href*='stackexchange.com']:before {content: url('./images/icons/stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
 diff -r bootstrap/templates/archives.html ../pelican-themes/bootstrap/templates/archives.html
@@ -146,7 +146,7 @@ diff -r bootstrap/templates/category.html ../pelican-themes/bootstrap/templates/
 diff -r bootstrap/templates/index.html ../pelican-themes/bootstrap/templates/index.html
 4,5d3
 < <p>Psst! I've posted details about my notebook setup <a href="{{ SITEURL }}/pages/setup.html">here</a>.</p>
-< 
+<
 diff -r bootstrap/templates/metadata.html ../pelican-themes/bootstrap/templates/metadata.html
 1c1
 < Permalink: <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.locale_date }}</a>
