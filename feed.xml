@@ -1,5 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 20 Jan 2016 00:00:00 -0500</lastBuildDate><item><title>Group meeting feedback, 20 Jan 2015</title><link>https://standage.github.io/group-meeting-feedback-20-jan-2015.html</link><description>&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 25 Jan 2016 00:00:00 -0500</lastBuildDate><item><title>Building a decision tree chart with graphviz</title><link>https://standage.github.io/building-a-decision-tree-chart-with-graphviz.html</link><description>&lt;p&gt;I'm preparing a manuscript, and I sketched out the following chart I would like to include.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://standage.github.io/images/ilocus-decision-tree.jpg" alt="Chart" style="width: 450px" /&gt;&lt;/p&gt;
+&lt;p&gt;With my rudimentary &lt;a href="http://www.graphviz.org/"&gt;graphviz&lt;/a&gt; experience, I threw together the following representation.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+{
+    ilocus [label=&amp;quot;iLocus&amp;quot;]
+    gilocus [label=&amp;quot;giLocus&amp;quot;]
+    pilocus [label=&amp;quot;piLocus&amp;quot;]
+    nilocus [label=&amp;quot;niLocus&amp;quot;]
+    silocus [label=&amp;quot;siLocus&amp;quot;]
+    cilocus [label=&amp;quot;ciLocus&amp;quot;]
+    filocus [label=&amp;quot;fiLocus&amp;quot;]
+    iilocus [label=&amp;quot;iiLocus&amp;quot;]
+
+    containgene [label=&amp;quot;Contains gene(s)?&amp;quot;]
+    proteincoding [label=&amp;quot;Protein coding?&amp;quot;]
+    multiplegenes [label=&amp;quot;Multiple genes?&amp;quot;]
+    geneflank [label=&amp;quot;Flanked by genes on both sides?&amp;quot;]
+
+    ilocus -&amp;gt; containgene
+    containgene -&amp;gt; geneflank [label=&amp;quot;No&amp;quot;]
+    geneflank -&amp;gt; filocus [label=&amp;quot;No&amp;quot;]
+    geneflank -&amp;gt; iilocus [label=&amp;quot;Yes&amp;quot;]
+    containgene -&amp;gt; gilocus [label=&amp;quot;Yes&amp;quot;]
+    gilocus -&amp;gt; proteincoding
+    proteincoding -&amp;gt; nilocus [label=&amp;quot;No&amp;quot;]
+    proteincoding -&amp;gt; pilocus [label=&amp;quot;Yes&amp;quot;]
+    pilocus -&amp;gt; multiplegenes
+    multiplegenes -&amp;gt; silocus [label=&amp;quot;No&amp;quot;]
+    multiplegenes -&amp;gt; cilocus [label=&amp;quot;Yes&amp;quot;]
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Saved as &lt;code&gt;take1.dot&lt;/code&gt; and rendered with the command &lt;code&gt;dot -Tpng -o take1.png take.dot&lt;/code&gt;, we get this.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chart, take 1" src="https://standage.github.io/images/take1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;It's not bad for a first pass, but let's adjust the style a bit to distinguish between iLocus designations and branching logic.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+{
+    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
+    ilocus [label=&amp;quot;iLocus&amp;quot;]
+    gilocus [label=&amp;quot;giLocus&amp;quot;]
+    pilocus [label=&amp;quot;piLocus&amp;quot;]
+    nilocus [label=&amp;quot;niLocus&amp;quot;]
+    silocus [label=&amp;quot;siLocus&amp;quot;]
+    cilocus [label=&amp;quot;ciLocus&amp;quot;]
+    filocus [label=&amp;quot;fiLocus&amp;quot;]
+    iilocus [label=&amp;quot;iiLocus&amp;quot;]
+
+    node [color=Blue,fontcolor=Blue,shape=diamond]
+    containgene [label=&amp;quot;Contains gene(s)?&amp;quot;]
+    proteincoding [label=&amp;quot;Protein coding?&amp;quot;]
+    multiplegenes [label=&amp;quot;Multiple genes?&amp;quot;]
+    geneflank [label=&amp;quot;Flanked by genes\non both sides?&amp;quot;]
+
+    ilocus -&amp;gt; containgene
+    containgene -&amp;gt; geneflank [label=&amp;quot;No&amp;quot;]
+    geneflank -&amp;gt; filocus [label=&amp;quot;No&amp;quot;]
+    geneflank -&amp;gt; iilocus [label=&amp;quot;Yes&amp;quot;]
+    containgene -&amp;gt; gilocus [label=&amp;quot;Yes&amp;quot;]
+    gilocus -&amp;gt; proteincoding
+    proteincoding -&amp;gt; nilocus [label=&amp;quot;No&amp;quot;]
+    proteincoding -&amp;gt; pilocus [label=&amp;quot;Yes&amp;quot;]
+    pilocus -&amp;gt; multiplegenes
+    multiplegenes -&amp;gt; silocus [label=&amp;quot;No&amp;quot;]
+    multiplegenes -&amp;gt; cilocus [label=&amp;quot;Yes&amp;quot;]
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That gives us the following.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chart, take 2" src="https://standage.github.io/images/take2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Now, let's see if we can get the &lt;code&gt;giLocus&lt;/code&gt; and &lt;code&gt;piLocus&lt;/code&gt; nodes on the same level as in the sketch, using &lt;code&gt;rank=same&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+{
+    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
+    ilocus [label=&amp;quot;iLocus&amp;quot;]
+    gilocus [label=&amp;quot;giLocus&amp;quot;]
+    pilocus [label=&amp;quot;piLocus&amp;quot;]
+    nilocus [label=&amp;quot;niLocus&amp;quot;]
+    silocus [label=&amp;quot;siLocus&amp;quot;]
+    cilocus [label=&amp;quot;ciLocus&amp;quot;]
+    filocus [label=&amp;quot;fiLocus&amp;quot;]
+    iilocus [label=&amp;quot;iiLocus&amp;quot;]
+
+    node [color=Blue,fontcolor=Blue,shape=diamond]
+    containgene [label=&amp;quot;Contains gene(s)?&amp;quot;]
+    proteincoding [label=&amp;quot;Protein coding?&amp;quot;]
+    multiplegenes [label=&amp;quot;Multiple genes?&amp;quot;]
+    geneflank [label=&amp;quot;Flanked by genes\non both sides?&amp;quot;]
+
+    {rank = same; containgene; gilocus}
+    {rank = same; proteincoding; pilocus}
+
+    ilocus -&amp;gt; containgene
+    containgene -&amp;gt; geneflank [label=&amp;quot;No&amp;quot;]
+    geneflank -&amp;gt; filocus [label=&amp;quot;No&amp;quot;]
+    geneflank -&amp;gt; iilocus [label=&amp;quot;Yes&amp;quot;]
+    containgene -&amp;gt; gilocus [label=&amp;quot;Yes&amp;quot;]
+    gilocus -&amp;gt; proteincoding
+    proteincoding -&amp;gt; nilocus [label=&amp;quot;No&amp;quot;]
+    proteincoding -&amp;gt; pilocus [label=&amp;quot;Yes&amp;quot;]
+    pilocus -&amp;gt; multiplegenes
+    multiplegenes -&amp;gt; silocus [label=&amp;quot;No&amp;quot;]
+    multiplegenes -&amp;gt; cilocus [label=&amp;quot;Yes&amp;quot;]
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That gives us the following.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chart, take 3" src="https://standage.github.io/images/take3.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Getting there!
+Now, let's use the &lt;code&gt;compass_pt&lt;/code&gt; feature to specify which side of the diamonds we want the arrows to come from.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+{
+    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
+    ilocus [label=&amp;quot;iLocus&amp;quot;]
+    gilocus [label=&amp;quot;giLocus&amp;quot;]
+    pilocus [label=&amp;quot;piLocus&amp;quot;]
+    nilocus [label=&amp;quot;niLocus&amp;quot;]
+    silocus [label=&amp;quot;siLocus&amp;quot;]
+    cilocus [label=&amp;quot;ciLocus&amp;quot;]
+    filocus [label=&amp;quot;fiLocus&amp;quot;]
+    iilocus [label=&amp;quot;iiLocus&amp;quot;]
+
+    node [color=Blue,fontcolor=Blue,shape=diamond]
+    containgene [label=&amp;quot;Contains gene(s)?&amp;quot;]
+    proteincoding [label=&amp;quot;Protein coding?&amp;quot;]
+    multiplegenes [label=&amp;quot;Multiple genes?&amp;quot;]
+    geneflank [label=&amp;quot;Flanked by genes\non both sides?&amp;quot;]
+
+    {rank = same; containgene; gilocus}
+    {rank = same; proteincoding; pilocus}
+
+    ilocus -&amp;gt; containgene
+    containgene:w -&amp;gt; geneflank [label=&amp;quot;No&amp;quot;]
+    geneflank:e -&amp;gt; filocus [label=&amp;quot;No&amp;quot;]
+    geneflank:w -&amp;gt; iilocus [label=&amp;quot;Yes&amp;quot;]
+    containgene:e -&amp;gt; gilocus [label=&amp;quot;Yes&amp;quot;]
+    gilocus -&amp;gt; proteincoding
+    proteincoding:w -&amp;gt; nilocus [label=&amp;quot;No&amp;quot;]
+    proteincoding:e -&amp;gt; pilocus [label=&amp;quot;Yes&amp;quot;]
+    pilocus -&amp;gt; multiplegenes
+    multiplegenes:e -&amp;gt; silocus [label=&amp;quot;No&amp;quot;]
+    multiplegenes:w -&amp;gt; cilocus [label=&amp;quot;Yes&amp;quot;]
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We end up with this.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chart, take 4" src="https://standage.github.io/images/take4.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Everything looks good here except for the edges.
+Is there any way we can force straight edges with corners, like in the sketch, rather than the curved edges?
+The &lt;code&gt;splines=ortho&lt;/code&gt; setting seems to be designed just for that.
+Let's try it out (also requires setting edge labels to &lt;code&gt;xlabel&lt;/code&gt;).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+{
+    graph [splines=ortho]
+
+    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
+    ilocus [label=&amp;quot;iLocus&amp;quot;]
+    gilocus [label=&amp;quot;giLocus&amp;quot;]
+    pilocus [label=&amp;quot;piLocus&amp;quot;]
+    nilocus [label=&amp;quot;niLocus&amp;quot;]
+    silocus [label=&amp;quot;siLocus&amp;quot;]
+    cilocus [label=&amp;quot;ciLocus&amp;quot;]
+    filocus [label=&amp;quot;fiLocus&amp;quot;]
+    iilocus [label=&amp;quot;iiLocus&amp;quot;]
+
+    node [color=Blue,fontcolor=Blue,shape=diamond]
+    containgene [label=&amp;quot;Contains gene(s)?&amp;quot;]
+    proteincoding [label=&amp;quot;Protein coding?&amp;quot;]
+    multiplegenes [label=&amp;quot;Multiple genes?&amp;quot;]
+    geneflank [label=&amp;quot;Flanked by genes\non both sides?&amp;quot;]
+
+    {rank = same; containgene; gilocus}
+    {rank = same; proteincoding; pilocus}
+
+    ilocus -&amp;gt; containgene
+    containgene:w -&amp;gt; geneflank [xlabel=&amp;quot;No&amp;quot;]
+    geneflank:e -&amp;gt; filocus [xlabel=&amp;quot;No&amp;quot;]
+    geneflank:w -&amp;gt; iilocus [xlabel=&amp;quot;Yes&amp;quot;]
+    containgene:e -&amp;gt; gilocus [xlabel=&amp;quot;Yes&amp;quot;]
+    gilocus -&amp;gt; proteincoding
+    proteincoding:w -&amp;gt; nilocus [xlabel=&amp;quot;No&amp;quot;]
+    proteincoding:e -&amp;gt; pilocus [xlabel=&amp;quot;Yes&amp;quot;]
+    pilocus -&amp;gt; multiplegenes
+    multiplegenes:e -&amp;gt; silocus [xlabel=&amp;quot;No&amp;quot;]
+    multiplegenes:w -&amp;gt; cilocus [xlabel=&amp;quot;Yes&amp;quot;]
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which gives us this.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Chart, take 5" src="https://standage.github.io/images/take5.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Whoa, definitely not what I had in mind.
+I haven't been able to figure this last step out.
+If I can't figure out how to force straight edges with corners, then I think I'll have to go with "take 3" above, the last figure before the &lt;code&gt;compass_pt&lt;/code&gt; feature was used.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Mon, 25 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-25:building-a-decision-tree-chart-with-graphviz.html</guid><category>visualization</category><category>graphviz</category></item><item><title>Group meeting feedback, 20 Jan 2015</title><link>https://standage.github.io/group-meeting-feedback-20-jan-2015.html</link><description>&lt;ul&gt;
 &lt;li&gt;I went right on to the practical applications and the results, without spending enough time motivating.&lt;ul&gt;
 &lt;li&gt;First, we want a reliable set of benchmarks that we can run a genome annotation through to get a quick first look at a genome.
   Is it normal?
