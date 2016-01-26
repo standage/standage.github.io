@@ -1,0 +1,33 @@
+digraph
+{
+    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
+    ilocus [label="iLocus"]
+    gilocus [label="giLocus"]
+    pilocus [label="piLocus"]
+    nilocus [label="niLocus"]
+    silocus [label="siLocus"]
+    cilocus [label="ciLocus"]
+    filocus [label="fiLocus"]
+    iilocus [label="iiLocus"]
+
+    node [color=Blue,fontcolor=Blue,shape=diamond]
+    containgene [label="Contains gene(s)?"]
+    proteincoding [label="Protein coding?"]
+    multiplegenes [label="Multiple genes?"]
+    geneflank [label="Flanked by genes\non both sides?"]
+
+    {rank = same; containgene; gilocus}
+    {rank = same; proteincoding; pilocus}
+
+    ilocus -> containgene
+    containgene:w -> geneflank [label="No"]
+    geneflank:e -> filocus [label="No"]
+    geneflank:w -> iilocus [label="Yes"]
+    containgene:e -> gilocus [label="Yes"]
+    gilocus -> proteincoding
+    proteincoding:w -> nilocus [label="No"]
+    proteincoding:e -> pilocus [label="Yes"]
+    pilocus -> multiplegenes
+    multiplegenes:e -> silocus [label="No"]
+    multiplegenes:w -> cilocus [label="Yes"]
+}
