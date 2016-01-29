@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-01-15T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-15.html" rel="alternate"></link><updated>2016-01-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-15:reading-roundup-2016-01-15.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-01-29T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-29.html" rel="alternate"></link><updated>2016-01-29T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-29:reading-roundup-2016-01-29.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://phys.org/news/2016-01-brewer-yeast-hybridizes-wasp-gut.html"&gt;This commentary on wasps and the reproductive ecosystem of brewer's yeast&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Taking the experiment a step further, the researchers found that the interbred strains tended to be more hardy inside the wasp gut then those that were not—over time, the pure breeds actually died off.
+This, the researchers claim, proves that wasp gut reproduction is a major driver of yeast diversity in nature.
+And , they add, that suggests that yeast are dependent on interaction with insects for evolutionary development.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://bioconductor.org/packages/release/bioc/html/ComplexHeatmap.html"&gt;This R package for creating heatmaps&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Looks like a really useful tool.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://insidehpc.com/2016/01/sustainable-software-needs-a-change-in-the-culture-of-science/"&gt;This excellent piece on culture and sustainable software in science&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;Career paths in software engineering&lt;/h3&gt;
+&lt;p&gt;In academia in particular, this is a big challenge.
+Faculty members, students, postdocs, and staff members may all be developing scientific software.
+But, university employees, at all levels, who are interested in both science and software often feel compelled to leave academia due to the lack of recognition of their software activities and the lack of career paths that let them pursue their interests in a manner that they feel is sustainable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.theallium.com/science-life/tears-of-joy-at-conference-as-bioinformaticist-says-i-wont-go-into-detail-of-algorithm/"&gt;This hilarious parody of biologists and algorithms&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WASHINGTON DC – At a human genomics meeting today, there was widespread relief during the fourth talk of the day, when the bioinformaticist that was speaking told the audience “I am not going to go through the details of my algorithm”.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Lots of commentary on the recent NEJM editorial on "research parasites"&lt;/h2&gt;
+&lt;p&gt;Here's a small sampling.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.opiniomics.org/the-age-of-the-dinosaurs-is-almost-over-nejm-publishes-one-of-their-last-dying-roars/"&gt;The age of the dinosaurs is almost over; NEJM publishes one of their last dying roars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://mrandrewdwatt.com/from-our-cold-dead-hands-nejm-editorial-on-data-sharing/"&gt;From our cold dead hands: NEJM Editorial on Data Sharing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href="http://benjiweber.co.uk/blog/2016/01/25/why-i-strive-to-be-a-0-1x-engineer/"&gt;This apt take on being a 0.1x engineer&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The trouble is, software has diseconomies of scale.
+The more we build, the more expensive it becomes to build and maintain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.universityaffairs.ca/career-advice/from-phd-to-life/grad-school-is-part-of-your-career-too/"&gt;This reminder that graduate training is part of your career&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As for those current students, I hope they can do as I didn’t.
+When I was a student, I spent little time thinking about and planning for what would come after.
+I was deeply unprepared for the world of paid employment.
+I was unprepared psychologically to transition to non-academic work, but I was also unprepared for the practical aspects of career exploration and job searching.
+I had never conducted an informational interview before.
+I didn’t have a resume.
+I had no idea that most applicants were networking their way to interviews, not simply applying cold.
+And I was just as unprepared for the socio-cultural aspects of non-academic employment: working 9-5 in an office with colleagues who understood, implicitly, how one comports oneself as a professional in that environment.&lt;/p&gt;
+&lt;/blockquote&gt;</summary></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-15.html" rel="alternate"></link><updated>2016-01-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-15:reading-roundup-2016-01-15.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Written as a Jupyter notebook nonetheless!&lt;/p&gt;
 &lt;h2&gt;&lt;a href="http://chronicle.com/article/It-s-Just-a-Job-Right-/234794"&gt;This piece on academic "quit lit"&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;There were some good parts, but honestly I'm not sure what point this guy's trying to make.&lt;/p&gt;

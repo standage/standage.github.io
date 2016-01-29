@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 25 Jan 2016 00:00:00 -0500</lastBuildDate><item><title>Building a decision tree chart with graphviz</title><link>https://standage.github.io/building-a-decision-tree-chart-with-graphviz.html</link><description>&lt;p&gt;I'm preparing a manuscript, and I sketched out the following chart I would like to include.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><atom:link href="https://standage.github.io/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 29 Jan 2016 00:00:00 -0500</lastBuildDate><item><title>Reading roundup</title><link>https://standage.github.io/reading-roundup-2016-01-29.html</link><description>&lt;h2&gt;&lt;a href="http://phys.org/news/2016-01-brewer-yeast-hybridizes-wasp-gut.html"&gt;This commentary on wasps and the reproductive ecosystem of brewer's yeast&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Taking the experiment a step further, the researchers found that the interbred strains tended to be more hardy inside the wasp gut then those that were not—over time, the pure breeds actually died off.
+This, the researchers claim, proves that wasp gut reproduction is a major driver of yeast diversity in nature.
+And , they add, that suggests that yeast are dependent on interaction with insects for evolutionary development.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://bioconductor.org/packages/release/bioc/html/ComplexHeatmap.html"&gt;This R package for creating heatmaps&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Looks like a really useful tool.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://insidehpc.com/2016/01/sustainable-software-needs-a-change-in-the-culture-of-science/"&gt;This excellent piece on culture and sustainable software in science&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;h3&gt;Career paths in software engineering&lt;/h3&gt;
+&lt;p&gt;In academia in particular, this is a big challenge.
+Faculty members, students, postdocs, and staff members may all be developing scientific software.
+But, university employees, at all levels, who are interested in both science and software often feel compelled to leave academia due to the lack of recognition of their software activities and the lack of career paths that let them pursue their interests in a manner that they feel is sustainable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.theallium.com/science-life/tears-of-joy-at-conference-as-bioinformaticist-says-i-wont-go-into-detail-of-algorithm/"&gt;This hilarious parody of biologists and algorithms&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WASHINGTON DC – At a human genomics meeting today, there was widespread relief during the fourth talk of the day, when the bioinformaticist that was speaking told the audience “I am not going to go through the details of my algorithm”.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Lots of commentary on the recent NEJM editorial on "research parasites"&lt;/h2&gt;
+&lt;p&gt;Here's a small sampling.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.opiniomics.org/the-age-of-the-dinosaurs-is-almost-over-nejm-publishes-one-of-their-last-dying-roars/"&gt;The age of the dinosaurs is almost over; NEJM publishes one of their last dying roars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://mrandrewdwatt.com/from-our-cold-dead-hands-nejm-editorial-on-data-sharing/"&gt;From our cold dead hands: NEJM Editorial on Data Sharing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a href="http://benjiweber.co.uk/blog/2016/01/25/why-i-strive-to-be-a-0-1x-engineer/"&gt;This apt take on being a 0.1x engineer&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The trouble is, software has diseconomies of scale.
+The more we build, the more expensive it becomes to build and maintain.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://www.universityaffairs.ca/career-advice/from-phd-to-life/grad-school-is-part-of-your-career-too/"&gt;This reminder that graduate training is part of your career&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As for those current students, I hope they can do as I didn’t.
+When I was a student, I spent little time thinking about and planning for what would come after.
+I was deeply unprepared for the world of paid employment.
+I was unprepared psychologically to transition to non-academic work, but I was also unprepared for the practical aspects of career exploration and job searching.
+I had never conducted an informational interview before.
+I didn’t have a resume.
+I had no idea that most applicants were networking their way to interviews, not simply applying cold.
+And I was just as unprepared for the socio-cultural aspects of non-academic employment: working 9-5 in an office with colleagues who understood, implicitly, how one comports oneself as a professional in that environment.&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Fri, 29 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-29:reading-roundup-2016-01-29.html</guid></item><item><title>Building a decision tree chart with graphviz</title><link>https://standage.github.io/building-a-decision-tree-chart-with-graphviz.html</link><description>&lt;p&gt;I'm preparing a manuscript, and I sketched out the following chart I would like to include.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://standage.github.io/images/ilocus-decision-tree.jpg" alt="Chart" style="width: 450px" /&gt;&lt;/p&gt;
 &lt;p&gt;With my rudimentary &lt;a href="http://www.graphviz.org/"&gt;graphviz&lt;/a&gt; experience, I threw together the following representation.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;digraph
@@ -227,7 +267,85 @@ If I can't figure out how to force straight edges with corners, then I think I'l
 &lt;li&gt;Better to randomly distribute giLoci with delta=0.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Wed, 20 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-20:group-meeting-feedback-20-jan-2015.html</guid><category>group meeting</category><category>iloci</category></item><item><title>Reading roundup</title><link>https://standage.github.io/reading-roundup-2016-01-15.html</link><description>&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Wed, 20 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-20:group-meeting-feedback-20-jan-2015.html</guid><category>group meeting</category><category>iloci</category></item><item><title>Formatting C code with clang-format</title><link>https://standage.github.io/formatting-c-code-with-clang-format.html</link><description>&lt;p&gt;Code formatting styles: the thing we all love to hate.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="The rules are like guidelines anyway" src="https://standage.github.io/images/pirate-guidelines.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;The best formatting style is the style you don't have to think about, the style that helps you focus on the logical flow of your code.
+The best formatting style is consistent and organic, providing an intuitive visual representation of program organization.&lt;/p&gt;
+&lt;p&gt;On the other hand, pedantic enforcement formatting styles can outweigh any benefits you get from it in the first place.&lt;/p&gt;
+&lt;p&gt;A lot of digital ink has been spilled and flame wars fought over this topic, and I will not belabor the point here.
+Suffice it to say that I think that enforcement of code formatting style is, on the whole, a good thing.
+Styles focus mostly on readability, which is a HUGE DEAL when it comes to collaborative development and maintenance of code.
+Simplifying the &lt;em&gt;maintenance&lt;/em&gt; of your code will save much more of your time and others' time in the future than almost any technical optimization.
+Explicitly enforcing a style convention (like Python's PEP8, and associated tools &lt;code&gt;pep8&lt;/code&gt; and &lt;code&gt;autopep8&lt;/code&gt;) minimize conflicts between project contributors, and make it easier to integrate contributions from new contributors.
+Exceptions can be considered on a per-case basis, and most enforcement tools provide mechanisms for marking code to ignore, but for the most part the rules are there to be followed for everyone's benefit.&lt;/p&gt;
+&lt;p&gt;For Python programming, the PEP8 style is the uncontested standard.
+There may be others out there, but they're surely obscure and &lt;em&gt;ad hoc&lt;/em&gt;.
+When it comes to C and C++, however, there are many different popular styles.
+There are lots of commonalities, but the differences (particularly in the placement of braces) make a huge difference in the appearance of the code.
+I prefer the popular Allman style, the K&amp;amp;R style (also popular) is pretty reasonable, but styles like Whitesmith and Pico are just nuts!
+See &lt;a href="http://www.terminally-incoherent.com/blog/2009/04/10/the-only-correct-indent-style/"&gt;this page&lt;/a&gt; for some examples.&lt;/p&gt;
+&lt;p&gt;So in some &lt;a href="https://matt.sh/howto-c"&gt;recent reading&lt;/a&gt; I came across a tool called &lt;code&gt;clang-format&lt;/code&gt; that will automatically format C code based on your preferred style.
+All of my C code formatting has previously been self-enforced, but after using &lt;code&gt;pep8&lt;/code&gt; and &lt;code&gt;autopep8&lt;/code&gt; on my Python code for a few years now I thought it was time to let an automated tool do the work for me.
+Here's my config file (&lt;code&gt;.clang-format&lt;/code&gt;).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;BasedOnStyle&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;llvm&lt;/span&gt;
+&lt;span class="n"&gt;IndentWidth&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;AllowShortFunctionsOnASingleLine&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;None&lt;/span&gt;
+&lt;span class="n"&gt;KeepEmptyLinesAtTheStartOfBlocks&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;span class="n"&gt;BreakBeforeBraces&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Allman&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And here's the command I use to reformat a file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;clang-format -i -style=file src/locuspocus.c
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Credits.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://matt.sh/howto-c"&gt;This post&lt;/a&gt; got me going on this.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/29477654/how-to-make-clang-format-add-new-line-before-opening-brace-of-a-function"&gt;This thread&lt;/a&gt; was helpful&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://clang.llvm.org/docs/ClangFormatStyleOptions.html"&gt;This page&lt;/a&gt; has the official documentation.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/25880990/clang-format-breaks-lint-annotations"&gt;This answer&lt;/a&gt; describes a nice trick for disabling style checks for a code block.&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Tue, 19 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-19:formatting-c-code-with-clang-format.html</guid><category>programming</category><category>c</category></item><item><title>PEP8 and the Atom editor</title><link>https://standage.github.io/pep8-and-the-atom-editor.html</link><description>&lt;p&gt;I tried out the &lt;a href="https://atom.io/"&gt;Atom text editor&lt;/a&gt; very soon after it came out.
+For some reason--whether a half-hearted attempt on my part, or the fact that Atom was an unrefined beta--I didn't love it.
+After only a day or two, I reverted to the Komodo Edit editor I had been comfortable with for several years.&lt;/p&gt;
+&lt;p&gt;Recently, I heard a colleague describe Atom as a "Markdown editor".
+I was surprised, since my impression is that Atom was developed as a general purpose editor.
+But after my colleague showed me Atom's real-time Markdown render/preview feature, I figured I might give Atom a try again.&lt;/p&gt;
+&lt;p&gt;I'm enjoying Atom much better this time around.
+After working with it for a few days doing some basic programming (Python) and writing (Markdown) I had no complaints.
+It was only when I started revisiting some of my C code that I started having problems.&lt;/p&gt;
+&lt;p&gt;Not serious problems by any means: maybe &lt;em&gt;annoyances&lt;/em&gt; is a better word.
+Anyway, I follow PEP8 for the most part when I write Python code, so I had my wrap guide set to 79 characters.
+This became awkward when I am working on C code, where I have long used 80 characters as the limit.
+I was not enthusiastic about switching the wrap guide every time I changed langauges, which seemed to be the only alternative to just switching the whole thing off.&lt;/p&gt;
+&lt;p&gt;Since Atom is touted as the ultimate hackable and configurable editor, I figured I would see if the wrap guide is something I can configure on a per-language basis.
+Surely enough, a bit of Google searching uncovered &lt;a href="https://atom.io/packages/wrap-guide"&gt;the secret&lt;/a&gt;.
+The &lt;code&gt;preferredLineLength&lt;/code&gt; attribute under &lt;code&gt;editor&lt;/code&gt; controls where the wrap guide is displayed.
+I set the default (under &lt;code&gt;*&lt;/code&gt;) to 80, and then I created another Python-specific configuration with &lt;code&gt;".source.py"&lt;/code&gt;, with &lt;code&gt;preferredLineLength&lt;/code&gt; set to 79.&lt;/p&gt;
+&lt;p&gt;Here is my Atom configuration file, stored at &lt;code&gt;~/.atom/config.cson&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot;*&amp;quot;:
+  core:
+    disabledPackages: [
+      &amp;quot;spell-check&amp;quot;
+    ]
+    projectHome: &amp;quot;/Users/standage/Software&amp;quot;
+  editor:
+    fontFamily: &amp;quot;Consolas&amp;quot;
+    invisibles: {}
+    preferredLineLength: 80
+    showIndentGuide: true
+    tabLength: 4
+  welcome:
+    showOnStartup: false
+
+&amp;quot;.source.py&amp;quot;:
+  &amp;quot;editor:&amp;quot;:
+    preferredLineLength: 79
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Tue, 19 Jan 2016 00:00:00 -0500</pubDate><guid>tag:standage.github.io,2016-01-19:pep8-and-the-atom-editor.html</guid><category>programming</category></item><item><title>Reading roundup</title><link>https://standage.github.io/reading-roundup-2016-01-15.html</link><description>&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Written as a Jupyter notebook nonetheless!&lt;/p&gt;
 &lt;h2&gt;&lt;a href="http://chronicle.com/article/It-s-Just-a-Job-Right-/234794"&gt;This piece on academic "quit lit"&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;There were some good parts, but honestly I'm not sure what point this guy's trying to make.&lt;/p&gt;
