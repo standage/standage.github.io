@@ -100,18 +100,18 @@ navorder: 01
 - [GenomeTools](http://genometools.org/) Library: contributor
 - [khmer Library](http://khmer.readthedocs.org/): contributor
 
-**Technical Skills**
+**Community Training**
+
+- [2014 course on Analyzing NGS Data, Michigan State University](http://bioinformatics.msu.edu/ngs-summer-course-2014): invited instructor
+- [Software Carpentry](http://software-carpentry.org/): certified instructor
+
+## Technical Skills
 
 - **Software development**: C, Python, C++, Java
 - **Scripting, data processing**: Python, Perl, Bash
 - **Data analysis, statistical computing**: Python, R
 - **Pipelines, workflow management**: Bash, GNU Make
 - **High-performance computing**: MPI programming, OpenMP programming, job scheduling and resource management, VM/cloud computing
-
-**Community Training**
-
-- [2014 course on Analyzing NGS Data, Michigan State University](http://bioinformatics.msu.edu/ngs-summer-course-2014): invited instructor
-- [Software Carpentry](http://software-carpentry.org/): certified instructor
 
 ## Teaching
 
