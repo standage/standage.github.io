@@ -45,32 +45,46 @@ navorder: 01
 
 **Graduate Research Assistant**, <small>Computational Genome Science Lab, Indiana University, 2012 — present</small>
 
-- Implement version control tools for genome annotations
-- Conduct comparative analysis of genome composition in social insects
-- Design new methods for organizing genomes to facilitate comparison and analysis between annotations, assemblies, and species
-- Investigate genome composition, differential expression, alternative splicing, and methylation in the paper wasp Polistes dominula
+- investigate comparative genomics of social insects
+- investigate eukaryotic genome composition and organization
+- develop tools for management, quality control and analysis of annotated genomes
+- teach computational genome science course to biology and bioinformatics grad students
 
 **Graduate Research Assistant**, <small>BCB Graduate Program, Iowa State University, 2010 — 2012</small>
 
-- Develop tools for comparing gene structure annotations
-- Implement parallel version of an NGS error correction program
-- Evaluate existing software tools for transposable element prediction
+- First year research rotations
+    - develop tools for comparison of genome annotations
+    - identify transposable elements in *Gossypium* (cotton)
+    - implement multithreading support for short read error correction software
+- Research assistantship
+    - follow through with first research rotation to engineer and publish a tool for comparison of genome annotations (ParsEval)
+    - assemble and annotate genome of the eusocial wasp *Polistes dominula*
+    - assist with data management and migration of a large comparative plant genomics database (PlantGDB)
+    - develop and participate in a course on NGS applications to genomics
 
-**Undegraduate Research Assistant**, <small>Plant Genetics Lab, Brigham Young University, 2009 — 2010</small>
+**Undegraduate Research Technician**, <small>Plant Genetics Lab, Brigham Young University, 2009 — 2010</small>
 
-- Analyze expression of homoeologous genes in Gossypium (cotton)
-- Prototype sample submission system for on-site 454 sequencer
-- Develop tools for SNP analysis in polyploid organisms
+- analyze homoeologous gene expression (genes duplicated by polyploidy) in cotton with high-throughput sequencing technology
+- prototype an electronic sample submission system for on-site 454 sequencer
+- develop software for SNP analysis in polyploid organisms
+- assemble and map high-throughput sequence data (454 and Illumina)
+- configure a genome browser for transcriptome visualization
 
 **Research Intern**, <small>Department of Genetics, University of Georgia, 2008</small>
 
-- Investigate genes involved in biosynthesis of plant cell wall monosaccharides using phylogenetic profile analysis
-- Model gene regulatory networks in fungus Neurospora crassa
+- model and simulate genetic networks in *Neurospora crassa*
+- analyze biological clocks in fungi using basic experimental protocols (Northern blot, RNA extraction, gene electrophoresis, etc)
+- introduction to systems biology and network modeling
+- introduction to high-performance computing
+- utilize phylogenetic profile analysis to identify genes involved with the biosynthesis of cell wall monosaccharides
 
 **Undegraduate Research Assistant**, <small>Center for Language Studies, Brigham Young University, 2007 — 2010</small>
 
-- Work with domain experts to produce responsive online learning materials
-- Research and prototype open, modular, and interoperable e-learning architectures
+- develop applications and architectures to support development, delivery, and assessment of electronic learning resources and student performance
+- focus on best practices such as separation of content, presentation, and logic
+- work directly with subject matter experts and instructional designers to create instructional materials
+- evangelize the topics of openness, modularity, and interoperability in the learning community
+- served (briefly) as chair of the Architecture working group for LETSI (the International Federation for Learning, Education, and Training Systems Interoperability)
 
 ## Professional Activities
 
@@ -81,8 +95,8 @@ navorder: 01
 
 **Open-source Software and Data**
 
-- [AEGeAn Toolkit](http://standage.github.io/AEGeAn/): primary developer
-- [HymHub](http://brendelgroup.github.io/HymHub/): primary developer
+- [AEGeAn Toolkit](http://brendelgroup.github.io/AEGeAn): primary developer
+- [GenHub](http://standage.github.io/genhub): primary developer
 - [GenomeTools](http://genometools.org/) Library: contributor
 - [khmer Library](http://khmer.readthedocs.org/): contributor
 
