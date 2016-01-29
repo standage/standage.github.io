@@ -1,15 +1,15 @@
 Title: Software & Databases
 navorder: 03
 
-### [AEGeAn Toolkit](http://standage.github.io/AEGeAn/)
+### [AEGeAn Toolkit](http://brendelgroup.github.io/AEGeAn)
 
 I am the primary developer of the AEGeAn Toolkit, an integrated toolkit for anlaysis and evaluation of genome annotations.
 AEGeAn includes a collection of programs and scripts, as well as a C library whose API provides access to all of AEGeAn's core functions and data structures.
 
-### [HymHub](http://brendelgroup.github.io/HymHub/)
+### [GenHub](http://standage.github.io/genhub)
 
-I created the HymHub database to support my comparative genomics work in the Hymenoptera.
-HymHub includes data for over 16 species of Hymenoptera (and related outgroups), as well as the scripts used to download the data from disparate primary sources and standardize the format.
+After creating *HymHub* in support of my comparative genomics work in Hymenoptera, I realized I needed a more general solution for downloading, managing, and analyzing annotated genome data.
+GenHub is a Python package for organizing genome sequences and annotations for comparative analysis.
 
 ### [GenomeTools Library](http://genometools.org/)
 
@@ -24,3 +24,4 @@ I can thank these kind folks for most of what I know about software engineering!
 
 I am a frequent user of the khmer library, and contributed several new features during the khmer code sprint at Pycon 2015 in Montreal.
 The khmer library is also an excellent model of research software development, in terms of both process and community engagement.
+
