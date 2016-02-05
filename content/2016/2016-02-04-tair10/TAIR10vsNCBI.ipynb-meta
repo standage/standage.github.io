@@ -1,0 +1,6 @@
+Title: Is RefSeq's Arabidopsis annotation TAIR10?
+Date: 2016-02-04
+Category: notebook
+Tags: bash; annotation
+Summary: Some notes on my data forensics to determine whether there are any
+    differences between the RefSeq *Arabidopsis* annotation and TAIR10.
