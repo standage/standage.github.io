@@ -18,7 +18,7 @@ RELATIVE_URLS = True
 DEFAULT_PAGINATION = 10
 CACHE_CONTENT = False
 DISQUS_SITENAME = 'standage-github-io'
-SUMMARY_MAX_LENGTH = 100
+SUMMARY_MAX_LENGTH = 60
 
 # Blog/page/category config
 IGNORE_FILES = ['.ipynb_checkpoints']
