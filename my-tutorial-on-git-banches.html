@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "my-tutorial-on-git-banches.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>My tutorial on git banches</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/my-tutorial-on-git-banches.html">2016-02-05</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/programming.html">programming</a> <a href="https://standage.github.io/tag/git.html">git</a> </div>
+		<div><p>I've been trying subtly (and in a few cases not-so-subtly) for years now to convert my colleagues to the gospel of git and GitHub.
+The git version control system has its quirks no doubt, but there is—in my opinion—no more powerful system for open collaboration on software and science than git and GitHub.
+A quote I attribute (hopefully correctly) to Software Carpentry's Greg Wilson (<a href="https://twitter.com/gvwilson">@gvwilson</a>) captures my sentiments exactly.</p>
+<blockquote>
+<p>Learning git is the tax you pay to use GitHub.</p>
+</blockquote>
+<p>Over Christmas break my advisor finally decided it was time to bite the bullet and see what git/GitHub offered that he couldn't get with Subversion.
+It took him a while to warm up to the idea, but once he decided to try it, he was committed to giving it his best shot.
+He read up on the git/GitHub workflow and immersed himself in it for a week or more.
+By the time we reconnected in the new year, he was convinced this was something he wanted to adopt for himself and the rest of the lab.</p>
+<p>Since then, we've been gradually piecing together a lab handbook with lab procedures, guidelines, and tips.
+My advisor wrote up a basic git/GitHub tutorial a few weeks ago, and yesterday I wrote a follow-up on using git branches in your daily workflow.
+The text of the tutorial is below.</p>
+<hr />
+<h1>01.1-Howto-github-branches</h1>
+<p>The git version control system has a feature called <em>branches</em> that make it safe and easy to implement bug fixes or new features, and to isolate those changes from the main development environment until they are vetted.
+The concept of branches is not unique to git: users of Subversion or CVS will recognize the common organizational strategy of placing the main development environment in a <code>trunk/</code> directory, and then creating experimental branches by copying that directory to a separate <code>branches/</code> directory.
+Indeed, with Subversion, branching is just that—a strategy—and merging branches back into the main trunk can be very tedious and frustrating.
+With git, however, branches are a built-in feature: they are trivial to create, and can almost always be merged back into the main line of development (<em>master</em>) with little or no hassle.</p>
+<p>For a quick intro to git branches, see <a href="https://www.atlassian.com/git/tutorials/using-branches/git-branch">this tutorial from Atlassian</a>.
+The remainder of this HowTo presents a hypothetical vignette demonstrating how branches could and should be used as part of your daily workflow, and how they help mitigate merge conflicts when working collaboratively.</p>
+<h2>Setting</h2>
+<p>Alice and Bob are two scientists collaborating on a research project they hope to publish soon.
+They have implemented a prototype R script to analyze data they have collected, and the R code is stored in a repository on GitHub called <code>BrendelGroup/proj</code>.
+Alice and Bob have their own forks at <code>alice/proj</code> and <code>bob/proj</code>, respectively.
+Having prototyped the analysis procedure and tested it on small sample data sets, they are ready to move forward by polishing up the prototype, running the analysis on complete data sets, reporting their results, and discussing their interpretation.</p>
+<p>Monday morning, Alice and Bob spent some time working on their manuscript, documenting the motivation for their work, describing their methodology, and putting in placeholders for results they will soon generate.
+Monday afternoon, after working on the manuscript, they discussed what  needed to be done next at a technical level.
+- First, they need to fix a small bug in the R prototype.
+  They opened a new thread on the <code>BrendelGroup/proj</code> issue tracker on GitHub to describe the bug, what causes the script to fail, and their plan to fix the bug.
+  The issue tracker designated this thread <code>#14</code>.
+- Second, they need to add one more step to their analysis procedure.
+  They described this step at (a high level) in the <em>Methods</em> section of their paper earlier that morning, but they took some time now to start a new thread on the GitHub issue tracker and describe their precise plan for implementating this additional step in R.
+  The issue tracker designated this thread <code>#15</code>.</p>
+<h2>First branch</h2>
+<p>On Tuesday morning, Alice comes in to the office to work on the project.
+She decides to get to work right away fixing the bug they discussed the previous day.
+She logs in to her laptop, fires up a terminal, changes to the directory containing her local clone of the repository, and checks her status...</p>
+<div class="highlight"><pre>cd /home/alice/proj/
+git status
+</pre></div>
+
+
+<p>...to which her terminal responds as follows.</p>
+<div class="highlight"><pre>On branch master
+nothing to commit, working directory clean
+</pre></div>
+
+
+<p>She's on the main/default development branch <em>master</em>, and the working directory is <em>clean</em>, meaning no changes have been made to the code since the last commit.</p>
+<p>Since everything looks good, Alice creates a new branch called <code>bugfix</code>.</p>
+<div class="highlight"><pre>git branch bugfix
+git checkout bugfix
+</pre></div>
+
+
+<p>She then opens up the R script and takes about 30 minutes to fix the code and test her solution.
+Once she's confident it is correct, she commits a new snapshot to her local repository.
+She references the corresponding GitHub thread in her commit message, using syntax that will automatically close the thread in the issue tracker once the commit is merged into the <code>master</code> branch of <code>BrendelGroup/proj</code>.</p>
+<div class="highlight"><pre>git add analysis.R
+git commit -m &#39;Fixed estimation bug. Closes #14.&#39;
+</pre></div>
+
+
+<h2>Pull request</h2>
+<p>At this point, the git repository on Alice's laptop has the bugfix, but the changes haven't been pushed anywhere else: her fork on GitHub (<code>alice/proj</code>), the original "upstream" repository on GitHub (<code>BrendelGroup/proj</code>), or Bob's fork (<code>bob/proj</code>).
+Referring back to the creative triangle described in <a href="https://github.com/BrendelGroup/bghandbook/blob/master/doc/01-Howto-github.md">the GitHub howto</a>, Alice proceeds by pushing her latest commit (stored on a branch called <code>bugfix</code>) to her fork on GitHub.</p>
+<div class="highlight"><pre>git push origin bugfix
+</pre></div>
+
+
+<p>She now goes to GitHub and opens a pull request to merge <code>alice/proj:bugfix</code> into <code>BrendelGroup/proj:master</code>.</p>
+<h2>Second branch</h2>
+<p>With the bug fix resolved, Alice now turns to the final step in their analysis procedure.
+The bug has nothing to do with this final step, so she starts by returning to the master branch.</p>
+<div class="highlight"><pre>git checkout master
+</pre></div>
+
+
+<p>Her directory now looks just like it did before she started working this morning.
+This provides a clean slate for Alice to begin working on the analysis procedure.
+She proceeds by creating a new branch in her local repo.</p>
+<div class="highlight"><pre>git branch laststep
+git checkout laststep
+</pre></div>
+
+
+<p>She then takes an hour or so to prepare a few small data files she will use to test the R script after the new feature is implemented.
+Next, once she is confident the tests are correct, she opens up the R script again and implements the new procedure.
+With test data already in place, it is very easy for Alice to confirm when the procedure is working correctly.</p>
+<p>Finally, after all her tests pass, Alice commits a new snapshot in her local repository.
+Again, she references the corresponding thread on the GitHub issue tracker.</p>
+<div class="highlight"><pre>git add analysis.R testdatafiles/
+git commit -m &#39;Implemented final analysis step. Closes #15.&#39;
+</pre></div>
+
+
+<h2>Another pull request</h2>
+<p>Just as before, Alice's new feature is present only on her laptop.
+She needs to push out to her fork and open a pull request to get these changes integrated into the main repository.</p>
+<p>First she pushes to her fork...</p>
+<div class="highlight"><pre>git push origin laststep
+</pre></div>
+
+
+<p>...and then goes to GitHub to open a pull request to merge <code>alice/proj:laststep</code> into <code>BrendelGroup/proj:master</code>.</p>
+<p>At this point, she has two open pull requests waiting for Bob to review and accept.
+Having worked for a few hours at this point, Alice takes a break to have lunch and attend a seminar.</p>
+<h2>Bob's review</h2>
+<p>When Bob arrives at his office late on Tuesday morning, he's suspicious that the solution he discussed with Alice the day before is incorrect.
+After digging through the data for a bit, he confirms his suspicion that they have made some incorrect assumptions about the input data, and that the bugfix they discussed previously isn't valid.
+He logs on to GitHub to comment on thread <code>#14</code> and explain his findings.
+Bob notes that Alice has already submitted a pull request to fix the bug, and adds a comment to the thread explaining why their proposed solution won't work.</p>
+<p>Bob also notes that Alice has submitted a pull request with her implementation of the final step of the procedure.
+He reviews the changes to the code on her <code>laststep</code> branch, understands the changes she made, and notes that she has provided test cases for validating the procedure.
+Since everything looks good, Bob accepts the pull request.
+GitHub automatically closes issue <code>#15</code> at this point, since Alice's commit message included the text <code>Closes #15</code>.
+Bob opens up his terminal, goes to his local clone of the repository, and pulls the latest changes from <code>BrendelGroup/proj</code>.</p>
+<div class="highlight"><pre>cd /home/bob/proj
+git pull upstream master
+</pre></div>
+
+
+<p>He then pushes those changes out to his fork to keep everything in sync.</p>
+<div class="highlight"><pre>git push origin master
+</pre></div>
+
+
+<h2>Bob's bug fix</h2>
+<p>After his morning data slogging session, Bob has a much better grasp on how to fix the bug in their R code.
+He has a few minutes before he has to teach a class, so he takes a stab at implementing the bug fix.
+Bob starts by creating a new branch in his local repo.</p>
+<div class="highlight"><pre>git branch newbugfix
+git checkout newbugfix
+</pre></div>
+
+
+<p>He then edits the R code and tests that it works on a variety of inputs.
+Once he's confident the bug fix handles the input data correctly, he makes a new commit.</p>
+<div class="highlight"><pre>git add analysis.R
+git commit -m &#39;Alternative approach to fixing the estimation bug. See my comments in #14. Closes #14.&#39;
+</pre></div>
+
+
+<p>Bob then pushes this new branch to his fork on GitHub...</p>
+<div class="highlight"><pre>git push origin newbugfix
+</pre></div>
+
+
+<p>...and opens a pull request on GitHub to merge <code>bob/proj:newbugfix</code> into <code>BrendelGroup/proj:master</code>.
+He then rushes out the door to go to his class.</p>
+<h2>Alice's review</h2>
+<p>When Alice returns from her lunch and seminar, she goes to GitHub to check on the status of her pull requests.
+She's happy to see that Bob has accepted her second pull request, but sees that the other is still open.
+She reads Bob's comments on <code>#14</code> and after a few minutes of thinking things over herself she understands and agrees with his assessment.
+She closes her unmerged pull request and deletes the <code>bugfix</code> branch from her fork on GitHub.</p>
+<div class="highlight"><pre>git push origin :bugfix
+</pre></div>
+
+
+<p>Alice then takes a look at Bob's proposed solution, reviews the code, and finding it solid she merges his pull request.
+GitHub automatically closes issue <code>#14</code> at this point, since Bob's commit message included the text <code>Closes #14</code>.</p>
+<p>Now Alice needs to syncronize her laptop with the new changes.
+First, she switches back to the main <code>master</code> branch.</p>
+<div class="highlight"><pre>git checkout master
+</pre></div>
+
+
+<p>At this point, her directory looks just like it did before she started work this morning.
+The changes she made before lunch are stored in dedicated branches, and she has not touched the main <code>master</code> branch on her laptop.
+To update her local <code>master</code> branch, she pulls from <code>BrendelGroup/proj</code>...</p>
+<div class="highlight"><pre>git pull upstream master
+</pre></div>
+
+
+<p>...and then pushes those updates out to her fork.</p>
+<div class="highlight"><pre>git push origin master
+</pre></div>
+
+
+<h2>Cleanup</h2>
+<p>At this point the <code>master</code> branch is up-to-date both on Alice's fork and her laptop.
+She has also deleted the <code>bugfix</code> branch on her fork, but the <code>bugfix</code> branch is still present on her laptop, and the <code>laststep</code> branch is still present both on her fork and her laptop.
+She wants to delete all of these branches now, since <code>laststep</code> has been merged and <code>bugfix</code> is a dead end.</p>
+<p>Alice can list the branches in her local clone, highlighting the active branch, with the command...</p>
+<div class="highlight"><pre>git branch
+</pre></div>
+
+
+<p>...and she can list the branches in her GitHub fork (along with some other information) using the following command.</p>
+<div class="highlight"><pre>git remote show origin
+</pre></div>
+
+
+<p>Alice then uses the following commands to delete the remaining extraneous branches.</p>
+<div class="highlight"><pre>git push origin :laststep # Delete `laststep` on `alice/proj`
+git branch -d laststep    # Delete `laststep` branch on laptop
+git branch -D bugfix      # Force deletion of the unmerged `bugfix` branch on laptop
+</pre></div>
+
+
+<h2>Epilogue</h2>
+<p>This story could have turned out very differently had Alice not used branches in her workflow.
+She would have committed her incorrect implementation of the bug fix to her <code>master</code> branch, followed by her correct implementation of the final step of their analysis procedure to the same <code>master</code> branch.
+Had she then submitted a pull request to merge <code>alice/proj:master</code> into <code>BrendelGroup/proj:master</code>, Bob would not have been able to merge it because of the erroneous bug fix.
+There would be no easy way for her to keep the latest commit while discarding an earlier commit, or to integrate Bob's new solution without merge conflicts.
+She likely would have had to rewind two commits in her history to get rid of her bug fix and re-implement the final step to their analysis procedure, and then use the <code>--force</code> option to overwrite the commit history she had previously pushed to her fork.</p>
+<p>By using branches, Alice cleanly isolated each set of changes from the main development branch, and was able to discard one set of changes without affecting the other set of changes.
+Using branches with git and GitHub is an excellent mechanism to keep your work organized into small manageable chunks that can be developed, evaluated, and merged independently.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

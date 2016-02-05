@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-01-29T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-29.html" rel="alternate"></link><updated>2016-01-29T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-29:reading-roundup-2016-01-29.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://phys.org/news/2016-01-brewer-yeast-hybridizes-wasp-gut.html"&gt;This commentary on wasps and the reproductive ecosystem of brewer's yeast&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-05T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-05.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:reading-roundup-2016-02-05.html</id><summary type="html">&lt;h2&gt;&lt;a href="https://twitter.com/climagic/status/694660103627259905"&gt;This tip for issuing an alarm when a site comes back up.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I don't have a &lt;code&gt;.wav/.mp3&lt;/code&gt; file handy, but a terminal bell (&lt;code&gt;\a&lt;/code&gt;) works just as well.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;&lt;a href="http://www.newyorker.com/tech/elements/do-the-new-big-money-science-prizes-work"&gt;This article about how big money science prizes are Doing It Wrong&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;But a larger problem is that these prizes are not an efficient use of funds.
+Instead of funding science prizes, these billionaires should try funding the science itself.
+Take particle physics—one of the main specialties in which Breakthrough Prizes have been awarded.
+In that field, government funding has been cut back significantly, and budgets have been flat or declining for years.
+The $27 million awarded by Yuri Milner, in 2012, would have funded perhaps two hundred and seventy new postdoctoral fellowships that year, or a smaller number of postdoctoral fellowships combined with endowed faculty positions.
+That could more than double the current number of young researchers in the field.
+With a larger group of young, talented, and ambitious scientists finding gainful employment, the likelihood of jumpstarting some new and exciting research would be significant.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I don't agree with the idea to create tons more postdocs: the 2000s-era doubling of the NIH budget created a lot of Ph.D. studentships and postdoctoral fellowships but did not significantly change the landscape for permanent academic faculty and staff positions.
+If you want to help the system, don't contribute to the attrition problem by funding more Ph.D.s or postdocs, mitigate it by creating more permanent career options for those already in the system!&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.nature.com/ncomms/2016/160202/ncomms10448/full/ncomms10448.html"&gt;This new paper in &lt;em&gt;Nature Comms&lt;/em&gt; reporting genetic profile of a "morning person"&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We conduct a genome-wide association analysis of self-reported morningness, followed by analyses of biological pathways and related phenotypes.
+We identify 15 significantly associated loci, including seven near established circadian genes...&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://mattgemmell.com/the-dao-of-the-shell/"&gt;This blog post on the "Dao of the shell"&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You don’t take your fingers off the keyboard, because the mouse isn’t going to help you.
+Everything is customisable and configurable… or you can equally just leave it alone.
+The whole ethos of configuration on the shell is to set up an environment where you type less.
+That’s a beautiful thing.
+On a GUI, configuration is often just about giving you more stuff to drag a pointer over to, and then click upon.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I agree with the sentiment: I spend a &lt;em&gt;lot&lt;/em&gt; of time in the shell, and it's as focusing and empowering as he describes.
+But I think mutt is a horrible example to demonstrate this!
+In my experience it's a huge pain to get working correctly, the documentation is sparse, and trying to piece together a sensible configuration from a dozen similar but slightly inconsistent neckbeard blog posts is not my idea of zen.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://www.scientificamerican.com/article/basic-science-can-t-survive-without-government-funding/"&gt;This piece arguing basic science's need for government funding&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Without government support, most basic scientific research will never happen.
+This is most clearly true for the kind of pure research that has delivered enormous prestige and great intellectual benefits but no profits, such as the work that brought us the Higgs boson, or the understanding that a supermassive black hole sits at the center of the Milky Way, or the discovery of methane seas on the surface of Saturn's moon Titan.
+Company research laboratories used to do this kind of work: experimental evidence for the big bang was discovered at AT&amp;amp;T's Bell Labs, resulting in a Nobel Prize.
+Now those days are gone.
+&lt;br /&gt;&lt;br /&gt;
+Even in applied fields, such as materials science and computer science, companies now understand that basic research is a form of charity—so they avoid it.
+Scientists at Bell Labs created the transistor, but that invention earned billions for Intel (and Microsoft).
+Engineers at Xerox PARC invented the modern graphical user interface, although Apple (and Microsoft) profited the most.
+IBM researchers pioneered the use of giant magnetoresistance to boost hard-disk capacity but soon lost the disk-drive business to Seagate and Western Digital.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Not a convincing argument in my opinion.
+I'm not saying I necessarily disagree with his opinion, I just don't think he does a good job of defending his claims.&lt;/p&gt;</summary><category term="shell"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-29.html" rel="alternate"></link><updated>2016-01-29T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-29:reading-roundup-2016-01-29.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://phys.org/news/2016-01-brewer-yeast-hybridizes-wasp-gut.html"&gt;This commentary on wasps and the reproductive ecosystem of brewer's yeast&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Taking the experiment a step further, the researchers found that the interbred strains tended to be more hardy inside the wasp gut then those that were not—over time, the pure breeds actually died off.
 This, the researchers claim, proves that wasp gut reproduction is a major driver of yeast diversity in nature.
@@ -39,7 +86,7 @@ I had never conducted an informational interview before.
 I didn’t have a resume.
 I had no idea that most applicants were networking their way to interviews, not simply applying cold.
 And I was just as unprepared for the socio-cultural aspects of non-academic employment: working 9-5 in an office with colleagues who understood, implicitly, how one comports oneself as a professional in that environment.&lt;/p&gt;
-&lt;/blockquote&gt;</summary></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-15.html" rel="alternate"></link><updated>2016-01-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-15:reading-roundup-2016-01-15.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
+&lt;/blockquote&gt;</summary><category term="R"></category><category term="software"></category><category term="publishing"></category><category term="career"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-01-15.html" rel="alternate"></link><updated>2016-01-15T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-15:reading-roundup-2016-01-15.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"&gt;This great tutorial on multiprocessing in Python&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Written as a Jupyter notebook nonetheless!&lt;/p&gt;
 &lt;h2&gt;&lt;a href="http://chronicle.com/article/It-s-Just-a-Job-Right-/234794"&gt;This piece on academic "quit lit"&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;There were some good parts, but honestly I'm not sure what point this guy's trying to make.&lt;/p&gt;
