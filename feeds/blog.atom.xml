@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-05T00:00:00-05:00</updated><entry><title>My tutorial on git banches</title><link href="https://standage.github.io/my-tutorial-on-git-banches.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:my-tutorial-on-git-banches.html</id><summary type="html">&lt;p&gt;I've been trying subtly (and in a few cases not-so-subtly) for years now to convert my colleagues to the gospel of git and GitHub.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-11T00:00:00-05:00</updated><entry><title>Genomic interval notations: personal preference, or a clear winner?</title><link href="https://standage.github.io/genomic-interval-notations-personal-preference-or-a-clear-winner.html" rel="alternate"></link><updated>2016-02-11T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-11:genomic-interval-notations-personal-preference-or-a-clear-winner.html</id><summary type="html">&lt;p&gt;Intervals are one of the most common data abstractions used in genome informatics, along with strings and graphs.
+DNA has an intricate dynamic three-dimensional structure, but for many bioinformatics problems we can get away with ignoring this level of detail and representing the molecule instead as a static linear sequence of symbols.
+Genomic features—such as genes or transposable elements—are then annotated as subsequences of the larger complete sequence, much like an interval on a discrete number line.&lt;/p&gt;
+&lt;p&gt;The most popular data formats for encoding sequence annotations (&lt;a href="http://www.sequenceontology.org/gff3.shtml"&gt;GFF3&lt;/a&gt;, &lt;a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format1"&gt;BED&lt;/a&gt;, &lt;a href="http://mblab.wustl.edu/GTF22.html"&gt;GTF&lt;/a&gt;) all use a very similar convention.
+The location of a feature is designated by three values: some kind of &lt;em&gt;label&lt;/em&gt; or &lt;em&gt;identifier&lt;/em&gt; specifying the precise molecule on which the feature resides (such as &lt;em&gt;Chr1&lt;/em&gt; or &lt;em&gt;Scaff17468&lt;/em&gt;), and two integers representing the start and end of the genomic interval.
+These values are stored in tab-delimited plain text, along with various other values and metadata.&lt;/p&gt;
+&lt;p&gt;There are, however, some substantial differences between "the big three" formats.
+BED and GTF were designed for very specific use cases (visualization and gene prediction, respectively), whereas GFF3 was designed as a generalized solution for genome annotation.
+BED allows for a single level of feature decomposition (a feature can be broken up into blocks), while GTF supports two levels (exons can be grouped by &lt;code&gt;transcript_id&lt;/code&gt;, and transcripts grouped by &lt;code&gt;gene_id&lt;/code&gt;), and GFF3 supports an arbitrary number of levels (parent/child relationships defined by &lt;code&gt;ID&lt;/code&gt; and &lt;code&gt;Parent&lt;/code&gt; attributes specify a directed acyclic graph of features).&lt;/p&gt;
+&lt;p&gt;Perhaps the most important difference, though, is the &lt;em&gt;notation&lt;/em&gt; these formats use to encode genomic intervals: that is, which two integers are used to specify the location of the interval?
+GFF3 and GTF both inherited, through their common heritage with older GFF variants, 1-based indexing and closed interval notation.
+BED on the other hand uses 0-based indexing and &lt;em&gt;half-closed&lt;/em&gt; interval notation.
+Consider the DNA sequence below.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;        1    2    3    4    5    6    7      &amp;lt;-- GFF3 style
+        |    |    |    |    |    |    |
+        G    A    T    T    A    C    A
+        |    |    |    |    |    |    |
+        0    1    2    3    4    5    6      &amp;lt;-- BED style
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Using 1-based indexing and closed interval notation &lt;em&gt;a la&lt;/em&gt; GFF3, the interval containing the subsequence &lt;code&gt;ATTA&lt;/code&gt; would be represented as &lt;code&gt;[2, 5]&lt;/code&gt;.
+With BED's 0-based indexing and half-closed interval notation, the same subsequence would be represented as &lt;code&gt;[1, 5)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Confused yet?
+Don't worry: off-by-one errors with interval arithmetic are very common in bioinformatics, striking newcomers and old-timers alike.&lt;/p&gt;
+&lt;p&gt;An alternative and useful way to conceptualize the BED-style notation is to shift the indices slightly so that they correspond to the spaces &lt;em&gt;between&lt;/em&gt; nucleotides, rather than the nucleotides themselves.
+Then, the two integers defining an interval are the ones that bound the nucleotides in question.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;        G    A    T    T    A    C    A
+     |    |    |    |    |    |    |    |
+     0    1    2    3    4    5    6    7
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So, the big question is: are there any compelling reasons to choose one notation over the other?
+Or is it simply a matter of preference?&lt;/p&gt;
+&lt;p&gt;Until very recently, I have been of the opinion that it's primarily a matter of preference.
+More generally, I have long favored the GFF3 format over any of the alternatives.
+Leveraging the &lt;a href="http://www.sequenceontology.org"&gt;Sequence Ontology&lt;/a&gt; and supporting parent/child relationships provides a more flexible, comprehensive, and consistent solution for genome annotation than any of GFF3's tab-delimited relatives.
+And counting nucleotides starting from 1 has never felt unnatural, at least from the perspective of a biologist.&lt;/p&gt;
+&lt;p&gt;But I'm now convinced that 0-based half-closed interval notation is indisputably superior to 1-based closed interval notation.
+Consider the following.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One of the most widely cited benefits is that interval length calculations are much simpler: &lt;code&gt;end - start&lt;/code&gt; rather than &lt;code&gt;end - start + 1&lt;/code&gt;.
+  Interval overlap calculations enjoy the same benefit: &lt;code&gt;min(a.end, b.end) - max(a.start, b.start)&lt;/code&gt; instead of &lt;code&gt;min(a.end, b.end) - max(a.start, b.start) + 1&lt;/code&gt;.
+  Although the majority of bioinformatics software likely has very little to gain &lt;em&gt;performance wise&lt;/em&gt; by simplifying calculations at this level, there is a lot to be gained by making &lt;em&gt;code&lt;/em&gt; cleaner, simpler, and easier to read.
+  It's important to optimize code for human comprehension whenever possible, and removing superfluous &lt;code&gt;+1&lt;/code&gt;s and &lt;code&gt;-1&lt;/code&gt;s can go a long way in this regard.&lt;/li&gt;
+&lt;li&gt;When taking the reverse complement of a sequence, the interval &lt;code&gt;[start, end)&lt;/code&gt; becomes &lt;code&gt;[length - end, length - start)&lt;/code&gt;, rather than &lt;code&gt;[length - end + 1, length - start + 1)&lt;/code&gt;.
+  And honestly, the list of cases where proper notation makes these pesky &lt;code&gt;+1&lt;/code&gt;s and &lt;code&gt;-1&lt;/code&gt;s disappear keeps going and going, so I'll just leave it at that.&lt;/li&gt;
+&lt;li&gt;Another compelling argument is that most programming languages utilize 0-based indexing, so using a 1-based notation for annotations requires care on the part of the programmer to make the ajustments themself when, for example, accessing a DNA subsequence stored as a string.
+  The 0-based half-open notation leads to very clean C-style loops (&lt;code&gt;for(int i = start; i &amp;lt; end; ++)&lt;/code&gt;), and ranges and slices in Python use the same notation.
+  Finally, renowned computer scientist Edsger Dijkstra expounded a &lt;a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html"&gt;simple yet elegant defense&lt;/a&gt; of this interval notation, citing empirical evidence that its use leads to fewer programming errors than any alternative notation.&lt;/li&gt;
+&lt;li&gt;When splitting a sequence into, for example, 100kb chunks, the 0-based half-closed notation gives much cleaner-looking boundaries: &lt;code&gt;[100000, 200000), [200000, 300000)&lt;/code&gt; instead of &lt;code&gt;[100001, 200000], [200001, 300000]&lt;/code&gt; or &lt;code&gt;[100000, 199999], [200000, 299999]&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As persuasive as this list is, one still might claim that all of these points (perhaps with the exception of Dijkstra's data-supported claims) still fall within the realm of opinion.
+But where the 1-based closed interval indexing really falls apart is in the encoding of &lt;strong&gt;zero-length features&lt;/strong&gt;.
+GFF3 simply has no unambiguous notation for specifying that, for example, an insertion site resides between the 50th and 51st nucleotide of a sequence.
+To be clear, the GFF3 specification explicitly addresses this case.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For zero-length features, such as insertion sites, start equals end and the implied site is to the right of the indicated base in the direction of the landmark.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But how is one to distinguish zero-length features from one-length features, which must also be encoded as &lt;code&gt;start = end&lt;/code&gt;?
+There is no way to distinguish between these two cases without looking for additional contextual hints, which (as experience shows) come in about as many flavors as there are bioinformaticians.&lt;/p&gt;
+&lt;p&gt;So although I still prefer GFF3 to the competitors, I now acknowledge its use of 1-based closed intervals as its biggest weakness.&lt;/p&gt;
+&lt;p&gt;Would it be possible to change GFF3?&lt;/p&gt;
+&lt;p&gt;I'm afraid that interval notation is too central a feature to change with an incremental update, and would likely require a new major release of the specification.
+With lots of legacy code (and modern code!) depending on GFF3, I'm not sure the world is quite ready for GFF4.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Hat tip to &lt;a href="https://github.com/ga4gh/schemas/pull/49#issuecomment-44520397"&gt;this thread&lt;/a&gt; for the insightful discussion and link to the Dijkstra transcript, and to &lt;a href="https://www.biostars.org/p/176583/#176590"&gt;this post&lt;/a&gt; for suggesting that zero-based indices point &lt;em&gt;between&lt;/em&gt; nucleotides.&lt;/p&gt;</summary><category term="annotation"></category><category term="gff3"></category><category term="coordinates"></category><category term="python"></category></entry><entry><title>My tutorial on git banches</title><link href="https://standage.github.io/my-tutorial-on-git-banches.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:my-tutorial-on-git-banches.html</id><summary type="html">&lt;p&gt;I've been trying subtly (and in a few cases not-so-subtly) for years now to convert my colleagues to the gospel of git and GitHub.
 The git version control system has its quirks no doubt, but there is—in my opinion—no more powerful system for open collaboration on software and science than git and GitHub.
 A quote I attribute (hopefully correctly) to Software Carpentry's Greg Wilson (&lt;a href="https://twitter.com/gvwilson"&gt;@gvwilson&lt;/a&gt;) captures my sentiments exactly.&lt;/p&gt;
 &lt;blockquote&gt;

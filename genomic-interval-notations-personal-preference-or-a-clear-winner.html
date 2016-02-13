@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "genomic-interval-notations-personal-preference-or-a-clear-winner.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Genomic interval notations: personal preference, or a clear winner?</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/genomic-interval-notations-personal-preference-or-a-clear-winner.html">2016-02-11</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/annotation.html">annotation</a> <a href="https://standage.github.io/tag/gff3.html">gff3</a> <a href="https://standage.github.io/tag/coordinates.html">coordinates</a> <a href="https://standage.github.io/tag/python.html">python</a> </div>
+		<div><p>Intervals are one of the most common data abstractions used in genome informatics, along with strings and graphs.
+DNA has an intricate dynamic three-dimensional structure, but for many bioinformatics problems we can get away with ignoring this level of detail and representing the molecule instead as a static linear sequence of symbols.
+Genomic features—such as genes or transposable elements—are then annotated as subsequences of the larger complete sequence, much like an interval on a discrete number line.</p>
+<p>The most popular data formats for encoding sequence annotations (<a href="http://www.sequenceontology.org/gff3.shtml">GFF3</a>, <a href="https://genome.ucsc.edu/FAQ/FAQformat.html#format1">BED</a>, <a href="http://mblab.wustl.edu/GTF22.html">GTF</a>) all use a very similar convention.
+The location of a feature is designated by three values: some kind of <em>label</em> or <em>identifier</em> specifying the precise molecule on which the feature resides (such as <em>Chr1</em> or <em>Scaff17468</em>), and two integers representing the start and end of the genomic interval.
+These values are stored in tab-delimited plain text, along with various other values and metadata.</p>
+<p>There are, however, some substantial differences between "the big three" formats.
+BED and GTF were designed for very specific use cases (visualization and gene prediction, respectively), whereas GFF3 was designed as a generalized solution for genome annotation.
+BED allows for a single level of feature decomposition (a feature can be broken up into blocks), while GTF supports two levels (exons can be grouped by <code>transcript_id</code>, and transcripts grouped by <code>gene_id</code>), and GFF3 supports an arbitrary number of levels (parent/child relationships defined by <code>ID</code> and <code>Parent</code> attributes specify a directed acyclic graph of features).</p>
+<p>Perhaps the most important difference, though, is the <em>notation</em> these formats use to encode genomic intervals: that is, which two integers are used to specify the location of the interval?
+GFF3 and GTF both inherited, through their common heritage with older GFF variants, 1-based indexing and closed interval notation.
+BED on the other hand uses 0-based indexing and <em>half-closed</em> interval notation.
+Consider the DNA sequence below.</p>
+<div class="highlight"><pre>        1    2    3    4    5    6    7      &lt;-- GFF3 style
+        |    |    |    |    |    |    |
+        G    A    T    T    A    C    A
+        |    |    |    |    |    |    |
+        0    1    2    3    4    5    6      &lt;-- BED style
+</pre></div>
+
+
+<p>Using 1-based indexing and closed interval notation <em>a la</em> GFF3, the interval containing the subsequence <code>ATTA</code> would be represented as <code>[2, 5]</code>.
+With BED's 0-based indexing and half-closed interval notation, the same subsequence would be represented as <code>[1, 5)</code>.</p>
+<p>Confused yet?
+Don't worry: off-by-one errors with interval arithmetic are very common in bioinformatics, striking newcomers and old-timers alike.</p>
+<p>An alternative and useful way to conceptualize the BED-style notation is to shift the indices slightly so that they correspond to the spaces <em>between</em> nucleotides, rather than the nucleotides themselves.
+Then, the two integers defining an interval are the ones that bound the nucleotides in question.</p>
+<div class="highlight"><pre>        G    A    T    T    A    C    A
+     |    |    |    |    |    |    |    |
+     0    1    2    3    4    5    6    7
+</pre></div>
+
+
+<p>So, the big question is: are there any compelling reasons to choose one notation over the other?
+Or is it simply a matter of preference?</p>
+<p>Until very recently, I have been of the opinion that it's primarily a matter of preference.
+More generally, I have long favored the GFF3 format over any of the alternatives.
+Leveraging the <a href="http://www.sequenceontology.org">Sequence Ontology</a> and supporting parent/child relationships provides a more flexible, comprehensive, and consistent solution for genome annotation than any of GFF3's tab-delimited relatives.
+And counting nucleotides starting from 1 has never felt unnatural, at least from the perspective of a biologist.</p>
+<p>But I'm now convinced that 0-based half-closed interval notation is indisputably superior to 1-based closed interval notation.
+Consider the following.</p>
+<ul>
+<li>One of the most widely cited benefits is that interval length calculations are much simpler: <code>end - start</code> rather than <code>end - start + 1</code>.
+  Interval overlap calculations enjoy the same benefit: <code>min(a.end, b.end) - max(a.start, b.start)</code> instead of <code>min(a.end, b.end) - max(a.start, b.start) + 1</code>.
+  Although the majority of bioinformatics software likely has very little to gain <em>performance wise</em> by simplifying calculations at this level, there is a lot to be gained by making <em>code</em> cleaner, simpler, and easier to read.
+  It's important to optimize code for human comprehension whenever possible, and removing superfluous <code>+1</code>s and <code>-1</code>s can go a long way in this regard.</li>
+<li>When taking the reverse complement of a sequence, the interval <code>[start, end)</code> becomes <code>[length - end, length - start)</code>, rather than <code>[length - end + 1, length - start + 1)</code>.
+  And honestly, the list of cases where proper notation makes these pesky <code>+1</code>s and <code>-1</code>s disappear keeps going and going, so I'll just leave it at that.</li>
+<li>Another compelling argument is that most programming languages utilize 0-based indexing, so using a 1-based notation for annotations requires care on the part of the programmer to make the ajustments themself when, for example, accessing a DNA subsequence stored as a string.
+  The 0-based half-open notation leads to very clean C-style loops (<code>for(int i = start; i &lt; end; ++)</code>), and ranges and slices in Python use the same notation.
+  Finally, renowned computer scientist Edsger Dijkstra expounded a <a href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html">simple yet elegant defense</a> of this interval notation, citing empirical evidence that its use leads to fewer programming errors than any alternative notation.</li>
+<li>When splitting a sequence into, for example, 100kb chunks, the 0-based half-closed notation gives much cleaner-looking boundaries: <code>[100000, 200000), [200000, 300000)</code> instead of <code>[100001, 200000], [200001, 300000]</code> or <code>[100000, 199999], [200000, 299999]</code>.</li>
+</ul>
+<p>As persuasive as this list is, one still might claim that all of these points (perhaps with the exception of Dijkstra's data-supported claims) still fall within the realm of opinion.
+But where the 1-based closed interval indexing really falls apart is in the encoding of <strong>zero-length features</strong>.
+GFF3 simply has no unambiguous notation for specifying that, for example, an insertion site resides between the 50th and 51st nucleotide of a sequence.
+To be clear, the GFF3 specification explicitly addresses this case.</p>
+<blockquote>
+<p>For zero-length features, such as insertion sites, start equals end and the implied site is to the right of the indicated base in the direction of the landmark.</p>
+</blockquote>
+<p>But how is one to distinguish zero-length features from one-length features, which must also be encoded as <code>start = end</code>?
+There is no way to distinguish between these two cases without looking for additional contextual hints, which (as experience shows) come in about as many flavors as there are bioinformaticians.</p>
+<p>So although I still prefer GFF3 to the competitors, I now acknowledge its use of 1-based closed intervals as its biggest weakness.</p>
+<p>Would it be possible to change GFF3?</p>
+<p>I'm afraid that interval notation is too central a feature to change with an incremental update, and would likely require a new major release of the specification.
+With lots of legacy code (and modern code!) depending on GFF3, I'm not sure the world is quite ready for GFF4.</p>
+<hr />
+<p>Hat tip to <a href="https://github.com/ga4gh/schemas/pull/49#issuecomment-44520397">this thread</a> for the insightful discussion and link to the Dijkstra transcript, and to <a href="https://www.biostars.org/p/176583/#176590">this post</a> for suggesting that zero-based indices point <em>between</em> nucleotides.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
