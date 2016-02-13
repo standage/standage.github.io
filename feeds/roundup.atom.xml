@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-05T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-05.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:reading-roundup-2016-02-05.html</id><summary type="html">&lt;h2&gt;&lt;a href="https://twitter.com/climagic/status/694660103627259905"&gt;This tip for issuing an alarm when a site comes back up.&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-12T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-12.html" rel="alternate"></link><updated>2016-02-12T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-12:reading-roundup-2016-02-12.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3442.html"&gt;This new paper on Sequence Bloom Trees for tractable search of huge RNA-Seq data sets&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We use SBTs to search 2,652 human blood, breast and brain RNA-seq experiments for all 214,293 known transcripts in under 4 days using less than 239 MB of RAM and a single CPU.
+Searching sequence archives at this scale and in this time frame is currently not possible using existing tools.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://github.com/p-e-w/maybe"&gt;This nifty Python package for vetting shell scripts before running them&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;maybe&lt;/strong&gt; allows you to run a command and see what it does to your files without actually doing it!
+After reviewing the operations listed, you can then decide whether you really want these things to happen or not.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002333"&gt;This meta-analysis reporting the dismal state of reproducibility in biomedical literature&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Emphasis mine.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In this survey, we assessed the current status of reproducibility and transparency addressing these indicators in a random sample of 441 biomedical journal articles published in 2000–2014.
+Only one study provided a full protocol &lt;strong&gt;and none made all raw data directly available&lt;/strong&gt;.
+Replication studies were rare (n = 4), and only 16 studies had their data included in a subsequent systematic review or meta-analysis.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://arxiv.org/abs/1602.03031"&gt;This preprint suggesting the use of sequence alignment as the basis for a cryptocurrency&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;However, since HTS read mapping requires substantial computational resources and fast analysis turnout is desired, Coinami uses the HTS read mapping as proof-of-work to generate valid blocks to main its own cryptocurrency system, which may help motivate volunteers to dedicate more resources.
+The Coinami protocol includes mechanisms to ensure that jobs performed by volunteers are correct, and provides genomic data privacy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://mikethemadbiologist.com/2016/02/08/what-does-reproducibility-mean/"&gt;This blog post bemoaning the lack of nuance in the discussion of reproducibility&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What bothers me about the reproducibility discussion is that, for the most part, we’re not discussing what reproducibility would and should mean, but rather it’s more along the lines of ALL TEH SCIENTISMZ ARE BROKEN!
+Which makes for great pundity thinky-pieces, but doesn’t really help us do science within the real-world constraints that scientists experience.&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="rnaseq"></category><category term="reproducibility"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-05.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:reading-roundup-2016-02-05.html</id><summary type="html">&lt;h2&gt;&lt;a href="https://twitter.com/climagic/status/694660103627259905"&gt;This tip for issuing an alarm when a site comes back up.&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I don't have a &lt;code&gt;.wav/.mp3&lt;/code&gt; file handy, but a terminal bell (&lt;code&gt;\a&lt;/code&gt;) works just as well.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
