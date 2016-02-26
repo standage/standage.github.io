@@ -103,7 +103,7 @@ See <a href="http://www.terminally-incoherent.com/blog/2009/04/10/the-only-corre
 <p>So in some <a href="https://matt.sh/howto-c">recent reading</a> I came across a tool called <code>clang-format</code> that will automatically format C code based on your preferred style.
 All of my C code formatting has previously been self-enforced, but after using <code>pep8</code> and <code>autopep8</code> on my Python code for a few years now I thought it was time to let an automated tool do the work for me.
 Here's my config file (<code>.clang-format</code>).</p>
-<div class="highlight"><pre><span class="n">BasedOnStyle</span><span class="o">:</span> <span class="n">llvm</span>
+<div class="highlight"><pre><span></span><span class="n">BasedOnStyle</span><span class="o">:</span> <span class="n">llvm</span>
 <span class="n">IndentWidth</span><span class="o">:</span> <span class="mi">4</span>
 <span class="n">AllowShortFunctionsOnASingleLine</span><span class="o">:</span> <span class="n">None</span>
 <span class="n">KeepEmptyLinesAtTheStartOfBlocks</span><span class="o">:</span> <span class="kc">false</span>
@@ -112,7 +112,7 @@ Here's my config file (<code>.clang-format</code>).</p>
 
 
 <p>And here's the command I use to reformat a file.</p>
-<div class="highlight"><pre>clang-format -i -style=file src/locuspocus.c
+<div class="highlight"><pre><span></span>clang-format -i -style=file src/locuspocus.c
 </pre></div>
 
 

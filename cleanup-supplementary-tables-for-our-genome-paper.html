@@ -171,7 +171,7 @@ I'll go ahead and do so here.</p>
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="c1"># Define an alias for mlr command settings</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># Define an alias for mlr command settings</span>
 <span class="c1">#  --csv: comma-separated values</span>
 <span class="c1">#  --fs tab: lol j/k they&#39;re separated by tabs (fs=field separator)</span>
 <span class="c1">#  --rs lf: use line feed as record separator (instead of default carriage return + line feed)</span>
@@ -212,7 +212,7 @@ I'll go ahead and do so here.</p>
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+<div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv
@@ -266,7 +266,7 @@ Length_mean	Length_p50	Length_min	Length_max
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+<div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv <span class="se">\</span>
@@ -314,7 +314,7 @@ Length_mean	Length_p50	Length_min	Length_max
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
 <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
@@ -368,7 +368,7 @@ Rather than retyping the command two more times, let's just wrap the command in 
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="k">for</span> field in Length ExonCount GCContent
+<div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> field in Length ExonCount GCContent
 <span class="k">do</span>
     <span class="nb">echo</span>
     <span class="nb">echo</span> <span class="nv">$f</span>ield
@@ -466,7 +466,7 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv
+<div class=" highlight hl-bash"><pre><span></span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv
 </pre></div>
 
 </div>
@@ -504,7 +504,7 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 1<span class="k">)</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 1<span class="k">)</span>
 <span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 2<span class="k">)</span>
 
 <span class="nb">echo</span> <span class="s2">&quot; 5% quantile: </span>$<span class="s2">p5&quot;</span>
@@ -547,7 +547,7 @@ We have to be careful to escape field names and shell variables, since both begi
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+<div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     mlrcmd filter <span class="se">\</span>
            <span class="s2">&quot;\$Length &gt;= </span>$<span class="s2">p5 &amp;&amp; \$Length &lt;= </span>$<span class="s2">p95 &amp;&amp; \$NContent &lt; 0.25&quot;</span> <span class="se">\</span>
@@ -603,7 +603,7 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
 <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
@@ -656,7 +656,7 @@ Nvit	0.46	0.45	0.15	0.79
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span class="k">for</span> featuretype in exons introns
+<div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> featuretype in exons introns
 <span class="k">do</span>
     <span class="nb">echo</span>
     <span class="nb">echo</span>

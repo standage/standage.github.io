@@ -158,7 +158,7 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span>
 <span class="kn">import</span> <span class="nn">seaborn</span>
@@ -176,7 +176,7 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">len_consec_iiloci</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">len_consec_iiloci</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute combined lengths for each set of n consecutive iiLoci.</span>
 
@@ -208,7 +208,7 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;ilens.tsv&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;ilens.tsv&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -221,7 +221,7 @@ tags: <a href="https://standage.github.io/tag/meta.html">meta</a> <a href="https
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">pdom</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Pdom&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">pdom</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Pdom&#39;</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">agglens</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">n_adj_iiloci</span><span class="p">(</span><span class="n">pdom</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">agglens</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -1355,7 +1355,7 @@ RU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">amel</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Amel&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">amel</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Amel&#39;</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">agglens</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">n_adj_iiloci</span><span class="p">(</span><span class="n">amel</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">agglens</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -2431,7 +2431,7 @@ kgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AMHiXlPb/U5QAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">ador</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Ador&#39;</span><span class="p">)]</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">ador</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">Species</span> <span class="o">==</span> <span class="s1">&#39;Ador&#39;</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
     <span class="n">agglens</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">n_adj_iiloci</span><span class="p">(</span><span class="n">ador</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="p">)]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">agglens</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
@@ -3555,7 +3555,7 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
+<div class=" highlight hl-ipython2"><pre><span></span> 
 </pre></div>
 
 </div>

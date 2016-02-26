@@ -121,20 +121,20 @@ Monday afternoon, after working on the manuscript, they discussed what  needed t
 <p>On Tuesday morning, Alice comes in to the office to work on the project.
 She decides to get to work right away fixing the bug they discussed the previous day.
 She logs in to her laptop, fires up a terminal, changes to the directory containing her local clone of the repository, and checks her status...</p>
-<div class="highlight"><pre>cd /home/alice/proj/
+<div class="highlight"><pre><span></span>cd /home/alice/proj/
 git status
 </pre></div>
 
 
 <p>...to which her terminal responds as follows.</p>
-<div class="highlight"><pre>On branch master
+<div class="highlight"><pre><span></span>On branch master
 nothing to commit, working directory clean
 </pre></div>
 
 
 <p>She's on the main/default development branch <em>master</em>, and the working directory is <em>clean</em>, meaning no changes have been made to the code since the last commit.</p>
 <p>Since everything looks good, Alice creates a new branch called <code>bugfix</code>.</p>
-<div class="highlight"><pre>git branch bugfix
+<div class="highlight"><pre><span></span>git branch bugfix
 git checkout bugfix
 </pre></div>
 
@@ -142,7 +142,7 @@ git checkout bugfix
 <p>She then opens up the R script and takes about 30 minutes to fix the code and test her solution.
 Once she's confident it is correct, she commits a new snapshot to her local repository.
 She references the corresponding GitHub thread in her commit message, using syntax that will automatically close the thread in the issue tracker once the commit is merged into the <code>master</code> branch of <code>BrendelGroup/proj</code>.</p>
-<div class="highlight"><pre>git add analysis.R
+<div class="highlight"><pre><span></span>git add analysis.R
 git commit -m &#39;Fixed estimation bug. Closes #14.&#39;
 </pre></div>
 
@@ -150,7 +150,7 @@ git commit -m &#39;Fixed estimation bug. Closes #14.&#39;
 <h2>Pull request</h2>
 <p>At this point, the git repository on Alice's laptop has the bugfix, but the changes haven't been pushed anywhere else: her fork on GitHub (<code>alice/proj</code>), the original "upstream" repository on GitHub (<code>BrendelGroup/proj</code>), or Bob's fork (<code>bob/proj</code>).
 Referring back to the creative triangle described in <a href="https://github.com/BrendelGroup/bghandbook/blob/master/doc/01-Howto-github.md">the GitHub howto</a>, Alice proceeds by pushing her latest commit (stored on a branch called <code>bugfix</code>) to her fork on GitHub.</p>
-<div class="highlight"><pre>git push origin bugfix
+<div class="highlight"><pre><span></span>git push origin bugfix
 </pre></div>
 
 
@@ -158,14 +158,14 @@ Referring back to the creative triangle described in <a href="https://github.com
 <h2>Second branch</h2>
 <p>With the bug fix resolved, Alice now turns to the final step in their analysis procedure.
 The bug has nothing to do with this final step, so she starts by returning to the master branch.</p>
-<div class="highlight"><pre>git checkout master
+<div class="highlight"><pre><span></span>git checkout master
 </pre></div>
 
 
 <p>Her directory now looks just like it did before she started working this morning.
 This provides a clean slate for Alice to begin working on the analysis procedure.
 She proceeds by creating a new branch in her local repo.</p>
-<div class="highlight"><pre>git branch laststep
+<div class="highlight"><pre><span></span>git branch laststep
 git checkout laststep
 </pre></div>
 
@@ -175,7 +175,7 @@ Next, once she is confident the tests are correct, she opens up the R script aga
 With test data already in place, it is very easy for Alice to confirm when the procedure is working correctly.</p>
 <p>Finally, after all her tests pass, Alice commits a new snapshot in her local repository.
 Again, she references the corresponding thread on the GitHub issue tracker.</p>
-<div class="highlight"><pre>git add analysis.R testdatafiles/
+<div class="highlight"><pre><span></span>git add analysis.R testdatafiles/
 git commit -m &#39;Implemented final analysis step. Closes #15.&#39;
 </pre></div>
 
@@ -184,7 +184,7 @@ git commit -m &#39;Implemented final analysis step. Closes #15.&#39;
 <p>Just as before, Alice's new feature is present only on her laptop.
 She needs to push out to her fork and open a pull request to get these changes integrated into the main repository.</p>
 <p>First she pushes to her fork...</p>
-<div class="highlight"><pre>git push origin laststep
+<div class="highlight"><pre><span></span>git push origin laststep
 </pre></div>
 
 
@@ -201,13 +201,13 @@ He reviews the changes to the code on her <code>laststep</code> branch, understa
 Since everything looks good, Bob accepts the pull request.
 GitHub automatically closes issue <code>#15</code> at this point, since Alice's commit message included the text <code>Closes #15</code>.
 Bob opens up his terminal, goes to his local clone of the repository, and pulls the latest changes from <code>BrendelGroup/proj</code>.</p>
-<div class="highlight"><pre>cd /home/bob/proj
+<div class="highlight"><pre><span></span>cd /home/bob/proj
 git pull upstream master
 </pre></div>
 
 
 <p>He then pushes those changes out to his fork to keep everything in sync.</p>
-<div class="highlight"><pre>git push origin master
+<div class="highlight"><pre><span></span>git push origin master
 </pre></div>
 
 
@@ -215,20 +215,20 @@ git pull upstream master
 <p>After his morning data slogging session, Bob has a much better grasp on how to fix the bug in their R code.
 He has a few minutes before he has to teach a class, so he takes a stab at implementing the bug fix.
 Bob starts by creating a new branch in his local repo.</p>
-<div class="highlight"><pre>git branch newbugfix
+<div class="highlight"><pre><span></span>git branch newbugfix
 git checkout newbugfix
 </pre></div>
 
 
 <p>He then edits the R code and tests that it works on a variety of inputs.
 Once he's confident the bug fix handles the input data correctly, he makes a new commit.</p>
-<div class="highlight"><pre>git add analysis.R
+<div class="highlight"><pre><span></span>git add analysis.R
 git commit -m &#39;Alternative approach to fixing the estimation bug. See my comments in #14. Closes #14.&#39;
 </pre></div>
 
 
 <p>Bob then pushes this new branch to his fork on GitHub...</p>
-<div class="highlight"><pre>git push origin newbugfix
+<div class="highlight"><pre><span></span>git push origin newbugfix
 </pre></div>
 
 
@@ -239,7 +239,7 @@ He then rushes out the door to go to his class.</p>
 She's happy to see that Bob has accepted her second pull request, but sees that the other is still open.
 She reads Bob's comments on <code>#14</code> and after a few minutes of thinking things over herself she understands and agrees with his assessment.
 She closes her unmerged pull request and deletes the <code>bugfix</code> branch from her fork on GitHub.</p>
-<div class="highlight"><pre>git push origin :bugfix
+<div class="highlight"><pre><span></span>git push origin :bugfix
 </pre></div>
 
 
@@ -247,19 +247,19 @@ She closes her unmerged pull request and deletes the <code>bugfix</code> branch 
 GitHub automatically closes issue <code>#14</code> at this point, since Bob's commit message included the text <code>Closes #14</code>.</p>
 <p>Now Alice needs to syncronize her laptop with the new changes.
 First, she switches back to the main <code>master</code> branch.</p>
-<div class="highlight"><pre>git checkout master
+<div class="highlight"><pre><span></span>git checkout master
 </pre></div>
 
 
 <p>At this point, her directory looks just like it did before she started work this morning.
 The changes she made before lunch are stored in dedicated branches, and she has not touched the main <code>master</code> branch on her laptop.
 To update her local <code>master</code> branch, she pulls from <code>BrendelGroup/proj</code>...</p>
-<div class="highlight"><pre>git pull upstream master
+<div class="highlight"><pre><span></span>git pull upstream master
 </pre></div>
 
 
 <p>...and then pushes those updates out to her fork.</p>
-<div class="highlight"><pre>git push origin master
+<div class="highlight"><pre><span></span>git push origin master
 </pre></div>
 
 
@@ -268,17 +268,17 @@ To update her local <code>master</code> branch, she pulls from <code>BrendelGrou
 She has also deleted the <code>bugfix</code> branch on her fork, but the <code>bugfix</code> branch is still present on her laptop, and the <code>laststep</code> branch is still present both on her fork and her laptop.
 She wants to delete all of these branches now, since <code>laststep</code> has been merged and <code>bugfix</code> is a dead end.</p>
 <p>Alice can list the branches in her local clone, highlighting the active branch, with the command...</p>
-<div class="highlight"><pre>git branch
+<div class="highlight"><pre><span></span>git branch
 </pre></div>
 
 
 <p>...and she can list the branches in her GitHub fork (along with some other information) using the following command.</p>
-<div class="highlight"><pre>git remote show origin
+<div class="highlight"><pre><span></span>git remote show origin
 </pre></div>
 
 
 <p>Alice then uses the following commands to delete the remaining extraneous branches.</p>
-<div class="highlight"><pre>git push origin :laststep # Delete `laststep` on `alice/proj`
+<div class="highlight"><pre><span></span>git push origin :laststep # Delete `laststep` on `alice/proj`
 git branch -d laststep    # Delete `laststep` branch on laptop
 git branch -D bugfix      # Force deletion of the unmerged `bugfix` branch on laptop
 </pre></div>

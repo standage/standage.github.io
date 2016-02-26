@@ -1,5 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-19T00:00:00-05:00</updated><entry><title>Searching for TSA master records at NCBI</title><link href="https://standage.github.io/searching-for-tsa-master-records-at-ncbi.html" rel="alternate"></link><updated>2016-02-19T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-19:searching-for-tsa-master-records-at-ncbi.html</id><summary type="html">&lt;p&gt;The &lt;a href="http://www.ncbi.nlm.nih.gov/genbank/tsa"&gt;NCBI Transcript Shotgun Assembly database&lt;/a&gt; is the go-to place for submitting transcript assemblies for long-term archival and public access.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-26T10:30:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-26.html" rel="alternate"></link><updated>2016-02-26T10:30:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-26:reading-roundup-2016-02-26.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://genome.fieldofscience.com/2016/01/nejm-editorial-calls-data-scientists.html"&gt;This commentary I missed previously on the "research parasites" fiasco&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Disproving a claim using the same data is what reproducibility is all about, and this is one of the most important reasons that data needs to be shared.
+After all, if someone has distorted their data in order to reach a conclusion that isn't really justified, we need someone else–someone not invested in proving the same result–to re-analyze the data using independent methods.
+This is how science corrects itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://opencontent.org/blog/archives/4443"&gt;This post on open educational resources (OER)&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Anderson goes on to critique OER:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“A big issue for the open source movement has been its sustainability.
+And that’s one of the reasons you’re seeing a lot of legislation about it because they are looking basically to the taxpayer,” he said.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I hope to hear more of this criticism of OER from publishers and AAP in the future. Why?
+The US PIRG’s recent report &lt;a href="http://www.uspirg.org/reports/usp/covering-cost"&gt;Covering the Cost&lt;/a&gt; estimates that each year approximately $3B – that’s $3,000,000,000US – of financial aid dollars are spent by undergraduates on textbooks and other proprietary educational materials.
+In other words, under the existing commercial textbook model students are simply valves through which taxpayer dollars flow to publishers.
+I would love the opportunity to get this number in front of more people.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://pyformat.info/"&gt;This HowTo on Python string formatting&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python has had awesome string formatters for many years but the documentation on them is far too theoretic and technical.
+With this site we try to show you the most common use-cases covered by the old and new style string formatting API with practical examples.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://simplystatistics.org/2016/02/16/when-it-comes-to-science-its-the-economy-stupid/"&gt;This post suggesting we fund science by lottery&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’m very confident in a peer review to detect the difference between psuedo-science and real science, or complete hype and realistic improvement.
+But I’m much less confident in the ability of peer review to accurately distinguish “important” from “not important” research.
+So I think we should consider seriously the lottery for these grants.&lt;/p&gt;
+&lt;p&gt;Each year all eligible scientists who meet some minimum entry requirements submit proposals for what they’d like to do scientifically.
+Each year those proposals are reviewed to make sure they meet the very minimum bar (are they scientific? do they have relevant training at all?).
+Among all the (very large) class of people who pass that bar we hold a lottery.
+We take the number of research dollars and divide it up to give the maximum number of these grants possible.
+These grants might be pretty small - just enough to fund the person’s salary and maybe one or two students/postdocs.
+To make this works for labs that required equipment there would have to be cooperative arrangements between multiple independent indviduals to fund/sustain equipment they needed.
+Renewal of these grants would happen as long as you were posting your code/data online, you were meeting peer review requirements, and responding to inquires about your work.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;These posts on Sci-Hub and open access to research&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.comicsgrid.com/2016/02/sci-hub-not-open-access/"&gt;This post&lt;/a&gt; claiming that Sci-Hub has brought much-needed attention to an important issue, but that it is not a long-term solution.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://engineuring.wordpress.com/2016/02/24/why-sci-hub-is-the-true-solution-for-open-access-reply-to-criticism/"&gt;This response&lt;/a&gt; to the original post, from the Sci-Hub founder, which comes across as pretty reactionary and defensive.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bjoern.brembs.net/2016/02/sci-hub-as-necessary-effective-civil-disobedience/"&gt;This post&lt;/a&gt; which doesn't (ostensibly) take any sides on the debate, but describes Sci-Hub as necessary civil disobedience and (in my opinion) highlights the good from both previous arguments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;These threads on compiling GCC with OpenMP support on OS X.&lt;/h2&gt;
+&lt;p&gt;I was having trouble installing CD-HIT this week with Homebrew.
+These two StackOverflow threads (&lt;a href="http://stackoverflow.com/a/29109926/459780"&gt;here&lt;/a&gt; and &lt;a href="http://stackoverflow.com/a/23490170/459780"&gt;here&lt;/a&gt;) led me to the solution.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew reinstall gcc --without-multilib
+brew install --build-from-source cd-hit
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="reproducibility"></category><category term="open"></category><category term="python"></category><category term="funding"></category><category term="homebrew"></category></entry><entry><title>Citing "manuscripts in progress" on your CV</title><link href="https://standage.github.io/citing-manuscripts-in-progress-on-your-cv.html" rel="alternate"></link><updated>2016-02-26T10:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-26:citing-manuscripts-in-progress-on-your-cv.html</id><summary type="html">&lt;p&gt;A couple of weeks ago, I saw a couple of Twitter threads explode on the topic of citing "manuscripts in progress" on one's CV.&lt;/p&gt;
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;OK I just saw an application that listed a prestigious journal name for a paper that is IN PREPARATION. Not even submitted. &lt;a href="https://twitter.com/hashtag/stopthemadness?src=hash"&gt;#stopthemadness&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michael Hoffman (@michaelhoffman) &lt;a href="https://twitter.com/michaelhoffman/status/696758391239221248"&gt;February 8, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Postdoc applicants - seriously, don&amp;#39;t do this: &lt;a href="https://t.co/o0d3x5rSTT"&gt;https://t.co/o0d3x5rSTT&lt;/a&gt;&lt;/p&gt;&amp;mdash; Daniel MacArthur (@dgmacarthur) &lt;a href="https://twitter.com/dgmacarthur/status/696892638721474560"&gt;February 9, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;p&gt;I include a retweet along with the original tweet, since the discussion on both threads is informative.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;There seems to be a pretty wide consensus among academics (at least those on Twitter) that listing publications &lt;em&gt;in progress&lt;/em&gt; with a journal name is pretty pretentious and is likely to do more harm than good.
+Of course all of this depends on context.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;An undergrad applying for a Master's or Ph.D. program would be treated differently than a Ph.D. student applying for a postdoc, or a postdoc applying for a faculty position.&lt;/li&gt;
+&lt;li&gt;If the CV has several solid publications and only one or two listed as &lt;em&gt;in progress&lt;/em&gt;, it would be treated differently than a CV with 1 (or 0) actual publications and several &lt;em&gt;in progress&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So should you list &lt;em&gt;in progress&lt;/em&gt; manuscripts/projects on your CV?
+Despite all the pitchfork brandishing that accompanied these Twitter threads, I'm actually of the opinion that this is an honest and acceptable way to present your scholarship, with a few caveats.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Don't list the journal name!&lt;/strong&gt;
+  I completely agree that listing a specific journal along with an &lt;em&gt;in prep&lt;/em&gt; paper is ridiculous and pretentious.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clearly list the manuscript as &lt;em&gt;in preparation&lt;/em&gt;!&lt;/strong&gt;
+  Not everyone looks kindly on listing &lt;em&gt;in prep&lt;/em&gt; manuscripts on your CV, and you don't want anyone to think you are being dishonest about your scholarship.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Only list papers that are soon to be submitted!&lt;/strong&gt;
+  If your paper is a long way from submission, listing it as &lt;em&gt;in prep&lt;/em&gt; is little more than wishful thinking.
+  This isn't really being honest with yourself or with others, and it would be ridiculous to have to &lt;em&gt;remove&lt;/em&gt; an item from your CV later on because life intervened and you were never able to complete a project.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Consider your academic status!&lt;/strong&gt;
+  As you advance in your career, the need to list &lt;em&gt;in prep&lt;/em&gt; manuscripts on your CV should rapidly dissolve.
+  People will be understanding if you're applying for grad school, but you have to be much more careful when finishing grad school and applying for postdocs.
+  By the time you're applying for faculty positions your publication record should &lt;em&gt;really&lt;/em&gt; be strong enough to stand on its own without padding from &lt;em&gt;in prep&lt;/em&gt; manuscripts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My suggestion is that early career scientists may want to replace the &lt;strong&gt;Publications&lt;/strong&gt; section of their CV with a more general &lt;strong&gt;Scholarship&lt;/strong&gt; section, with subsections for &lt;strong&gt;Publications&lt;/strong&gt;, &lt;strong&gt;Posters&lt;/strong&gt;, and &lt;strong&gt;Oral Presentations&lt;/strong&gt;.
+The &lt;strong&gt;Publications&lt;/strong&gt; subsection would be strictly for actual published papers and accepted in-press papers (and &lt;em&gt;maybe&lt;/em&gt; submitted papers, with discretion).
+For substantial projects that have not yet been published, hopefully you've had a chance to present that work to your academic colleagues at a research conference.
+In that case, list poster and oral presentations, along with the conference name and details, in the relevant subsection(s).
+The end of one of these entries, in my opinion, would be the place to list an unfinished paper as &lt;em&gt;in preparation&lt;/em&gt;, subject to the same caveats listed above.&lt;/p&gt;
+&lt;p&gt;What to you think?&lt;/p&gt;</summary><category term="science"></category><category term="publication"></category></entry><entry><title>Searching for TSA master records at NCBI</title><link href="https://standage.github.io/searching-for-tsa-master-records-at-ncbi.html" rel="alternate"></link><updated>2016-02-19T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-19:searching-for-tsa-master-records-at-ncbi.html</id><summary type="html">&lt;p&gt;The &lt;a href="http://www.ncbi.nlm.nih.gov/genbank/tsa"&gt;NCBI Transcript Shotgun Assembly database&lt;/a&gt; is the go-to place for submitting transcript assemblies for long-term archival and public access.
 However, &lt;code&gt;TSA&lt;/code&gt; is not one of the database options provided when doing keyword searches at NCBI.
 TSA sequences are available through the &lt;code&gt;nuccore&lt;/code&gt; nucleotide database, along with all other DNA and RNA sequences.&lt;/p&gt;
 &lt;p&gt;If you want to search NCBI exclusively for TSA records, include &lt;code&gt;tsa-master[prop]&lt;/code&gt; in your query.
@@ -44,7 +128,7 @@ BED allows for a single level of feature decomposition (a feature can be broken 
 GFF3 and GTF both inherited, through their common heritage with older GFF variants, 1-based indexing and closed interval notation.
 BED on the other hand uses 0-based indexing and &lt;em&gt;half-closed&lt;/em&gt; interval notation.
 Consider the DNA sequence below.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;        1    2    3    4    5    6    7      &amp;lt;-- GFF3 style
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        1    2    3    4    5    6    7      &amp;lt;-- GFF3 style
         |    |    |    |    |    |    |
         G    A    T    T    A    C    A
         |    |    |    |    |    |    |
@@ -58,7 +142,7 @@ With BED's 0-based indexing and half-closed interval notation, the same subseque
 Don't worry: off-by-one errors with interval arithmetic are very common in bioinformatics, striking newcomers and old-timers alike.&lt;/p&gt;
 &lt;p&gt;An alternative and useful way to conceptualize the BED-style notation is to shift the indices slightly so that they correspond to the spaces &lt;em&gt;between&lt;/em&gt; nucleotides, rather than the nucleotides themselves.
 Then, the two integers defining an interval are the ones that bound the nucleotides in question.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;        G    A    T    T    A    C    A
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        G    A    T    T    A    C    A
      |    |    |    |    |    |    |    |
      0    1    2    3    4    5    6    7
 &lt;/pre&gt;&lt;/div&gt;
@@ -148,20 +232,20 @@ Monday afternoon, after working on the manuscript, they discussed what  needed t
 &lt;p&gt;On Tuesday morning, Alice comes in to the office to work on the project.
 She decides to get to work right away fixing the bug they discussed the previous day.
 She logs in to her laptop, fires up a terminal, changes to the directory containing her local clone of the repository, and checks her status...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;cd /home/alice/proj/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /home/alice/proj/
 git status
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;...to which her terminal responds as follows.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;On branch master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;On branch master
 nothing to commit, working directory clean
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;She's on the main/default development branch &lt;em&gt;master&lt;/em&gt;, and the working directory is &lt;em&gt;clean&lt;/em&gt;, meaning no changes have been made to the code since the last commit.&lt;/p&gt;
 &lt;p&gt;Since everything looks good, Alice creates a new branch called &lt;code&gt;bugfix&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git branch bugfix
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch bugfix
 git checkout bugfix
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -169,7 +253,7 @@ git checkout bugfix
 &lt;p&gt;She then opens up the R script and takes about 30 minutes to fix the code and test her solution.
 Once she's confident it is correct, she commits a new snapshot to her local repository.
 She references the corresponding GitHub thread in her commit message, using syntax that will automatically close the thread in the issue tracker once the commit is merged into the &lt;code&gt;master&lt;/code&gt; branch of &lt;code&gt;BrendelGroup/proj&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git add analysis.R
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add analysis.R
 git commit -m &amp;#39;Fixed estimation bug. Closes #14.&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -177,7 +261,7 @@ git commit -m &amp;#39;Fixed estimation bug. Closes #14.&amp;#39;
 &lt;h2&gt;Pull request&lt;/h2&gt;
 &lt;p&gt;At this point, the git repository on Alice's laptop has the bugfix, but the changes haven't been pushed anywhere else: her fork on GitHub (&lt;code&gt;alice/proj&lt;/code&gt;), the original "upstream" repository on GitHub (&lt;code&gt;BrendelGroup/proj&lt;/code&gt;), or Bob's fork (&lt;code&gt;bob/proj&lt;/code&gt;).
 Referring back to the creative triangle described in &lt;a href="https://github.com/BrendelGroup/bghandbook/blob/master/doc/01-Howto-github.md"&gt;the GitHub howto&lt;/a&gt;, Alice proceeds by pushing her latest commit (stored on a branch called &lt;code&gt;bugfix&lt;/code&gt;) to her fork on GitHub.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin bugfix
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin bugfix
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -185,14 +269,14 @@ Referring back to the creative triangle described in &lt;a href="https://github.
 &lt;h2&gt;Second branch&lt;/h2&gt;
 &lt;p&gt;With the bug fix resolved, Alice now turns to the final step in their analysis procedure.
 The bug has nothing to do with this final step, so she starts by returning to the master branch.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git checkout master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout master
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Her directory now looks just like it did before she started working this morning.
 This provides a clean slate for Alice to begin working on the analysis procedure.
 She proceeds by creating a new branch in her local repo.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git branch laststep
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch laststep
 git checkout laststep
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -202,7 +286,7 @@ Next, once she is confident the tests are correct, she opens up the R script aga
 With test data already in place, it is very easy for Alice to confirm when the procedure is working correctly.&lt;/p&gt;
 &lt;p&gt;Finally, after all her tests pass, Alice commits a new snapshot in her local repository.
 Again, she references the corresponding thread on the GitHub issue tracker.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git add analysis.R testdatafiles/
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add analysis.R testdatafiles/
 git commit -m &amp;#39;Implemented final analysis step. Closes #15.&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -211,7 +295,7 @@ git commit -m &amp;#39;Implemented final analysis step. Closes #15.&amp;#39;
 &lt;p&gt;Just as before, Alice's new feature is present only on her laptop.
 She needs to push out to her fork and open a pull request to get these changes integrated into the main repository.&lt;/p&gt;
 &lt;p&gt;First she pushes to her fork...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin laststep
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin laststep
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -228,13 +312,13 @@ He reviews the changes to the code on her &lt;code&gt;laststep&lt;/code&gt; bran
 Since everything looks good, Bob accepts the pull request.
 GitHub automatically closes issue &lt;code&gt;#15&lt;/code&gt; at this point, since Alice's commit message included the text &lt;code&gt;Closes #15&lt;/code&gt;.
 Bob opens up his terminal, goes to his local clone of the repository, and pulls the latest changes from &lt;code&gt;BrendelGroup/proj&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;cd /home/bob/proj
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /home/bob/proj
 git pull upstream master
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;He then pushes those changes out to his fork to keep everything in sync.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin master
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -242,20 +326,20 @@ git pull upstream master
 &lt;p&gt;After his morning data slogging session, Bob has a much better grasp on how to fix the bug in their R code.
 He has a few minutes before he has to teach a class, so he takes a stab at implementing the bug fix.
 Bob starts by creating a new branch in his local repo.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git branch newbugfix
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch newbugfix
 git checkout newbugfix
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;He then edits the R code and tests that it works on a variety of inputs.
 Once he's confident the bug fix handles the input data correctly, he makes a new commit.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git add analysis.R
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git add analysis.R
 git commit -m &amp;#39;Alternative approach to fixing the estimation bug. See my comments in #14. Closes #14.&amp;#39;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Bob then pushes this new branch to his fork on GitHub...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin newbugfix
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin newbugfix
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -266,7 +350,7 @@ He then rushes out the door to go to his class.&lt;/p&gt;
 She's happy to see that Bob has accepted her second pull request, but sees that the other is still open.
 She reads Bob's comments on &lt;code&gt;#14&lt;/code&gt; and after a few minutes of thinking things over herself she understands and agrees with his assessment.
 She closes her unmerged pull request and deletes the &lt;code&gt;bugfix&lt;/code&gt; branch from her fork on GitHub.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin :bugfix
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin :bugfix
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -274,19 +358,19 @@ She closes her unmerged pull request and deletes the &lt;code&gt;bugfix&lt;/code
 GitHub automatically closes issue &lt;code&gt;#14&lt;/code&gt; at this point, since Bob's commit message included the text &lt;code&gt;Closes #14&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now Alice needs to syncronize her laptop with the new changes.
 First, she switches back to the main &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git checkout master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git checkout master
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;At this point, her directory looks just like it did before she started work this morning.
 The changes she made before lunch are stored in dedicated branches, and she has not touched the main &lt;code&gt;master&lt;/code&gt; branch on her laptop.
 To update her local &lt;code&gt;master&lt;/code&gt; branch, she pulls from &lt;code&gt;BrendelGroup/proj&lt;/code&gt;...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git pull upstream master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git pull upstream master
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;...and then pushes those updates out to her fork.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin master
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin master
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -295,17 +379,17 @@ To update her local &lt;code&gt;master&lt;/code&gt; branch, she pulls from &lt;c
 She has also deleted the &lt;code&gt;bugfix&lt;/code&gt; branch on her fork, but the &lt;code&gt;bugfix&lt;/code&gt; branch is still present on her laptop, and the &lt;code&gt;laststep&lt;/code&gt; branch is still present both on her fork and her laptop.
 She wants to delete all of these branches now, since &lt;code&gt;laststep&lt;/code&gt; has been merged and &lt;code&gt;bugfix&lt;/code&gt; is a dead end.&lt;/p&gt;
 &lt;p&gt;Alice can list the branches in her local clone, highlighting the active branch, with the command...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git branch
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git branch
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;...and she can list the branches in her GitHub fork (along with some other information) using the following command.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git remote show origin
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git remote show origin
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Alice then uses the following commands to delete the remaining extraneous branches.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;git push origin :laststep # Delete `laststep` on `alice/proj`
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git push origin :laststep # Delete `laststep` on `alice/proj`
 git branch -d laststep    # Delete `laststep` branch on laptop
 git branch -D bugfix      # Force deletion of the unmerged `bugfix` branch on laptop
 &lt;/pre&gt;&lt;/div&gt;
@@ -320,7 +404,7 @@ She likely would have had to rewind two commits in her history to get rid of her
 &lt;p&gt;By using branches, Alice cleanly isolated each set of changes from the main development branch, and was able to discard one set of changes without affecting the other set of changes.
 Using branches with git and GitHub is an excellent mechanism to keep your work organized into small manageable chunks that can be developed, evaluated, and merged independently.&lt;/p&gt;</summary><category term="programming"></category><category term="git"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-05.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:reading-roundup-2016-02-05.html</id><summary type="html">&lt;h2&gt;&lt;a href="https://twitter.com/climagic/status/694660103627259905"&gt;This tip for issuing an alarm when a site comes back up.&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I don't have a &lt;code&gt;.wav/.mp3&lt;/code&gt; file handy, but a terminal bell (&lt;code&gt;\a&lt;/code&gt;) works just as well.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -473,7 +557,7 @@ I followed the &lt;code&gt;Download --&amp;gt; FTP Archive&lt;/code&gt; link on 
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;wget ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -524,7 +608,7 @@ TAIR10_GFF3_genes.g 100%[===================&amp;gt;]  42.09M  3.55MB/s    in 14
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;head TAIR10_GFF3_genes.gff
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;head TAIR10_GFF3_genes.gff
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -571,7 +655,7 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;cut -f &lt;span class="m"&gt;1&lt;/span&gt; TAIR10_GFF3_genes.gff &lt;span class="p"&gt;|&lt;/span&gt; sort -u
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cut -f &lt;span class="m"&gt;1&lt;/span&gt; TAIR10_GFF3_genes.gff &lt;span class="p"&gt;|&lt;/span&gt; sort -u
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -615,7 +699,7 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;grep -v -e &lt;span class="s1"&gt;&amp;#39;^ChrM&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;&amp;#39;^ChrC&amp;#39;&lt;/span&gt; TAIR10_GFF3_genes.gff &amp;gt; tair10.gff3
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep -v -e &lt;span class="s1"&gt;&amp;#39;^ChrM&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;&amp;#39;^ChrC&amp;#39;&lt;/span&gt; TAIR10_GFF3_genes.gff &amp;gt; tair10.gff3
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -652,7 +736,7 @@ Once you locate the &lt;code&gt;/genomes/refseq/&lt;/code&gt; directory, finding
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -703,7 +787,7 @@ GCF_000001735.3_TAI 100%[===================&amp;gt;]  12.06M  3.56MB/s    in 3.
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="p"&gt;|&lt;/span&gt; head
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="p"&gt;|&lt;/span&gt; head
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -751,7 +835,7 @@ It looks like &lt;code&gt;region&lt;/code&gt; entries with a &lt;code&gt;chromos
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;$&amp;#39;\tregion\t&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;&amp;#39;chromosome=&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -795,7 +879,7 @@ Let's check whether there are any trans-spliced genes annotated in this file.&lt
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;$&amp;#39;\tgene\t&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s1"&gt;&amp;#39;trans-splicing&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -842,7 +926,7 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; sed -e &lt;span class="s1"&gt;&amp;#39;s/NC_003070.9/Chr1/&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
           -e &lt;span class="s1"&gt;&amp;#39;s/NC_003071.7/Chr2/&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
           -e &lt;span class="s1"&gt;&amp;#39;s/NC_003074.8/Chr3/&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -890,7 +974,7 @@ Let's use the &lt;code&gt;--summary&lt;/code&gt; flag to suppress the locus-leve
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;parseval --summary tair10.gff3 ncbi.gff3 2&amp;gt; stderr.txt
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;parseval --summary tair10.gff3 ncbi.gff3 2&amp;gt; stderr.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -1091,7 +1175,7 @@ And I was just as unprepared for the socio-cultural aspects of non-academic empl
 &lt;/blockquote&gt;</summary><category term="R"></category><category term="software"></category><category term="publishing"></category><category term="career"></category></entry><entry><title>Building a decision tree chart with graphviz</title><link href="https://standage.github.io/building-a-decision-tree-chart-with-graphviz.html" rel="alternate"></link><updated>2016-01-25T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-25:building-a-decision-tree-chart-with-graphviz.html</id><summary type="html">&lt;p&gt;I'm preparing a manuscript, and I sketched out the following chart I would like to include.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://standage.github.io/images/ilocus-decision-tree.jpg" alt="Chart" style="width: 450px" /&gt;&lt;/p&gt;
 &lt;p&gt;With my rudimentary &lt;a href="http://www.graphviz.org/"&gt;graphviz&lt;/a&gt; experience, I threw together the following representation.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;digraph
 {
     ilocus [label=&amp;quot;iLocus&amp;quot;]
     gilocus [label=&amp;quot;giLocus&amp;quot;]
@@ -1125,7 +1209,7 @@ And I was just as unprepared for the socio-cultural aspects of non-academic empl
 &lt;p&gt;Saved as &lt;code&gt;take1.dot&lt;/code&gt; and rendered with the command &lt;code&gt;dot -Tpng -o take1.png take.dot&lt;/code&gt;, we get this.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Chart, take 1" src="https://standage.github.io/images/take1.png" /&gt;&lt;/p&gt;
 &lt;p&gt;It's not bad for a first pass, but let's adjust the style a bit to distinguish between iLocus designations and branching logic.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;digraph
 {
     node [color=Limegreen,fontcolor=Limegreen,shape=oval]
     ilocus [label=&amp;quot;iLocus&amp;quot;]
@@ -1161,7 +1245,7 @@ And I was just as unprepared for the socio-cultural aspects of non-academic empl
 &lt;p&gt;That gives us the following.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Chart, take 2" src="https://standage.github.io/images/take2.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Now, let's see if we can get the &lt;code&gt;giLocus&lt;/code&gt; and &lt;code&gt;piLocus&lt;/code&gt; nodes on the same level as in the sketch, using &lt;code&gt;rank=same&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;digraph
 {
     node [color=Limegreen,fontcolor=Limegreen,shape=oval]
     ilocus [label=&amp;quot;iLocus&amp;quot;]
@@ -1201,7 +1285,7 @@ And I was just as unprepared for the socio-cultural aspects of non-academic empl
 &lt;p&gt;&lt;img alt="Chart, take 3" src="https://standage.github.io/images/take3.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Getting there!
 Now, let's use the &lt;code&gt;compass_pt&lt;/code&gt; feature to specify which side of the diamonds we want the arrows to come from.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;digraph
 {
     node [color=Limegreen,fontcolor=Limegreen,shape=oval]
     ilocus [label=&amp;quot;iLocus&amp;quot;]
@@ -1243,7 +1327,7 @@ Now, let's use the &lt;code&gt;compass_pt&lt;/code&gt; feature to specify which 
 Is there any way we can force straight edges with corners, like in the sketch, rather than the curved edges?
 The &lt;code&gt;splines=ortho&lt;/code&gt; setting seems to be designed just for that.
 Let's try it out (also requires setting edge labels to &lt;code&gt;xlabel&lt;/code&gt;).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;digraph
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;digraph
 {
     graph [splines=ortho]
 
@@ -1336,7 +1420,7 @@ See &lt;a href="http://www.terminally-incoherent.com/blog/2009/04/10/the-only-co
 &lt;p&gt;So in some &lt;a href="https://matt.sh/howto-c"&gt;recent reading&lt;/a&gt; I came across a tool called &lt;code&gt;clang-format&lt;/code&gt; that will automatically format C code based on your preferred style.
 All of my C code formatting has previously been self-enforced, but after using &lt;code&gt;pep8&lt;/code&gt; and &lt;code&gt;autopep8&lt;/code&gt; on my Python code for a few years now I thought it was time to let an automated tool do the work for me.
 Here's my config file (&lt;code&gt;.clang-format&lt;/code&gt;).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;BasedOnStyle&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;llvm&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;BasedOnStyle&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;llvm&lt;/span&gt;
 &lt;span class="n"&gt;IndentWidth&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
 &lt;span class="n"&gt;AllowShortFunctionsOnASingleLine&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;None&lt;/span&gt;
 &lt;span class="n"&gt;KeepEmptyLinesAtTheStartOfBlocks&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
@@ -1345,7 +1429,7 @@ Here's my config file (&lt;code&gt;.clang-format&lt;/code&gt;).&lt;/p&gt;
 
 
 &lt;p&gt;And here's the command I use to reformat a file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;clang-format -i -style=file src/locuspocus.c
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;clang-format -i -style=file src/locuspocus.c
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1373,7 +1457,7 @@ Surely enough, a bit of Google searching uncovered &lt;a href="https://atom.io/p
 The &lt;code&gt;preferredLineLength&lt;/code&gt; attribute under &lt;code&gt;editor&lt;/code&gt; controls where the wrap guide is displayed.
 I set the default (under &lt;code&gt;*&lt;/code&gt;) to 80, and then I created another Python-specific configuration with &lt;code&gt;".source.py"&lt;/code&gt;, with &lt;code&gt;preferredLineLength&lt;/code&gt; set to 79.&lt;/p&gt;
 &lt;p&gt;Here is my Atom configuration file, stored at &lt;code&gt;~/.atom/config.cson&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;quot;*&amp;quot;:
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;*&amp;quot;:
   core:
     disabledPackages: [
       &amp;quot;spell-check&amp;quot;
@@ -1415,7 +1499,7 @@ Even the "dream" professions are not immune: Aren’t movie stars always complai
 &lt;blockquote&gt;
 &lt;p&gt;Gooey is attached to your code via a simple decorator on whichever method has your argparse declarations (usually &lt;code&gt;main&lt;/code&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;from gooey import Gooey
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;from gooey import Gooey
 
 @Gooey      &amp;lt;--- all it takes! :)
 def main():
@@ -1622,39 +1706,39 @@ In short, the shell is great for interactive computing and automating simple tas
 &lt;p&gt;You don't typically get much bioinformatics work done with a single command without arguments.
 Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you don't have these hard coded in a script, do you?!?!).
 But just for sake of completeness, it's very straightforward to execute shell commands this way in Python.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;ls
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The Python equivalent is as follows.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;There is even the simpler &lt;code&gt;call&lt;/code&gt; function...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;...but for most situations I find the &lt;code&gt;check_call&lt;/code&gt; more useful, since it will halt the Python code immediately if the subprocess returns a non-zero status.&lt;/p&gt;
 &lt;h2&gt;Command with arguments&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;ls -lhp
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls -lhp
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Commands with arguments cannot simply be dropped in to the &lt;code&gt;check_call&lt;/code&gt; command as-is.
 The following code will fail.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;There are two ways you can fix this: the convenient (and wrong and insecure) way...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;...and The Right Way.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-lhp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1662,14 +1746,14 @@ The following code will fail.&lt;/p&gt;
 This isn't the type of thing you expect to encounter much in the research setting, but it's an important consideration nonetheless, and exceptions should be made with caution.&lt;/p&gt;
 &lt;p&gt;This example is pretty silly, since you'll probably never need to call the &lt;code&gt;ls&lt;/code&gt; command from Python.
 Let's do a different example you're much more likely to encounter in bioinformatics.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;blastx -db /opt/ncbi/nr -query tsa.fasta &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;blastx -db /opt/ncbi/nr -query tsa.fasta &lt;span class="se"&gt;\&lt;/span&gt;
        -evalue 1e-4 -num_threads $numthreads &lt;span class="se"&gt;\&lt;/span&gt;
        -out tsa-vs-nr.blastx
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The Python equivalent is as follows.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;blastx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-db&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/opt/ncbi/nr&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-query&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tsa.fasta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;blastx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-db&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/opt/ncbi/nr&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-query&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tsa.fasta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
            &lt;span class="s1"&gt;&amp;#39;-evalue&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;1e-4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-num_threads&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;numthreads&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
            &lt;span class="s1"&gt;&amp;#39;-out&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;tsa-vs-nr.blastx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1679,19 +1763,19 @@ Let's do a different example you're much more likely to encounter in bioinformat
 &lt;h2&gt;Redirect stdin and stdout&lt;/h2&gt;
 &lt;p&gt;Many programs and commands allow you to specify input and output files as arguments, as in the &lt;code&gt;blastx&lt;/code&gt; command above.
 However, sometimes your only options are &lt;code&gt;stdin&lt;/code&gt; and/or &lt;code&gt;stdout&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;sed s/^scaffold_/PcanScaf/ &amp;lt; pcan-in.gff3 &amp;gt; pcan-out.gff3
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sed s/^scaffold_/PcanScaf/ &amp;lt; pcan-in.gff3 &amp;gt; pcan-out.gff3
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Here is the Python equivalent.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pcan-in.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pcan-out.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;outstream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pcan-in.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pcan-out.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;outstream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_call&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sed&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;s/^scaffold_/PcanScaf/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;outstream&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h2&gt;The main event: pipelines&lt;/h2&gt;
 &lt;p&gt;Handling input and output for single commands is great and all, but the real power of the shell is piping commands together like so.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;grep -v &lt;span class="s1"&gt;$&amp;#39;\tintron\t&amp;#39;&lt;/span&gt; loci.gff3 &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep -v &lt;span class="s1"&gt;$&amp;#39;\tintron\t&amp;#39;&lt;/span&gt; loci.gff3 &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; pmrna --locus --accession --map&lt;span class="o"&gt;=&lt;/span&gt;map.txt &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; canon-gff3 --outfile&lt;span class="o"&gt;=&lt;/span&gt;locus.mrnas.gff3 
 &lt;/pre&gt;&lt;/div&gt;
@@ -1699,7 +1783,7 @@ However, sometimes your only options are &lt;code&gt;stdin&lt;/code&gt; and/or &
 
 &lt;p&gt;Unless we want to introduce security vulnerabilities, we cannot simply run these commands with a single call to the &lt;code&gt;check_call&lt;/code&gt; function.
 For this use case, we want to use the &lt;code&gt;Popen&lt;/code&gt; constructor and the &lt;code&gt;communicate&lt;/code&gt; method.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                              &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;pmrnaproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pmrna&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--locus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--accession&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--map=map.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                              &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1711,7 +1795,7 @@ For this use case, we want to use the &lt;code&gt;Popen&lt;/code&gt; constructor
 
 
 &lt;p&gt;If needed, it is trivial to capture the terminal output like so.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;grep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-v&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;intron&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                              &lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;pmrnaproc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pmrna&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--locus&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--accession&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--map=map.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                              &lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;grepproc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -1735,7 +1819,7 @@ This has become a core technique I use almost on a daily basis in my data work i
 It has many uses, but I want to highlight a particular one here.&lt;/p&gt;
 &lt;h2&gt;Use case&lt;/h2&gt;
 &lt;p&gt;Imagine you have a shell script with the following commands&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; second_command one two three &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; third_command --abc xyz &lt;span class="se"&gt;\&lt;/span&gt;
     &amp;gt; outfile.txt
@@ -1748,23 +1832,23 @@ How can we filter the stderr of &lt;code&gt;second_command&lt;/code&gt; so that 
 &lt;h2&gt;Solution&lt;/h2&gt;
 &lt;p&gt;Process substitutions can be used not only as pseudo input files using the &lt;code&gt;&amp;lt;()&lt;/code&gt; syntax, but also as pseudo output files using the &lt;code&gt;&amp;gt;()&lt;/code&gt; syntax.
 If we redirect a program's output to a process, we can then filter the data within that process, like so.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;some_program &amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program &amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Extending this to stderr requires only two changes.
 First, we replace &lt;code&gt;&amp;gt;&lt;/code&gt; with &lt;code&gt;2&amp;gt;&lt;/code&gt; so that we are redirecting the correct output stream.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Secondly, we add &lt;code&gt;1&amp;gt;&amp;amp;2&lt;/code&gt; to the end of the process so that its stdout is redirected back to stderr, which is where the data was intended to go in the first place (cue Ghostbusters quote about not crossing the streams).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Putting this all together and going back to our original use case, we can remove the unwanted &lt;code&gt;cannot find "foo"&lt;/code&gt; messages from our terminal like so.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; second_command one two three 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;grep &lt;span class="s1"&gt;&amp;#39;cannot find &amp;quot;foo&amp;quot;&amp;#39;&lt;/span&gt; 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; third_command --abc xyz &lt;span class="se"&gt;\&lt;/span&gt;
     &amp;gt; outfile.txt
@@ -1892,7 +1976,7 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;gt &lt;span class="k"&gt;select&lt;/span&gt; -seqid PdomSCFr1.2-0025 pdom-annot-r1.2.gff3 &amp;gt; pdom-scf25.gff3
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;gt &lt;span class="k"&gt;select&lt;/span&gt; -seqid PdomSCFr1.2-0025 pdom-annot-r1.2.gff3 &amp;gt; pdom-scf25.gff3
 &lt;span class="o"&gt;!&lt;/span&gt;locuspocus --verbose pdom-scf25.gff3 &amp;gt; pdom-scf25-loci.gff3
 &lt;span class="o"&gt;!&lt;/span&gt;./shuffle_iloci.py -s &lt;span class="m"&gt;1234&lt;/span&gt; pdom-scf25-loci.gff3 &amp;gt; pdom-scf25-shuf.gff3
 &lt;span class="o"&gt;!&lt;/span&gt;locuspocus --verbose pdom-scf25-shuf.gff3 &amp;gt; pdom-scf25-loci-shuf.gff3
@@ -1932,7 +2016,7 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt;
 &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;figure.figsize&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;
@@ -1948,7 +2032,7 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Boilerplate code for visualizations.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;plot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Genomic position&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1971,7 +2055,7 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pdom-scf25-loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pdom-scf25-loci.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;locus&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -2264,7 +2348,7 @@ kqTCDOWSJElSYYZySZIkqTBDuSRJklSYoVySJEkq7P8Dd3Pg4qyw8f4AAAAASUVORK5CYII=
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pdom-scf25-loci-shuf.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pdom-scf25-loci-shuf.gff3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;instream&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;locus&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -2702,7 +2786,7 @@ Which statistics are relevant here (I've been working on this), and what can the
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;gzip&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
@@ -2721,7 +2805,7 @@ Which statistics are relevant here (I've been working on this), and what can the
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Boilerplate code for visualizations.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="n"&gt;plot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Genomic position&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -2762,7 +2846,7 @@ Interval &lt;code&gt;B&lt;/code&gt; is represented as &lt;code&gt;[8, 14]&lt;/co
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Interval&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Interval&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Simple implementation of a discrete closed interval.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -2810,7 +2894,7 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;load_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;load_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Load features of interest into Interval objects.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
     &lt;span class="n"&gt;seqreg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
@@ -2860,7 +2944,7 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;gzip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pdom-scf25-iloci.gff3.gz&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;gzip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pdom-scf25-iloci.gff3.gz&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;pd_seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pd_intervals&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pd_intervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Gene distribution (Polistes dominula scaffold 25)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -3179,7 +3263,7 @@ QmCC
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;gzip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;NC_007416.2-loci.gff3.gz&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;gzip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;NC_007416.2-loci.gff3.gz&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;tc_seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tc_intervals&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tc_intervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Gene distribution (Tribolium castaneum X chromosome)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -3510,7 +3594,7 @@ aYICaRERERGRJiiQFhERERFpggJpEREREZEmKJAWEREREWnC35meu6pIOf+NAAAAAElFTkSuQmCC
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;gzip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;NW_004668235.1-loci.gff3.gz&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;gzip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;NW_004668235.1-loci.gff3.gz&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;xt_seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xt_intervals&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;load_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;xt_intervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Gene distribution (Xenopus tropicalis scaffold 3b)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -3867,7 +3951,7 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;place_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;intervals&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;place_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;intervals&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Re-place sub-intervals in a larger interval.&lt;/span&gt;
 
@@ -3934,7 +4018,7 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3333&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3333&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;pd_randintervals&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;place_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pd_seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pd_intervals&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pd_randintervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random gene distribution (Polistes dominula scaffold 25)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -4268,7 +4352,7 @@ kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[11]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3333&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3333&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;tc_randintervals&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;place_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tc_seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tc_intervals&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tc_randintervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random gene distribution (Tribolium castaneum X chromosome)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -4610,7 +4694,7 @@ rkJggg==
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[12]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3333&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seed&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3333&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;xt_randintervals&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;place_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xt_seqreg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xt_intervals&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;xt_randintervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random gene distribution (Xenopus tropicalis scaffold 3b)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -5141,7 +5225,7 @@ I'll go ahead and do so here.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Define an alias for mlr command settings&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Define an alias for mlr command settings&lt;/span&gt;
 &lt;span class="c1"&gt;#  --csv: comma-separated values&lt;/span&gt;
 &lt;span class="c1"&gt;#  --fs tab: lol j/k they&amp;#39;re separated by tabs (fs=field separator)&lt;/span&gt;
 &lt;span class="c1"&gt;#  --rs lf: use line feed as record separator (instead of default carriage return + line feed)&lt;/span&gt;
@@ -5182,7 +5266,7 @@ I'll go ahead and do so here.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv
@@ -5236,7 +5320,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
@@ -5284,7 +5368,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
@@ -5338,7 +5422,7 @@ Rather than retyping the command two more times, let's just wrap the command in 
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; field in Length ExonCount GCContent
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; field in Length ExonCount GCContent
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$f&lt;/span&gt;ield
@@ -5436,7 +5520,7 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -5474,7 +5558,7 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 1&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 1&lt;span class="k"&gt;)&lt;/span&gt;
 &lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 2&lt;span class="k"&gt;)&lt;/span&gt;
 
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; 5% quantile: &lt;/span&gt;$&lt;span class="s2"&gt;p5&amp;quot;&lt;/span&gt;
@@ -5517,7 +5601,7 @@ We have to be careful to escape field names and shell variables, since both begi
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd filter &lt;span class="se"&gt;\&lt;/span&gt;
            &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;$&lt;span class="s2"&gt;p5 &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;$&lt;span class="s2"&gt;p95 &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -5573,7 +5657,7 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
@@ -5626,7 +5710,7 @@ Nvit	0.46	0.45	0.15	0.79
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; featuretype in exons introns
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; featuretype in exons introns
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt;
@@ -5860,7 +5944,7 @@ I need a more organized and streamlined solution.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt;
@@ -5878,7 +5962,7 @@ I need a more organized and streamlined solution.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;len_consec_iiloci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;len_consec_iiloci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 &lt;span class="sd"&gt;    Compute combined lengths for each set of n consecutive iiLoci.&lt;/span&gt;
 
@@ -5910,7 +5994,7 @@ I need a more organized and streamlined solution.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[17]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ilens.tsv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_table&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ilens.tsv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -5923,7 +6007,7 @@ I need a more organized and streamlined solution.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[20]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;pdom&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Species&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Pdom&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pdom&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Species&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Pdom&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;agglens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log10&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n_adj_iiloci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pdom&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
     &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;agglens&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -7057,7 +7141,7 @@ RU5ErkJggg==
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[21]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;amel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Species&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Amel&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;amel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Species&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Amel&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;agglens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log10&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n_adj_iiloci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;amel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
     &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;agglens&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -8133,7 +8217,7 @@ kgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AMHiXlPb/U5QAAAAAElFTkSuQmCC
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[22]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span class="n"&gt;ador&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Species&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Ador&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ador&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Species&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Ador&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;agglens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log10&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;length&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n_adj_iiloci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ador&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
     &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;agglens&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -9257,7 +9341,7 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt; 
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;

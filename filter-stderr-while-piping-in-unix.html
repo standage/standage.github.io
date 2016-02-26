@@ -88,7 +88,7 @@ This has become a core technique I use almost on a daily basis in my data work i
 It has many uses, but I want to highlight a particular one here.</p>
 <h2>Use case</h2>
 <p>Imagine you have a shell script with the following commands</p>
-<div class="highlight"><pre>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
+<div class="highlight"><pre><span></span>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
     <span class="p">|</span> second_command one two three <span class="se">\</span>
     <span class="p">|</span> third_command --abc xyz <span class="se">\</span>
     &gt; outfile.txt
@@ -101,23 +101,23 @@ How can we filter the stderr of <code>second_command</code> so that the <code>ca
 <h2>Solution</h2>
 <p>Process substitutions can be used not only as pseudo input files using the <code>&lt;()</code> syntax, but also as pseudo output files using the <code>&gt;()</code> syntax.
 If we redirect a program's output to a process, we can then filter the data within that process, like so.</p>
-<div class="highlight"><pre>some_program &gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
+<div class="highlight"><pre><span></span>some_program &gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
 </pre></div>
 
 
 <p>Extending this to stderr requires only two changes.
 First, we replace <code>&gt;</code> with <code>2&gt;</code> so that we are redirecting the correct output stream.</p>
-<div class="highlight"><pre>some_program 2&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
+<div class="highlight"><pre><span></span>some_program 2&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
 </pre></div>
 
 
 <p>Secondly, we add <code>1&gt;&amp;2</code> to the end of the process so that its stdout is redirected back to stderr, which is where the data was intended to go in the first place (cue Ghostbusters quote about not crossing the streams).</p>
-<div class="highlight"><pre>some_program 2&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c 1&gt;<span class="p">&amp;</span>2<span class="o">)</span>
+<div class="highlight"><pre><span></span>some_program 2&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c 1&gt;<span class="p">&amp;</span>2<span class="o">)</span>
 </pre></div>
 
 
 <p>Putting this all together and going back to our original use case, we can remove the unwanted <code>cannot find "foo"</code> messages from our terminal like so.</p>
-<div class="highlight"><pre>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
+<div class="highlight"><pre><span></span>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
     <span class="p">|</span> second_command one two three 2&gt; &gt;<span class="o">(</span>grep <span class="s1">&#39;cannot find &quot;foo&quot;&#39;</span> 1&gt;<span class="p">&amp;</span>2<span class="o">)</span> <span class="se">\</span>
     <span class="p">|</span> third_command --abc xyz <span class="se">\</span>
     &gt; outfile.txt

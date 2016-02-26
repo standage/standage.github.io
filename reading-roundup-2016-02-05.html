@@ -85,7 +85,7 @@ by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.h
 tags: <a href="https://standage.github.io/tag/shell.html">shell</a> <a href="https://standage.github.io/tag/funding.html">funding</a> <a href="https://standage.github.io/tag/gwas.html">gwas</a> </div>
 		<div><h2><a href="https://twitter.com/climagic/status/694660103627259905">This tip for issuing an alarm when a site comes back up.</a></h2>
 <p>I don't have a <code>.wav/.mp3</code> file handy, but a terminal bell (<code>\a</code>) works just as well.</p>
-<div class="highlight"><pre><span class="k">while</span> ! curl -m <span class="m">10</span> http://www.example.com/<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> still down<span class="p">;</span> sleep 30<span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">echo</span> <span class="s1">$&#39;\a\a\a&#39;</span>
+<div class="highlight"><pre><span></span><span class="k">while</span> ! curl -m <span class="m">10</span> http://www.example.com/<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> still down<span class="p">;</span> sleep 30<span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">echo</span> <span class="s1">$&#39;\a\a\a&#39;</span>
 </pre></div>
 
 

@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-12T00:00:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-12.html" rel="alternate"></link><updated>2016-02-12T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-12:reading-roundup-2016-02-12.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3442.html"&gt;This new paper on Sequence Bloom Trees for tractable search of huge RNA-Seq data sets&lt;/a&gt;&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/roundup.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-02-26T10:30:00-05:00</updated><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-26.html" rel="alternate"></link><updated>2016-02-26T10:30:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-26:reading-roundup-2016-02-26.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://genome.fieldofscience.com/2016/01/nejm-editorial-calls-data-scientists.html"&gt;This commentary I missed previously on the "research parasites" fiasco&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Disproving a claim using the same data is what reproducibility is all about, and this is one of the most important reasons that data needs to be shared.
+After all, if someone has distorted their data in order to reach a conclusion that isn't really justified, we need someone else–someone not invested in proving the same result–to re-analyze the data using independent methods.
+This is how science corrects itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://opencontent.org/blog/archives/4443"&gt;This post on open educational resources (OER)&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Anderson goes on to critique OER:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“A big issue for the open source movement has been its sustainability.
+And that’s one of the reasons you’re seeing a lot of legislation about it because they are looking basically to the taxpayer,” he said.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I hope to hear more of this criticism of OER from publishers and AAP in the future. Why?
+The US PIRG’s recent report &lt;a href="http://www.uspirg.org/reports/usp/covering-cost"&gt;Covering the Cost&lt;/a&gt; estimates that each year approximately $3B – that’s $3,000,000,000US – of financial aid dollars are spent by undergraduates on textbooks and other proprietary educational materials.
+In other words, under the existing commercial textbook model students are simply valves through which taxpayer dollars flow to publishers.
+I would love the opportunity to get this number in front of more people.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="https://pyformat.info/"&gt;This HowTo on Python string formatting&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python has had awesome string formatters for many years but the documentation on them is far too theoretic and technical.
+With this site we try to show you the most common use-cases covered by the old and new style string formatting API with practical examples.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;a href="http://simplystatistics.org/2016/02/16/when-it-comes-to-science-its-the-economy-stupid/"&gt;This post suggesting we fund science by lottery&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’m very confident in a peer review to detect the difference between psuedo-science and real science, or complete hype and realistic improvement.
+But I’m much less confident in the ability of peer review to accurately distinguish “important” from “not important” research.
+So I think we should consider seriously the lottery for these grants.&lt;/p&gt;
+&lt;p&gt;Each year all eligible scientists who meet some minimum entry requirements submit proposals for what they’d like to do scientifically.
+Each year those proposals are reviewed to make sure they meet the very minimum bar (are they scientific? do they have relevant training at all?).
+Among all the (very large) class of people who pass that bar we hold a lottery.
+We take the number of research dollars and divide it up to give the maximum number of these grants possible.
+These grants might be pretty small - just enough to fund the person’s salary and maybe one or two students/postdocs.
+To make this works for labs that required equipment there would have to be cooperative arrangements between multiple independent indviduals to fund/sustain equipment they needed.
+Renewal of these grants would happen as long as you were posting your code/data online, you were meeting peer review requirements, and responding to inquires about your work.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;These posts on Sci-Hub and open access to research&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.comicsgrid.com/2016/02/sci-hub-not-open-access/"&gt;This post&lt;/a&gt; claiming that Sci-Hub has brought much-needed attention to an important issue, but that it is not a long-term solution.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://engineuring.wordpress.com/2016/02/24/why-sci-hub-is-the-true-solution-for-open-access-reply-to-criticism/"&gt;This response&lt;/a&gt; to the original post, from the Sci-Hub founder, which comes across as pretty reactionary and defensive.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bjoern.brembs.net/2016/02/sci-hub-as-necessary-effective-civil-disobedience/"&gt;This post&lt;/a&gt; which doesn't (ostensibly) take any sides on the debate, but describes Sci-Hub as necessary civil disobedience and (in my opinion) highlights the good from both previous arguments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;These threads on compiling GCC with OpenMP support on OS X.&lt;/h2&gt;
+&lt;p&gt;I was having trouble installing CD-HIT this week with Homebrew.
+These two StackOverflow threads (&lt;a href="http://stackoverflow.com/a/29109926/459780"&gt;here&lt;/a&gt; and &lt;a href="http://stackoverflow.com/a/23490170/459780"&gt;here&lt;/a&gt;) led me to the solution.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew reinstall gcc --without-multilib
+brew install --build-from-source cd-hit
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="reproducibility"></category><category term="open"></category><category term="python"></category><category term="funding"></category><category term="homebrew"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-12.html" rel="alternate"></link><updated>2016-02-12T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-12:reading-roundup-2016-02-12.html</id><summary type="html">&lt;h2&gt;&lt;a href="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3442.html"&gt;This new paper on Sequence Bloom Trees for tractable search of huge RNA-Seq data sets&lt;/a&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;We use SBTs to search 2,652 human blood, breast and brain RNA-seq experiments for all 214,293 known transcripts in under 4 days using less than 239 MB of RAM and a single CPU.
 Searching sequence archives at this scale and in this time frame is currently not possible using existing tools.&lt;/p&gt;
@@ -27,7 +74,7 @@ The Coinami protocol includes mechanisms to ensure that jobs performed by volunt
 Which makes for great pundity thinky-pieces, but doesn’t really help us do science within the real-world constraints that scientists experience.&lt;/p&gt;
 &lt;/blockquote&gt;</summary><category term="rnaseq"></category><category term="reproducibility"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-05.html" rel="alternate"></link><updated>2016-02-05T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:reading-roundup-2016-02-05.html</id><summary type="html">&lt;h2&gt;&lt;a href="https://twitter.com/climagic/status/694660103627259905"&gt;This tip for issuing an alarm when a site comes back up.&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I don't have a &lt;code&gt;.wav/.mp3&lt;/code&gt; file handy, but a terminal bell (&lt;code&gt;\a&lt;/code&gt;) works just as well.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -133,7 +180,7 @@ Even the "dream" professions are not immune: Aren’t movie stars always complai
 &lt;blockquote&gt;
 &lt;p&gt;Gooey is attached to your code via a simple decorator on whichever method has your argparse declarations (usually &lt;code&gt;main&lt;/code&gt;).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;from gooey import Gooey
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;from gooey import Gooey
 
 @Gooey      &amp;lt;--- all it takes! :)
 def main():

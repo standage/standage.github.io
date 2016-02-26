@@ -191,7 +191,7 @@ I followed the <code>Download --&gt; FTP Archive</code> link on the <a href="htt
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>wget ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
+<div class=" highlight hl-bash"><pre><span></span>wget ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
 </pre></div>
 
 </div>
@@ -242,7 +242,7 @@ TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>head TAIR10_GFF3_genes.gff
+<div class=" highlight hl-bash"><pre><span></span>head TAIR10_GFF3_genes.gff
 </pre></div>
 
 </div>
@@ -289,7 +289,7 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>cut -f <span class="m">1</span> TAIR10_GFF3_genes.gff <span class="p">|</span> sort -u
+<div class=" highlight hl-bash"><pre><span></span>cut -f <span class="m">1</span> TAIR10_GFF3_genes.gff <span class="p">|</span> sort -u
 </pre></div>
 
 </div>
@@ -333,7 +333,7 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>grep -v -e <span class="s1">&#39;^ChrM&#39;</span> -e <span class="s1">&#39;^ChrC&#39;</span> TAIR10_GFF3_genes.gff &gt; tair10.gff3
+<div class=" highlight hl-bash"><pre><span></span>grep -v -e <span class="s1">&#39;^ChrM&#39;</span> -e <span class="s1">&#39;^ChrC&#39;</span> TAIR10_GFF3_genes.gff &gt; tair10.gff3
 </pre></div>
 
 </div>
@@ -370,7 +370,7 @@ Once you locate the <code>/genomes/refseq/</code> directory, finding the <em>Ara
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
+<div class=" highlight hl-bash"><pre><span></span>wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
 </pre></div>
 
 </div>
@@ -421,7 +421,7 @@ GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="p">|</span> head
+<div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="p">|</span> head
 </pre></div>
 
 </div>
@@ -469,7 +469,7 @@ It looks like <code>region</code> entries with a <code>chromosome</code> attribu
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
     <span class="p">|</span> grep <span class="s1">$&#39;\tregion\t&#39;</span> <span class="se">\</span>
     <span class="p">|</span> grep <span class="s1">&#39;chromosome=&#39;</span>
 </pre></div>
@@ -513,7 +513,7 @@ Let's check whether there are any trans-spliced genes annotated in this file.</p
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
     <span class="p">|</span> grep <span class="s1">$&#39;\tgene\t&#39;</span> <span class="se">\</span>
     <span class="p">|</span> grep <span class="s1">&#39;trans-splicing&#39;</span>
 </pre></div>
@@ -560,7 +560,7 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
+<div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
     <span class="p">|</span> sed -e <span class="s1">&#39;s/NC_003070.9/Chr1/&#39;</span> <span class="se">\</span>
           -e <span class="s1">&#39;s/NC_003071.7/Chr2/&#39;</span> <span class="se">\</span>
           -e <span class="s1">&#39;s/NC_003074.8/Chr3/&#39;</span> <span class="se">\</span>
@@ -608,7 +608,7 @@ Let's use the <code>--summary</code> flag to suppress the locus-level reports an
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>parseval --summary tair10.gff3 ncbi.gff3 2&gt; stderr.txt
+<div class=" highlight hl-bash"><pre><span></span>parseval --summary tair10.gff3 ncbi.gff3 2&gt; stderr.txt
 </pre></div>
 
 </div>

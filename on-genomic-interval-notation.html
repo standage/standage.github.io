@@ -96,7 +96,7 @@ BED allows for a single level of feature decomposition (a feature can be broken 
 GFF3 and GTF both inherited, through their common heritage with older GFF variants, 1-based indexing and closed interval notation.
 BED on the other hand uses 0-based indexing and <em>half-closed</em> interval notation.
 Consider the DNA sequence below.</p>
-<div class="highlight"><pre>        1    2    3    4    5    6    7      &lt;-- GFF3 style
+<div class="highlight"><pre><span></span>        1    2    3    4    5    6    7      &lt;-- GFF3 style
         |    |    |    |    |    |    |
         G    A    T    T    A    C    A
         |    |    |    |    |    |    |
@@ -110,7 +110,7 @@ With BED's 0-based indexing and half-closed interval notation, the same subseque
 Don't worry: off-by-one errors with interval arithmetic are very common in bioinformatics, striking newcomers and old-timers alike.</p>
 <p>An alternative and useful way to conceptualize the BED-style notation is to shift the indices slightly so that they correspond to the spaces <em>between</em> nucleotides, rather than the nucleotides themselves.
 Then, the two integers defining an interval are the ones that bound the nucleotides in question.</p>
-<div class="highlight"><pre>        G    A    T    T    A    C    A
+<div class="highlight"><pre><span></span>        G    A    T    T    A    C    A
      |    |    |    |    |    |    |    |
      0    1    2    3    4    5    6    7
 </pre></div>
