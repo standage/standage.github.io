@@ -1,5 +1,5 @@
 Title: Citing "manuscripts in progress" on your CV
-Date: 2016-02-26
+Date: 2016-02-26 10:00:00
 Author: Daniel S. Standage
 Category: blog
 Tags: science; publication
