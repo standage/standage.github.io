@@ -690,7 +690,7 @@ This isn't the type of thing you expect to encounter much in the research settin
 &lt;p&gt;This example is pretty silly, since you'll probably never need to call the &lt;code&gt;ls&lt;/code&gt; command from Python.
 Let's do a different example you're much more likely to encounter in bioinformatics.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;blastx -db /opt/ncbi/nr -query tsa.fasta &lt;span class="se"&gt;\&lt;/span&gt;
-       -evalue 1e-4 -num_threads $numthreads &lt;span class="se"&gt;\&lt;/span&gt;
+       -evalue 1e-4 -num_threads &lt;span class="nv"&gt;$numthreads&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
        -out tsa-vs-nr.blastx
 &lt;/pre&gt;&lt;/div&gt;
 
