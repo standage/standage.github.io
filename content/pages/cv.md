@@ -34,12 +34,12 @@ navorder: 01
 ### Oral Presentations
 
 - **Standage DS**, Toth AL, Brendel VP. iLoci: scalable annotation for provisional genome assemblies. Presented at CSHL Biology and Genomics of Social Insects Meeting, May 2015. *Manuscript in preparation*.
-- Duvick JP, Denton JF, **Standage DS**, Merchant N, Brendel VP. xGDBvm: a virtual platform for annotating eukaryotic genomes. Invited talk given at PAG XXI, January 2013. *Manuscript in review*.
+- Duvick JP, Denton JF, **Standage DS**, Merchant N, Brendel VP. xGDBvm: a virtual platform for annotating eukaryotic genomes. Invited talk given at PAG XXI, January 2013.
 
 ### Posters
 
 - **Standage DS**, Brendel VP, Toth AL. Genome sequence and annotation of the primitively social paper wasp *Polistes dominula*. Presented at Notre Dame Arthropod Genomics Conference, June 2013.
-- Brendel VP, **Standage DS**. mRNAmarkup: quality control and annotation of de novo transcriptome assemblies. Presented at CSHL Genome Informatics meeting, November 2013. *Manuscript in preparation*.
+- Brendel VP, **Standage DS**. mRNAmarkup: quality control and annotation of de novo transcriptome assemblies. Presented at CSHL Genome Informatics meeting, November 2013.
 
 ## Research Experience
 
