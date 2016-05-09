@@ -13,8 +13,7 @@ My research focuses primarily on leveraging annotated genome sequences to better
 I split my research effort between developing tools for managing and querying genome annotations, and applying these tools to characterize genomic features.
 I am especially interested in comparative genomics, and in species of agricultural significance—most of my work has focused on plant and insect genomics.
 
-I recently joined Titus Brown's [Lab for Data Intensive Biology](http://ivory.idyll.org/lab/) at the University of California, Davis.
-I recently completed my Ph.D. in the research groups of [Volker Brendel (Indiana University)](http://brendelgroup.org/) and [Amy Toth (Iowa State University)](http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html).
+I recently joined Titus Brown's [Lab for Data Intensive Biology](http://ivory.idyll.org/lab/) at the University of California, Davis after completing a Ph.D. in the research groups of [Volker Brendel (Indiana University)](http://brendelgroup.org/) and [Amy Toth (Iowa State University)](http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html).
 See my [curriculum vitae]({filename}cv.md) for additional details about my education and scholarship.
 
 ## Teaching
