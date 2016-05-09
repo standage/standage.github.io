@@ -1,17 +1,25 @@
 Title: Vitae
 navorder: 01
 
-## Eductation
+## Education
 
 <table>
   <tr>
-    <td>2010 — 2015</td>
+    <td>2016 — present</td>
     <td>
-      Ph.D. in <strong>Bioinformatics and Computational Biology</strong><br />
-      Iowa State University<br />
-      In residence at Indiana University since July 2012
+      Postdoctoral Scholar<br />
+      Lab for Data Intensive Biology<br />
+      University of California, Davis
     </td>
   </tr>
+    <tr>
+      <td>2010 — 2016</td>
+      <td>
+        Ph.D. in <strong>Bioinformatics and Computational Biology</strong><br />
+        Iowa State University<br />
+        In residence at Indiana University July 2012 — May 2016
+      </td>
+    </tr>
   <tr>
     <td>2003 — 2010</td>
     <td>
@@ -27,7 +35,7 @@ navorder: 01
 ### Publications
 
 - **Standage DS**, Berens AJ, Glastad KM, Severin AJ, Brendel VP, Toth AL (2016) Genome, transcriptome, and methylome sequencing of a primitively eusocial wasp reveal a greatly reduced DNA methylation system in a social insect. *Molecular Ecology*, [doi:10.1111/mec.13578](http://dx.doi.org/10.1111/mec.13578).
-- Duvick JP, **Standage DS**, Merchant N, Brendel VP (2016) xGDBvm: A Web GUI-driven workflow for annotating eukaryotic genomes in the cloud. *The Plant Cell*, *in press*.
+- Duvick JP, **Standage DS**, Merchant N, Brendel VP (2016) xGDBvm: A Web GUI-driven workflow for annotating eukaryotic genomes in the cloud. *The Plant Cell*, Advance publication, [doi:10.1105/tpc.15.00933](http://dx.doi.org/10.1105/tpc.15.00933).
 - **Standage DS**, Brendel VP (2012) ParsEval: parallel comparison and analysis of gene structure annotations. *BMC Bioinformatics*, **13**:187, [doi:10.1186/1471-2105-13-187](http://dx.doi.org/10.1186/1471-2105-13-187).
 - Doyle EL, Booher NJ, **Standage DS**, Voytas DF, Brendel VP, VanDyk JK, Bogdanove AJ (2012) TAL Effector-Nucleotide Targeter (TALE-NT) 2.0: Tools for TAL effector design and target prediction. *Nucleic Acids Research*, **40** (W1): W117-W122, [doi:10.1093/nar/gks608](http://dx.doi.org/10.1093/nar/gks608).
 

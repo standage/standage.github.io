@@ -16,7 +16,7 @@ from pelican.readers import MarkdownReader, HTMLReader, BaseReader
 
 import IPython
 try:
-    # Jupyter  
+    # Jupyter
     from traitlets.config import Config
 except ImportError:
     # IPython < 4.0
@@ -118,7 +118,7 @@ class IPythonNB(BaseReader):
         content, info = exporter.from_filename(filepath)
 
         if BeautifulSoup:
-            soup = BeautifulSoup(content)
+            soup = BeautifulSoup(content, "html.parser")
             for i in soup.findAll("div", {"class" : "input"}):
                 if i.findChildren()[1].find(text='#ignore') is not None:
                     i.extract()
