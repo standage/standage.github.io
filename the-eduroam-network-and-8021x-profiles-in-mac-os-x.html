@@ -23,6 +23,14 @@
 	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
 
 
+<script type="text/javascript">
+	var disqus_identifier = "the-eduroam-network-and-8021x-profiles-in-mac-os-x.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
 </head>
 <body>
 	<div class="topbar">
@@ -69,29 +77,25 @@
 		</div>
 	  </div>
 	  <div class="content">
-<div class="page-header"><h1>Notebook <small>open</small></h1></div>
-<p>Psst! I've posted some details about my notebook setup <a href="https://standage.github.io/pages/notebook-setup.html">here</a>.</p>
-
-<div class='article'>
-	<h2><a href="https://standage.github.io/reading-roundup-2016-05-13.html">After the hiatus: reading roundup!</a></h2>
-	<div class="well small">Permalink: <a class="more" href="https://standage.github.io/reading-roundup-2016-05-13.html">2016-05-13</a>
+	<div class='article'>
+		<div class="page-header"><h1>The eduroam network and 802.1X profiles in Mac OS X</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/the-eduroam-network-and-8021x-profiles-in-mac-os-x.html">2016-05-18</a>
 by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
- in <a href="https://standage.github.io/category/roundup.html">roundup</a>
-tags: <a href="https://standage.github.io/tag/publication.html">publication</a> <a href="https://standage.github.io/tag/open.html">open</a> <a href="https://standage.github.io/tag/r.html">r</a> <a href="https://standage.github.io/tag/rna-seq.html">rna-seq</a> <a href="https://standage.github.io/tag/social.html">social</a> <a href="https://standage.github.io/tag/education.html">education</a> <a href="https://standage.github.io/tag/reproducibility.html">reproducibility</a> </div>
-	<div class="summary"><p>Summary of interesting reads over the last several months.</p> <a class="btn primary xsmall" href="https://standage.github.io/reading-roundup-2016-05-13.html">more…</a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/networking.html">networking</a> <a href="https://standage.github.io/tag/mac.html">mac</a> </div>
+		<div><p>My affiliation recently changed from Indiana University to UC Davis, and accordingly my IU credentials no longer give me access to the eduroam wifi network.
+Over the last couple of days I've been struggling to connect my laptop to eduroam using my new UC Davis credentials.
+At first I thought the it was an issue with my account, but it turns out it was simply an issue with a profile saved on the system.</p>
+<p>When I first connected to eduroam with my IU credentials on my MacBook Pro several years ago, it stored a "profile" on the system.
+On my phone, "forgetting" the eduroam network was sufficient for deleting this profile, but on the laptop, disconnecting or "forgetting" the network didn't solve the issue.
+With a bit of searching, I was able to find the profile in the <code>Network</code> section of <code>System Preferences</code>, but this provided no way to remove the profile (as had been suggested on several forums for older versions of OS X)!</p>
+<p>Finally, I was able to find the profile in a different subsection of the <code>System Preferences</code> (aptly named <code>Profiles</code>, go figure), and there was able to delete the profile.
+I was then able to connect to the eduroam network, provide my UC Davis credentials, and successfully connect.
+It doesn't look like UC Davis stored a profile on the system, so hopefully I don't have to deal with this issue again!</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
 	</div>
-</div>	
-<div class='article'>
-	<h2><a href="https://standage.github.io/reading-roundup-2016-02-26.html">Reading roundup</a></h2>
-	<div class="well small">Permalink: <a class="more" href="https://standage.github.io/reading-roundup-2016-02-26.html">2016-02-26</a>
-by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
- in <a href="https://standage.github.io/category/roundup.html">roundup</a>
-tags: <a href="https://standage.github.io/tag/reproducibility.html">reproducibility</a> <a href="https://standage.github.io/tag/open.html">open</a> <a href="https://standage.github.io/tag/python.html">python</a> <a href="https://standage.github.io/tag/funding.html">funding</a> <a href="https://standage.github.io/tag/homebrew.html">homebrew</a> </div>
-	<div class="summary"><p>Roundup of links from the last week's worth of interesting reads.</p> <a class="btn primary xsmall" href="https://standage.github.io/reading-roundup-2016-02-26.html">more…</a>
-	</div>
-</div>	
-
-
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
