@@ -20,6 +20,12 @@ CACHE_CONTENT = False
 DISQUS_SITENAME = 'standage-github-io'
 SUMMARY_MAX_LENGTH = 60
 
+# Disallow indexing of drafts
+STATIC_PATHS = ['extra'] 
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+}
+
 # Blog/page/category config
 IGNORE_FILES = ['.ipynb_checkpoints']
 DISPLAY_CATEGORIES_ON_MENU = False
