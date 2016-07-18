@@ -1073,6 +1073,7 @@ Perhaps it's an annotation by NCBI's GNOMON pipeline, or perhaps NCBI made some 
 <p>I was about to search for some more documentation on NCBI, but after a moment's hesitation I decided it would best to settle the question here and now by comparing the RefSeq annotation and the TAIR10 annotation.
 My first project as a graduate student was comparing different sources of annotation for the same genome, and I later built on this work to publish the <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-13-187">ParsEval program</a>.
 Using this tool, it should be fairly easy to compare the RefSeq GFF3 with the latest GFF3 from TAIR and determine if they're the same.</p>
+
 </div>
 </div>
 </div>
@@ -1081,27 +1082,32 @@ Using this tool, it should be fairly easy to compare the RefSeq GFF3 with the la
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="TAIR">TAIR<a class="anchor-link" href="#TAIR">¶</a></h2><p>First, let's take a look at the latest annotation from TAIR.
+<h2 id="TAIR">TAIR<a class="anchor-link" href="#TAIR">&#182;</a></h2><p>First, let's take a look at the latest annotation from TAIR.
 I followed the <code>Download --&gt; FTP Archive</code> link on the <a href="https://www.arabidopsis.org/">TAIR homepage</a> to their FTP site, and poked around until I found the URL of the appropriate GFF3 file.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>wget ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>--2016-02-04 21:15:05--  ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
-           =&gt; 'TAIR10_GFF3_genes.gff'
+           =&gt; &#39;TAIR10_GFF3_genes.gff&#39;
 Resolving ftp.arabidopsis.org... 129.114.60.67
 Connecting to ftp.arabidopsis.org|129.114.60.67|:21... connected.
 Logging in as anonymous ... Logged in!
@@ -1113,13 +1119,15 @@ Length: 44139005 (42M) (unauthoritative)
 
 TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s     
 
-2016-02-04 21:15:24 (3.08 MB/s) - 'TAIR10_GFF3_genes.gff' saved [44139005]
+2016-02-04 21:15:24 (3.08 MB/s) - &#39;TAIR10_GFF3_genes.gff&#39; saved [44139005]
 
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1127,21 +1135,26 @@ TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The file is uncompressed, so a simple <code>head</code> command will give us a look at the first few lines.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>head TAIR10_GFF3_genes.gff
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Chr1	TAIR10	chromosome	1	30427671	.	.	.	ID=Chr1;Name=Chr1
@@ -1157,8 +1170,10 @@ Chr1	TAIR10	exon	4486	4605	.	+	.	Parent=AT1G01010.1
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1167,21 +1182,26 @@ Chr1	TAIR10	exon	4486	4605	.	+	.	Parent=AT1G01010.1
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It looks like TAIR doesn't use <code>##sequence-region</code> pragmas or any other metadata, just basic feature entries with 9 tab-delimited values.
 Let's take a look at how the sequences are labeled by cutting out the first column of each entry and then pulling out unique values.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>cut -f <span class="m">1</span> TAIR10_GFF3_genes.gff <span class="p">|</span> sort -u
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Chr1
@@ -1194,8 +1214,10 @@ ChrM
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1204,55 +1226,67 @@ ChrM
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I'm not really interested in organellar genomes, and the way they're annotated (especially by NCBI) is often problematic.
 Let's go ahead and remove the chloroplast genome and the mitochondrial genome from the GFF3 file, leaving the 5 chromosomes of the nuclear genome.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>grep -v -e <span class="s1">'^ChrM'</span> -e <span class="s1">'^ChrC'</span> TAIR10_GFF3_genes.gff &gt; tair10.gff3
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>grep -v -e <span class="s1">&#39;^ChrM&#39;</span> -e <span class="s1">&#39;^ChrC&#39;</span> TAIR10_GFF3_genes.gff &gt; tair10.gff3
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="NCBI/RefSeq">NCBI/RefSeq<a class="anchor-link" href="#NCBI/RefSeq">¶</a></h2><p>The <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq">NCBI FTP site</a> is a bit easier to navigate.
+<h2 id="NCBI/RefSeq">NCBI/RefSeq<a class="anchor-link" href="#NCBI/RefSeq">&#182;</a></h2><p>The <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq">NCBI FTP site</a> is a bit easier to navigate.
 Once you locate the <code>/genomes/refseq/</code> directory, finding the <em>Arabidopsis</em> data is trivial: <code>plant/ --&gt; Arabidopsis_thaliana --&gt; all_assembly_versions</code>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>--2016-02-04 21:15:32--  ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
-           =&gt; 'GCF_000001735.3_TAIR10_genomic.gff.gz'
+           =&gt; &#39;GCF_000001735.3_TAIR10_genomic.gff.gz&#39;
 Resolving ftp.ncbi.nlm.nih.gov... 130.14.250.13, 2607:f220:41e:250::13
 Connecting to ftp.ncbi.nlm.nih.gov|130.14.250.13|:21... connected.
 Logging in as anonymous ... Logged in!
@@ -1264,13 +1298,15 @@ Length: 12647493 (12M) (unauthoritative)
 
 GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s    
 
-2016-02-04 21:15:37 (3.34 MB/s) - 'GCF_000001735.3_TAIR10_genomic.gff.gz' saved [12647493]
+2016-02-04 21:15:37 (3.34 MB/s) - &#39;GCF_000001735.3_TAIR10_genomic.gff.gz&#39; saved [12647493]
 
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1278,21 +1314,26 @@ GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This file is compressed, so we combine <code>head</code> with <code>gunzip</code> to take a quick peak.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="p">|</span> head
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>##gff-version 3
@@ -1308,8 +1349,10 @@ NC_003070.9	RefSeq	mRNA	3631	5899	.	+	.	ID=rna0;Parent=gene0;Dbxref=Genbank:NM_0
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1319,23 +1362,28 @@ NC_003070.9	RefSeq	mRNA	3631	5899	.	+	.	ID=rna0;Parent=gene0;Dbxref=Genbank:NM_0
 <p>It looks like the RefSeq GFF3 file refers to the chromosome sequences by their accession number rather than the simple <em>Chr1</em>-style labels used by TAIR.
 If we want to compare this data to the TAIR data, we'll need to convert these accession numbers to chromosome numbers.
 It looks like <code>region</code> entries with a <code>chromosome</code> attribute give us the mapping we need to do the conversion.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
-    <span class="p">|</span> grep <span class="s1">$'\tregion\t'</span> <span class="se">\</span>
-    <span class="p">|</span> grep <span class="s1">'chromosome='</span>
+    <span class="p">|</span> grep <span class="s1">$&#39;\tregion\t&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> grep <span class="s1">&#39;chromosome=&#39;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>NC_003070.9	RefSeq	region	1	30427671	.	+	.	ID=id0;Dbxref=taxon:3702;Name=1;chromosome=1;ecotype=Columbia;gbkey=Src;genome=chromosome;mol_type=genomic DNA
@@ -1346,8 +1394,10 @@ NC_003076.8	RefSeq	region	1	26975502	.	+	.	ID=id164622;Dbxref=taxon:3702;Name=5;
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1356,23 +1406,28 @@ NC_003076.8	RefSeq	region	1	26975502	.	+	.	ID=id164622;Dbxref=taxon:3702;Name=5;
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I also know (based on personal experience) that trans-spliced genes can cause issues with ParsEval and the GenomeTools  library it links to.
 Let's check whether there are any trans-spliced genes annotated in this file.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
-    <span class="p">|</span> grep <span class="s1">$'\tgene\t'</span> <span class="se">\</span>
-    <span class="p">|</span> grep <span class="s1">'trans-splicing'</span>
+    <span class="p">|</span> grep <span class="s1">$&#39;\tgene\t&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> grep <span class="s1">&#39;trans-splicing&#39;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>NC_001284.2	RefSeq	gene	79740	81297	.	-	.	ID=gene33323;Dbxref=GeneID:3371312;Name=nad2;exception=trans-splicing;gbkey=Gene;gene=nad2;gene_biotype=protein_coding;locus_tag=ArthMp026;part=1/2
@@ -1386,8 +1441,10 @@ NC_000932.1	RefSeq	gene	139856	140650	.	+	.	ID=gene33521;Dbxref=GeneID:844801;Na
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1396,39 +1453,46 @@ NC_000932.1	RefSeq	gene	139856	140650	.	+	.	ID=gene33521;Dbxref=GeneID:844801;Na
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are indeed a few.
 So, in addition to converting sequence accession numbers to chromosome numbers, we need to filter out these trans-spliced genes so that they don't cause trouble for our comparison.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="se">\</span>
-    <span class="p">|</span> sed -e <span class="s1">'s/NC_003070.9/Chr1/'</span> <span class="se">\</span>
-          -e <span class="s1">'s/NC_003071.7/Chr2/'</span> <span class="se">\</span>
-          -e <span class="s1">'s/NC_003074.8/Chr3/'</span> <span class="se">\</span>
-          -e <span class="s1">'s/NC_003075.7/Chr4/'</span> <span class="se">\</span>
-          -e <span class="s1">'s/NC_003076.8/Chr5/'</span> <span class="se">\</span>
-    <span class="p">|</span> grep -v -e <span class="s1">'GeneID:1466250'</span> <span class="se">\</span>
-              -e <span class="s1">'GeneID:3371312'</span> <span class="se">\</span>
-              -e <span class="s1">'GeneID:3371313'</span> <span class="se">\</span>
-              -e <span class="s1">'GeneID:3890477'</span> <span class="se">\</span>
-              -e <span class="s1">'GeneID:844801'</span> <span class="se">\</span>
+    <span class="p">|</span> sed -e <span class="s1">&#39;s/NC_003070.9/Chr1/&#39;</span> <span class="se">\</span>
+          -e <span class="s1">&#39;s/NC_003071.7/Chr2/&#39;</span> <span class="se">\</span>
+          -e <span class="s1">&#39;s/NC_003074.8/Chr3/&#39;</span> <span class="se">\</span>
+          -e <span class="s1">&#39;s/NC_003075.7/Chr4/&#39;</span> <span class="se">\</span>
+          -e <span class="s1">&#39;s/NC_003076.8/Chr5/&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> grep -v -e <span class="s1">&#39;GeneID:1466250&#39;</span> <span class="se">\</span>
+              -e <span class="s1">&#39;GeneID:3371312&#39;</span> <span class="se">\</span>
+              -e <span class="s1">&#39;GeneID:3371313&#39;</span> <span class="se">\</span>
+              -e <span class="s1">&#39;GeneID:3890477&#39;</span> <span class="se">\</span>
+              -e <span class="s1">&#39;GeneID:844801&#39;</span> <span class="se">\</span>
     &gt; ncbi.gff3
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1437,21 +1501,26 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we should be ready to compare the two annotations using ParsEval.
 Let's use the <code>--summary</code> flag to suppress the locus-level reports and print out only the aggregate report.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>parseval --summary tair10.gff3 ncbi.gff3 2&gt; stderr.txt
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>============================================================
@@ -1512,10 +1581,10 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
   CDS structure comparison
     reference CDS segments.................196913
       match prediction.....................196913 (100.0%)
-      don't match prediction...............0 (0.0%)
+      don&#39;t match prediction...............0 (0.0%)
     prediction CDS segments................196913
       match reference......................196913 (100.0%)
-      don't match reference................0 (0.0%)
+      don&#39;t match reference................0 (0.0%)
     Sensitivity............................1.000
     Specificity............................1.000
     F1 Score...............................1.000
@@ -1524,10 +1593,10 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
   Exon structure comparison
     reference exons........................207206
       match prediction.....................207004 (99.9%)
-      don't match prediction...............202 (0.1%)
+      don&#39;t match prediction...............202 (0.1%)
     prediction exons.......................207057
       match reference......................207004 (100.0%)
-      don't match reference................53 (0.0%)
+      don&#39;t match reference................53 (0.0%)
     Sensitivity............................0.999
     Specificity............................1.000
     F1 Score...............................0.999
@@ -1536,10 +1605,10 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
   UTR structure comparison
     reference UTR segments.................65233
       match prediction.....................64991 (99.6%)
-      don't match prediction...............242 (0.4%)
+      don&#39;t match prediction...............242 (0.4%)
     prediction UTR segments................64992
       match reference......................64991 (100.0%)
-      don't match reference................1 (0.0%)
+      don&#39;t match reference................1 (0.0%)
     Sensitivity............................0.996
     Specificity............................1.000
     F1 Score...............................0.998
@@ -1555,8 +1624,10 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1566,6 +1637,7 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
 <p>Well, other than a couple hundred UTRs that RefSeq appears to have trimmed, the annotations are identical.
 That's good enough for me!
 I'll add a recipe for TAIR6 to GenHub, and use the existing RefSeq recipe for TAIR10.</p>
+
 </div>
 </div>
 </div>

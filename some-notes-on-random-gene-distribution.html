@@ -1075,6 +1075,7 @@ Rather, I have:</p>
 </ul>
 <p>The differences are clear and stark, but more work will be needed to provide biological insight.
 Which statistics are relevant here (I've been working on this), and what can these statistics tell us about how genomes are organized?</p>
+
 </div>
 </div>
 </div>
@@ -1083,37 +1084,40 @@ Which statistics are relevant here (I've been working on this), and what can the
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Graphics-boilerplate-code">Graphics boilerplate code<a class="anchor-link" href="#Graphics-boilerplate-code">¶</a></h2><p>As with anything involving matplotlib, we need to start with some boring boilerplate code.</p>
+<h2 id="Graphics-boilerplate-code">Graphics boilerplate code<a class="anchor-link" href="#Graphics-boilerplate-code">&#182;</a></h2><p>As with anything involving matplotlib, we need to start with some boring boilerplate code.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">gzip</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">seaborn</span>
 
-<span class="n">seaborn</span><span class="o">.</span><span class="n">set_context</span><span class="p">({</span><span class="s2">"figure.figsize"</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)})</span>
+<span class="n">seaborn</span><span class="o">.</span><span class="n">set_context</span><span class="p">({</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)})</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">plot_hist_rug</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-    <span class="sd">"""Boilerplate code for visualizations."""</span>
+    <span class="sd">&quot;&quot;&quot;Boilerplate code for visualizations.&quot;&quot;&quot;</span>
     <span class="n">plot</span> <span class="o">=</span> <span class="n">seaborn</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">rug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">seaborn</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Genomic position'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">seaborn</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">seaborn</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Genomic position&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">seaborn</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
         <span class="n">seaborn</span><span class="o">.</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">xlim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
@@ -1121,33 +1125,37 @@ Which statistics are relevant here (I've been working on this), and what can the
     <span class="k">if</span> <span class="n">ylim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">_</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="n">ylim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ylim</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Intervals">Intervals<a class="anchor-link" href="#Intervals">¶</a></h2><p><em>In silico</em> we typically represent gene loci as intervals in a discrete number line.
+<h2 id="Intervals">Intervals<a class="anchor-link" href="#Intervals">&#182;</a></h2><p><em>In silico</em> we typically represent gene loci as intervals in a discrete number line.
 My thinking about genome intervals has been heavily influenced by the <a href="http://www.sequenceontology.org/resources/gff3.html">GFF3 specification</a>, and so this simple implementation adopts the same conventions: a closed interval (ends inclusive), with counting starting at 1 (instead of 0).
 Consider the following example.</p>
+
 <pre><code>           1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
            -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
                  [---A----]     [--------B--------]</code></pre>
 <p>In this example, we represent interval <code>A</code> as <code>[3, 6]</code>, with a length of 4 (calculated <code>end - start + 1 = 6 - 3 + 1 = 4</code>).
 Interval <code>B</code> is represented as <code>[8, 14]</code> and has a length of <code>7</code>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">class</span> <span class="nc">Interval</span><span class="p">():</span>
-    <span class="sd">"""Simple implementation of a discrete closed interval."""</span>
+    <span class="sd">&quot;&quot;&quot;Simple implementation of a discrete closed interval.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">end</span>
@@ -1159,16 +1167,18 @@ Interval <code>B</code> is represented as <code>[8, 14]</code> and has a length 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s1">'[</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">]'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;[</span><span class="si">%d</span><span class="s1">, </span><span class="si">%d</span><span class="s1">]&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newstart</span><span class="p">):</span>
         <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">newstart</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">newstart</span> <span class="o">+</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1183,22 +1193,23 @@ GFF3 files are allowed to contain many such entries, but for our purposes we wil
 <li>Second, features of type <code>locus</code> encode the intervals we're interested in, and specifically we want those with a <code>gene</code> attribute.
 Feature entries have 9 tab-separated values, with feature type stored in the third field and attributes stored in the ninth field.</li>
 </ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">load_intervals</span><span class="p">(</span><span class="n">infile</span><span class="p">):</span>
-    <span class="sd">"""Load features of interest into Interval objects."""</span>
+    <span class="sd">&quot;&quot;&quot;Load features of interest into Interval objects.&quot;&quot;&quot;</span>
 
     <span class="n">seqreg</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">intervals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">seqreg</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="n">seqreg_pattern</span> <span class="o">=</span> <span class="s1">'^##sequence-region\s+(\S+)\s+(\d+)\s+(\d+)'</span>
+            <span class="n">seqreg_pattern</span> <span class="o">=</span> <span class="s1">&#39;^##sequence-region\s+(\S+)\s+(\d+)\s+(\d+)&#39;</span>
             <span class="n">srmatch</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">seqreg_pattern</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">srmatch</span><span class="p">:</span>
                 <span class="n">seqid</span> <span class="o">=</span> <span class="n">srmatch</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -1207,12 +1218,12 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
                 <span class="n">length</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span>
                 <span class="n">seqreg</span> <span class="o">=</span> <span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">seqid</span><span class="p">)</span>
 
-        <span class="n">values</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">9</span><span class="p">:</span>
             <span class="k">continue</span>
         <span class="n">feature_type</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
         <span class="n">attributes</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">feature_type</span> <span class="o">==</span> <span class="s1">'locus'</span> <span class="ow">and</span> <span class="s1">'gene='</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">feature_type</span> <span class="o">==</span> <span class="s1">&#39;locus&#39;</span> <span class="ow">and</span> <span class="s1">&#39;gene=&#39;</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">:</span>
             <span class="n">start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
             <span class="n">end</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
             <span class="n">itvl</span> <span class="o">=</span> <span class="n">Interval</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">values</span><span class="p">)</span>
@@ -1220,36 +1231,45 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 
     <span class="k">return</span> <span class="n">seqreg</span><span class="p">,</span> <span class="n">intervals</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Observed-gene-distribution">Observed gene distribution<a class="anchor-link" href="#Observed-gene-distribution">¶</a></h2><p>Now that we have implemented an interval and a simple parser, let's take a look at the distribution of genes in a couple of real data sets.</p>
+<h2 id="Observed-gene-distribution">Observed gene distribution<a class="anchor-link" href="#Observed-gene-distribution">&#182;</a></h2><p>Now that we have implemented an interval and a simple parser, let's take a look at the distribution of genes in a couple of real data sets.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'pdom-scf25-iloci.gff3.gz'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;pdom-scf25-iloci.gff3.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="n">pd_seqreg</span><span class="p">,</span> <span class="n">pd_intervals</span> <span class="o">=</span> <span class="n">load_intervals</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pd_intervals</span><span class="p">]</span>
-<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Gene distribution (Polistes dominula scaffold 25)'</span><span class="p">,</span>
+<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Gene distribution (Polistes dominula scaffold 25)&#39;</span><span class="p">,</span>
               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">pd_seqreg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pd_seqreg</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtIAAAIDCAYAAAApCPkgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmcXFWd//9Xd5qQdKcTEojLqIjKzMfRcXD7yegoIIq7
@@ -1538,28 +1558,37 @@ Zuanre8PwJVUbfUbwJtUYrc5M7/onHbYk66W2jJzG7Ut3dXUfsoPUPsk39Xr3z/POG3dz7cDO6gt
 pAk4Iy1JkiRNwERakiRJmoCJtCRJkjQBE2lJkiRpAibSkiRJ0gT+BlINo0T/T9ZsAAAAAElFTkSu
 QmCC
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'NC_007416.2-loci.gff3.gz'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;NC_007416.2-loci.gff3.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="n">tc_seqreg</span><span class="p">,</span> <span class="n">tc_intervals</span> <span class="o">=</span> <span class="n">load_intervals</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tc_intervals</span><span class="p">]</span>
-<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Gene distribution (Tribolium castaneum X chromosome)'</span><span class="p">,</span>
+<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Gene distribution (Tribolium castaneum X chromosome)&#39;</span><span class="p">,</span>
               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">tc_seqreg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tc_seqreg</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtIAAAIDCAYAAAApCPkgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XmYZGV59/Fv9wzDTPf0DNugxl2Jt3mjorigBgGNKBoV
@@ -1860,28 +1889,37 @@ YANwV719Tw+uWUYE7q8Rkx0vI1YxKdJJJvuc0k6eJW5QNlT5fpCYcHiIWK/6LWLFjnnunudz1zzn
 IiInQ9uxY7rOiIjI5ANZLnX3RSesLCIiGpEWEREREWmGAmkRERERkSYotUNEREREpAkakRYRERER
 aYICaRERERGRJiiQFhERERFpggJpEREREZEmKJAWEREREWnC35meu6pIOf+NAAAAAElFTkSuQmCC
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'NW_004668235.1-loci.gff3.gz'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;NW_004668235.1-loci.gff3.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
     <span class="n">xt_seqreg</span><span class="p">,</span> <span class="n">xt_intervals</span> <span class="o">=</span> <span class="n">load_intervals</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xt_intervals</span><span class="p">]</span>
-<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Gene distribution (Xenopus tropicalis scaffold 3b)'</span><span class="p">,</span>
+<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Gene distribution (Xenopus tropicalis scaffold 3b)&#39;</span><span class="p">,</span>
               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">xt_seqreg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xt_seqreg</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">160</span><span class="p">))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtcAAAIDCAYAAADPITJkAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XucXHV9//FXNiEk2WzCLWqrVby0H9uqWLRSEblYUPBu
@@ -2197,28 +2235,32 @@ UHkS8fSULBVlX59TysoNxE3LvBLlm4lFjVuI52nfSTwpZKC75/PDy465iMiBoB0aRUSkU2kTmf7u
 Pni/lUVERDPXIiIiIiK1ouBaRERERKRGlBYiIiIiIlIjmrkWEREREakRBdciIiIiIjWi4FpERERE
 pEYUXIuIiIiI1IiCaxERERGRGnkDzpVi+cwHoqIAAAAASUVORK5CYII=
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Re-distribute-genes">Re-distribute genes<a class="anchor-link" href="#Re-distribute-genes">¶</a></h2><p>How do these plots change if we randomly re-distribute the genes?
+<h2 id="Re-distribute-genes">Re-distribute genes<a class="anchor-link" href="#Re-distribute-genes">&#182;</a></h2><p>How do these plots change if we randomly re-distribute the genes?
 See <a href="http://stackoverflow.com/q/33831442/459780">http://stackoverflow.com/q/33831442/459780</a>.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">place_intervals</span><span class="p">(</span><span class="n">seqreg</span><span class="p">,</span> <span class="n">intervals</span><span class="p">):</span>
-    <span class="sd">"""</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Re-place sub-intervals in a larger interval.</span>
 
 <span class="sd">    Conceptually:</span>
@@ -2227,7 +2269,7 @@ See <a href="http://stackoverflow.com/q/33831442/459780">http://stackoverflow.co
 <span class="sd">           making sure it is not the starting position of any</span>
 <span class="sd">           other sub-interval.</span>
 <span class="sd">        2. Exand the sub-intervals back to their original size.</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">itvls</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
     <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">itvls</span><span class="p">)</span>
 
@@ -2254,46 +2296,62 @@ See <a href="http://stackoverflow.com/q/33831442/459780">http://stackoverflow.co
 <span class="c1"># A bit of testing</span>
 <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3333</span><span class="p">)</span>
 <span class="n">intervals</span> <span class="o">=</span> <span class="p">[</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">Interval</span><span class="p">(</span><span class="mi">97</span><span class="p">,</span> <span class="mi">98</span><span class="p">)</span> <span class="p">]</span>
-<span class="n">region</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'reg'</span><span class="p">)</span>
+<span class="n">region</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;reg&#39;</span><span class="p">)</span>
 <span class="n">place_intervals</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">intervals</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
 <div class="output_text output_subarea output_execute_result">
 <pre>([[76, 86], [2, 29], [69, 70]], 0)</pre>
 </div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3333</span><span class="p">)</span>
 <span class="n">pd_randintervals</span><span class="p">,</span> <span class="n">collisions</span> <span class="o">=</span> <span class="n">place_intervals</span><span class="p">(</span><span class="n">pd_seqreg</span><span class="p">,</span> <span class="n">pd_intervals</span><span class="p">)</span>
 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pd_randintervals</span><span class="p">]</span>
-<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Random gene distribution (Polistes dominula scaffold 25)'</span><span class="p">,</span>
+<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Random gene distribution (Polistes dominula scaffold 25)&#39;</span><span class="p">,</span>
               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">pd_seqreg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pd_seqreg</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
-<span class="k">print</span> <span class="s1">'Collisions: </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">collisions</span>
+<span class="k">print</span> <span class="s1">&#39;Collisions: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">collisions</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Collisions: 0
 </pre>
 </div>
 </div>
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtIAAAIDCAYAAAApCPkgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xm8W3Wd//HXbS+l222hUNTRQVw/jqOD4oI6DLiLuI+O
@@ -2589,35 +2647,45 @@ E6lcIPYAAACgSURBVJZGgI+J+1sFrAXu7jT29OKam4jE/TVisuOFxComVTnJXMyp7OR54gFlbc32
 kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 9Hxm1W5wAAAAAElFTkSuQmCC
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3333</span><span class="p">)</span>
 <span class="n">tc_randintervals</span><span class="p">,</span> <span class="n">collisions</span> <span class="o">=</span> <span class="n">place_intervals</span><span class="p">(</span><span class="n">tc_seqreg</span><span class="p">,</span> <span class="n">tc_intervals</span><span class="p">)</span>
 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tc_randintervals</span><span class="p">]</span>
-<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Random gene distribution (Tribolium castaneum X chromosome)'</span><span class="p">,</span>
+<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Random gene distribution (Tribolium castaneum X chromosome)&#39;</span><span class="p">,</span>
               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">tc_seqreg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tc_seqreg</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
-<span class="k">print</span> <span class="s1">'Collisions: </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">collisions</span>
+<span class="k">print</span> <span class="s1">&#39;Collisions: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">collisions</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Collisions: 0
 </pre>
 </div>
 </div>
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtIAAAIDCAYAAAApCPkgAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xm4HFWZ+PFvQgjZWYM6bij+eNVRUVxQREAGEVfAGXVU
@@ -2921,35 +2989,45 @@ eJcI7Abc/dui2XILunll7r6R2JZuFbGf8hPEPskP1+rX22mnrPx8H7CZ2BLuAyKn+JbaYsK6YeBj
 IiIi0gUF0iIiIiIiXVAgLSIiIiLSBQXSIiIiIiJdUCAtIiIiItKFvwEY+7Bg853M2AAAAABJRU5E
 rkJggg==
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">3333</span><span class="p">)</span>
 <span class="n">xt_randintervals</span><span class="p">,</span> <span class="n">collisions</span> <span class="o">=</span> <span class="n">place_intervals</span><span class="p">(</span><span class="n">xt_seqreg</span><span class="p">,</span> <span class="n">xt_intervals</span><span class="p">)</span>
 <span class="n">starts</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">start</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xt_randintervals</span><span class="p">]</span>
-<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Random gene distribution (Xenopus tropicalis scaffold 3b)'</span><span class="p">,</span>
+<span class="n">plot_hist_rug</span><span class="p">(</span><span class="n">starts</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Random gene distribution (Xenopus tropicalis scaffold 3b)&#39;</span><span class="p">,</span>
               <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="n">xt_seqreg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xt_seqreg</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">160</span><span class="p">))</span>
-<span class="k">print</span> <span class="s1">'Collisions: </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">collisions</span>
+<span class="k">print</span> <span class="s1">&#39;Collisions: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">collisions</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Collisions: 0
 </pre>
 </div>
 </div>
+
 <div class="output_area"><div class="prompt"></div>
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtcAAAIDCAYAAADPITJkAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xm4HFWZ+PFvQgiQDQEDzrjhMr46o6LoiDIIuCEuA6Mz
@@ -3270,10 +3348,13 @@ zAc+WWnb02I75xPB/BxiQuWpxNNTslSUg21OKSvXEzct80uUbyMmNW4nnqd9B/GkkIHuns8PL9vn
 IiKHg1ZoFBGRTqVFZPq7++BD7iwiIhq5FhERERGpFgXXIiIiIiJVorQQEREREZEq0ci1iIiIiEiV
 KLgWEREREakSBdciIiIiIlWi4FpEREREpEoUXIuIiIiIVMl/AFmuslWqbOHkAAAAAElFTkSuQmCC
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');

@@ -1064,59 +1064,71 @@ h6:hover .anchor-link {
 I'm going through our repository and tidying things up, and I realized I have not had a chance to record my notes on several of the supplemental tables providing a comparison of genome features across seven species.
 I'll go ahead and do so here.</p>
 <p>The data files were retrieved from <a href="http://brendelgroup.github.io/HymHub/">HymHub</a>, and the <code>mlr</code> program was obtained from <a href="https://github.com/johnkerl/miller.git">johnkerl/miller</a> (installed with <a href="http://brew.sh/">Homebrew</a>).</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Define an alias for mlr command settings</span>
 <span class="c1">#  --csv: comma-separated values</span>
-<span class="c1">#  --fs tab: lol j/k they're separated by tabs (fs=field separator)</span>
+<span class="c1">#  --fs tab: lol j/k they&#39;re separated by tabs (fs=field separator)</span>
 <span class="c1">#  --rs lf: use line feed as record separator (instead of default carriage return + line feed)</span>
 <span class="c1">#  --ofmt %.2lf: print only 2 decimal points for real numbers</span>
-<span class="nb">alias</span> <span class="nv">mlrcmd</span><span class="o">=</span><span class="s1">'mlr --csv --fs tab --rs lf --ofmt %.2lf'</span>
+<span class="nb">alias</span> <span class="nv">mlrcmd</span><span class="o">=</span><span class="s1">&#39;mlr --csv --fs tab --rs lf --ofmt %.2lf&#39;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Table-S6:-gene-model-characteristics">Table S6: gene model characteristics<a class="anchor-link" href="#Table-S6:-gene-model-characteristics">¶</a></h2><p>Here we're looking at gene models across the seven species, and in particular the distribution of gene length, exon count, and nucleotide composition. First we report the length distribution: the mean, median, min, and max gene lengths (in base pairs).</p>
+<h2 id="Table-S6:-gene-model-characteristics">Table S6: gene model characteristics<a class="anchor-link" href="#Table-S6:-gene-model-characteristics">&#182;</a></h2><p>Here we're looking at gene models across the seven species, and in particular the distribution of gene length, exon count, and nucleotide composition. First we report the length distribution: the mean, median, min, and max gene lengths (in base pairs).</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Length_mean	Length_p50	Length_min	Length_max
@@ -1136,8 +1148,10 @@ Length_mean	Length_p50	Length_min	Length_max
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1145,14 +1159,15 @@ Length_mean	Length_p50	Length_min	Length_max
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The header is duplicated for each file, so let's get rid of that with the tail command.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
@@ -1160,11 +1175,15 @@ Length_mean	Length_p50	Length_min	Length_max
         <span class="p">|</span> tail -n 1
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>13139.40	3557	105	904366
@@ -1177,8 +1196,10 @@ Length_mean	Length_p50	Length_min	Length_max
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1186,28 +1207,33 @@ Length_mean	Length_p50	Length_min	Length_max
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we can add back in our own header, and include the species label on each row.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">$'Species\tMean\tMedian\tMin\tMax'</span>
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
 <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
-    <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$'\t'</span>
+    <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv <span class="se">\</span>
         <span class="p">|</span> tail -n 1
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Species	Mean	Median	Min	Max
@@ -1221,8 +1247,10 @@ Nvit	9917.48	2979	105	600051
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1233,33 +1261,38 @@ Nvit	9917.48	2979	105	600051
 <p>We've been using <code>-f Length</code> to specify which field from our data tables to compute these statistics for.
 In addition to length, we also want to compute these statistics for exon count and nucleotide composition (<code>ExonCount</code> and <code>GCContent</code> in the data tables, respectively).
 Rather than retyping the command two more times, let's just wrap the command in another loop and iterate over each field.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> field in Length ExonCount GCContent
 <span class="k">do</span>
     <span class="nb">echo</span>
     <span class="nb">echo</span> <span class="nv">$field</span>
-    <span class="nb">echo</span> <span class="s1">$'Species\tMean\tMedian\tMin\tMax'</span>
+    <span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
     <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
     <span class="k">do</span>
-        <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$'\t'</span>
+        <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
         mlrcmd stats1 -a mean,p50,min,max -f <span class="nv">$field</span> <span class="se">\</span>
                scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv <span class="se">\</span>
             <span class="p">|</span> tail -n 1
     <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
@@ -1295,8 +1328,10 @@ Nvit	0.40	0.40	0.20	0.74
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1306,6 +1341,7 @@ Nvit	0.40	0.40	0.20	0.74
 <p>Great.
 This doesn't get the data into <em>exactly</em> the same format as the table, but it's close enough that it requires only a few minutes of copy/paste work to compose the final table.
 Had we been using LaTeX to typeset the supplement, I might have taken a few more minutes to completely automate the construction of the table, but since we're using Word anyway :( I figured this would be sufficient.</p>
+
 </div>
 </div>
 </div>
@@ -1314,7 +1350,7 @@ Had we been using LaTeX to typeset the supplement, I might have taken a few more
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Table-S7-S8:-exon-and-intron-characteristics">Table S7-S8: exon and intron characteristics<a class="anchor-link" href="#Table-S7-S8:-exon-and-intron-characteristics">¶</a></h2><p>We'll use the same basic approach for computing summary stats for exon and intron characteristics that we did for entire gene models.
+<h2 id="Table-S7-S8:-exon-and-intron-characteristics">Table S7-S8: exon and intron characteristics<a class="anchor-link" href="#Table-S7-S8:-exon-and-intron-characteristics">&#182;</a></h2><p>We'll use the same basic approach for computing summary stats for exon and intron characteristics that we did for entire gene models.
 There are two differences, however.</p>
 <ul>
 <li>First, exon count only makes sense at the gene level, so we don't compute this for exons and introns.</li>
@@ -1323,21 +1359,26 @@ Although outliers may be interesting (if indeed they are annotated correctly), h
 </ul>
 <p>With respect to this second point, we first compute the 5% and 95% length quantiles over a large number of related species, and then use these values to filter exons and introns before computing summary statistics for nucleotide composition.
 We also make sure that exons and introns contain no more than 25% ambiguous nucleotide calls.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Length_p5	Length_p95
@@ -1345,8 +1386,10 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1354,25 +1397,30 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's capture these values and store them in variables so we can use them for subsequent commands.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 1<span class="k">)</span>
 <span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 2<span class="k">)</span>
 
-<span class="nb">echo</span> <span class="s2">" 5% quantile: </span><span class="nv">$p5</span><span class="s2">"</span>
-<span class="nb">echo</span> <span class="s2">"95% quantile: </span><span class="nv">$p95</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">&quot; 5% quantile: </span><span class="nv">$p5</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;95% quantile: </span><span class="nv">$p95</span><span class="s2">&quot;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre> 5% quantile: 66
@@ -1380,8 +1428,10 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1390,27 +1440,32 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's feed these in to the filter command.
 We have to be careful to escape field names and shell variables, since both begin with the dollar sign prefix.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
     mlrcmd filter <span class="se">\</span>
-           <span class="s2">"\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25"</span> <span class="se">\</span>
+           <span class="s2">&quot;\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25&quot;</span> <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.exons.tsv <span class="se">\</span>
         <span class="p">|</span> mlrcmd stats1 -a mean,p50,min,max -f GCContent
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
@@ -1430,8 +1485,10 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1439,30 +1496,35 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We need a bit of cleanup, similar to what we did before.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">$'Species\tMean\tMedian\tMin\tMax'</span>
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
 <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
 <span class="k">do</span>
-    <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$'\t'</span>
+    <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
     mlrcmd filter <span class="se">\</span>
-           <span class="s2">"\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25"</span> <span class="se">\</span>
+           <span class="s2">&quot;\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25&quot;</span> <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.exons.tsv <span class="se">\</span>
         <span class="p">|</span> mlrcmd stats1 -a mean,p50,min,max -f GCContent <span class="se">\</span>
         <span class="p">|</span> tail -n 1
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Species	Mean	Median	Min	Max
@@ -1476,8 +1538,10 @@ Nvit	0.46	0.45	0.15	0.79
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1485,53 +1549,58 @@ Nvit	0.46	0.45	0.15	0.79
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now let's wrap it all up and bring it together to produce the final versions of Table S7-S8.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="k">for</span> featuretype in exons introns
 <span class="k">do</span>
     <span class="nb">echo</span>
     <span class="nb">echo</span>
-    <span class="nv">title</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$featuretype</span> <span class="p">|</span> tr <span class="s1">'[:lower:]'</span> <span class="s1">'[:upper:]'</span><span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"=====</span><span class="si">${</span><span class="nv">title</span><span class="si">}</span><span class="s2">====="</span>
+    <span class="nv">title</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$featuretype</span> <span class="p">|</span> tr <span class="s1">&#39;[:lower:]&#39;</span> <span class="s1">&#39;[:upper:]&#39;</span><span class="k">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;=====</span><span class="si">${</span><span class="nv">title</span><span class="si">}</span><span class="s2">=====&quot;</span>
 
     <span class="nb">echo</span>
-    <span class="nb">echo</span> <span class="s2">"Length"</span>
-    <span class="nb">echo</span> <span class="s1">$'Species\tMean\tMedian\tMin\tMax'</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Length&quot;</span>
+    <span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
     <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
     <span class="k">do</span>
-        <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$'\t'</span>
+        <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
         mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
                scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="se">\</span>
             <span class="p">|</span> tail -n 1
     <span class="k">done</span>
     
     <span class="nb">echo</span>
-    <span class="nb">echo</span> <span class="s2">"GCContent"</span>
-    <span class="nb">echo</span> <span class="s1">$'Species\tMean\tMedian\tMin\tMax'</span>
+    <span class="nb">echo</span> <span class="s2">&quot;GCContent&quot;</span>
+    <span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
     <span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 1<span class="k">)</span>
     <span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 2<span class="k">)</span>
     <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
     <span class="k">do</span>
-        <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$'\t'</span>
+        <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
         mlrcmd filter <span class="se">\</span>
-               <span class="s2">"\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25"</span> <span class="se">\</span>
+               <span class="s2">&quot;\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25&quot;</span> <span class="se">\</span>
                scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="se">\</span>
             <span class="p">|</span> mlrcmd stats1 -a mean,p50,min,max -f GCContent <span class="se">\</span>
             <span class="p">|</span> tail -n 1
 <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
@@ -1583,8 +1652,10 @@ Nvit	0.32	0.30	0.06	0.81
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -1592,6 +1663,7 @@ Nvit	0.32	0.30	0.06	0.81
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>That's it!</p>
+
 </div>
 </div>
 </div>

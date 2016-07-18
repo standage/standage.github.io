@@ -1069,46 +1069,57 @@ The annotation files were created using <a href="https://standage.github.io/genh
                 --numprocs<span class="o">=</span><span class="m">4</span> <span class="se">\</span>
                 download format prepare
 </pre></div>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># The input files</span>
-<span class="nv">annotfiles</span><span class="o">=</span><span class="s2">"species/Att6/Att6.iloci.gff3 species/Atha/Atha.iloci.gff3</span>
-<span class="s2">            species/Am10/Am10.iloci.gff3 species/Am32/Am32.iloci.gff3"</span>
+<span class="nv">annotfiles</span><span class="o">=</span><span class="s2">&quot;species/Att6/Att6.iloci.gff3 species/Atha/Atha.iloci.gff3</span>
+<span class="s2">            species/Am10/Am10.iloci.gff3 species/Am32/Am32.iloci.gff3&quot;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># First row of the table: genome size</span>
 <span class="k">for</span> file in <span class="nv">$annotfiles</span><span class="p">;</span> <span class="k">do</span>
-    grep <span class="s1">'^##sequence-region'</span> <span class="nv">$file</span> <span class="p">|</span> awk <span class="s1">'{ sum += $4 } END { print sum }'</span>
+    grep <span class="s1">&#39;^##sequence-region&#39;</span> <span class="nv">$file</span> <span class="p">|</span> awk <span class="s1">&#39;{ sum += $4 } END { print sum }&#39;</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>119186497
@@ -1118,24 +1129,30 @@ The annotation files were created using <a href="https://standage.github.io/genh
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Second row: sequence count</span>
 <span class="k">for</span> file in <span class="nv">$annotfiles</span><span class="p">;</span> <span class="k">do</span>
-    grep -c <span class="s1">'^##sequence-region'</span> <span class="nv">$file</span>
+    grep -c <span class="s1">&#39;^##sequence-region&#39;</span> <span class="nv">$file</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>5
@@ -1145,28 +1162,34 @@ The annotation files were created using <a href="https://standage.github.io/genh
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Third row: gene count</span>
 <span class="k">for</span> file in <span class="nv">$annotfiles</span><span class="p">;</span> <span class="k">do</span>
-     grep <span class="s1">$'\tmRNA\t'</span> <span class="nv">$file</span> <span class="se">\</span>
-         <span class="p">|</span> perl -ne <span class="s1">'m/Parent=([^;\n]+)/ and print "$1\n"'</span> <span class="se">\</span>
+     grep <span class="s1">$&#39;\tmRNA\t&#39;</span> <span class="nv">$file</span> <span class="se">\</span>
+         <span class="p">|</span> perl -ne <span class="s1">&#39;m/Parent=([^;\n]+)/ and print &quot;$1\n&quot;&#39;</span> <span class="se">\</span>
          <span class="p">|</span> sort -u <span class="se">\</span>
          <span class="p">|</span> wc -l <span class="se">\</span>
-         <span class="p">|</span> tr -d <span class="s1">' '</span>
+         <span class="p">|</span> tr -d <span class="s1">&#39; &#39;</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>26541
@@ -1176,23 +1199,29 @@ The annotation files were created using <a href="https://standage.github.io/genh
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Determine all annotated feature types so we can test for all</span>
 <span class="c1"># ncRNA types.</span>
-cat <span class="nv">$annotfiles</span> <span class="p">|</span> grep -v <span class="s1">'^#'</span> <span class="p">|</span> cut -f <span class="m">3</span> <span class="p">|</span> sort -u
+cat <span class="nv">$annotfiles</span> <span class="p">|</span> grep -v <span class="s1">&#39;^#&#39;</span> <span class="p">|</span> cut -f <span class="m">3</span> <span class="p">|</span> sort -u
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>CDS
@@ -1212,29 +1241,35 @@ transcript
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Fourth row: non-coding gene count</span>
 <span class="k">for</span> file in <span class="nv">$annotfiles</span><span class="p">;</span> <span class="k">do</span>
-     grep -e <span class="s1">$'\tmiRNA\t'</span> -e <span class="s1">$'\tncRNA\t'</span> -e <span class="s1">$'\trRNA\t'</span> -e <span class="s1">$'\tsnRNA\t'</span> <span class="se">\</span>
-          -e <span class="s1">$'\tsnoRNA\t'</span> -e <span class="s1">$'\ttRNA\t'</span> -e <span class="s1">$'\ttranscript\t'</span> <span class="nv">$file</span> <span class="se">\</span>
-         <span class="p">|</span> perl -ne <span class="s1">'m/Parent=([^;\n]+)/ and print "$1\n"'</span> <span class="se">\</span>
+     grep -e <span class="s1">$&#39;\tmiRNA\t&#39;</span> -e <span class="s1">$&#39;\tncRNA\t&#39;</span> -e <span class="s1">$&#39;\trRNA\t&#39;</span> -e <span class="s1">$&#39;\tsnRNA\t&#39;</span> <span class="se">\</span>
+          -e <span class="s1">$&#39;\tsnoRNA\t&#39;</span> -e <span class="s1">$&#39;\ttRNA\t&#39;</span> -e <span class="s1">$&#39;\ttranscript\t&#39;</span> <span class="nv">$file</span> <span class="se">\</span>
+         <span class="p">|</span> perl -ne <span class="s1">&#39;m/Parent=([^;\n]+)/ and print &quot;$1\n&quot;&#39;</span> <span class="se">\</span>
          <span class="p">|</span> sort -u <span class="se">\</span>
          <span class="p">|</span> wc -l <span class="se">\</span>
-         <span class="p">|</span> tr -d <span class="s1">' '</span>
+         <span class="p">|</span> tr -d <span class="s1">&#39; &#39;</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>769
@@ -1244,24 +1279,30 @@ transcript
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Fifth row: total iLocus count</span>
 <span class="k">for</span> file in <span class="nv">$annotfiles</span><span class="p">;</span> <span class="k">do</span>
-    grep -c <span class="s1">$'\tlocus\t'</span> <span class="nv">$file</span>
+    grep -c <span class="s1">$&#39;\tlocus\t&#39;</span> <span class="nv">$file</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>37299
@@ -1271,29 +1312,35 @@ transcript
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="c1"># Final rows: iLocus count breakdown</span>
 <span class="k">for</span> file in <span class="nv">$annotfiles</span><span class="p">;</span> <span class="k">do</span>
-    <span class="nb">echo</span> <span class="s2">""</span>
+    <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
     <span class="nb">echo</span> <span class="nv">$file</span>
     <span class="k">for</span> <span class="nb">type</span> in piLocus iiLocus ciLocus fiLocus niLocus<span class="p">;</span> <span class="k">do</span>
-        <span class="nb">echo</span> -n <span class="s2">"</span><span class="nv">$type</span><span class="s2">: "</span>
+        <span class="nb">echo</span> -n <span class="s2">&quot;</span><span class="nv">$type</span><span class="s2">: &quot;</span>
         grep -c <span class="nv">iLocus_type</span><span class="o">=</span><span class="nv">$type</span> <span class="nv">$file</span>
     <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
@@ -1327,8 +1374,10 @@ niLocus: 0
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
