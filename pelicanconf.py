@@ -21,7 +21,7 @@ DISQUS_SITENAME = 'standage-github-io'
 SUMMARY_MAX_LENGTH = 60
 
 # Disallow indexing of drafts
-STATIC_PATHS = ['extra'] 
+STATIC_PATHS = ['extra', 'images'] 
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
 }
