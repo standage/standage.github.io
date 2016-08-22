@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "reproducible-variant-calling-is-possible-with-randomized-algorithms.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Reproducible variant calling is possible with randomized algorithms</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/reproducible-variant-calling-is-possible-with-randomized-algorithms.html">2016-08-22</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/random.html">random</a> <a href="https://standage.github.io/tag/variant-calling.html">variant calling</a> </div>
+		<div><p>This morning I read <a href="http://dx.doi.org/10.1093/bioinformatics/btw139">On genomic repeats and reproducibility</a> by Can Firtina and Can Alkan.
+The paper discusses two notable observations regarding calling genomic variants.</p>
+<ol>
+<li>Some sequence read aligners are not deterministic, and shuffling the order of the reads can result in different alignments.</li>
+<li>Some variant callers are not deterministic, and will report a different set of variants if an analysis is repeated on the same set of alignments (i.e. the same BAM file).</li>
+</ol>
+<h2>Non-deterministic read mapping</h2>
+<p>The first observation wasn't all that surprising to me.
+I remember as a graduate student hearing anecdotally that genome assembly algorithms are (or can be) sensitive to read order.
+And anything that involves pseudorandom number generators will by definition produce results with technical variation.</p>
+<p>The authors analyzed four read alignment tools: Bowtie2, RazerS3, mrFAST, and BWA-MEM.
+Based on a sample of 1 million reads, they confirmed that Bowtie2<sup>‡</sup> and mrFAST produce identical alignments when the read order is shuffled.
+BWA-MEM, however, reports multimapped reads differently, and the location reported for each multimapped read depends on its order.
+Oddly enough, the the authors didn't report RazerS3 results for this analysis, although in the discussion section they describe RazerS3 as a deterministic mapper.</p>
+<h2>Non-deterministic variant calling</h2>
+<p>The second observation was quite intriguing to me.
+The authors evaluated four variant callers—HaplotypeCaller, Freebayes, Platypus, and SAMtools—and reported the extent to which differences in read alignments due to read order affect variant calling.
+More interestingly, though, was the observation that HaplotypeCaller would produce different results when run multiple times on the same input file.
+Apparently, HaplotypeCaller uses a random sampling of the training data for sake of efficiency, and different random samples will result in different variants being filtered out by quality control before final results are reported.</p>
+<h2>Discussion and recommendations</h2>
+<p>In the discussion section, the authors recommend using a deterministic read mapper and variant caller for sake of reproducibility.
+However, I want to contend with their claim that <em>Full reproducibility could only be achieved through using deterministic methods.</em>
+The behavior of random number generators can be controlled by initializing the generator with a "seed" (see <a href="https://biowize.wordpress.com/2015/08/05/reproducible-software-behavior-with-random-seeds/">this post from my old blog</a>).
+Therefore, a randomized algorithm can indeed be fully reproducible if the following conditions are met.</p>
+<ul>
+<li>The algorithm allows (but does not necessarily require) the user to specify a seed to initialize the random number generator.</li>
+<li>The algorithm reports the seed used to initialize the random number generator, whether specified by the user or not.</li>
+<li>The random seed(s) used for an analysis are disclosed whenever results are published or shared.</li>
+</ul>
+<p>Unfortunately, BWA-MEM does not allow users to specify random seeds, so the authors are correct <em>in this case</em> that full reproducibility is not possible with the aligner (I'm not familiar with HaplotypeCaller, so I won't comment on that).
+However, the authors themselves admit that in general "randomized algorithms may achieve better accuracy in practice."
+So rather than recommending that fellow scientists avoid a tool or class of tools entirely for the sake of reproducibility, I contend that we should recommend that randomized algorithms follow these simple steps to facilitate complete reproducibility.
+Perhaps I'll even open a pull request for BWA-MEM myself, although with 30 open pull requests I don't have faith it would be merged any time soon.</p>
+<hr />
+<p><sup>‡</sup>The authors reported anecdotal evidence, almost as an afterthought, that changing read names will affect the results reported by Bowtie2, even if changing the read order does not.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

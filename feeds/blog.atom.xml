@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-05-18T00:00:00-04:00</updated><entry><title>That darn cache! Configuring the SRA Toolkit</title><link href="https://standage.github.io/that-darn-cache-configuring-the-sra-toolkit.html" rel="alternate"></link><published>2016-05-18T00:00:00-04:00</published><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-05-18:that-darn-cache-configuring-the-sra-toolkit.html</id><summary type="html">&lt;p&gt;Last night I started a batch job on our group's cluster to download and process 9 Illumina libraries from the &lt;a href="https://www.ncbi.nlm.nih.gov/sra"&gt;NCBI SRA&lt;/a&gt;.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-08-22T00:00:00-04:00</updated><entry><title>Reproducible variant calling is possible with randomized algorithms</title><link href="https://standage.github.io/reproducible-variant-calling-is-possible-with-randomized-algorithms.html" rel="alternate"></link><published>2016-08-22T00:00:00-04:00</published><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-08-22:reproducible-variant-calling-is-possible-with-randomized-algorithms.html</id><summary type="html">&lt;p&gt;This morning I read &lt;a href="http://dx.doi.org/10.1093/bioinformatics/btw139"&gt;On genomic repeats and reproducibility&lt;/a&gt; by Can Firtina and Can Alkan.
+The paper discusses two notable observations regarding calling genomic variants.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Some sequence read aligners are not deterministic, and shuffling the order of the reads can result in different alignments.&lt;/li&gt;
+&lt;li&gt;Some variant callers are not deterministic, and will report a different set of variants if an analysis is repeated on the same set of alignments (i.e. the same BAM file).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Non-deterministic read mapping&lt;/h2&gt;
+&lt;p&gt;The first observation wasn't all that surprising to me.
+I remember as a graduate student hearing anecdotally that genome assembly algorithms are (or can be) sensitive to read order.
+And anything that involves pseudorandom number generators will by definition produce results with technical variation.&lt;/p&gt;
+&lt;p&gt;The authors analyzed four read alignment tools: Bowtie2, RazerS3, mrFAST, and BWA-MEM.
+Based on a sample of 1 million reads, they confirmed that Bowtie2&lt;sup&gt;‡&lt;/sup&gt; and mrFAST produce identical alignments when the read order is shuffled.
+BWA-MEM, however, reports multimapped reads differently, and the location reported for each multimapped read depends on its order.
+Oddly enough, the the authors didn't report RazerS3 results for this analysis, although in the discussion section they describe RazerS3 as a deterministic mapper.&lt;/p&gt;
+&lt;h2&gt;Non-deterministic variant calling&lt;/h2&gt;
+&lt;p&gt;The second observation was quite intriguing to me.
+The authors evaluated four variant callers—HaplotypeCaller, Freebayes, Platypus, and SAMtools—and reported the extent to which differences in read alignments due to read order affect variant calling.
+More interestingly, though, was the observation that HaplotypeCaller would produce different results when run multiple times on the same input file.
+Apparently, HaplotypeCaller uses a random sampling of the training data for sake of efficiency, and different random samples will result in different variants being filtered out by quality control before final results are reported.&lt;/p&gt;
+&lt;h2&gt;Discussion and recommendations&lt;/h2&gt;
+&lt;p&gt;In the discussion section, the authors recommend using a deterministic read mapper and variant caller for sake of reproducibility.
+However, I want to contend with their claim that &lt;em&gt;Full reproducibility could only be achieved through using deterministic methods.&lt;/em&gt;
+The behavior of random number generators can be controlled by initializing the generator with a "seed" (see &lt;a href="https://biowize.wordpress.com/2015/08/05/reproducible-software-behavior-with-random-seeds/"&gt;this post from my old blog&lt;/a&gt;).
+Therefore, a randomized algorithm can indeed be fully reproducible if the following conditions are met.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The algorithm allows (but does not necessarily require) the user to specify a seed to initialize the random number generator.&lt;/li&gt;
+&lt;li&gt;The algorithm reports the seed used to initialize the random number generator, whether specified by the user or not.&lt;/li&gt;
+&lt;li&gt;The random seed(s) used for an analysis are disclosed whenever results are published or shared.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unfortunately, BWA-MEM does not allow users to specify random seeds, so the authors are correct &lt;em&gt;in this case&lt;/em&gt; that full reproducibility is not possible with the aligner (I'm not familiar with HaplotypeCaller, so I won't comment on that).
+However, the authors themselves admit that in general "randomized algorithms may achieve better accuracy in practice."
+So rather than recommending that fellow scientists avoid a tool or class of tools entirely for the sake of reproducibility, I contend that we should recommend that randomized algorithms follow these simple steps to facilitate complete reproducibility.
+Perhaps I'll even open a pull request for BWA-MEM myself, although with 30 open pull requests I don't have faith it would be merged any time soon.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;sup&gt;‡&lt;/sup&gt;The authors reported anecdotal evidence, almost as an afterthought, that changing read names will affect the results reported by Bowtie2, even if changing the read order does not.&lt;/p&gt;</summary><category term="random"></category><category term="variant calling"></category></entry><entry><title>That darn cache! Configuring the SRA Toolkit</title><link href="https://standage.github.io/that-darn-cache-configuring-the-sra-toolkit.html" rel="alternate"></link><published>2016-05-18T00:00:00-04:00</published><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-05-18:that-darn-cache-configuring-the-sra-toolkit.html</id><summary type="html">&lt;p&gt;Last night I started a batch job on our group's cluster to download and process 9 Illumina libraries from the &lt;a href="https://www.ncbi.nlm.nih.gov/sra"&gt;NCBI SRA&lt;/a&gt;.
 In the past, I have almost always downloaded such data via direct links to &lt;code&gt;.sra&lt;/code&gt; files on the SRA FTP site, and then converted these files to Fastq format using the &lt;code&gt;fastq-dump&lt;/code&gt; command from the &lt;a href="https://www.ncbi.nlm.nih.gov/Traces/sra/?view=software"&gt;SRA Toolkit&lt;/a&gt;.
 However, for a while I've been aware that the &lt;code&gt;fastq-dump&lt;/code&gt; command is capable of downloading data (by accession) directly from NCBI.
 So last night, I took advantage of this convenience function.&lt;/p&gt;
