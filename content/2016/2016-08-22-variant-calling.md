@@ -32,7 +32,8 @@ Apparently, HaplotypeCaller uses a random sampling of the training data for sake
 
 In the discussion section, the authors recommend using a deterministic read mapper and variant caller for sake of reproducibility.
 However, I want to contend with their claim that *Full reproducibility could only be achieved through using deterministic methods.*
-The behavior of random number generators can be controlled by initializing the generator with a "seed" (see [this post from my old blog](https://biowize.wordpress.com/2015/08/05/reproducible-software-behavior-with-random-seeds/)).
+The behavior of random number generators can be controlled by initializing the generator with a "seed" (see [this post from my old blog](https://biowize.wordpress.com/2015/08/05/reproducible-software-behavior-with-random-seeds/)), and I think I'm safe in saying that random seeds are general knowledge.
+Somebody with enough technical chops to implement a read aligner will almost certainly be familiar with random seeds.
 Therefore, a randomized algorithm can indeed be fully reproducible if the following conditions are met.
 
 - The algorithm allows (but does not necessarily require) the user to specify a seed to initialize the random number generator.
