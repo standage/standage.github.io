@@ -1,5 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><lastBuildDate>Mon, 22 Aug 2016 00:00:00 -0400</lastBuildDate><item><title>Reproducible variant calling is possible with randomized algorithms</title><link>https://standage.github.io/reproducible-variant-calling-is-possible-with-randomized-algorithms.html</link><description>&lt;p&gt;This morning I read &lt;a href="http://dx.doi.org/10.1093/bioinformatics/btw139"&gt;On genomic repeats and reproducibility&lt;/a&gt; by Can Firtina and Can Alkan.
+<rss version="2.0"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><lastBuildDate>Thu, 08 Sep 2016 00:00:00 -0400</lastBuildDate><item><title>An idiot's guide to loading reads from a BAM file</title><link>https://standage.github.io/an-idiots-guide-to-loading-reads-from-a-bam-file.html</link><description>&lt;p&gt;tl;dr? It's fine, just ignore secondary/supplementary alignments and don't disable reporting of unaligned reads.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;I recently started my first &lt;em&gt;real&lt;/em&gt; foray into human genomics, and if I thought I was overwhelmed with data before, I'm much more so now.
+(Thank goodness I'm not &lt;strike&gt;stupid&lt;/strike&gt; ambitious enough to work on marine or soil metagenomics!)
+One challenge I've encountered already is that this field seems to be moving toward BAM files&lt;sup&gt;1&lt;/sup&gt; for distributing not only read alignments against a reference genome but also the original read sequences themselves.
+I have a passing familiarity with SAM/BAM files, but (barring a few exceptions) I've always treated them as a black box before, using "trusted" tools to create and process them.
+Now that I'm faced with the prospect of writing software to take them as input, I've really had to bite the bullet and dig into the nitty gritty.&lt;/p&gt;
+&lt;h2&gt;BAM is the new Fastq&lt;/h2&gt;
+&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/FASTQ_format"&gt;Fastq format&lt;/a&gt; has long been the standard for storing nucleotide sequence reads from genome-scale sequencing platforms such as Illumina.
+Although it is riddled with the &lt;a href="https://www.biostars.org/p/7126/#7136"&gt;same issues as essentially every other bioinformatics data format&lt;/a&gt;—a redundant and incomplete spec (&lt;em&gt;What *is* the purpose of the third line? Can the sequence be split across multiple lines?&lt;/em&gt;) and inconsistent usage (&lt;em&gt;Which quality encoding was used? Are pairs interleaved or split into different files?&lt;/em&gt;)—the Fastq format's stripped-down simplicity is no doubt a big factor in its wide adoption.
+On the other hand, the &lt;a href="https://en.wikipedia.org/wiki/SAM_(file_format)"&gt;SAM format&lt;/a&gt; was designed for storing read alignments against a reference, with BAM as its compressed binary counterpart.
+When it comes to analyzing the raw reads produced by a sequencer, Fastq is everybody's natural first choice.&lt;/p&gt;
+&lt;p&gt;The scale of human genomics data collection is proving challenging, however.
+When a single modest-coverage sample requires on the order of 100 GB for storage, and you're sequencing thousands of samples, you don't want to store duplicates of your data.
+And since the majority of scientists in the field are only interested in the alignments anyway, it makes much more sense to publish and archive only BAM files rather than only Fastq files.&lt;/p&gt;
+&lt;h2&gt;But what if I just want the reads?&lt;/h2&gt;
+&lt;p&gt;So the big question then is: if I'm not interested in the alignments and only want the original read sequences, can I get these from the BAM file?
+Those more familiar with SAM/BAM could probably have given an immediate answer, but as a relative n00b I had several questions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is the sequence reported in the BAM file the read sequence, the reference sequence, or an alignment artifact (like a consensus)?&lt;/li&gt;
+&lt;li&gt;Do BAM files include unmapped reads?&lt;/li&gt;
+&lt;li&gt;Are multi-mapped reads reported multiple times?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In short, is it possible to extract all input read sequences non-redundantly from a BAM file?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(I should note at this point that I wasn't &lt;strong&gt;completely&lt;/strong&gt; unaware that BAM-to-Fastq converters exist&lt;sup&gt;2&lt;/sup&gt;, so I probably should have approached this question with a bit more confidence.)&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Some probing&lt;/h2&gt;
+&lt;p&gt;To satisfy my curiousity, I did a bit of detective work on the BAM files I'm analyzing in my current project.
+Since the files are huge (&amp;gt;100GB per) and stored on a busy cluster, I selected only the first 5 million-ish reads from the file for testing (processing the whole file would have required submitting a job request to the queue).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;samtools view -h mysample.bam \
+    | head -n 5000000 \
+    | samtools view -b -o mysample.1st5mil.bam
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Checking whether the file contains unmapped reads is quite simple.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;samtools view -f 4 -c mysample.1st5mil.bam
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Checking whether multimapped reads are reported multiple times took a bit more command-line fu.
+The following command cuts out the read ID from each alignment, sorts, reports the counts of each uniq read ID, sorts again by counts, and then reports the top 10 reads by count.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;samtools view mysample.1st5mil.bam \
+    | cut -f 1 \
+    | sort \
+    | uniq -c \
+    | sort -rn \
+    | head -n 10
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;All of the top 10 read IDs occurred four times in the input.
+I suspected that two times would simply mean both the read and its pair were found, but four times means that both the read and its pair were each reported twice.
+To confirm, I searched the file for several of the duplicated read IDs.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;samtools view mysample.1st5mil.bam | grep ReadIdHere
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sure enough, in each case, both of the read pairs were reported once in full, and a second time as a hard-clipped secondary alignment (256 or 0x100 in the bitwise flag).
+The SAM specification is a bit sparse on when hard and soft clipping are intended to be used, but the point is moot since these are marked as secondary alignments.&lt;/p&gt;
+&lt;p&gt;I then used the following commands to ensure that all hard-clipped alignments are marked as secondary (and that all secondary alignments are hard-clipped).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;samtools view -f 256 -c mysample.1st5mil.bam
+samtools view -f 256 mysample.1st5mil.bam | cut -f 6 | grep -c H
+samtools view -F 256 mysample.1st5mil.bam | cut -f 6 | grep -c H
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So far so good.
+The only point remaining is to verify that the sequences in the BAM file actually correspond to the read and not the reference or some kind of alignment consensus.
+Without access to the original reads, I could only refer back to the SAM specification, which describes the 10th column of an alignment record as the "segment sequence".
+Elsewhere in the SAM spec, it is said a read may be composed of multiple segments, so for primary alignments I think we're safe in saying the reported sequence is the entire original read sequence.&lt;/p&gt;
+&lt;h2&gt;A little test&lt;/h2&gt;
+&lt;p&gt;Based on this detective work, it looks like BAM files do indeed contain the information we need to pull out the original read sequence.&lt;sup&gt;3&lt;/sup&gt;
+On one hand, it's not too surprising: this kind of thing has likely come up as authors of the SAM spec and mapping software refined their tools over time.
+On the other hand, I couldn't shake the feeling that, as a newcomer, there might be some problematic detail that I've missed.
+I concluded that the only way to ease my unsettled mind was to do a test where I knew the (Fastq) input, and could verify that the (BAM) output had exactly the information I needed.&lt;/p&gt;
+&lt;p&gt;Here is the basic outline of the test.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;grab a couple of chromosomes from the human reference genome (commands not shown)&lt;/li&gt;
+&lt;li&gt;grab a small sample (≈1 million reads) from a Fastq file I have access to (commands not shown)&lt;/li&gt;
+&lt;li&gt;index the reference sequence for mapping&lt;/li&gt;
+&lt;li&gt;map the reads to the reference, produce BAM file&lt;/li&gt;
+&lt;li&gt;extract read sequences from the BAM file, compare to contents of Fastq file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I decided to test both BWA and Bowtie2 with default settings, figuring that &amp;gt;95% of human genome stuff is going to involve data mapped by of these two tools.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bwa index hg.fasta
+bwa mem -t 4 hg.fasta reads-subset.fastq | samtools view b -o test.bwa.bam
+
+bowtie2-build hg.fasta hg.fasta.bt2
+bowtie2 -p 4 -x hg.fasta.bt2 -U reads-subset.fastq | samtools view -b -o test.bt2.bam
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now let's extract all of the sequences corresponding to primary alignments—not marked as secondary (256 or 0x100) or supplementary (2048 or 0x800)—from each BAM file.
+If we sort the sequences, they should be identical right?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# 2048 + 256 = 2304
+samtools -F 2304 test.bwa.bam \
+    | cut -f 10 \
+    | sort \
+    &amp;gt; test.bwa.seq.txt
+samtools -F 2304 test.bt2.bam \
+    | cut -f 10 \
+    | sort \
+    &amp;gt; test.bt2.seq.txt
+diff -q test.bwa.seq.txt test.bt2.seq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ruh, roh!
+It looks like they're not the same!
+What's going on?
+Both files contain exactly 1,000,000 lines, as expected.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wc -l test.bwa.seq.txt test.bt2.seq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;How many are shared between them?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;comm -12 test.bwa.seq.txt test.bt2.seq.txt | wc -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It looks like only about 84% are shared in this case.
+After a bit more investigation, I discovered that in some cases the mapper will report the reverse complement of the read sequence instead of the original read sequence.
+This of course is not at all problematic for BAM paring in general, but it complicated my rudimentary evaluation using the &lt;code&gt;diff&lt;/code&gt; command.
+To this end, I wrote a simple C++ program that would print out each sequence it was given &lt;em&gt;as well as its reverse complement&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="nf"&gt;comp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;A&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;T&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;T&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;A&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;C&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;G&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;G&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;C&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;N&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;revcomp&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;getline&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;revcomp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+        &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rbegin&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rend&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;revcomp&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;comp&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;revcomp&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;\t&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;revcomp&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;revcomp&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;\t&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;seq&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="sc"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We can now use this to confirm that the ≈16% of sequences that don't match between BWA and Bowtie are simply reverse complements of each other.
+If we compile this program and re-run the pipeline with it included, we should get identical output.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;g++ -Wall -O3 --std=c++11 -o rc rc.cpp
+samtools -F 2304 test.bwa.bam \
+    | cut -f 10 \
+    | ./rc \
+    | sort \
+    &amp;gt; test.bwa.seq.txt
+samtools -F 2304 test.bt2.bam \
+    | cut -f 10 \
+    | ./rc \
+    | sort \
+    &amp;gt; test.bt2.seq.txt
+diff -q test.bwa.seq.txt test.bt2.seq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Woohoo, success!
+Of course, this only checks that the mappers give identical results.
+What we're &lt;em&gt;really&lt;/em&gt; interested in is whether they both match the contents of the original Fastq file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;paste - - - - &amp;lt; reads-subset.fastq \
+    | cut -f 2 \
+    | ./rc \
+    | sort \
+    &amp;gt; test.fastq.seq.txt
+diff -q test.fastq.seq.txt test.bwa.seq.txt
+diff -q test.fastq.seq.txt test.bt2.seq.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It is indeed a match, and I think I can confidently mark this case closed.&lt;/p&gt;
+&lt;h2&gt;Epilogue&lt;/h2&gt;
+&lt;p&gt;I &lt;em&gt;did&lt;/em&gt; warn you in the title that this was an idiot's guide, right?
+A lot of this is probably very elementary stuff to guys and gals that work with mappers and BAM file internals on a daily basis.
+Even so, I hope I've demonstrated clearly and comprehensively that even if you're interested only in the original read sequence, BAM files are a suitable data format.
+Of course...there are some caveats:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Caveats" src="https://standage.github.io/images/genie.gif" /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Some mappers give you the option to not report unmapped reads.
+  Enabling these settings is problematic if the Fastq files are not published alongside the BAM files.&lt;/li&gt;
+&lt;li&gt;Some mappers may behave differently than the two I evaluated, which (although unlikely) might render some points of my assessment invalid.&lt;/li&gt;
+&lt;li&gt;Performing quality control prior to mapping is convenient for those using the alignments, but prevents users from ever going back and applying a different (improved?) quality control procedure&lt;sup&gt;4&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other than that, it looks like you're just fine grabbing the segment sequence from each alignment except those marked as secondary or supplementary.&lt;/p&gt;
+&lt;p&gt;But let me open this up: is there anything I've missed, any potential pitfalls that I've overlooked?&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;Or, in the longer term, CRAM files, which are different but supposedly backwards compatible with BAM.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;a href="http://seqanswers.com/forums/showthread.php?t=7061"&gt;This thread&lt;/a&gt; on SEQanswers discusses a variety of BAM-to-Fastq converters that exist or have existed.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;3&lt;/sup&gt;I haven't discussed pairing information since it's not important for the current analysis I'm doing, but it should also be simple to extract by examining the read ID and bitwise flag(s) related to pairing.
+Of course, things are rarely as simple in practice as they are conceptually...&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;4&lt;/sup&gt;This is actually a very important discussion, and where the publishing-BAM-only approach becomes tricky.
+When do we handle adapter trimming? Removal of technical duplicates? Quality trimming (if any)?
+Wouldn't we want to apply some quality control before mapping the reads?
+But then again, quality control on reads is not a settled science, and publishing BAM files of cleaned-up reads prevents us from applying improved QC in the future.
+I'm not sure I have a good answer for this, but it's an important conversation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Thu, 08 Sep 2016 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:standage.github.io,2016-09-08:an-idiots-guide-to-loading-reads-from-a-bam-file.html</guid><category>mapping</category><category>bam</category></item><item><title>Overview of hashing</title><link>https://standage.github.io/overview-of-hashing.html</link><description>&lt;p&gt;Recently I've been digging into the internals of the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt; and how it handles DNA sequences.
+While this is all fresh on my mind, I wanted to take a moment to discuss the topic from the layman's perspective.
+This post reviews the two-bit encoding scheme used by khmer, &lt;em&gt;k&lt;/em&gt;-mer hashing in general, the reason khmer is limited to &lt;em&gt;k&lt;/em&gt;-mers ≤ 32 nucleotides in length, and the implications of our plan to support larger (possibly arbitrary) values of &lt;em&gt;k&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Two-bit representation of DNA sequences&lt;/h2&gt;
+&lt;p&gt;The most common convention for &lt;/p&gt;
+&lt;p&gt;The letters A, C, G, and T have long been used as shorthand for the nucleotides from which DNA sequences are composed.&lt;/p&gt;
+&lt;p&gt;Many research questions in genomics and bioinformatics ignore the fascinating biochemical properties and molecular structure of DNA and focus on its &lt;em&gt;primary sequence&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;DNA has many fascinating biochemical and biophysical properties&lt;/p&gt;
+&lt;p&gt;It is common practice in bioinformatics to ignore the biochemical and biophysical&lt;/p&gt;
+&lt;p&gt;Although DNA has a complex and intricate 3-dimensional structure,&lt;/p&gt;
+&lt;p&gt;a lot of genomics and bioinformatics research ignores this level of detail.
+ the information stored in DNA depends&lt;/p&gt;
+&lt;p&gt;For a variety of (extremely uninteresting) reasons&lt;/p&gt;
+&lt;p&gt;When stored as text, DNA sequences require 8 bits (1 byte) per nucleotide: a 32 base pair sequence requires 256 bits of storage, a 1 kilobase sequence requires 8,000 bits (1,000 bytes or 1 kilobyte), and 1 megabase requires 8,000,000 bits (1,000,000 bytes or 1 megabyte) of storage.
+This has to do with how computers store information.
+Each character of text requires 8 bits of information.
+Consider the text.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;|   G    |   A    |   T    |   T    |   A    |   C    |   A    |
+|01000111|01000001|01010100|01010100|01000001|01000011|01000001|
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;However, if we hash each of these sequences to an integer value, we only require 64 bits (8 bytes) at most to store each one.
+Recall that computers store information in binary format.&lt;/p&gt;
+&lt;p&gt;0000000000000000000000000000000000000000000000000000000000000000&lt;/p&gt;
+&lt;p&gt;There are a variety of ways to hash a string to an integer value.
+The scheme used by khmer is based on the observation that each individual nucleotide can be unambiguously represented using only 2 bits of information.
+For example, if we map the nucleotides adenine (A), thymine (T), cytosine (C), and guanine (G) to the numbers 0, 1, 2, and 3&lt;/p&gt;
+&lt;p&gt;nice property: perfect hash&lt;/p&gt;
+&lt;p&gt;When working with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  G  |  A  |  T  |  T  |  A  |  C  |  A  |
+ 1 1 | 0 0 | 0 1 | 0 1 | 0 0 | 1 0 | 0 0 |
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Currently, khmer only supports&lt;/p&gt;
+&lt;p&gt;The bulk of the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt;'s functionality is devoted to data structures designed for querying the presence and abundance of &lt;em&gt;k&lt;/em&gt;-mers (DNA sequences of a set length &lt;em&gt;k&lt;/em&gt;).
+khmer&lt;/p&gt;
+&lt;p&gt;Like many sequence analysis tools, the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt; relies on hashing &lt;em&gt;k&lt;/em&gt;-mers (DNA sequences of a set length &lt;em&gt;k&lt;/em&gt;).
+Defined broadly, hashing is the process by which data of arbitrary size is transformed to an alternative fixed-size representation.
+Within the scope of the khmer package, &lt;em&gt;k&lt;/em&gt;-mer sequences stored as text are hashed into a numerical value (an unsigned 64 bit integer, specifically) for further processing.
+This transformation serves two purposes: first, the integer representation of the sequence occupies much less memory than the text-based representation; and second, the integer representation is the value used to index into various data structures for storing and querying &lt;em&gt;k&lt;/em&gt;-mer presence and abundance.&lt;/p&gt;
+&lt;p&gt;The khmer package uses a fairly common two-bit encoding scheme
+Within the scope of the khmer package, &lt;em&gt;k&lt;/em&gt;-mer hashing serves primary two purposes: first, it transforms DNA sequences from a text-based representation to a numerical representation that occupies much less memory (compression); and second,&lt;/p&gt;
+&lt;p&gt;Generally, hashing is a transformation of arbitrary data (DNA sequence stored as plain text) to a single numerical value.&lt;/p&gt;
+&lt;p&gt;Hashing has two purposes: first, it transforms character/string data into a numerical representation that occupies much less memory (compression), and it&lt;/p&gt;
+&lt;p&gt;I've been digging&lt;/p&gt;
+&lt;p&gt;All of these features depend on &lt;em&gt;k&lt;/em&gt;-mer hashing.&lt;/p&gt;
+&lt;p&gt;Broadly defined, hashing is a process by which data of arbitrary size is transformed to an alternative fixed-size representation.
+In khmer, &lt;em&gt;k&lt;/em&gt;-mers stored initially as text are transformed into a numerical value (an unsigned 64 bit integer) for further processing.
+Storing k-mer as integers rather than as text is much more space efficient, and the integer values can be used to index directly into the hash tables used for k-mer counting.&lt;/p&gt;
+&lt;p&gt;Recently I've been digging into the internals of the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt; and, in particular, its hashing scheme.
+khmer uses the very common approach in bioinformatics of breaking DNA sequences into overlapping segments of length &lt;em&gt;k&lt;/em&gt; called &lt;em&gt;k&lt;/em&gt;-mers.
+It then provides data structures for querying &lt;em&gt;k&lt;/em&gt;-mer presence and abundance, as well as algorithms for data filtering and graph traversal.&lt;/p&gt;
+&lt;p&gt;Like many DNA sequence analysis tools, khmer uses a &lt;em&gt;hash function&lt;/em&gt; to transform &lt;em&gt;k&lt;/em&gt;-mers stored initially as text into a numerical value that occupies much less memory.
+Currently, khmer can only support &lt;em&gt;k&lt;/em&gt;-mers of length ≤ 32 nucleotides.
+Here I discuss khmer's hashing function, the reasons for the 32 bp limit, and discuss how we might add support for larger (possibly arbitrary) value of &lt;em&gt;k&lt;/em&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Thu, 01 Sep 2016 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:standage.github.io,2016-09-01:overview-of-hashing.html</guid><category>hashing</category><category>k-mers</category><category>khmer</category></item><item><title>Reproducible variant calling is possible with randomized algorithms</title><link>https://standage.github.io/reproducible-variant-calling-is-possible-with-randomized-algorithms.html</link><description>&lt;p&gt;This morning I read &lt;a href="http://dx.doi.org/10.1093/bioinformatics/btw139"&gt;On genomic repeats and reproducibility&lt;/a&gt; by Can Firtina and Can Alkan.
 The paper discusses two notable observations regarding calling genomic variants.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Some sequence read aligners are not deterministic, and shuffling the order of the reads can result in different alignments.&lt;/li&gt;

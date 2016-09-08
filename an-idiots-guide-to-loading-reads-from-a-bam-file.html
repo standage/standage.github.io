@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "an-idiots-guide-to-loading-reads-from-a-bam-file.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="http://1.gravatar.com/avatar/fe326141c425326acf247aef9c475c03?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>An idiot's guide to loading reads from a BAM file</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/an-idiots-guide-to-loading-reads-from-a-bam-file.html">2016-09-08</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/mapping.html">mapping</a> <a href="https://standage.github.io/tag/bam.html">bam</a> </div>
+		<div><p>tl;dr? It's fine, just ignore secondary/supplementary alignments and don't disable reporting of unaligned reads.</p>
+<hr />
+<p>I recently started my first <em>real</em> foray into human genomics, and if I thought I was overwhelmed with data before, I'm much more so now.
+(Thank goodness I'm not <strike>stupid</strike> ambitious enough to work on marine or soil metagenomics!)
+One challenge I've encountered already is that this field seems to be moving toward BAM files<sup>1</sup> for distributing not only read alignments against a reference genome but also the original read sequences themselves.
+I have a passing familiarity with SAM/BAM files, but (barring a few exceptions) I've always treated them as a black box before, using "trusted" tools to create and process them.
+Now that I'm faced with the prospect of writing software to take them as input, I've really had to bite the bullet and dig into the nitty gritty.</p>
+<h2>BAM is the new Fastq</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/FASTQ_format">Fastq format</a> has long been the standard for storing nucleotide sequence reads from genome-scale sequencing platforms such as Illumina.
+Although it is riddled with the <a href="https://www.biostars.org/p/7126/#7136">same issues as essentially every other bioinformatics data format</a>—a redundant and incomplete spec (<em>What *is* the purpose of the third line? Can the sequence be split across multiple lines?</em>) and inconsistent usage (<em>Which quality encoding was used? Are pairs interleaved or split into different files?</em>)—the Fastq format's stripped-down simplicity is no doubt a big factor in its wide adoption.
+On the other hand, the <a href="https://en.wikipedia.org/wiki/SAM_(file_format)">SAM format</a> was designed for storing read alignments against a reference, with BAM as its compressed binary counterpart.
+When it comes to analyzing the raw reads produced by a sequencer, Fastq is everybody's natural first choice.</p>
+<p>The scale of human genomics data collection is proving challenging, however.
+When a single modest-coverage sample requires on the order of 100 GB for storage, and you're sequencing thousands of samples, you don't want to store duplicates of your data.
+And since the majority of scientists in the field are only interested in the alignments anyway, it makes much more sense to publish and archive only BAM files rather than only Fastq files.</p>
+<h2>But what if I just want the reads?</h2>
+<p>So the big question then is: if I'm not interested in the alignments and only want the original read sequences, can I get these from the BAM file?
+Those more familiar with SAM/BAM could probably have given an immediate answer, but as a relative n00b I had several questions.</p>
+<ul>
+<li>Is the sequence reported in the BAM file the read sequence, the reference sequence, or an alignment artifact (like a consensus)?</li>
+<li>Do BAM files include unmapped reads?</li>
+<li>Are multi-mapped reads reported multiple times?</li>
+</ul>
+<p>In short, is it possible to extract all input read sequences non-redundantly from a BAM file?</p>
+<p><em>(I should note at this point that I wasn't <strong>completely</strong> unaware that BAM-to-Fastq converters exist<sup>2</sup>, so I probably should have approached this question with a bit more confidence.)</em></p>
+<h2>Some probing</h2>
+<p>To satisfy my curiousity, I did a bit of detective work on the BAM files I'm analyzing in my current project.
+Since the files are huge (&gt;100GB per) and stored on a busy cluster, I selected only the first 5 million-ish reads from the file for testing (processing the whole file would have required submitting a job request to the queue).</p>
+<div class="highlight"><pre><span></span>samtools view -h mysample.bam \
+    | head -n 5000000 \
+    | samtools view -b -o mysample.1st5mil.bam
+</pre></div>
+
+
+<p>Checking whether the file contains unmapped reads is quite simple.</p>
+<div class="highlight"><pre><span></span>samtools view -f 4 -c mysample.1st5mil.bam
+</pre></div>
+
+
+<p>Checking whether multimapped reads are reported multiple times took a bit more command-line fu.
+The following command cuts out the read ID from each alignment, sorts, reports the counts of each uniq read ID, sorts again by counts, and then reports the top 10 reads by count.</p>
+<div class="highlight"><pre><span></span>samtools view mysample.1st5mil.bam \
+    | cut -f 1 \
+    | sort \
+    | uniq -c \
+    | sort -rn \
+    | head -n 10
+</pre></div>
+
+
+<p>All of the top 10 read IDs occurred four times in the input.
+I suspected that two times would simply mean both the read and its pair were found, but four times means that both the read and its pair were each reported twice.
+To confirm, I searched the file for several of the duplicated read IDs.</p>
+<div class="highlight"><pre><span></span>samtools view mysample.1st5mil.bam | grep ReadIdHere
+</pre></div>
+
+
+<p>Sure enough, in each case, both of the read pairs were reported once in full, and a second time as a hard-clipped secondary alignment (256 or 0x100 in the bitwise flag).
+The SAM specification is a bit sparse on when hard and soft clipping are intended to be used, but the point is moot since these are marked as secondary alignments.</p>
+<p>I then used the following commands to ensure that all hard-clipped alignments are marked as secondary (and that all secondary alignments are hard-clipped).</p>
+<div class="highlight"><pre><span></span>samtools view -f 256 -c mysample.1st5mil.bam
+samtools view -f 256 mysample.1st5mil.bam | cut -f 6 | grep -c H
+samtools view -F 256 mysample.1st5mil.bam | cut -f 6 | grep -c H
+</pre></div>
+
+
+<p>So far so good.
+The only point remaining is to verify that the sequences in the BAM file actually correspond to the read and not the reference or some kind of alignment consensus.
+Without access to the original reads, I could only refer back to the SAM specification, which describes the 10th column of an alignment record as the "segment sequence".
+Elsewhere in the SAM spec, it is said a read may be composed of multiple segments, so for primary alignments I think we're safe in saying the reported sequence is the entire original read sequence.</p>
+<h2>A little test</h2>
+<p>Based on this detective work, it looks like BAM files do indeed contain the information we need to pull out the original read sequence.<sup>3</sup>
+On one hand, it's not too surprising: this kind of thing has likely come up as authors of the SAM spec and mapping software refined their tools over time.
+On the other hand, I couldn't shake the feeling that, as a newcomer, there might be some problematic detail that I've missed.
+I concluded that the only way to ease my unsettled mind was to do a test where I knew the (Fastq) input, and could verify that the (BAM) output had exactly the information I needed.</p>
+<p>Here is the basic outline of the test.</p>
+<ul>
+<li>grab a couple of chromosomes from the human reference genome (commands not shown)</li>
+<li>grab a small sample (≈1 million reads) from a Fastq file I have access to (commands not shown)</li>
+<li>index the reference sequence for mapping</li>
+<li>map the reads to the reference, produce BAM file</li>
+<li>extract read sequences from the BAM file, compare to contents of Fastq file</li>
+</ul>
+<p>I decided to test both BWA and Bowtie2 with default settings, figuring that &gt;95% of human genome stuff is going to involve data mapped by of these two tools.</p>
+<div class="highlight"><pre><span></span>bwa index hg.fasta
+bwa mem -t 4 hg.fasta reads-subset.fastq | samtools view b -o test.bwa.bam
+
+bowtie2-build hg.fasta hg.fasta.bt2
+bowtie2 -p 4 -x hg.fasta.bt2 -U reads-subset.fastq | samtools view -b -o test.bt2.bam
+</pre></div>
+
+
+<p>Now let's extract all of the sequences corresponding to primary alignments—not marked as secondary (256 or 0x100) or supplementary (2048 or 0x800)—from each BAM file.
+If we sort the sequences, they should be identical right?</p>
+<div class="highlight"><pre><span></span># 2048 + 256 = 2304
+samtools -F 2304 test.bwa.bam \
+    | cut -f 10 \
+    | sort \
+    &gt; test.bwa.seq.txt
+samtools -F 2304 test.bt2.bam \
+    | cut -f 10 \
+    | sort \
+    &gt; test.bt2.seq.txt
+diff -q test.bwa.seq.txt test.bt2.seq.txt
+</pre></div>
+
+
+<p>Ruh, roh!
+It looks like they're not the same!
+What's going on?
+Both files contain exactly 1,000,000 lines, as expected.</p>
+<div class="highlight"><pre><span></span>wc -l test.bwa.seq.txt test.bt2.seq.txt
+</pre></div>
+
+
+<p>How many are shared between them?</p>
+<div class="highlight"><pre><span></span>comm -12 test.bwa.seq.txt test.bt2.seq.txt | wc -l
+</pre></div>
+
+
+<p>It looks like only about 84% are shared in this case.
+After a bit more investigation, I discovered that in some cases the mapper will report the reverse complement of the read sequence instead of the original read sequence.
+This of course is not at all problematic for BAM paring in general, but it complicated my rudimentary evaluation using the <code>diff</code> command.
+To this end, I wrote a simple C++ program that would print out each sequence it was given <em>as well as its reverse complement</em>.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="kt">char</span> <span class="nf">comp</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;A&#39;</span> <span class="o">?</span> <span class="sc">&#39;T&#39;</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;T&#39;</span> <span class="o">?</span> <span class="sc">&#39;A&#39;</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;C&#39;</span> <span class="o">?</span> <span class="sc">&#39;G&#39;</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;G&#39;</span> <span class="o">?</span> <span class="sc">&#39;C&#39;</span> <span class="o">:</span> <span class="sc">&#39;N&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">seq</span><span class="p">,</span> <span class="n">revcomp</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">seq</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">revcomp</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">seq</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">seq</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span> <span class="n">seq</span><span class="p">.</span><span class="n">rend</span><span class="p">(),</span> <span class="n">revcomp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">comp</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">seq</span> <span class="o">&lt;</span> <span class="n">revcomp</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">seq</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\t&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">revcomp</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">revcomp</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\t&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">seq</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>We can now use this to confirm that the ≈16% of sequences that don't match between BWA and Bowtie are simply reverse complements of each other.
+If we compile this program and re-run the pipeline with it included, we should get identical output.</p>
+<div class="highlight"><pre><span></span>g++ -Wall -O3 --std=c++11 -o rc rc.cpp
+samtools -F 2304 test.bwa.bam \
+    | cut -f 10 \
+    | ./rc \
+    | sort \
+    &gt; test.bwa.seq.txt
+samtools -F 2304 test.bt2.bam \
+    | cut -f 10 \
+    | ./rc \
+    | sort \
+    &gt; test.bt2.seq.txt
+diff -q test.bwa.seq.txt test.bt2.seq.txt
+</pre></div>
+
+
+<p>Woohoo, success!
+Of course, this only checks that the mappers give identical results.
+What we're <em>really</em> interested in is whether they both match the contents of the original Fastq file.</p>
+<div class="highlight"><pre><span></span>paste - - - - &lt; reads-subset.fastq \
+    | cut -f 2 \
+    | ./rc \
+    | sort \
+    &gt; test.fastq.seq.txt
+diff -q test.fastq.seq.txt test.bwa.seq.txt
+diff -q test.fastq.seq.txt test.bt2.seq.txt
+</pre></div>
+
+
+<p>It is indeed a match, and I think I can confidently mark this case closed.</p>
+<h2>Epilogue</h2>
+<p>I <em>did</em> warn you in the title that this was an idiot's guide, right?
+A lot of this is probably very elementary stuff to guys and gals that work with mappers and BAM file internals on a daily basis.
+Even so, I hope I've demonstrated clearly and comprehensively that even if you're interested only in the original read sequence, BAM files are a suitable data format.
+Of course...there are some caveats:</p>
+<p><img alt="Caveats" src="https://standage.github.io/images/genie.gif" /></p>
+<ul>
+<li>Some mappers give you the option to not report unmapped reads.
+  Enabling these settings is problematic if the Fastq files are not published alongside the BAM files.</li>
+<li>Some mappers may behave differently than the two I evaluated, which (although unlikely) might render some points of my assessment invalid.</li>
+<li>Performing quality control prior to mapping is convenient for those using the alignments, but prevents users from ever going back and applying a different (improved?) quality control procedure<sup>4</sup>.</li>
+</ul>
+<p>Other than that, it looks like you're just fine grabbing the segment sequence from each alignment except those marked as secondary or supplementary.</p>
+<p>But let me open this up: is there anything I've missed, any potential pitfalls that I've overlooked?</p>
+<hr />
+<p><sup>1</sup>Or, in the longer term, CRAM files, which are different but supposedly backwards compatible with BAM.</p>
+<p><sup>2</sup><a href="http://seqanswers.com/forums/showthread.php?t=7061">This thread</a> on SEQanswers discusses a variety of BAM-to-Fastq converters that exist or have existed.</p>
+<p><sup>3</sup>I haven't discussed pairing information since it's not important for the current analysis I'm doing, but it should also be simple to extract by examining the read ID and bitwise flag(s) related to pairing.
+Of course, things are rarely as simple in practice as they are conceptually...</p>
+<p><sup>4</sup>This is actually a very important discussion, and where the publishing-BAM-only approach becomes tricky.
+When do we handle adapter trimming? Removal of technical duplicates? Quality trimming (if any)?
+Wouldn't we want to apply some quality control before mapping the reads?
+But then again, quality control on reads is not a settled science, and publishing BAM files of cleaned-up reads prevents us from applying improved QC in the future.
+I'm not sure I have a good answer for this, but it's an important conversation.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
