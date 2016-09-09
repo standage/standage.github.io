@@ -195,6 +195,8 @@ Of course...there are some caveats:&lt;/p&gt;
 &lt;p&gt;Other than that, it looks like you're just fine grabbing the segment sequence from each alignment except those marked as secondary or supplementary.&lt;/p&gt;
 &lt;p&gt;But let me open this up: is there anything I've missed, any potential pitfalls that I've overlooked?&lt;/p&gt;
 &lt;hr /&gt;
+&lt;p&gt;A big thanks to Carrie Ganote, Ali Berens, Titus Brown, and Fereydoun Hormozdiari for discussions on the topic and feedback on a draft of this blog post.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;Or, in the longer term, CRAM files, which are different but supposedly backwards compatible with BAM.&lt;/p&gt;
 &lt;p&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;a href="http://seqanswers.com/forums/showthread.php?t=7061"&gt;This thread&lt;/a&gt; on SEQanswers discusses a variety of BAM-to-Fastq converters that exist or have existed.&lt;/p&gt;
 &lt;p&gt;&lt;sup&gt;3&lt;/sup&gt;I haven't discussed pairing information since it's not important for the current analysis I'm doing, but it should also be simple to extract by examining the read ID and bitwise flag(s) related to pairing.
