@@ -205,63 +205,7 @@ Of course, things are rarely as simple in practice as they are conceptually...&l
 When do we handle adapter trimming? Removal of technical duplicates? Quality trimming (if any)?
 Wouldn't we want to apply some quality control before mapping the reads?
 But then again, quality control on reads is not a settled science, and publishing BAM files of cleaned-up reads prevents us from applying improved QC in the future.
-I'm not sure I have a good answer for this, but it's an important conversation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Thu, 08 Sep 2016 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:standage.github.io,2016-09-08:an-idiots-guide-to-loading-reads-from-a-bam-file.html</guid><category>mapping</category><category>bam</category></item><item><title>Overview of hashing</title><link>https://standage.github.io/overview-of-hashing.html</link><description>&lt;p&gt;Recently I've been digging into the internals of the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt; and how it handles DNA sequences.
-While this is all fresh on my mind, I wanted to take a moment to discuss the topic from the layman's perspective.
-This post reviews the two-bit encoding scheme used by khmer, &lt;em&gt;k&lt;/em&gt;-mer hashing in general, the reason khmer is limited to &lt;em&gt;k&lt;/em&gt;-mers ≤ 32 nucleotides in length, and the implications of our plan to support larger (possibly arbitrary) values of &lt;em&gt;k&lt;/em&gt;.&lt;/p&gt;
-&lt;h2&gt;Two-bit representation of DNA sequences&lt;/h2&gt;
-&lt;p&gt;The most common convention for &lt;/p&gt;
-&lt;p&gt;The letters A, C, G, and T have long been used as shorthand for the nucleotides from which DNA sequences are composed.&lt;/p&gt;
-&lt;p&gt;Many research questions in genomics and bioinformatics ignore the fascinating biochemical properties and molecular structure of DNA and focus on its &lt;em&gt;primary sequence&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;DNA has many fascinating biochemical and biophysical properties&lt;/p&gt;
-&lt;p&gt;It is common practice in bioinformatics to ignore the biochemical and biophysical&lt;/p&gt;
-&lt;p&gt;Although DNA has a complex and intricate 3-dimensional structure,&lt;/p&gt;
-&lt;p&gt;a lot of genomics and bioinformatics research ignores this level of detail.
- the information stored in DNA depends&lt;/p&gt;
-&lt;p&gt;For a variety of (extremely uninteresting) reasons&lt;/p&gt;
-&lt;p&gt;When stored as text, DNA sequences require 8 bits (1 byte) per nucleotide: a 32 base pair sequence requires 256 bits of storage, a 1 kilobase sequence requires 8,000 bits (1,000 bytes or 1 kilobyte), and 1 megabase requires 8,000,000 bits (1,000,000 bytes or 1 megabyte) of storage.
-This has to do with how computers store information.
-Each character of text requires 8 bits of information.
-Consider the text.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;|   G    |   A    |   T    |   T    |   A    |   C    |   A    |
-|01000111|01000001|01010100|01010100|01000001|01000011|01000001|
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;However, if we hash each of these sequences to an integer value, we only require 64 bits (8 bytes) at most to store each one.
-Recall that computers store information in binary format.&lt;/p&gt;
-&lt;p&gt;0000000000000000000000000000000000000000000000000000000000000000&lt;/p&gt;
-&lt;p&gt;There are a variety of ways to hash a string to an integer value.
-The scheme used by khmer is based on the observation that each individual nucleotide can be unambiguously represented using only 2 bits of information.
-For example, if we map the nucleotides adenine (A), thymine (T), cytosine (C), and guanine (G) to the numbers 0, 1, 2, and 3&lt;/p&gt;
-&lt;p&gt;nice property: perfect hash&lt;/p&gt;
-&lt;p&gt;When working with&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  G  |  A  |  T  |  T  |  A  |  C  |  A  |
- 1 1 | 0 0 | 0 1 | 0 1 | 0 0 | 1 0 | 0 0 |
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Currently, khmer only supports&lt;/p&gt;
-&lt;p&gt;The bulk of the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt;'s functionality is devoted to data structures designed for querying the presence and abundance of &lt;em&gt;k&lt;/em&gt;-mers (DNA sequences of a set length &lt;em&gt;k&lt;/em&gt;).
-khmer&lt;/p&gt;
-&lt;p&gt;Like many sequence analysis tools, the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt; relies on hashing &lt;em&gt;k&lt;/em&gt;-mers (DNA sequences of a set length &lt;em&gt;k&lt;/em&gt;).
-Defined broadly, hashing is the process by which data of arbitrary size is transformed to an alternative fixed-size representation.
-Within the scope of the khmer package, &lt;em&gt;k&lt;/em&gt;-mer sequences stored as text are hashed into a numerical value (an unsigned 64 bit integer, specifically) for further processing.
-This transformation serves two purposes: first, the integer representation of the sequence occupies much less memory than the text-based representation; and second, the integer representation is the value used to index into various data structures for storing and querying &lt;em&gt;k&lt;/em&gt;-mer presence and abundance.&lt;/p&gt;
-&lt;p&gt;The khmer package uses a fairly common two-bit encoding scheme
-Within the scope of the khmer package, &lt;em&gt;k&lt;/em&gt;-mer hashing serves primary two purposes: first, it transforms DNA sequences from a text-based representation to a numerical representation that occupies much less memory (compression); and second,&lt;/p&gt;
-&lt;p&gt;Generally, hashing is a transformation of arbitrary data (DNA sequence stored as plain text) to a single numerical value.&lt;/p&gt;
-&lt;p&gt;Hashing has two purposes: first, it transforms character/string data into a numerical representation that occupies much less memory (compression), and it&lt;/p&gt;
-&lt;p&gt;I've been digging&lt;/p&gt;
-&lt;p&gt;All of these features depend on &lt;em&gt;k&lt;/em&gt;-mer hashing.&lt;/p&gt;
-&lt;p&gt;Broadly defined, hashing is a process by which data of arbitrary size is transformed to an alternative fixed-size representation.
-In khmer, &lt;em&gt;k&lt;/em&gt;-mers stored initially as text are transformed into a numerical value (an unsigned 64 bit integer) for further processing.
-Storing k-mer as integers rather than as text is much more space efficient, and the integer values can be used to index directly into the hash tables used for k-mer counting.&lt;/p&gt;
-&lt;p&gt;Recently I've been digging into the internals of the &lt;a href="https://github.com/dib-lab/khmer/"&gt;khmer package&lt;/a&gt; and, in particular, its hashing scheme.
-khmer uses the very common approach in bioinformatics of breaking DNA sequences into overlapping segments of length &lt;em&gt;k&lt;/em&gt; called &lt;em&gt;k&lt;/em&gt;-mers.
-It then provides data structures for querying &lt;em&gt;k&lt;/em&gt;-mer presence and abundance, as well as algorithms for data filtering and graph traversal.&lt;/p&gt;
-&lt;p&gt;Like many DNA sequence analysis tools, khmer uses a &lt;em&gt;hash function&lt;/em&gt; to transform &lt;em&gt;k&lt;/em&gt;-mers stored initially as text into a numerical value that occupies much less memory.
-Currently, khmer can only support &lt;em&gt;k&lt;/em&gt;-mers of length ≤ 32 nucleotides.
-Here I discuss khmer's hashing function, the reasons for the 32 bp limit, and discuss how we might add support for larger (possibly arbitrary) value of &lt;em&gt;k&lt;/em&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Thu, 01 Sep 2016 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:standage.github.io,2016-09-01:overview-of-hashing.html</guid><category>hashing</category><category>k-mers</category><category>khmer</category></item><item><title>Reproducible variant calling is possible with randomized algorithms</title><link>https://standage.github.io/reproducible-variant-calling-is-possible-with-randomized-algorithms.html</link><description>&lt;p&gt;This morning I read &lt;a href="http://dx.doi.org/10.1093/bioinformatics/btw139"&gt;On genomic repeats and reproducibility&lt;/a&gt; by Can Firtina and Can Alkan.
+I'm not sure I have a good answer for this, but it's an important conversation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Thu, 08 Sep 2016 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:standage.github.io,2016-09-08:an-idiots-guide-to-loading-reads-from-a-bam-file.html</guid><category>mapping</category><category>bam</category></item><item><title>Reproducible variant calling is possible with randomized algorithms</title><link>https://standage.github.io/reproducible-variant-calling-is-possible-with-randomized-algorithms.html</link><description>&lt;p&gt;This morning I read &lt;a href="http://dx.doi.org/10.1093/bioinformatics/btw139"&gt;On genomic repeats and reproducibility&lt;/a&gt; by Can Firtina and Can Alkan.
 The paper discusses two notable observations regarding calling genomic variants.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Some sequence read aligners are not deterministic, and shuffling the order of the reads can result in different alignments.&lt;/li&gt;
