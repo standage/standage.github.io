@@ -99,7 +99,7 @@ navorder: 01
 **Journal Review**
 
 - **Science**, May 2013
-- **Bioinformatics**, April 2013
+- **Bioinformatics**, April 2013, October 2016
 
 **Open-source Software and Data**
 
