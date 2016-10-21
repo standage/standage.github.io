@@ -2,8 +2,9 @@ Title: Thoughts on research software from the PSRN workshop
 Date: 2016-10-20 9:30
 Author: Daniel S. Standage
 Category: blog
-Tags: software; science
+Tags: software; science; cyberinfrastructure
 Summary: In which I ramble on about experimental science, research software, and cyberinfrastructure engineering.
+Status: draft
 
 \*_In which I ramble on about experimental science, research software, and cyberinfrastructure engineering._\*
 

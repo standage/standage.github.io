@@ -3,6 +3,7 @@ Date: 2016-10-20 9:00
 Author: Daniel S. Standage
 Category: blog
 Tags: education; academics; cyberinfrastructure
+Status: draft
 
 I am on my way home from a workshop on cyberinfrastructure and postgraduate training hosted by the [Plant Science Research Network](http://bti.cornell.edu/news/plant-science-research-network-launches/).
 It was a grueling three-day sprint, but it brought together a phenomenal diversity of experience and perspectives on the relevant issues.
@@ -11,12 +12,12 @@ Beware: what follows is a bit of a brain dump!
 
 ## Why me?
 
-![What are you doing here?](https://media.giphy.com/media/10dmJg2twz6Gl2/giphy.gif)
+![What are you doing here?](images/whatareyoudoinghere.gif)
 
 Those who know me best may be wondering what I was doing at a ***plant*** science workshop.
-That question certainly came up several times as I explained my graduate work (insect genomics) and postdoctoral work (human genome structural variation) to other workshop attendees.
+That question certainly came up several times as I explained my graduate work (insect genomics) and postdoctoral work (rare genomic variant discovery in human) to other workshop attendees.
 The long-winded answer is that in addition to working in a plant genetics lab as an undergraduate before joining a plant genomics lab as a new Ph.D. student (even though I went on to study mostly insects!), I've also been an active science cyberinfrastructure user, enthusiast, advocate, and instructor for many years.
-The *more honest* answer, though, is that somebody much more influential than me was invited first, but was unable to attend, and recommended me in their place. :-)
+But the *more honest* answer is that somebody much more influential than me was invited first, but was unable to attend, and recommended me in their place. :-)
 
 ## Layout
 
@@ -26,23 +27,20 @@ And as I started reviewing these workshop prep materials, I became even more ske
 It turns out that I enjoyed the workshop immensely, and I think the layout helped make it a worthwhile experience for everyone involved.
 
 The workshop was organized as a [scenario planning](https://en.wikipedia.org/wiki/Scenario_planning) session, which (based on feedback from previous planning efforts in the plant science community) was focused on two critical uncertainties regarding the future of plant research.
-The first is **resource availability**, the question of whether funding and other resources would be *abundant* or *limited*.
-The second uncertainty is the primary **driver of research**, the question of whether the plant science community was motivated by *necessity and problem solving* (reactive) or by *advancement and curiosity* (proactive).
+The first is **resource availability**, the question of whether funding and other resources will be *abundant* or *limited*.
+The second uncertainty is the primary **driver of research**, the question of whether the plant science community is motivated primarily by *necessity and problem solving* (reactive) or by *advancement and curiosity* (proactive).
 These uncertainties served as two axes for brainstorming alternative hypothetical futures: the axes form four quadrants which served as scenarios for our discussion.
 
-Prior to the workshop, participants were assigned to one of the four scenarios (e.g., abundant resources and necessity-driven science) and asked to reflect on what (plant) science would be like if that scenario were taken to the extreme.
-Once gathered at the workshop, we then discussed opportunities and challenges related to postgraduate training and cyberinfrastructure in the assigned hypothetical scenario, as well as recommendations we would make for immediate action if the scenario was to be our inevitable and unavoidable future.
 ```
-
--                           Abundant
+4                           Abundant                                1
                                ^
                                |
                                |
-         Resource availability |
+       (Resource availability) |
                                |
                                |
                                |
-Necessity <------------------------Driver of research---> Advancement
+Necessity <-----------------------(Driver of research)--> Advancement
                                |
                                |
                                |
@@ -50,12 +48,15 @@ Necessity <------------------------Driver of research---> Advancement
                                |
                                |
                                v
--                           Limited
+3                           Limited                                 2
 ```
+
+Prior to the workshop, participants were assigned to one of the four scenarios and asked to reflect on what (plant) science would be like if that scenario were taken to the extreme.
+Once gathered at the workshop, we then discussed opportunities and challenges related to postgraduate training and cyberinfrastructure in the assigned hypothetical scenario, as well as recommendations we would make for immediate action if the scenario was to be our inevitable and unavoidable future.
 
 One could argue that the organizers could have chosen different or better axes.
 Perhaps this is true.
-But the idea was to anchor the discussion and nail down some givens so that each working group could explore the remainder of the uncertainty space, and associated opportunities and challenges, in more detail.
+But the idea was to anchor the discussion and nail down some givens so that each working group could explore the remainder of the uncertainty space—and associated opportunities and challenges—in more detail.
 I think the scenario planning strategy effectively satisfied this purpose.
 
 ## Recommendations
@@ -73,7 +74,7 @@ The group also emphasized the detrimental effect of some of the plant science co
 
 ## The <strike>end</strike> beginning
 
-<!-- Obama not bad GIF or something like that -->
+![Not Bad Obama](images/notbad.jpg)
 
 Whoa, that's a lot!
 And actually *addressing* all these issues and recommendations in any meaningful way is going to be an extremely ambitious endeavor, no doubt about it.
