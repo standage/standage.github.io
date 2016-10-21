@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "drafts/thoughts-on-research-software-from-the-psrn-workshop.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				205A Simon Hall<br />
+				Indiana University<br />
+				212 South Hawthorne Drive<br />
+				Bloomington, IN 47405<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+				<li><a href="http://www.bio.indiana.edu/">Indiana Biology Department</a></li>
+				<li><a href="http://www.bcb.iastate.edu/">Iowa State BCB Program</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Thoughts on research software from the PSRN workshop</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/drafts/thoughts-on-research-software-from-the-psrn-workshop.html">2016-10-20</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/software.html">software</a> <a href="https://standage.github.io/tag/science.html">science</a> <a href="https://standage.github.io/tag/cyberinfrastructure.html">cyberinfrastructure</a> </div>
+		<div><p>*<em>In which I ramble on about experimental science, research software, and cyberinfrastructure engineering.</em>*</p>
+<p>I'm on my way home from a workshop on cyberinfrastructure and postgraduate training hosted by the <a href="http://bti.cornell.edu/news/plant-science-research-network-launches/">Plant Science Research Network</a>.
+I, like all the other participants, had some assigned prep work prior to the workshop, which got me thinking (<a href="misconceptions-about-research-software.html">again</a>) about research software.
+The purpose of this post is to summarize my thoughts while they're fresh in my head.</p>
+<p><em>To be clear, the contents of this post represent my personal perspectives, and I do not imply that any of these perspectives are endorsed by the PSRN or any institution with which I'm affiliated.
+I do hope, however, that they turn out to be useful.</em></p>
+<h2>Setup</h2>
+<p>Several days in advance, the workshop organizers sent out some material to introduce the subject matter and prime everyone for productive discourse.
+Each of us was assigned to one of four extreme scenarios regarding resource availability (high vs. low) and research motivation ("advancement" / curiosity-driven / proactive vs. "necessity" / problem-solving / reactive), and then asked to consider the plant science community's opportunities and challenges with respect to cyberinfrastructure and postgraduate training in the given scenario.
+Specifically, we were asked to come to the workshop ready to share an "early indicator" that would suggest a trend in the direction of our assigned scenario.
+I've summarized my overall experience at the workshop <a href="my-thoughts-on-the-psrn-workshop-on-cyberinfrastructure-and-training.html">here</a>.</p>
+<h2>Initial concern</h2>
+<p>The prep material referred quite a bit to software, but it was almost exclusively mentioned<sup>1</sup> in the context of cyberinfrastructure components integration—in other words, very low-level systems engineering.
+One of my initial reactions was that the prep material failed to acknowledge the wider spectrum of research software that exists, with systems engineering at one extreme and very domain-specific (and sometimes study-specific) research codes at the other extreme.
+The former requires deep engineering expertise with some minimal exposure to plant science domain knowledge, while the latter requires extensive plant science expertise with minimal (perhaps even self-taught) programming experience.
+But there is a lot of middle ground there, with most research software closer to the "domain expertise" extreme.
+And it doesn't do any good to lump everything together under one umbrella.
+This too often results in software being designated as second-class, with plant science (or another life science discipline, more generally) being elevated as the "real" science and software demoted to a purely technical exercise best delegated to trainees (or technicians, if you're fortunate enough to afford them) or outsourced to engineers for heavy technical lifting.</p>
+<h2>Pleasant surprise</h2>
+<p>Despite my concern coming into the workshop, I must say that I was pleasantly surprised with the discussions around software.
+This point was acknowledged throughout the discussion, and it was quite well received, and even connected to other relevant concerns and takeaways.
+I'm not sure I can even take credit for this, since I don't remember if I was the only or even the first person to raise the issue.
+I'm cautiously optimistic that the plant science community can foster continued dialog and perhaps even (crossed fingers!!!) catalyze some actual cultural change in this regard.</p>
+<h2>Stepping back: research software and experiments</h2>
+<p>All of this has me <a href="misconceptions-about-research-software.html">thinking again</a> about <em>why</em> research software is rarely considered a legitimate intellectual contribution to science.<sup>2</sup>
+As I've said before, I think it's important to compare software to experiments.
+Which components of experiments are valued as legitimate intellectual research activities?
+Of course you must include the design of the experiment, the evaluation of the experimental results, and the interpretation and dissemination of the findings.
+The actual execution of the experiment, on the other hand, is a purely technical exercise.
+An important one no doubt, but something that could be delegated to a competent technician with minimal domain expertise.
+The keeping of a detailed and accurate lab notebook could be argued either way, but is probably more on the technical side than the intellectual.</p>
+<p>So how does this translate to software?
+I will again echo <a href="http://phdops.kblin.org/software-dev-intellectual-contribution.html">Kai Blin's argument</a> that designing research software is like designing experiments, and just as with experiments, you must evaluate, interpret, and disseminate computational results.
+These are all inherently intellectual activities.
+Ideally, with some upfront design, <em>implementing</em> the software and then <em>executing</em> it should be a fairly straightforward technical exercise, also perfectly fine to designate to competent technicians with minimal domain expertise as resources allow.
+But research software is so much more than just "writing code", and should definitely not be treated the same as code for systems-level cyberinfrastructure engineering.</p>
+<h2>An ideal world</h2>
+<p>In an ideal world, design is completely separated from execution.
+Entire experiments are thoroughly designed and critically evaluated before a single sample is collected or reagent is touched.
+Consideration is given to what controls are in place to validate assumptions and verify experimental integrity, to how the results will be evaluated, and to which statistics and data visualizations will be most interesting to report—regardless of the result!
+Once all this is fleshed out, conducting the experiment is almost mechanical, with little or no critical thinking required.
+Collecting, formatting, interpreting, and disseminating the results is not quite so formulaic, but the critical thinking required at this stage has been well primed by the upfront design.</p>
+<p>The ideal world of research software looks very similar.
+The software is thoroughly spec'd out before a single line of code is written.
+Consideration is given to what automated tests are in place to validate assumptions and verify computational accuracy, to how the results will be evaluated, and to which statistics and data visualizations will be most interesting to report.
+Once the design is critically vetted, implementing the software is almost mechanical, with little or no critical thinking required.<sup>3</sup>
+Collecting, formatting, interpreting, and disseminating the results is not quite so formulaic, but the critical thinking required at this stage has been well primed by the upfront design.</p>
+<h2>We do not live in that world</h2>
+<p>I have enough <a href="https://udall-lab.byu.edu/LabPersonnel">exposure to experimental molecular biology</a> to know that these ideals are rarely met in experimental science.
+However, my experience allows me to speak in more depth about why these ideals are rarely met in computational science.</p>
+<p>Part of the problem is that as time- and resource-strapped scientists, often poorly trained with respect to software, we rarely invest sufficient time in the upfront design.
+As a result, we often end up taking the less than optimal approach of design-by-implementation, which can lead to messy and inflexible and inaccurate software.
+Perhaps now is a good time to reiterate the fact that this workshop focused on both cyberinfrastructure <em>and training</em>.
+Training won't necessarily help with time and resource limitations, but it can certainly expose a nacent plant-scientist-programmer to some basic software development principles that help avoid common pitfalls.</p>
+<p>The other side of this coin is that software requirements are often hard to specify for cutting-edge research.
+The problem spaces are typically underdefined and rife with subtle complexity, making it difficult to clearly articulate solid software requirements before some initial data exploration, which itself requires some software/computing literacy.
+It often makes sense, therefore, to adopt an iterative approach to research software development: building a rudimentary prototype, evaluating its behavior/accuracy/utility, refining the design requirements, and then repeating.
+Again, a minimal amount of training with basic software development practices can make a huge difference in the scientist's effectiveness and morale, as well as the desired research outcomes.</p>
+<h2>Reusable software libraries</h2>
+<p>Taking things a step further, it's important to note that research software can be a powerful platform in which to explore and evaluate conceptual models.
+One of the discussion points that came up in the workshop is that building and reusing software libraries is not incentivized in the current plant science (and wider science) culture.
+All of the professional incentives push scientists toward implementing new ideas from scratch (and getting a paper out of it, which can then be cited), rather than building on existing tools (nobody will publish or credit contributions like this).</p>
+<p>Building on existing code requires more attention to software engineering than is realistic to invest in the current funding/career/credit landscape.
+Imagine a scientist interested in exploring the nuances of transcriptome assembly.
+The most common scenarios in the current climate involve the scientist either 1) losing their sanity trying to understand and extend existing assembly software that the original scientist was never supported to clean up, organize, and document, or 2) building the assembler software components (de Bruijn graph implementation, assembly algorithm, etc.) from scratch.
+This is a genomics example (that's my research interest), but the principle can apply to research software in any area of plant research.</p>
+<p>Those that produce good software in today's academic environment do so <em>in spite</em> of the system and at great personal sacrifice, not <em>because</em> the system supports them in doing so.
+Not all research software warrants this additional attention—there is definitely a place for <a href="http://ivory.idyll.org/blog/2015-how-should-we-think-about-research-software.html">"single-use" research software</a>—but there is a critical need in some cases to support development of reusable software libraries.<sup>4</sup>
+The plant science community has a huge opportunity to address this with relevant career support and incentives.</p>
+<h2>Closing thoughts</h2>
+<p>I'm encouraged that the diverse plant science community is beginning to acknowledge that software is a critical component of the plant research enterprise, not only for what it brings to the table in a technical sense but also what it represents in an intellectual sense.
+Transforming this understanding into cultural change is a much bigger challenge, but one I hope this community is willing to fight for.</p>
+<p>And if my lengthy ramblings have not yet diverted your attention to more important matters, I salute you!
+Thanks for humoring me!
+More importantly, I'm interested in your feedback.
+What do you think?
+Did I miss an important point or get something completely wrong?
+Leave a note in the comments if you feel so inclined.</p>
+<hr />
+<p><sup>1</sup>It's possible that I just perceived it that way, but the language and context seemed skewed towards cyberinfrastructure engineering.<br />
+<sup>2</sup>I think we're at the point that many people have recognized this as a problem, but the incentive structures and culture have not yet changed to reflect this.<br />
+<sup>3</sup>This is only partially true. Sometimes multiple implementation approaches exist and tradeoffs must be considered, but really these are technical considerations rather than scientific considerations. Of course, the same can be said of lab techniques...<br />
+<sup>4</sup>This is quickly becoming a complex multi-dimensional space. We've already discussed the "domain" axis (cyberinfrastructure engineering &lt;---&gt; highly specialized plant science analysis) and the "re-use" axis (libraries &lt;---&gt; single-use proof-of-concept software), but another axis that was brought up was the "scale and integration" axis (research &lt;---&gt; production). The cutting edge of plant science insights happens at the small-scale research level, whereas the integration of critical cyberinfrastructure components requires production-scale strategies.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
