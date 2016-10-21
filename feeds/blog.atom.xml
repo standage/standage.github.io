@@ -1,49 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-10-20T10:30:00-04:00</updated><entry><title>FIXMEFIXME</title><link href="https://standage.github.io/fixmefixme.html" rel="alternate"></link><published>2016-10-20T10:30:00-04:00</published><updated>2016-10-20T10:30:00-04:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-10-20:fixmefixme.html</id><summary type="html">&lt;p&gt;This week I &lt;a href="my-thoughts-on-the-psrn-workshop-on-cyberinfrastructure-and-training.html"&gt;attended a workshop on cyberinfrastructure and postgraduate training&lt;/a&gt; hosted by the &lt;a href="http://bti.cornell.edu/news/plant-science-research-network-launches/"&gt;Plant Science Research Network&lt;/a&gt;.
-In this workshop we discussed a variety of opportunities and challenges faced by the plant science community in the face of rapid technology developments, and changes to training and cyberinfrastructure that will allow the community to flourish through the coming decade's technological advances.
-With such a diverse range of backgrounds and career stages represented, I was pleasantly surprised at how well we were able to converge on a shared vision.&lt;/p&gt;
-&lt;p&gt;As we discussed the issues, several common themes started to emerge, including the following.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The need for &lt;strong&gt;openness&lt;/strong&gt;:
-  openness in the community's publishing of data;
-  openness with respect to software&lt;sup&gt;1&lt;/sup&gt;;
-  clear documentation of code, data, and metadata;
-  and so on.&lt;/li&gt;
-&lt;li&gt;The need for &lt;strong&gt;interoperability&lt;/strong&gt;:
-  interoperability of software/tools, and data;
-  investment in standards development;
-  interoperability of cyberinfrastructure components (the ability to deploy a technology stack without a whole lot of custom work);
-  and so on.&lt;/li&gt;
-&lt;li&gt;The need for &lt;strong&gt;modularity&lt;/strong&gt;:
-  the ability to build on others' research software rather than starting from scratch;
-  the modularity of cyberinfrastructure components (i.e. ability to swap out a single layer of the technology "stack");
-  and so on.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;As I reflected&lt;/p&gt;
-&lt;p&gt;At one point during the workshop, as we were discussing problematic legacy practices and culture in the community, and making recommendations for cyberinfrastructure investment, somebody made the following comment (paraphrased).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You know, we're not the first group to sit down and make a list like this.
-These issues and proposals are not new.
-How are we going to affect any actual change?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This is an excellent point.
-I'm quite impressed and very pleased that such a diverse group of scientists at this workshop were able to converge so well on a shared vision.
-Going in to the workshop I was skeptical whether this would be possible.
-But it's one thing to acknowledge a systemic issue or make a recommendation for community development, but its another to make substantive changes in the community culture.
-I can't think of a single discussion point that somebody in the community hasn't been shouting rants about on Twitter for years.&lt;/p&gt;
-&lt;p&gt;I don't have an answer for this dilemma.
-But as I've reflected on it for the last couple of days, I think there is a lot to be said for enabling the community to work together and come to these conclusions themselves.
-hard to motivate data backup if someone has never had a hard drive failure; if you just tell them "you need backup" they'll bristle, but if they've experienced it they'll appreciate it; this workshop allowed the attendees to experience a wide variety of perspectives, and thus appreciate the motivation for the needed changes&lt;/p&gt;
-&lt;p&gt;The success rate for changing people's minds by yelling into the social media void isn't quite 0.0%, but it's close.&lt;sup&gt;1&lt;/sup&gt;
-By the same token, the workshop organizers could have been much more prescriptive about where the discussion needed to go—I'm certain they had at least a rough idea of the direction the dialogue would take (although there were no doubt some surprises).
-Instead, they were very hands-off and simply put a diverse bunch of talented, passionate scientists together and cut them loose.&lt;/p&gt;
-&lt;p&gt;context, not individual points but aggregate vision
-getting people to come to these conclusions themselves
-    workshop organizers may have had an idea of where they expected it to go (no doubt some surprises)
-    but telling everyone what the future should be and then asking them for feedback would not have been nearly as affective as letting the participants converge on solutions themselves&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;sup&gt;1&lt;/sup&gt;Here I'm using the term &lt;em&gt;software&lt;/em&gt; to refer to both cyberinfrastructure integration code as well as narrowly specialized scientific codes.
-&lt;sup&gt;1&lt;/sup&gt;Don't get me wrong, I think it's healthy and cathartic to yell into the void. Sometimes you don't change people's minds, but you can provoke some thought in someone else or get provoked yourself. Also, people may not be convinced the first time they're exposed to a new idea, but continued exposure from different sources is often the key.&lt;/p&gt;</summary><category term="education"></category><category term="academics"></category><category term="cyberinfrastructure"></category></entry><entry><title>An idiot's guide to loading reads from a BAM file</title><link href="https://standage.github.io/an-idiots-guide-to-loading-reads-from-a-bam-file.html" rel="alternate"></link><published>2016-09-08T00:00:00-04:00</published><updated>2016-09-08T00:00:00-04:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-09-08:an-idiots-guide-to-loading-reads-from-a-bam-file.html</id><summary type="html">&lt;p&gt;tl;dr? It's fine, just ignore secondary/supplementary alignments and don't disable reporting of unaligned reads.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2016-09-08T00:00:00-04:00</updated><entry><title>An idiot's guide to loading reads from a BAM file</title><link href="https://standage.github.io/an-idiots-guide-to-loading-reads-from-a-bam-file.html" rel="alternate"></link><published>2016-09-08T00:00:00-04:00</published><updated>2016-09-08T00:00:00-04:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-09-08:an-idiots-guide-to-loading-reads-from-a-bam-file.html</id><summary type="html">&lt;p&gt;tl;dr? It's fine, just ignore secondary/supplementary alignments and don't disable reporting of unaligned reads.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;I recently started my first &lt;em&gt;real&lt;/em&gt; foray into human genomics, and if I thought I was overwhelmed with data before, I'm much more so now.
 (Thank goodness I'm not &lt;strike&gt;stupid&lt;/strike&gt; ambitious enough to work on marine or soil metagenomics!)
