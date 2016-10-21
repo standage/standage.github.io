@@ -9,7 +9,7 @@ Status: draft
 \*_In which I ramble on about experimental science, research software, and cyberinfrastructure engineering._\*
 
 I'm on my way home from a workshop on cyberinfrastructure and postgraduate training hosted by the [Plant Science Research Network](http://bti.cornell.edu/news/plant-science-research-network-launches/).
-I, like all the other participants, had some assigned prep work prior to the workshop, which got me thinking ([again](misconceptions-about-research-software.html)) about research software.
+I, like all the other participants, had some assigned prep work prior to the workshop, which got me thinking ([again]({filename}../2015/2015-12-16-wrong-about-software.md)) about research software.
 The purpose of this post is to summarize my thoughts while they're fresh in my head.
 
 *To be clear, the contents of this post represent my personal perspectives, and I do not imply that any of these perspectives are endorsed by the PSRN or any institution with which I'm affiliated.
@@ -20,7 +20,7 @@ I do hope, however, that they turn out to be useful.*
 Several days in advance, the workshop organizers sent out some material to introduce the subject matter and prime everyone for productive discourse.
 Each of us was assigned to one of four extreme scenarios regarding resource availability (high vs. low) and research motivation ("advancement" / curiosity-driven / proactive vs. "necessity" / problem-solving / reactive), and then asked to consider the plant science community's opportunities and challenges with respect to cyberinfrastructure and postgraduate training in the given scenario.
 Specifically, we were asked to come to the workshop ready to share an "early indicator" that would suggest a trend in the direction of our assigned scenario.
-I've summarized my overall experience at the workshop [here](my-thoughts-on-the-psrn-workshop-on-cyberinfrastructure-and-training.html).
+I've summarized my overall experience at the workshop [here]({filename}2016-10-20-psrn-retreat.md).
 
 ## Initial concern
 
@@ -40,7 +40,7 @@ I'm cautiously optimistic that the plant science community can foster continued 
 
 ## Stepping back: research software and experiments
 
-All of this has me [thinking again](misconceptions-about-research-software.html) about *why* research software is rarely considered a legitimate intellectual contribution to science.<sup>2</sup>
+All of this has me [thinking again]({filename}../2015/2015-12-16-wrong-about-software.md) about *why* research software is rarely considered a legitimate intellectual contribution to science.<sup>2</sup>
 As I've said before, I think it's important to compare software to experiments.
 Which components of experiments are valued as legitimate intellectual research activities?
 Of course you must include the design of the experiment, the evaluation of the experimental results, and the interpretation and dissemination of the findings.

@@ -12,7 +12,7 @@ Beware: what follows is a bit of a brain dump!
 
 ## Why me?
 
-![What are you doing here?](images/whatareyoudoinghere.gif)
+![What are you doing here?]({filename}/images/whatareyoudoinghere.gif)
 
 Those who know me best may be wondering what I was doing at a ***plant*** science workshop.
 That question certainly came up several times as I explained my graduate work (insect genomics) and postdoctoral work (rare genomic variant discovery in human) to other workshop attendees.
@@ -26,7 +26,7 @@ As an early career scientist and a relative outsider to the plant science commun
 And as I started reviewing these workshop prep materials, I became even more skeptical that the "corporate strategy" they were describing would play out well for rooms full of academics.<sup>1</sup>
 It turns out that I enjoyed the workshop immensely, and I think the layout helped make it a worthwhile experience for everyone involved.
 
-The workshop was organized as a [scenario planning](https://en.wikipedia.org/wiki/Scenario_planning) session, which (based on feedback from previous planning efforts in the plant science community) was focused on two critical uncertainties regarding the future of plant research.
+The workshop was organized as a [scenario planning](https://en.wikipedia.org/wiki/Scenario_planning) session, which (based on feedback from earlier planning efforts) was focused on two critical uncertainties regarding the future of plant research.
 The first is **resource availability**, the question of whether funding and other resources will be *abundant* or *limited*.
 The second uncertainty is the primary **driver of research**, the question of whether the plant science community is motivated primarily by *necessity and problem solving* (reactive) or by *advancement and curiosity* (proactive).
 These uncertainties served as two axes for brainstorming alternative hypothetical futures: the axes form four quadrants which served as scenarios for our discussion.
@@ -68,13 +68,13 @@ These will no doubt be covered in detail in the official post-workshop report, s
 
 I will say that **connections** were a theme that came up over and over again: collaboration between scientists, integration of distributed data and tools, and sincere engagement of all relevant stakeholders, especially legislature and the general public.
 The fundamental need to address **training in data and computing literacy** (distinct from computer science!) **throughout all career stages**—even (and especially) as early as high school—was another persisent recommendation.
-Several plugs were made for [Software Carpentry](FIXMEFIXME) and [Data Carpentry](FIXMEFIXME) as an excellent model for such training.
+Several plugs were made for [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/) as an excellent model for such training.
 
 The group also emphasized the detrimental effect of some of the plant science community's (and the wider science community's) legacy practices/culture, such as the general resistance to sharing and openness, the lack of incentives for making code/data/metadata documented/reusable, the general neglect towards sufficient standards development, and the reticence of academics toward valuing diverse career paths in (plant) science.
 
 ## The <strike>end</strike> beginning
 
-![Not Bad Obama](images/notbad.jpg)
+![Not Bad Obama]({filename}/images/notbad.jpg)
 
 Whoa, that's a lot!
 And actually *addressing* all these issues and recommendations in any meaningful way is going to be an extremely ambitious endeavor, no doubt about it.
