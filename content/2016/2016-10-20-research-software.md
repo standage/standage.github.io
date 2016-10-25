@@ -4,7 +4,6 @@ Author: Daniel S. Standage
 Category: blog
 Tags: software; science; cyberinfrastructure
 Summary: In which I ramble on about experimental science, research software, and cyberinfrastructure engineering.
-Status: draft
 
 \*_In which I ramble on about experimental science, research software, and cyberinfrastructure engineering._\*
 

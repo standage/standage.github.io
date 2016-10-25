@@ -3,7 +3,6 @@ Date: 2016-10-20 9:00
 Author: Daniel S. Standage
 Category: blog
 Tags: education; academics; cyberinfrastructure
-Status: draft
 
 I am on my way home from a workshop on cyberinfrastructure and postgraduate training hosted by the [Plant Science Research Network](http://bti.cornell.edu/news/plant-science-research-network-launches/).
 It was a grueling three-day sprint, but it brought together a phenomenal diversity of experience and perspectives on the relevant issues.
