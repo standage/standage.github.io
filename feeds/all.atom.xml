@@ -47,7 +47,7 @@ Consideration is given to what automated tests are in place to validate assumpti
 Once the design is critically vetted, implementing the software is almost mechanical, with little or no critical thinking required.&lt;sup&gt;3&lt;/sup&gt;
 Collecting, formatting, interpreting, and disseminating the results is not quite so formulaic, but the critical thinking required at this stage has been well primed by the upfront design.&lt;/p&gt;
 &lt;h2&gt;We do not live in that world&lt;/h2&gt;
-&lt;p&gt;I have enough &lt;a href="https://udall-lab.byu.edu/LabPersonnel"&gt;exposure to experimental molecular biology&lt;/a&gt; to know that these ideals are rarely met in experimental science.
+&lt;p&gt;I have enough exposure to experimental molecular biology to know that these ideals are rarely met in experimental science.
 However, my experience allows me to speak in more depth about why these ideals are rarely met in computational science.&lt;/p&gt;
 &lt;p&gt;Part of the problem is that as time- and resource-strapped scientists, often poorly trained with respect to software, we rarely invest sufficient time in the upfront design.
 As a result, we often end up taking the less than optimal approach of design-by-implementation, which can lead to messy and inflexible and inaccurate software.
