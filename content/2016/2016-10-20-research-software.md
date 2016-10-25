@@ -69,7 +69,7 @@ Collecting, formatting, interpreting, and disseminating the results is not quite
 
 ## We do not live in that world
 
-I have enough [exposure to experimental molecular biology](https://udall-lab.byu.edu/LabPersonnel) to know that these ideals are rarely met in experimental science.
+I have enough exposure to experimental molecular biology to know that these ideals are rarely met in experimental science.
 However, my experience allows me to speak in more depth about why these ideals are rarely met in computational science.
 
 Part of the problem is that as time- and resource-strapped scientists, often poorly trained with respect to software, we rarely invest sufficient time in the upfront design.
