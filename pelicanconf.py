@@ -6,7 +6,7 @@ import glob
 # Basic config
 AUTHOR = 'Daniel S. Standage'
 SITENAME = 'Daniel Standage'
-TIMEZONE = 'America/Indiana/Indianapolis'
+TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 FOOTER_YEARS = '2015-2016'
@@ -21,7 +21,7 @@ DISQUS_SITENAME = 'standage-github-io'
 SUMMARY_MAX_LENGTH = 60
 
 # Disallow indexing of drafts
-STATIC_PATHS = ['extra', 'images'] 
+STATIC_PATHS = ['extra', 'images']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
 }
@@ -33,16 +33,16 @@ INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'
 
 # Settings for left side well
-ADDRESS = ('205A Simon Hall',
-           'Indiana University',
-           '212 South Hawthorne Drive',
-           'Bloomington, IN 47405')
+ADDRESS = ('253 CCAH',
+           'University of California, Davis',
+           '1 Shields Ave',
+           'Davis, CA 95616')
 
 # Affiliations (replaced "Blogroll" in theme)
-LINKS = (('Brendel Group', 'http://brendelgroup.org/'),
-         ('Toth Lab', 'http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html'),
-         ('Indiana Biology Department', 'http://www.bio.indiana.edu/'),
-         ('Iowa State BCB Program', 'http://www.bcb.iastate.edu/'),)
+LINKS = (('Lab for Data Intensive Biology', 'http://ivory.idyll.org/lab/'),
+         ('Brendel Group', 'http://brendelgroup.org/'),
+         ('Toth Lab', 'http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html'),)
+
 
 # Social widget
 SOCIAL = (('GitHub', 'http://github.com/standage'),
