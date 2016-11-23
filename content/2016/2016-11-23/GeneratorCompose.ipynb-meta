@@ -1,0 +1,6 @@
+Title: Composing generator functions in Python
+Date: 2016-11-23
+Category: notebook
+Tags: python; generators; streaming
+Summary: In which I briefly motivate the utility of generator functions and
+    demonstrate that they can be nested to create a data processing stream.
