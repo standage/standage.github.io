@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><lastBuildDate>Wed, 23 Nov 2016 00:00:00 -0800</lastBuildDate><item><title>Composing generator functions in Python</title><link>https://standage.github.io/composing-generator-functions-in-python.html</link><description>&lt;style type="text/css"&gt;/*!
+<rss version="2.0"><channel><title>Daniel Standage</title><link>https://standage.github.io/</link><description></description><lastBuildDate>Tue, 24 Jan 2017 00:00:00 -0800</lastBuildDate><item><title>Streaming data from the SRA with fastq-dump</title><link>https://standage.github.io/streaming-data-from-the-sra-with-fastq-dump.html</link><description>&lt;p&gt;NCBI's &lt;a href="https://www.ncbi.nlm.nih.gov/sra"&gt;Sequence Read Archive&lt;/a&gt; is the go-to repository for published genome-scale sequence data sets.
+Although there are a variety of ways to download sequence data from SRA, the &lt;code&gt;fastq-dump&lt;/code&gt; command from the &lt;a href="https://www.ncbi.nlm.nih.gov/Traces/sra/?view=software"&gt;SRA Toolkit&lt;/a&gt; is the most convenient in my opinion.
+In fact, with a few settings tweaks &lt;code&gt;fastq-dump&lt;/code&gt; can stream data directly from the SRA into an analysis pipeline.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For a true streaming approach, you'll want to disable local file caching with &lt;a href="https://github.com/ncbi/sra-tools/wiki/Toolkit-Configuration"&gt;vdb-config&lt;/a&gt;.
+   Especially on clusters with tight quotas on home directory storage, the default settings can be very problematic.&lt;/li&gt;
+&lt;li&gt;If you have paired reads, use the &lt;code&gt;--split-files&lt;/code&gt; flag for proper printing of pairs and the &lt;code&gt;--stdout&lt;/code&gt; flag (or &lt;code&gt;-Z&lt;/code&gt; for short) so that the data is printed in &lt;em&gt;interleaved Fastq&lt;/em&gt; format, rather than in two paired files (as is the default).&lt;/li&gt;
+&lt;li&gt;By default, the read IDs returned by &lt;code&gt;fastq-dump&lt;/code&gt; don't include any pairing information, which some programs rely on for processing paired-end data.
+   Include the options &lt;code&gt;--defline-seq '@$ac.$si.$sg/$ri' --defline-qual '+'&lt;/code&gt; to append a &lt;code&gt;/1&lt;/code&gt; or &lt;code&gt;/2&lt;/code&gt; to the end of each read ID for pairing information, and to throw away all of the superfluous and redundant info in the 3rd line of each Fastq record.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The following example pipes the SRA data set with the accession ERR612477 into a processing pipeline.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;fastq-dump --split-files --defline-seq &amp;#39;@&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;ac&lt;/span&gt;&lt;span class="x"&gt;.&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;si&lt;/span&gt;&lt;span class="x"&gt;.&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;sg&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;ri&lt;/span&gt;&lt;span class="x"&gt;&amp;#39; --defline-qual &amp;#39;+&amp;#39; -Z ERR612477 \&lt;/span&gt;
+&lt;span class="x"&gt;    | trim-low-abund.py --ksize 25 --max-memory-usage 2G --variable-coverage - \&lt;/span&gt;
+&lt;span class="x"&gt;    | my-favorite-mapper-or-assembler &amp;gt; out.dat&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Tue, 24 Jan 2017 00:00:00 -0800</pubDate><guid isPermaLink="false">tag:standage.github.io,2017-01-24:streaming-data-from-the-sra-with-fastq-dump.html</guid><category>sra</category><category>streaming</category><category>ngs</category></item><item><title>Why can't blastdb_aliastool take plain old sequence IDs?</title><link>https://standage.github.io/why-cant-blastdb_aliastool-take-plain-old-sequence-ids.html</link><description>&lt;p&gt;Imagine you have a genome sequence in a Fasta formatted file: a human reference genome from Ensemble, for example.
+Now imagine that you want to perform BLAST searches against this genome&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Daniel S. Standage</dc:creator><pubDate>Wed, 30 Nov 2016 10:30:00 -0800</pubDate><guid isPermaLink="false">tag:standage.github.io,2016-11-30:why-cant-blastdb_aliastool-take-plain-old-sequence-ids.html</guid><category>ncbi</category><category>blast</category><category>fail</category></item><item><title>Composing generator functions in Python</title><link>https://standage.github.io/composing-generator-functions-in-python.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1177,6 +1192,9 @@ Am I the late one to this party?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -3014,6 +3032,9 @@ niLocus: 0
 &lt;/div&gt;
 
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -5049,6 +5070,9 @@ I'll add a recipe for TAIR6 to GenHub, and use the existing RefSeq recipe for TA
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -7496,6 +7520,9 @@ AElFTkSuQmCC
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -10796,6 +10823,9 @@ KLgWEREREakSBdciIiIiIlWi4FpEREREpEoUXIuIiIiIVMl/AFmuslWqbOHkAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -12469,6 +12499,9 @@ Nvit	0.32	0.30	0.06	0.81
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -16901,6 +16934,9 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;/div&gt;
+ 
+
+
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
