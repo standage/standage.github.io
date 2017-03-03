@@ -239,6 +239,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -259,11 +260,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -1001,8 +997,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -1013,9 +1011,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1088,7 +1088,9 @@ I'll go ahead and do so here.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
@@ -1128,7 +1130,9 @@ I'll go ahead and do so here.</p>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Length_mean	Length_p50	Length_min	Length_max
 13139.40	3557	105	904366
@@ -1171,7 +1175,7 @@ Length_mean	Length_p50	Length_min	Length_max
 <span class="k">do</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv <span class="se">\</span>
-        <span class="p">|</span> tail -n 1
+        <span class="p">|</span> tail -n <span class="m">1</span>
 <span class="k">done</span>
 </pre></div>
 
@@ -1183,7 +1187,9 @@ Length_mean	Length_p50	Length_min	Length_max
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>13139.40	3557	105	904366
 15409.72	3774	276	674837
@@ -1221,7 +1227,7 @@ Length_mean	Length_p50	Length_min	Length_max
     <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
     mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv <span class="se">\</span>
-        <span class="p">|</span> tail -n 1
+        <span class="p">|</span> tail -n <span class="m">1</span>
 <span class="k">done</span>
 </pre></div>
 
@@ -1233,7 +1239,9 @@ Length_mean	Length_p50	Length_min	Length_max
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Species	Mean	Median	Min	Max
 Amel	13139.40	3557	105	904366
@@ -1279,7 +1287,7 @@ Rather than retyping the command two more times, let's just wrap the command in 
         <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
         mlrcmd stats1 -a mean,p50,min,max -f <span class="nv">$field</span> <span class="se">\</span>
                scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.pre-mrnas.tsv <span class="se">\</span>
-            <span class="p">|</span> tail -n 1
+            <span class="p">|</span> tail -n <span class="m">1</span>
     <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
@@ -1292,7 +1300,9 @@ Rather than retyping the command two more times, let's just wrap the command in 
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Length
@@ -1378,7 +1388,9 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Length_p5	Length_p95
 66	1101
@@ -1405,8 +1417,8 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 1<span class="k">)</span>
-<span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 2<span class="k">)</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f <span class="m">1</span><span class="k">)</span>
+<span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f <span class="m">2</span><span class="k">)</span>
 
 <span class="nb">echo</span> <span class="s2">&quot; 5% quantile: </span><span class="nv">$p5</span><span class="s2">&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;95% quantile: </span><span class="nv">$p95</span><span class="s2">&quot;</span>
@@ -1420,7 +1432,9 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre> 5% quantile: 66
 95% quantile: 1101
@@ -1465,7 +1479,9 @@ We have to be careful to escape field names and shell variables, since both begi
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 0.37	0.35	0.07	0.80
@@ -1512,7 +1528,7 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
            <span class="s2">&quot;\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25&quot;</span> <span class="se">\</span>
            scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.exons.tsv <span class="se">\</span>
         <span class="p">|</span> mlrcmd stats1 -a mean,p50,min,max -f GCContent <span class="se">\</span>
-        <span class="p">|</span> tail -n 1
+        <span class="p">|</span> tail -n <span class="m">1</span>
 <span class="k">done</span>
 </pre></div>
 
@@ -1524,7 +1540,9 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Species	Mean	Median	Min	Max
 Amel	0.37	0.35	0.07	0.80
@@ -1572,14 +1590,14 @@ Nvit	0.46	0.45	0.15	0.79
         <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
         mlrcmd stats1 -a mean,p50,min,max -f Length <span class="se">\</span>
                scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="se">\</span>
-            <span class="p">|</span> tail -n 1
+            <span class="p">|</span> tail -n <span class="m">1</span>
     <span class="k">done</span>
     
     <span class="nb">echo</span>
     <span class="nb">echo</span> <span class="s2">&quot;GCContent&quot;</span>
     <span class="nb">echo</span> <span class="s1">$&#39;Species\tMean\tMedian\tMin\tMax&#39;</span>
-    <span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 1<span class="k">)</span>
-    <span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f 2<span class="k">)</span>
+    <span class="nv">p5</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f <span class="m">1</span><span class="k">)</span>
+    <span class="nv">p95</span><span class="o">=</span><span class="k">$(</span>mlrcmd stats1 -a p5,p95 -f Length scratch/data/<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="p">|</span> tail -n <span class="m">1</span> <span class="p">|</span> cut -f <span class="m">2</span><span class="k">)</span>
     <span class="k">for</span> species in Amel Bter Hsal Cflo Pdom Pcan Nvit
     <span class="k">do</span>
         <span class="nb">echo</span> -n <span class="si">${</span><span class="nv">species</span><span class="si">}</span><span class="s1">$&#39;\t&#39;</span>
@@ -1587,7 +1605,7 @@ Nvit	0.46	0.45	0.15	0.79
                <span class="s2">&quot;\$Length &gt;= </span><span class="nv">$p5</span><span class="s2"> &amp;&amp; \$Length &lt;= </span><span class="nv">$p95</span><span class="s2"> &amp;&amp; \$NContent &lt; 0.25&quot;</span> <span class="se">\</span>
                scratch/species/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>/<span class="si">${</span><span class="nv">species</span><span class="si">}</span>.<span class="si">${</span><span class="nv">featuretype</span><span class="si">}</span>.tsv <span class="se">\</span>
             <span class="p">|</span> mlrcmd stats1 -a mean,p50,min,max -f GCContent <span class="se">\</span>
-            <span class="p">|</span> tail -n 1
+            <span class="p">|</span> tail -n <span class="m">1</span>
 <span class="k">done</span>
 <span class="k">done</span>
 </pre></div>
@@ -1600,7 +1618,9 @@ Nvit	0.46	0.45	0.15	0.79
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 

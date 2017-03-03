@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2017-01-24T00:00:00-08:00</updated><entry><title>Streaming data from the SRA with fastq-dump</title><link href="https://standage.github.io/streaming-data-from-the-sra-with-fastq-dump.html" rel="alternate"></link><published>2017-01-24T00:00:00-08:00</published><updated>2017-01-24T00:00:00-08:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2017-01-24:streaming-data-from-the-sra-with-fastq-dump.html</id><summary type="html">&lt;p&gt;NCBI's &lt;a href="https://www.ncbi.nlm.nih.gov/sra"&gt;Sequence Read Archive&lt;/a&gt; is the go-to repository for published genome-scale sequence data sets.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel Standage</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/all.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2017-03-02T00:00:00-08:00</updated><entry><title>Super simple reverse-complement aware DNA sequence search with rcgrep</title><link href="https://standage.github.io/super-simple-reverse-complement-aware-dna-sequence-search-with-rcgrep.html" rel="alternate"></link><published>2017-03-02T00:00:00-08:00</published><updated>2017-03-02T00:00:00-08:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2017-03-02:super-simple-reverse-complement-aware-dna-sequence-search-with-rcgrep.html</id><summary type="html">&lt;p&gt;There are many wonderfully elegant and efficient tools for performing all sorts of exact and inexact searches on large collections of DNA sequences.
+Experience has shown, however, that these tools are usually very rigid with respect to their assumptions about input data.
+If input files are compressed in a certain way, or stored in a non-standard format, there is usually some non-trivial work and storage involved in converting the data to a format the software will accept.
+There are circumstances in which this extra work is justified, but many times you just need a flexible tool to do a quick-n-dirty search.&lt;/p&gt;
+&lt;p&gt;Consider the following, totally not-real never-happened-to-me hypothetical situation.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ME&lt;/strong&gt;: &lt;em&gt;I just need to search for a sequence in this text file real quick. I'll use &lt;code&gt;grep&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ALSO ME&lt;/strong&gt;: &lt;em&gt;Oh, the file is gzip-compressed. Use &lt;code&gt;gzgrep&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ME AGAIN&lt;/strong&gt;: &lt;em&gt;Oops, I forgot to search for the sequence's reverse complement as well. Try again.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ME, 5 MINUTES LATER&lt;/strong&gt;: &lt;em&gt;This time I want to search a different file (bzip2-compressed) for 3 sequences and their reverse complements. Invoke &lt;code&gt;bzgrep&lt;/code&gt; with multiple &lt;code&gt;-e&lt;/code&gt; flags.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ME, HEAD ON DESK&lt;/strong&gt;: &lt;em&gt;Uggghh, &lt;code&gt;bzgrep&lt;/code&gt; on Linux doesn't support multiple &lt;code&gt;-e&lt;/code&gt; flags. Pipe output of &lt;code&gt;bzcat&lt;/code&gt; to &lt;code&gt;grep&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Searching for DNA sequences in text files is a very simple task that too often is unnecessarily complicated by uninteresting and frustrating technical details.&lt;/p&gt;
+&lt;p&gt;Enter &lt;a href="https://github.com/dib-lab/rcgrep"&gt;rcgrep&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;rcgrep&lt;/strong&gt; is a lightweight wrapper for the UNIX &lt;code&gt;grep&lt;/code&gt; command and is intended to make these irrelevant details disappear as much as possible.
+It supports multiple queries, is reverse complement aware, handles mixtures of compressed and uncompressed files automagically, supports streaming, and can tap into &lt;code&gt;grep&lt;/code&gt;'s extended features such as case-insensitive search (&lt;code&gt;grep -i&lt;/code&gt;) and before- and after-context reporting (&lt;code&gt;grep -B&lt;/code&gt; and &lt;code&gt;grep -A&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;This tool, like a few others I've artisanally hand-crafted over the past few years, is an example of &lt;em&gt;frustration-driven development&lt;/em&gt;.
+It's such a simple and obvious idea that I'm sure it's been implemented and re-implemented in dozens of ways by hundreds of researchers over the years.
+I hope that the small amount of work I've put into publishing this tool and making it easy to install and use will save the field a few hundred computational-biologist-hours: time much better spent on doing some awesome science.&lt;/p&gt;
+&lt;p&gt;To install, invoke &lt;code&gt;pip install rcgrep&lt;/code&gt; or download directly from the GitHub repository at &lt;a href="https://github.com/dib-lab/rcgrep"&gt;https://github.com/dib-lab/rcgrep&lt;/a&gt;.&lt;/p&gt;</summary><category term="software"></category><category term="rcgrep"></category><category term="frustration driven development"></category></entry><entry><title>Streaming data from the SRA with fastq-dump</title><link href="https://standage.github.io/streaming-data-from-the-sra-with-fastq-dump.html" rel="alternate"></link><published>2017-01-24T00:00:00-08:00</published><updated>2017-01-24T00:00:00-08:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2017-01-24:streaming-data-from-the-sra-with-fastq-dump.html</id><summary type="html">&lt;p&gt;NCBI's &lt;a href="https://www.ncbi.nlm.nih.gov/sra"&gt;Sequence Read Archive&lt;/a&gt; is the go-to repository for published genome-scale sequence data sets.
 Although there are a variety of ways to download sequence data from SRA, the &lt;code&gt;fastq-dump&lt;/code&gt; command from the &lt;a href="https://www.ncbi.nlm.nih.gov/Traces/sra/?view=software"&gt;SRA Toolkit&lt;/a&gt; is the most convenient in my opinion.
 In fact, with a few settings tweaks &lt;code&gt;fastq-dump&lt;/code&gt; can stream data directly from the SRA into an analysis pipeline.&lt;/p&gt;
 &lt;ol&gt;
@@ -10,9 +29,9 @@ In fact, with a few settings tweaks &lt;code&gt;fastq-dump&lt;/code&gt; can stre
    Include the options &lt;code&gt;--defline-seq '@$ac.$si.$sg/$ri' --defline-qual '+'&lt;/code&gt; to append a &lt;code&gt;/1&lt;/code&gt; or &lt;code&gt;/2&lt;/code&gt; to the end of each read ID for pairing information, and to throw away all of the superfluous and redundant info in the 3rd line of each Fastq record.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The following example pipes the SRA data set with the accession ERR612477 into a processing pipeline.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;fastq-dump --split-files --defline-seq &amp;#39;@&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;ac&lt;/span&gt;&lt;span class="x"&gt;.&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;si&lt;/span&gt;&lt;span class="x"&gt;.&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;sg&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;ri&lt;/span&gt;&lt;span class="x"&gt;&amp;#39; --defline-qual &amp;#39;+&amp;#39; -Z ERR612477 \&lt;/span&gt;
-&lt;span class="x"&gt;    | trim-low-abund.py --ksize 25 --max-memory-usage 2G --variable-coverage - \&lt;/span&gt;
-&lt;span class="x"&gt;    | my-favorite-mapper-or-assembler &amp;gt; out.dat&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fastq-dump --split-files --defline-seq &amp;#39;@$ac.$si.$sg/$ri&amp;#39; --defline-qual &amp;#39;+&amp;#39; -Z ERR612477 \
+    | trim-low-abund.py --ksize 25 --max-memory-usage 2G --variable-coverage - \
+    | my-favorite-mapper-or-assembler &amp;gt; out.dat
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="sra"></category><category term="streaming"></category><category term="ngs"></category></entry><entry><title>Why can't blastdb_aliastool take plain old sequence IDs?</title><link href="https://standage.github.io/why-cant-blastdb_aliastool-take-plain-old-sequence-ids.html" rel="alternate"></link><published>2016-11-30T10:30:00-08:00</published><updated>2016-11-30T10:30:00-08:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-11-30:why-cant-blastdb_aliastool-take-plain-old-sequence-ids.html</id><summary type="html">&lt;p&gt;Imagine you have a genome sequence in a Fasta formatted file: a human reference genome from Ensemble, for example.
 Now imagine that you want to perform BLAST searches against this genome&lt;/p&gt;</summary><category term="ncbi"></category><category term="blast"></category><category term="fail"></category></entry><entry><title>Composing generator functions in Python</title><link href="https://standage.github.io/composing-generator-functions-in-python.html" rel="alternate"></link><published>2016-11-23T00:00:00-08:00</published><updated>2016-11-23T00:00:00-08:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-11-23:composing-generator-functions-in-python.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
@@ -171,6 +190,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -191,11 +211,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -933,8 +948,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -945,9 +962,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1163,7 +1182,9 @@ Now, consider the behavior we observe when these generators are all composed.&lt
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[1, &amp;#39;t1&amp;#39;, &amp;#39;t2&amp;#39;, &amp;#39;t3&amp;#39;]
 [2, &amp;#39;t1&amp;#39;, &amp;#39;t2&amp;#39;, &amp;#39;t3&amp;#39;]
@@ -1893,6 +1914,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -1913,11 +1935,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -2655,8 +2672,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -2667,9 +2686,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -2744,7 +2765,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -2773,7 +2796,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;119186497
 119146348
@@ -2806,7 +2831,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;5
 5
@@ -2843,7 +2870,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;26541
 27202
@@ -2875,7 +2904,9 @@ cat &lt;span class="nv"&gt;$annotfiles&lt;/span&gt; &lt;span class="p"&gt;|&lt;/
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;CDS
 exon
@@ -2923,7 +2954,9 @@ transcript
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;769
 1290
@@ -2956,7 +2989,9 @@ transcript
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;37299
 37669
@@ -2994,7 +3029,9 @@ transcript
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
 species/Att6/Att6.iloci.gff3
@@ -3467,7 +3504,7 @@ She likely would have had to rewind two commits in her history to get rid of her
 &lt;p&gt;By using branches, Alice cleanly isolated each set of changes from the main development branch, and was able to discard one set of changes without affecting the other set of changes.
 Using branches with git and GitHub is an excellent mechanism to keep your work organized into small manageable chunks that can be developed, evaluated, and merged independently.&lt;/p&gt;</summary><category term="programming"></category><category term="git"></category></entry><entry><title>Reading roundup</title><link href="https://standage.github.io/reading-roundup-2016-02-05.html" rel="alternate"></link><published>2016-02-05T00:00:00-08:00</published><updated>2016-02-05T00:00:00-08:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-05:reading-roundup-2016-02-05.html</id><summary type="html">&lt;h2&gt;&lt;a href="https://twitter.com/climagic/status/694660103627259905"&gt;This tip for issuing an alarm when a site comes back up.&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;I don't have a &lt;code&gt;.wav/.mp3&lt;/code&gt; file handy, but a terminal bell (&lt;code&gt;\a&lt;/code&gt;) works just as well.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep 30&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; ! curl -m &lt;span class="m"&gt;10&lt;/span&gt; http://www.example.com/&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; still down&lt;span class="p"&gt;;&lt;/span&gt; sleep &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;\a\a\a&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3669,6 +3706,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -3689,11 +3727,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -4431,8 +4464,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -4443,9 +4478,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -4533,7 +4570,9 @@ I followed the &lt;code&gt;Download --&amp;gt; FTP Archive&lt;/code&gt; link on 
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;--2016-02-04 21:15:05--  ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
            =&amp;gt; &amp;#39;TAIR10_GFF3_genes.gff&amp;#39;
@@ -4584,7 +4623,9 @@ TAIR10_GFF3_genes.g 100%[===================&amp;gt;]  42.09M  3.55MB/s    in 14
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Chr1	TAIR10	chromosome	1	30427671	.	.	.	ID=Chr1;Name=Chr1
 Chr1	TAIR10	gene	3631	5899	.	+	.	ID=AT1G01010;Note=protein_coding_gene;Name=AT1G01010
@@ -4631,7 +4672,9 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Chr1
 Chr2
@@ -4675,7 +4718,9 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -4712,7 +4757,9 @@ Once you locate the &lt;code&gt;/genomes/refseq/&lt;/code&gt; directory, finding
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;--2016-02-04 21:15:32--  ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
            =&amp;gt; &amp;#39;GCF_000001735.3_TAIR10_genomic.gff.gz&amp;#39;
@@ -4763,7 +4810,9 @@ GCF_000001735.3_TAI 100%[===================&amp;gt;]  12.06M  3.56MB/s    in 3.
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;##gff-version 3
 #!gff-spec-version 1.21
@@ -4813,7 +4862,9 @@ It looks like &lt;code&gt;region&lt;/code&gt; entries with a &lt;code&gt;chromos
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;NC_003070.9	RefSeq	region	1	30427671	.	+	.	ID=id0;Dbxref=taxon:3702;Name=1;chromosome=1;ecotype=Columbia;gbkey=Src;genome=chromosome;mol_type=genomic DNA
 NC_003071.7	RefSeq	region	1	19698289	.	+	.	ID=id57764;Dbxref=taxon:3702;Name=2;chromosome=2;ecotype=Columbia;gbkey=Src;genome=chromosome;mol_type=genomic DNA
@@ -4857,7 +4908,9 @@ Let's check whether there are any trans-spliced genes annotated in this file.&lt
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;NC_001284.2	RefSeq	gene	79740	81297	.	-	.	ID=gene33323;Dbxref=GeneID:3371312;Name=nad2;exception=trans-splicing;gbkey=Gene;gene=nad2;gene_biotype=protein_coding;locus_tag=ArthMp026;part=1/2
 NC_001284.2	RefSeq	gene	327890	333105	.	-	.	ID=gene33323;Dbxref=GeneID:3371312;Name=nad2;exception=trans-splicing;gbkey=Gene;gene=nad2;gene_biotype=protein_coding;locus_tag=ArthMp026;part=2/2
@@ -4913,7 +4966,9 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -4939,7 +4994,7 @@ Let's use the &lt;code&gt;--summary&lt;/code&gt; flag to suppress the locus-leve
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;parseval --summary tair10.gff3 ncbi.gff3 2&amp;gt; stderr.txt
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;parseval --summary tair10.gff3 ncbi.gff3 &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; stderr.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;
@@ -4950,7 +5005,9 @@ Let's use the &lt;code&gt;--summary&lt;/code&gt; flag to suppress the locus-leve
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;============================================================
 ========== ParsEval Summary
@@ -5806,18 +5863,18 @@ If we redirect a program's output to a process, we can then filter the data with
 
 &lt;p&gt;Extending this to stderr requires only two changes.
 First, we replace &lt;code&gt;&amp;gt;&lt;/code&gt; with &lt;code&gt;2&amp;gt;&lt;/code&gt; so that we are redirecting the correct output stream.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Secondly, we add &lt;code&gt;1&amp;gt;&amp;amp;2&lt;/code&gt; to the end of the process so that its stdout is redirected back to stderr, which is where the data was intended to go in the first place (cue Ghostbusters quote about not crossing the streams).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;some_program &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;sort &lt;span class="p"&gt;|&lt;/span&gt; uniq -c &lt;span class="m"&gt;1&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Putting this all together and going back to our original use case, we can remove the unwanted &lt;code&gt;cannot find "foo"&lt;/code&gt; messages from our terminal like so.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;first_command --arg1&lt;span class="o"&gt;=&lt;/span&gt;foo --arg2&lt;span class="o"&gt;=&lt;/span&gt;bar --flag3 infile.txt &lt;span class="se"&gt;\&lt;/span&gt;
-    &lt;span class="p"&gt;|&lt;/span&gt; second_command one two three 2&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;grep &lt;span class="s1"&gt;&amp;#39;cannot find &amp;quot;foo&amp;quot;&amp;#39;&lt;/span&gt; 1&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="p"&gt;|&lt;/span&gt; second_command one two three &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt; &amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;grep &lt;span class="s1"&gt;&amp;#39;cannot find &amp;quot;foo&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
     &lt;span class="p"&gt;|&lt;/span&gt; third_command --abc xyz &lt;span class="se"&gt;\&lt;/span&gt;
     &amp;gt; outfile.txt
 &lt;/pre&gt;&lt;/div&gt;
@@ -6015,6 +6072,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -6035,11 +6093,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -6777,8 +6830,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -6789,9 +6844,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -6860,7 +6917,9 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Random seed: 1234
 &lt;/pre&gt;
@@ -6943,7 +7002,9 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -7236,7 +7297,9 @@ kqTCDOWSJElSYYZySZIkqTBDuSRJklSYoVySJEkq7P8Dd3Pg4qyw8f4AAAAASUVORK5CYII=
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -7707,6 +7770,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -7727,11 +7791,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -8469,8 +8528,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -8481,9 +8542,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -8624,16 +8687,16 @@ Interval &lt;code&gt;B&lt;/code&gt; is represented as &lt;code&gt;[8, 14]&lt;/co
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Interval&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Simple implementation of a discrete closed interval.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
 
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__len__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__len__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
 
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__repr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__repr__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;, &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;]&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;place&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;newstart&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -8734,7 +8797,9 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -9053,7 +9118,9 @@ QmCC
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -9384,7 +9451,9 @@ aYICaRERERGRJiiQFhERERFpggJpEREREZEmKJAWEREREWnC35meu6pIOf+NAAAAAElFTkSuQmCC
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -9775,7 +9844,9 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 &lt;div class="output_text output_subarea output_execute_result"&gt;
@@ -9809,14 +9880,18 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Collisions: 0
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -10143,14 +10218,18 @@ kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Collisions: 0
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -10485,14 +10564,18 @@ rkJggg==
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Collisions: 0
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -11072,6 +11155,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -11092,11 +11176,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11834,8 +11913,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11846,9 +11927,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -11921,7 +12004,9 @@ I'll go ahead and do so here.&lt;/p&gt;
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -11961,7 +12046,9 @@ I'll go ahead and do so here.&lt;/p&gt;
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Length_mean	Length_p50	Length_min	Length_max
 13139.40	3557	105	904366
@@ -12004,7 +12091,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
-        &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+        &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -12016,7 +12103,9 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;13139.40	3557	105	904366
 15409.72	3774	276	674837
@@ -12054,7 +12143,7 @@ Length_mean	Length_p50	Length_min	Length_max
     &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
-        &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+        &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -12066,7 +12155,9 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Species	Mean	Median	Min	Max
 Amel	13139.40	3557	105	904366
@@ -12112,7 +12203,7 @@ Rather than retyping the command two more times, let's just wrap the command in 
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
         mlrcmd stats1 -a mean,p50,min,max -f &lt;span class="nv"&gt;$field&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
                scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
-            &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+            &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
     &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -12125,7 +12216,9 @@ Rather than retyping the command two more times, let's just wrap the command in 
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
 Length
@@ -12211,7 +12304,9 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Length_p5	Length_p95
 66	1101
@@ -12238,8 +12333,8 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[7]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 1&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 2&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/exons.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
 
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; 5% quantile: &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;95% quantile: &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
@@ -12253,7 +12348,9 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt; 5% quantile: 66
 95% quantile: 1101
@@ -12298,7 +12395,9 @@ We have to be careful to escape field names and shell variables, since both begi
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 0.37	0.35	0.07	0.80
@@ -12345,7 +12444,7 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
            &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.exons.tsv &lt;span class="se"&gt;\&lt;/span&gt;
         &lt;span class="p"&gt;|&lt;/span&gt; mlrcmd stats1 -a mean,p50,min,max -f GCContent &lt;span class="se"&gt;\&lt;/span&gt;
-        &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+        &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -12357,7 +12456,9 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Species	Mean	Median	Min	Max
 Amel	0.37	0.35	0.07	0.80
@@ -12405,14 +12506,14 @@ Nvit	0.46	0.45	0.15	0.79
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
         mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
                scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="se"&gt;\&lt;/span&gt;
-            &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+            &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
     &lt;span class="k"&gt;done&lt;/span&gt;
     
     &lt;span class="nb"&gt;echo&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;GCContent&amp;quot;&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
-    &lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 1&lt;span class="k"&gt;)&lt;/span&gt;
-    &lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f 2&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
     &lt;span class="k"&gt;do&lt;/span&gt;
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
@@ -12420,7 +12521,7 @@ Nvit	0.46	0.45	0.15	0.79
                &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
                scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="se"&gt;\&lt;/span&gt;
             &lt;span class="p"&gt;|&lt;/span&gt; mlrcmd stats1 -a mean,p50,min,max -f GCContent &lt;span class="se"&gt;\&lt;/span&gt;
-            &lt;span class="p"&gt;|&lt;/span&gt; tail -n 1
+            &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -12433,7 +12534,9 @@ Nvit	0.46	0.45	0.15	0.79
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
 
@@ -12709,6 +12812,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -12729,11 +12833,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -13471,8 +13570,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -13483,9 +13584,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -13607,7 +13710,9 @@ h6:hover .anchor-link {
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -13708,7 +13813,9 @@ JakQBr4kFcLAl6RCGPiSVIj/A0lj3av7gje1AAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -13795,7 +13902,9 @@ wnCe/r2CAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -13900,7 +14009,9 @@ FcCwl6QC/F+8KPd32bqc0QAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -13989,7 +14100,9 @@ YS9JBTDsJakAhr0kFcCwl6QCGPaSVID/B02rUo8ILuYpAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14102,7 +14215,9 @@ AAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14215,7 +14330,9 @@ VDEGuyRVjMEuSRVjsEtSxRjsklQxBrskVcz/B9ZljQ8+6JMVAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14328,7 +14445,9 @@ LkkVY7BLUsUY7JJUMf8f1nCChKxfysoAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14441,7 +14560,9 @@ AABJRU5ErkJggg==
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14533,7 +14654,9 @@ YS9JBfh/99GN8EyXO6gAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14625,7 +14748,9 @@ QmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14741,7 +14866,9 @@ RU5ErkJggg==
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14835,7 +14962,9 @@ YII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -14948,7 +15077,9 @@ wCrgrogYX8tfm5lvdrGm2fQYsC0inqH6JMRtmXmsyzWpfV8A/iAidtWPb+iX1YPM3BERl0TEHqoD
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15050,7 +15181,9 @@ RK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15137,7 +15270,9 @@ JKnLDHxJKoSBL0mFMPAlqRAGviQVwsCXpEIY+JJUCANfkgrxf4/i1t2VFgccAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15247,7 +15382,9 @@ KsD/Bwbler1WltyCAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15346,7 +15483,9 @@ AQx7SSqAYS9JBTDsJakAhr0kFcCwl6QCGPaSVID/B7hdZG0xNFeOAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15436,7 +15575,9 @@ BTDsJakAhr0kFcCwl6QCGPaSVADDXpIKYNhLUgH+D3lqZWuzQd2yAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15526,7 +15667,9 @@ e0kqwP8BTox3UPRmAuUAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15615,7 +15758,9 @@ Ahj2klQAw16SCmDYS1IBDHtJKoBhL0kFMOwlqQD/B6K3eEIkb4+eAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15704,7 +15849,9 @@ VK6TXezbGiofZnPqiNk4lLOGTi+uTbEdGALuj4iLY/c3Z+bZNtbUSPuAvRHxFJUZD9sy840216TF
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15817,7 +15964,9 @@ kgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AMHiXlPb/U5QAAAAAElFTkSuQmCC
 &lt;div class="output"&gt;
 
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -15931,7 +16080,9 @@ IQx8SSqEgS9Jhfi/IIm5oB72IoMAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16025,7 +16176,9 @@ SYUw8CWpEAa+JBXi/wB4ohMAcXcTQgAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16106,7 +16259,9 @@ viQVwuBLUiEMviQVwuBLUiH+D3sA/74CGMSDAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16205,7 +16360,9 @@ WkvEREQwAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16293,7 +16450,9 @@ T+8AAAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16399,7 +16558,9 @@ rkJggg==
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16504,7 +16665,9 @@ kgpjsEtSYQx2SSqMwS5Jhfl/ykajBaztZEUAAAAASUVORK5CYII=
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16609,7 +16772,9 @@ YJek4hjsklQYg12SCmOwS1JhDHZJKozBLkmFMdglqTD/H2GUvdTXqeIUAAAAAElFTkSuQmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16714,7 +16879,9 @@ VcPFjgAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;
@@ -16818,7 +16985,9 @@ QmCC
 
 &lt;/div&gt;
 
-&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_area"&gt;
+&lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 &lt;div class="output_png output_subarea "&gt;

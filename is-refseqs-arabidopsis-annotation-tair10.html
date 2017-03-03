@@ -239,6 +239,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -259,11 +260,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -1001,8 +997,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -1013,9 +1011,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1103,7 +1103,9 @@ I followed the <code>Download --&gt; FTP Archive</code> link on the <a href="htt
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>--2016-02-04 21:15:05--  ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
            =&gt; &#39;TAIR10_GFF3_genes.gff&#39;
@@ -1154,7 +1156,9 @@ TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Chr1	TAIR10	chromosome	1	30427671	.	.	.	ID=Chr1;Name=Chr1
 Chr1	TAIR10	gene	3631	5899	.	+	.	ID=AT1G01010;Note=protein_coding_gene;Name=AT1G01010
@@ -1201,7 +1205,9 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Chr1
 Chr2
@@ -1245,7 +1251,9 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
@@ -1282,7 +1290,9 @@ Once you locate the <code>/genomes/refseq/</code> directory, finding the <em>Ara
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>--2016-02-04 21:15:32--  ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
            =&gt; &#39;GCF_000001735.3_TAIR10_genomic.gff.gz&#39;
@@ -1333,7 +1343,9 @@ GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>##gff-version 3
 #!gff-spec-version 1.21
@@ -1383,7 +1395,9 @@ It looks like <code>region</code> entries with a <code>chromosome</code> attribu
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>NC_003070.9	RefSeq	region	1	30427671	.	+	.	ID=id0;Dbxref=taxon:3702;Name=1;chromosome=1;ecotype=Columbia;gbkey=Src;genome=chromosome;mol_type=genomic DNA
 NC_003071.7	RefSeq	region	1	19698289	.	+	.	ID=id57764;Dbxref=taxon:3702;Name=2;chromosome=2;ecotype=Columbia;gbkey=Src;genome=chromosome;mol_type=genomic DNA
@@ -1427,7 +1441,9 @@ Let's check whether there are any trans-spliced genes annotated in this file.</p
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>NC_001284.2	RefSeq	gene	79740	81297	.	-	.	ID=gene33323;Dbxref=GeneID:3371312;Name=nad2;exception=trans-splicing;gbkey=Gene;gene=nad2;gene_biotype=protein_coding;locus_tag=ArthMp026;part=1/2
 NC_001284.2	RefSeq	gene	327890	333105	.	-	.	ID=gene33323;Dbxref=GeneID:3371312;Name=nad2;exception=trans-splicing;gbkey=Gene;gene=nad2;gene_biotype=protein_coding;locus_tag=ArthMp026;part=2/2
@@ -1483,7 +1499,9 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre></pre>
 </div>
@@ -1509,7 +1527,7 @@ Let's use the <code>--summary</code> flag to suppress the locus-level reports an
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>parseval --summary tair10.gff3 ncbi.gff3 2&gt; stderr.txt
+<div class=" highlight hl-bash"><pre><span></span>parseval --summary tair10.gff3 ncbi.gff3 <span class="m">2</span>&gt; stderr.txt
 </pre></div>
 
 </div>
@@ -1520,7 +1538,9 @@ Let's use the <code>--summary</code> flag to suppress the locus-level reports an
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>============================================================
 ========== ParsEval Summary

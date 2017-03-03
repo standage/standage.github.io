@@ -24,7 +24,7 @@
 
 
 <script type="text/javascript">
-	var disqus_identifier = "streaming-data-from-the-sra-with-fastq-dump.html";
+	var disqus_identifier = "super-simple-reverse-complement-aware-dna-sequence-search-with-rcgrep.html";
 	(function() {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
@@ -77,26 +77,31 @@
 	  </div>
 	  <div class="content">
 	<div class='article'>
-		<div class="page-header"><h1>Streaming data from the SRA with fastq-dump</h1></div>
-		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/streaming-data-from-the-sra-with-fastq-dump.html">2017-01-24</a>
+		<div class="page-header"><h1>Super simple reverse-complement aware DNA sequence search with rcgrep</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/super-simple-reverse-complement-aware-dna-sequence-search-with-rcgrep.html">2017-03-02</a>
 by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
  in <a href="https://standage.github.io/category/blog.html">blog</a>
-tags: <a href="https://standage.github.io/tag/sra.html">sra</a> <a href="https://standage.github.io/tag/streaming.html">streaming</a> <a href="https://standage.github.io/tag/ngs.html">ngs</a> </div>
-		<div><p>NCBI's <a href="https://www.ncbi.nlm.nih.gov/sra">Sequence Read Archive</a> is the go-to repository for published genome-scale sequence data sets.
-Although there are a variety of ways to download sequence data from SRA, the <code>fastq-dump</code> command from the <a href="https://www.ncbi.nlm.nih.gov/Traces/sra/?view=software">SRA Toolkit</a> is the most convenient in my opinion.
-In fact, with a few settings tweaks <code>fastq-dump</code> can stream data directly from the SRA into an analysis pipeline.</p>
-<ol>
-<li>For a true streaming approach, you'll want to disable local file caching with <a href="https://github.com/ncbi/sra-tools/wiki/Toolkit-Configuration">vdb-config</a>.
-   Especially on clusters with tight quotas on home directory storage, the default settings can be very problematic.</li>
-<li>If you have paired reads, use the <code>--split-files</code> flag for proper printing of pairs and the <code>--stdout</code> flag (or <code>-Z</code> for short) so that the data is printed in <em>interleaved Fastq</em> format, rather than in two paired files (as is the default).</li>
-<li>By default, the read IDs returned by <code>fastq-dump</code> don't include any pairing information, which some programs rely on for processing paired-end data.
-   Include the options <code>--defline-seq '@$ac.$si.$sg/$ri' --defline-qual '+'</code> to append a <code>/1</code> or <code>/2</code> to the end of each read ID for pairing information, and to throw away all of the superfluous and redundant info in the 3rd line of each Fastq record.</li>
-</ol>
-<p>The following example pipes the SRA data set with the accession ERR612477 into a processing pipeline.</p>
-<div class="highlight"><pre><span></span>fastq-dump --split-files --defline-seq &#39;@$ac.$si.$sg/$ri&#39; --defline-qual &#39;+&#39; -Z ERR612477 \
-    | trim-low-abund.py --ksize 25 --max-memory-usage 2G --variable-coverage - \
-    | my-favorite-mapper-or-assembler &gt; out.dat
-</pre></div></div>
+tags: <a href="https://standage.github.io/tag/software.html">software</a> <a href="https://standage.github.io/tag/rcgrep.html">rcgrep</a> <a href="https://standage.github.io/tag/frustration-driven-development.html">frustration driven development</a> </div>
+		<div><p>There are many wonderfully elegant and efficient tools for performing all sorts of exact and inexact searches on large collections of DNA sequences.
+Experience has shown, however, that these tools are usually very rigid with respect to their assumptions about input data.
+If input files are compressed in a certain way, or stored in a non-standard format, there is usually some non-trivial work and storage involved in converting the data to a format the software will accept.
+There are circumstances in which this extra work is justified, but many times you just need a flexible tool to do a quick-n-dirty search.</p>
+<p>Consider the following, totally not-real never-happened-to-me hypothetical situation.</p>
+<blockquote>
+<p><strong>ME</strong>: <em>I just need to search for a sequence in this text file real quick. I'll use <code>grep</code>.</em></p>
+<p><strong>ALSO ME</strong>: <em>Oh, the file is gzip-compressed. Use <code>gzgrep</code>.</em></p>
+<p><strong>ME AGAIN</strong>: <em>Oops, I forgot to search for the sequence's reverse complement as well. Try again.</em></p>
+<p><strong>ME, 5 MINUTES LATER</strong>: <em>This time I want to search a different file (bzip2-compressed) for 3 sequences and their reverse complements. Invoke <code>bzgrep</code> with multiple <code>-e</code> flags.</em></p>
+<p><strong>ME, HEAD ON DESK</strong>: <em>Uggghh, <code>bzgrep</code> on Linux doesn't support multiple <code>-e</code> flags. Pipe output of <code>bzcat</code> to <code>grep</code>.</em></p>
+</blockquote>
+<p>Searching for DNA sequences in text files is a very simple task that too often is unnecessarily complicated by uninteresting and frustrating technical details.</p>
+<p>Enter <a href="https://github.com/dib-lab/rcgrep">rcgrep</a>.</p>
+<p><strong>rcgrep</strong> is a lightweight wrapper for the UNIX <code>grep</code> command and is intended to make these irrelevant details disappear as much as possible.
+It supports multiple queries, is reverse complement aware, handles mixtures of compressed and uncompressed files automagically, supports streaming, and can tap into <code>grep</code>'s extended features such as case-insensitive search (<code>grep -i</code>) and before- and after-context reporting (<code>grep -B</code> and <code>grep -A</code>).</p>
+<p>This tool, like a few others I've artisanally hand-crafted over the past few years, is an example of <em>frustration-driven development</em>.
+It's such a simple and obvious idea that I'm sure it's been implemented and re-implemented in dozens of ways by hundreds of researchers over the years.
+I hope that the small amount of work I've put into publishing this tool and making it easy to install and use will save the field a few hundred computational-biologist-hours: time much better spent on doing some awesome science.</p>
+<p>To install, invoke <code>pip install rcgrep</code> or download directly from the GitHub repository at <a href="https://github.com/dib-lab/rcgrep">https://github.com/dib-lab/rcgrep</a>.</p></div>
 		<div>
 			<h2>Comments</h2>
 <div id="disqus_thread"></div>		<div>
