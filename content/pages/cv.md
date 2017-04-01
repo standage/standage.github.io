@@ -51,7 +51,12 @@ navorder: 01
 
 ## Research Experience
 
-**Graduate Research Assistant**, <small>Computational Genome Science Lab, Indiana University, 2012 — present</small>
+**Postdoctoral Scholar**, <small>Lab for Data Intensive Biology, UC Davis, 2016 – present</small>
+
+- develop reference-free methods for variant discovery in large eukaryotic genomes
+- lead development of [khmer DNA analysis software package](https://github.com/dib-lab/khmer)
+
+**Graduate Research Assistant**, <small>Computational Genome Science Lab, Indiana University, 2012 — 2016</small>
 
 - investigate comparative genomics of social insects
 - investigate eukaryotic genome composition and organization
@@ -103,19 +108,22 @@ navorder: 01
 
 **Open-source Software and Data**
 
+- [khmer Library](http://khmer.readthedocs.org/): core developer
+- [tag Library](https://github.com/standage/tag): primary developer
 - [AEGeAn Toolkit](http://brendelgroup.github.io/AEGeAn): primary developer
+- [*P. dominula* Genome Project](http://pdomgenomeproject.github.io/): lead
 - [GenHub](http://standage.github.io/genhub): primary developer
-- [GenomeTools](http://genometools.org/) Library: contributor
-- [khmer Library](http://khmer.readthedocs.org/): contributor
+- [GenomeTools Library](http://genometools.org/): contributor
 
 **Community Training**
 
 - [2014 course on Analyzing NGS Data, Michigan State University](http://bioinformatics.msu.edu/ngs-summer-course-2014): invited instructor
-- [Software Carpentry](http://software-carpentry.org/): certified instructor
+- [Software Carpentry](http://software-carpentry.org/) certified instructor
+- [Data Carpentry](http://www.datacarpentry.org/) certified instructor
 
 ## Technical Skills
 
-- **Software development**: C, Python, C++, Java
+- **Software development**: C/C++, Python, Java
 - **Scripting, data processing**: Python, Perl, Bash
 - **Data analysis, statistical computing**: Python, R
 - **Pipelines, workflow management**: Bash, GNU Make
