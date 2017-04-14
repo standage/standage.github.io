@@ -1,0 +1,7 @@
+Title: How to distinguish perfectly mapped reads from a SAM/BAM file
+Date: 2017-04-14
+Category: notebook
+Tags: bash; sam; bam; mapping
+Summary: In which I explore read alignments in SAM format and discuss the pros
+    and cons of various approaches to distinguishing perfect matches from
+    imperfect matches.
