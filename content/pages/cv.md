@@ -34,6 +34,7 @@ navorder: 01
 
 ### Publications
 
+- **Standage DS**, Crusoe MR, Joslin SEK, Kingsley NB, Murray KD, Neches R, Scott C, Shean R, Steinbiss S, Sydney C, Brown CT (2017). khmer release v2.1: software for biological sequence analysis. *In review*.
 - **Standage DS**, Berens AJ, Glastad KM, Severin AJ, Brendel VP, Toth AL (2016) Genome, transcriptome, and methylome sequencing of a primitively eusocial wasp reveal a greatly reduced DNA methylation system in a social insect. *Molecular Ecology*, [doi:10.1111/mec.13578](http://dx.doi.org/10.1111/mec.13578).
 - Duvick JP, **Standage DS**, Merchant N, Brendel VP (2016) xGDBvm: A Web GUI-driven workflow for annotating eukaryotic genomes in the cloud. *The Plant Cell*, Advance publication, [doi:10.1105/tpc.15.00933](http://dx.doi.org/10.1105/tpc.15.00933).
 - **Standage DS**, Brendel VP (2012) ParsEval: parallel comparison and analysis of gene structure annotations. *BMC Bioinformatics*, **13**:187, [doi:10.1186/1471-2105-13-187](http://dx.doi.org/10.1186/1471-2105-13-187).
@@ -41,6 +42,9 @@ navorder: 01
 
 ### Oral Presentations
 
+- **Standage DS**. Testing research software: an academic perspective on compromise. Presented at PyCon, May 2017.
+- **Standage DS**, Brown CT, Hormozdiari F. Kevlar: reference-free variant discovery in human genomes and beyond. Presented at the Sequencing, Finishing, and Analysis of the Future Meeting, May 2017. *Manuscript in preparation*.
+- **Standage DS**, Wilson GV. Managing research software projects. Presented at Lawrence Berkeley Laboratory LabTech, October 2016.
 - **Standage DS**, Toth AL, Brendel VP. iLoci: scalable annotation for provisional genome assemblies. Presented at CSHL Biology and Genomics of Social Insects Meeting, May 2015. *Manuscript in preparation*.
 - Duvick JP, Denton JF, **Standage DS**, Merchant N, Brendel VP. xGDBvm: a virtual platform for annotating eukaryotic genomes. Invited talk given at PAG XXI, January 2013.
 
@@ -108,6 +112,7 @@ navorder: 01
 
 **Open-source Software and Data**
 
+- [kevlar](http://kevlar.readthedocs.org): primary developer
 - [khmer Library](http://khmer.readthedocs.org/): core developer
 - [tag Library](https://github.com/standage/tag): primary developer
 - [AEGeAn Toolkit](http://brendelgroup.github.io/AEGeAn): primary developer
@@ -117,6 +122,7 @@ navorder: 01
 
 **Community Training**
 
+- [2017 Data Intensive Biology Summer Institute, UC Davis](http://ivory.idyll.org/dibsi/): instructor
 - [2014 course on Analyzing NGS Data, Michigan State University](http://bioinformatics.msu.edu/ngs-summer-course-2014): invited instructor
 - [Software Carpentry](http://software-carpentry.org/) certified instructor
 - [Data Carpentry](http://www.datacarpentry.org/) certified instructor

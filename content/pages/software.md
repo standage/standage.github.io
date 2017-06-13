@@ -1,6 +1,12 @@
 Title: Software & Databases
 navorder: 03
 
+### [kevlar](http://kevlar.readthedocs.io/)
+
+The primary focus of my postdoctoral research has been developing reference-free methods for variant discovery in human (and similarly sized) genomes.
+The kevlar software has served as my testbed for simulation, method development, and data analysis.
+From its inception it has been developed as an open source software project.
+
 ### [khmer Library](http://khmer.readthedocs.io/)
 
 Before joining the DIB Lab at UC Davis, I was a user of and (modest) contributor to the khmer library.
