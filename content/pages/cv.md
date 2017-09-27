@@ -57,7 +57,7 @@ navorder: 01
 
 **Postdoctoral Scholar**, <small>Lab for Data Intensive Biology, UC Davis, 2016 – present</small>
 
-- develop reference-free methods for variant discovery in large eukaryotic genomes
+- *de novo* variant discovery in autism simplex pedigrees
 - lead development of [khmer DNA analysis software package](https://github.com/dib-lab/khmer)
 
 **Graduate Research Assistant**, <small>Computational Genome Science Lab, Indiana University, 2012 — 2016</small>
@@ -123,6 +123,7 @@ navorder: 01
 
 **Community Training**
 
+- Fall 2017 Workshop on Managing Research Software Projects, Lawrence Berkeley National Lab: lead instructor
 - [2017 Data Intensive Biology Summer Institute, UC Davis](http://ivory.idyll.org/dibsi/): instructor
 - [2014 course on Analyzing NGS Data, Michigan State University](http://bioinformatics.msu.edu/ngs-summer-course-2014): invited instructor
 - [Software Carpentry](http://software-carpentry.org/) certified instructor

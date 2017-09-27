@@ -3,7 +3,8 @@ navorder: 03
 
 ### [kevlar](http://kevlar.readthedocs.io/)
 
-The primary focus of my postdoctoral research has been developing reference-free methods for variant discovery in human (and similarly sized) genomes.
+The primary focus of my postdoctoral research is novel germline variant discovery in autism simplex pedigrees.
+In support of this work, I am developing reference-free methods for variant discovery that should generalize very easily to other eukaryotes.
 The kevlar software has served as my testbed for simulation, method development, and data analysis.
 From its inception it has been developed as an open source software project.
 
