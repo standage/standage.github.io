@@ -30,9 +30,9 @@
 		<div class="container-fluid">
 		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
 			<ul class="nav">
-						<li><a href="https://standage.github.io/pages/vitae.html">Vitae</a></li>
+						<li><a href="https://standage.github.io/pages/cv.html">CV</a></li>
 						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
-						<li><a href="https://standage.github.io/pages/software-databases.html">Software & Databases</a></li>
+						<li><a href="https://standage.github.io/pages/software.html">Software</a></li>
 				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
 			</ul>
 			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
@@ -69,7 +69,7 @@
 	  </div>
 	  <div class="content">
 	<div class='page'>
-		<div class="page-header"><h1>Vitae</h1></div>
+		<div class="page-header"><h1>CV</h1></div>
 		<div><h2>Education</h2>
 <table>
   <tr>
@@ -81,7 +81,7 @@
     </td>
   </tr>
     <tr>
-      <td>2010 — 2016</td>
+      <td>2016</td>
       <td>
         Ph.D. in <strong>Bioinformatics and Computational Biology</strong><br />
         Iowa State University<br />
@@ -89,15 +89,81 @@
       </td>
     </tr>
   <tr>
-    <td>2003 — 2010</td>
+    <td>2010</td>
     <td>
       B.S. in <strong>Bioinformatics</strong> (with minors in <strong>Mathematics</strong> and <strong>Computer Science</strong>)<br />
       Brigham Young University<br />
-      University Honors
+      Honors thesis: <em>PhyloProf: A Software Package for Predicting Gene Function Using Phylogenetic Profile Analysis</em>
     </td>
   </tr>
 </table>
 
+<h2>Research</h2>
+<h3>Research Interests</h3>
+<p>Variant discovery<br />
+Genome annotation and annotation data management<br />
+Comparative genomics<br />
+Research software engineering</p>
+<h3>Selected Research Projects</h3>
+<ul>
+<li>
+<p><strong>Discovery of novel germline variants in whole genome sequence data from autism simplex pedigrees</strong><br />
+<a href="https://github.com/dib-lab/kevlar">https://github.com/dib-lab/kevlar</a><br />
+  In this project I am developing a novel method for identifying <em>de novo</em> mutations in autism trios and quads.
+  This method does not rely on read alignments but on <em>k</em>-mer abundances to identify potential variants, increasing sensitivity and incorporating multiple variant types in a single workflow.
+  This project is being actively developed as an open source research software library and is distributed as a Python package.
+  <em>Manuscript in preparation.</em></p>
+</li>
+<li>
+<p><strong>Efficient and tunable processing of sequence data using <em>k</em>-mer banding</strong><br />
+  In my variant discovery work we developed a split-and-gather strategy that demonstrates a linear reduction in memory requirements when processing sequence data in batches.
+  This project explores additional contexts in which subsampling data with <em>k</em>-mer banding will provide a substantial decrease in memory requirements but also in runtime.</p>
+</li>
+<li>
+<p><strong>Robust evaluation of genome content and organization with iLoci</strong><br />
+<a href="https://github.com/BrendelGroup/IntervalLoci">https://github.com/BrendelGroup/IntervalLoci</a><br />
+  In this project I am developing a new framework for genome analyses based on parsing an annotated genome assembly in distinct units (iLoci).
+  Statistics computed on iLoci reflect various characteristics of genome content and organization in a way that is explicit and meaningful for comparison between related data sets.
+  This project also introduces a well-defined measure of relative genome compactness and explores trends across a variety of eukaryotic genomes.
+  <em>Manuscript in preparation</em>.</p>
+</li>
+<li>
+<p><strong>Paper wasp genome project</strong><br />
+<a href="http://pdomgenomeproject.github.io">http://pdomgenomeproject.github.io</a><br />
+  Investigating the molecular mechanisms contributing to social behavior and caste differentiation in the paper wasp <em>Polistes dominula</em> was a primary emphasis of my doctoral research, and required a substantial amount of bioinformatics work.
+  My contributions to this project included quality control of more than a dozen Illumina samples (whole genome shotgun and RNA-seq), <em>de novo</em> genome and transcriptome assembly, genome annotation, differential expression analysis, alternative splicing analysis, phylogenetic analysis of conserved single copy orthologs, analysis of taxonomically restricted genes, and assistance with processing and interpreting results of bisulfite sequencing analysis.</p>
+</li>
+<li>
+<p><strong>xGDBvm: cloud-based genome browser and annotation platform</strong><br />
+<a href="http://goblinx.soic.indiana.edu">http://goblinx.soic.indiana.edu</a><br />
+  For many years my graduate lab has operated <a href="http://plantgdb.org">PlantGDB</a>, a web-based system for comparative plant genomics that provides genome browsers, various search capabilities, and integrated community annotation tools.
+  I contributed to porting this platform over to the NSF cloud computing provider Atmosphere (now Jetstream), and used this platform for hosting the <a href="http://goblinx.soic.indiana.edu/PdomGDB"><em>P. dominula</em> genome database</a>.
+  Using xGDBvm, our paper wasp project was able to collect hundreds of manually curated annotations from colleagues, collaborators, and biology/bioinformatics students, and feed these back into our annotation workflow.</p>
+</li>
+</ul>
+<h3>Previous Research Experience</h3>
+<ul>
+<li>
+<p><strong>Graduate Research Assistant</strong>, Computational Genome Science Lab<br />
+  Indiana University, 2012 — 2016</p>
+</li>
+<li>
+<p><strong>Graduate Research Assistant</strong>, BCB Graduate Program<br />
+  Iowa State University, 2010 — 2012</p>
+</li>
+<li>
+<p><strong>Undegraduate Research Technician</strong>, Plant Genetics Lab<br />
+  Brigham Young University, 2009 — 2010</p>
+</li>
+<li>
+<p><strong>NSF REU Research Intern</strong>, Department of Genetics<br />
+  University of Georgia, 2008</p>
+</li>
+<li>
+<p><strong>Undegraduate Research Assistant</strong>, Center for Language Studies<br />
+  Brigham Young University, 2007 — 2010</p>
+</li>
+</ul>
 <h2>Scholarship</h2>
 <h3>Publications</h3>
 <ul>
@@ -109,6 +175,7 @@
 </ul>
 <h3>Oral Presentations</h3>
 <ul>
+<li><strong>Standage DS</strong>, Wilson GV. Managing research software projects. Presented at Lawrence Berkeley National Laboratory, September 2017.</li>
 <li><strong>Standage DS</strong>. Testing research software: an academic perspective on compromise. Presented at PyCon, May 2017.</li>
 <li><strong>Standage DS</strong>, Brown CT, Hormozdiari F. Kevlar: reference-free variant discovery in human genomes and beyond. Presented at the Sequencing, Finishing, and Analysis of the Future Meeting, May 2017. <em>Manuscript in preparation</em>.</li>
 <li><strong>Standage DS</strong>, Wilson GV. Managing research software projects. Presented at Lawrence Berkeley Laboratory LabTech, October 2016.</li>
@@ -120,58 +187,20 @@
 <li><strong>Standage DS</strong>, Brendel VP, Toth AL. Genome sequence and annotation of the primitively social paper wasp <em>Polistes dominula</em>. Presented at Notre Dame Arthropod Genomics Conference, June 2013.</li>
 <li>Brendel VP, <strong>Standage DS</strong>. mRNAmarkup: quality control and annotation of de novo transcriptome assemblies. Presented at CSHL Genome Informatics meeting, November 2013.</li>
 </ul>
-<h2>Research Experience</h2>
-<p><strong>Postdoctoral Scholar</strong>, <small>Lab for Data Intensive Biology, UC Davis, 2016 – present</small></p>
+<h2>Teaching</h2>
 <ul>
-<li><em>de novo</em> variant discovery in autism simplex pedigrees</li>
-<li>lead development of <a href="https://github.com/dib-lab/khmer">khmer DNA analysis software package</a></li>
-</ul>
-<p><strong>Graduate Research Assistant</strong>, <small>Computational Genome Science Lab, Indiana University, 2012 — 2016</small></p>
-<ul>
-<li>investigate comparative genomics of social insects</li>
-<li>investigate eukaryotic genome composition and organization</li>
-<li>develop tools for management, quality control and analysis of annotated genomes</li>
-<li>teach computational genome science course to biology and bioinformatics grad students</li>
-</ul>
-<p><strong>Graduate Research Assistant</strong>, <small>BCB Graduate Program, Iowa State University, 2010 — 2012</small></p>
-<ul>
-<li>First year research rotations<ul>
-<li>develop tools for comparison of genome annotations</li>
-<li>identify transposable elements in <em>Gossypium</em> (cotton)</li>
-<li>implement multithreading support for short read error correction software</li>
-</ul>
+<li>
+<p><strong>Computational Genome Science <small>(Fall 2011, Spring 2013, Spring 2014, Spring 2015)</small></strong><br />
+  Graduate course covering the full range of computational genomics analysis: quality control, read mapping, expression profiling, genome assembly, transcript assembly, and annotation.
+  The class provides brief exposure to relevant theory, but focuses primarily on installing and running software and (most importantly) critical analysis and biological interpretation of results.
+  I helped develop the course in 2011, and from 2013 to 2015 I was the primary instructor.</p>
 </li>
-<li>Research assistantship<ul>
-<li>follow through with first research rotation to engineer and publish a tool for comparison of genome annotations (ParsEval)</li>
-<li>assemble and annotate genome of the eusocial wasp <em>Polistes dominula</em></li>
-<li>assist with data management and migration of a large comparative plant genomics database (PlantGDB)</li>
-<li>develop and participate in a course on NGS applications to genomics</li>
-</ul>
+<li>
+<p><strong>Science of Biology, Honors <small>(Spring 2007, Spring 2008)</small></strong><br />
+  As an undergraduate I was a teaching assistant for Prof. Craig Coleman's Biol 120H class.
+  This class provided a comprehensive introduction to the biological sciences, with modules for biochemistry, molecular biology, genetics, cell biology, and evolution.
+  The course focused on learning the scientific method with computer-based experiment simulations, and had a heavy emphasis on writing.</p>
 </li>
-</ul>
-<p><strong>Undegraduate Research Technician</strong>, <small>Plant Genetics Lab, Brigham Young University, 2009 — 2010</small></p>
-<ul>
-<li>analyze homoeologous gene expression (genes duplicated by polyploidy) in cotton with high-throughput sequencing technology</li>
-<li>prototype an electronic sample submission system for on-site 454 sequencer</li>
-<li>develop software for SNP analysis in polyploid organisms</li>
-<li>assemble and map high-throughput sequence data (454 and Illumina)</li>
-<li>configure a genome browser for transcriptome visualization</li>
-</ul>
-<p><strong>Research Intern</strong>, <small>Department of Genetics, University of Georgia, 2008</small></p>
-<ul>
-<li>model and simulate genetic networks in <em>Neurospora crassa</em></li>
-<li>analyze biological clocks in fungi using basic experimental protocols (Northern blot, RNA extraction, gene electrophoresis, etc)</li>
-<li>introduction to systems biology and network modeling</li>
-<li>introduction to high-performance computing</li>
-<li>utilize phylogenetic profile analysis to identify genes involved with the biosynthesis of cell wall monosaccharides</li>
-</ul>
-<p><strong>Undegraduate Research Assistant</strong>, <small>Center for Language Studies, Brigham Young University, 2007 — 2010</small></p>
-<ul>
-<li>develop applications and architectures to support development, delivery, and assessment of electronic learning resources and student performance</li>
-<li>focus on best practices such as separation of content, presentation, and logic</li>
-<li>work directly with subject matter experts and instructional designers to create instructional materials</li>
-<li>evangelize the topics of openness, modularity, and interoperability in the learning community</li>
-<li>served (briefly) as chair of the Architecture working group for LETSI (the International Federation for Learning, Education, and Training Systems Interoperability)</li>
 </ul>
 <h2>Professional Activities</h2>
 <p><strong>Journal Review</strong></p>
@@ -180,13 +209,12 @@
 <li><strong>Bioinformatics</strong>, April 2013, October 2016</li>
 <li><strong>ACM BCB</strong>, June 2016</li>
 </ul>
-<p><strong>Open-source Software and Data</strong></p>
+<p><strong>Open Source Research Software</strong></p>
 <ul>
 <li><a href="http://kevlar.readthedocs.org">kevlar</a>: primary developer</li>
-<li><a href="http://khmer.readthedocs.org/">khmer Library</a>: core developer</li>
+<li><a href="http://khmer.readthedocs.org/">khmer Library</a>: core contributor</li>
 <li><a href="https://github.com/standage/tag">tag Library</a>: primary developer</li>
 <li><a href="http://brendelgroup.github.io/AEGeAn">AEGeAn Toolkit</a>: primary developer</li>
-<li><a href="http://pdomgenomeproject.github.io/"><em>P. dominula</em> Genome Project</a>: lead</li>
 <li><a href="http://standage.github.io/genhub">GenHub</a>: primary developer</li>
 <li><a href="http://genometools.org/">GenomeTools Library</a>: contributor</li>
 </ul>
@@ -200,21 +228,12 @@
 </ul>
 <h2>Technical Skills</h2>
 <ul>
-<li><strong>Software development</strong>: C/C++, Python, Java</li>
+<li><strong>Software development</strong>: C, C++, Python, Java</li>
 <li><strong>Scripting, data processing</strong>: Python, Perl, Bash</li>
 <li><strong>Data analysis, statistical computing</strong>: Python, R</li>
 <li><strong>Pipelines, workflow management</strong>: Bash, GNU Make, pydoit</li>
 <li><strong>High-performance computing</strong>: MPI programming, OpenMP programming, job scheduling and resource management, VM/cloud computing</li>
-</ul>
-<h2>Teaching</h2>
-<p><strong>Computational Genome Science <small>(Fall 2011, Spring 2013, Spring 2014, Spring 2015, Spring 2016)</small></strong></p>
-<p>Graduate course covering the full range of computational genomics analysis: quality control, read mapping, expression profiling, genome assembly, transcript assembly, and annotation.
-The class provides brief exposure to relevant theory, but focuses primarily on installing and running software and (most importantly) critical analysis and biological interpretation of results.
-I helped develop the course in 2011, and since 2013 I have been the primary instructor.</p>
-<p><strong>Science of Biology, Honors <small>(Spring 2007, Spring 2008)</small></strong></p>
-<p>As an undergraduate I was a teaching assistant for Prof. Craig Coleman's Biol 120H class.
-This class provided a comprehensive introduction to the biological sciences, with modules for biochemistry, molecular biology, genetics, cell biology, and evolution.
-The course focused on learning the scientific method with computer-based experiment simulations, and had a heavy emphasis on writing.</p></div>
+</ul></div>
 	</div>
 		<footer>
 		  <p>
