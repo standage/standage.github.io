@@ -11,10 +11,10 @@ I also enjoy mentoring and teaching, both in the classroom and in less structure
 
 -----
 
-If you're interested in my research experience, take a look at my [CV](cv.html).
+If you're interested in my research experience, take a look at my [CV](pages/cv.html).
 
-I've written a few notes here about [my teaching experience and philosopy](teaching.html).
+I've written a few notes here about [my teaching experience and philosopy](pages/teaching.html).
 
-Take a look at the [open source research software projects](software.html) I've created and contributed to.
+Take a look at the [open source research software projects](pages/software.html) I've created and contributed to.
 
 Musings about research and computing are posted (infrequently) to [my notebook](notebook.html).
