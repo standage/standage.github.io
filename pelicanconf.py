@@ -33,8 +33,8 @@ INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'
 
 # Settings for left side well
-ADDRESS = ('253 CCAH',
-           'University of California, Davis',
+ADDRESS = ('University of California, Davis',
+           'Population Health and Reproduction',
            '1 Shields Ave',
            'Davis, CA 95616')
 
