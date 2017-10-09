@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "information-content-versus-data-volume-and-k-mer-counting-accuracy.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/cv.html">CV</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software.html">Software</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				University of California, Davis<br />
+				Population Health and Reproduction<br />
+				1 Shields Ave<br />
+				Davis, CA 95616<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://ivory.idyll.org/lab/">Lab for Data Intensive Biology</a></li>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Information content versus data volume and <em>k</em>-mer counting accuracy</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/information-content-versus-data-volume-and-k-mer-counting-accuracy.html">2017-10-06</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/kevlar.html">kevlar</a> <a href="https://standage.github.io/tag/variant-discovery.html">variant discovery</a> <a href="https://standage.github.io/tag/error-correction.html">error correction</a> </div>
+		<div><p>Keeping track of <em>k</em>-mers for simple operations has become a fundamental component of many bioinformatics techniques.
+Two common operations on <em>k</em>-mers include set membership queries ("is <em>k</em>-mer <em>X</em> present in data set <em>Y</em>?") and abundance queries ("how many times does <em>k</em>-mer <em>X</em> occur in data set <em>Y</em>").
+Several probabilistic data structures have been developed to support these types of operations in a memory-efficient manner, and this is still <a href="https://doi.org/10.1093/bioinformatics/btx636">an active area of research</a>.</p>
+<p>In my recent work with variant discovery, I make extensive use of the Count-min sketch implementation available from the <a href="http://dx.doi.org/10.21105/joss.00272">khmer library</a>.
+This data structure is very similar to a Bloom filter, using a fixed amount of memory and multiple hash functions to keep track of <em>k</em>-mer abundances.
+Because the memory is fixed and collisions are left intentionally unresolved, the accuracy of these data structures declines as they approach full capacity.
+The precise accuracy of depends on the number of unique <em>k</em>-mers in the data set being analyzed and the amount of space allocated to the data structure.</p>
+<p>I was recently reminded of the fact that "data does not equal information" in a way that should have been obvious to me from the beginning.
+One of the big challenges with doing variant discovery on human genome sized data sets is the sheer volume of data, where whole genome sequencing to about 30x coverage requires more than 100 Gb of raw compressed data per sample.
+Accordingly, I am always looking for things I can do to reduce the data to a more manageable size, both to facilitate my own research progress and to make the methods I'm developing more generally useful.</p>
+<p>One of the first ideas I and my colleagues bounced around was to discard all reads that matched the reference genome perfectly before counting <em>k</em>-mers.
+Preliminary results looked deceptively promising, with around 80% of the reads being discarded from each sample.
+This certainly reduced the amount of time required to iterate over the reads in subsequent steps of the workflow.
+However, this did very little to reduce the <em>information content</em> of each sample.
+Recall that the accuracy of the Count-min sketch is a function of the number of distinct <em>k</em>-mers and the amount of memory allocated.
+Put another way, the only way reduce memory consumption while keeping the accuracy constant is to also reduce the number of distinct <em>k</em>-mers being stored.</p>
+<p>As it turns out, discarding reads that match the reference genome perfectly does very little to reduce the number of unique <em>k</em>-mers in a data set.
+<em>k</em>-mers associated with sequencing errors typically outnumber true <em>k</em>-mers, and this approach does nothing to address these erroneous <em>k</em>-mers.
+And despite discarding such a large proportion of the reads, the majority of the true <em>k</em>-mers were still present in the remaining reads, many of which we can presume had only a single nucleotide substitution error.</p>
+<p>For a long time I was resistant to the idea of error correction, because of the resources and the additional processing time that this would require.
+But had I been thinking in terms of <em>information content</em> instead of <em>data volume</em>, this is something I would have investigated much earlier.
+Indeed, running the <a href="https://doi.org/10.1186/s13059-014-0509-9">Lighter</a> error correction tool on one of my data sets resulted in a 60% reduction in the number of unique <em>k</em>-mers in each sample.
+I was able to cut the memory I had devoted to <em>k</em>-mer counting in half and achieve even better accuracy than before.
+And it turns out my concerns about resources and processing time were unfounded: with 8 threads Lighter required only 90 minutes of runtime and less than 16 GB of RAM, which isn't asking too much of commodity bioinformatics hardware these days.</p>
+<p>Now I need to verify that running error correction doesn't introduce problems later on for variant discovery, but given that error correction tools are usually quite conservative in my experience, I don't anticipate this will be much of a problem.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
