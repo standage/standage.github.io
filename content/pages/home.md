@@ -5,7 +5,7 @@ status: hidden
 
 <div style="width: 42em; margin-bottom: 10px;">
 Hi, I'm Daniel, a research scientist with interests in genome informatics, specifically variant discovery and genome annotation.
-I am committed to open, transparent, and reproducible research, and to established software engineering practices to the extent that they facilitate these ends.
+I am committed to open, transparent, and reproducible research, and to responsible research software engineering.
 I also enjoy mentoring and teaching, both in the classroom and in less structured settings.
 </div>
 
