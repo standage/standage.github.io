@@ -971,8 +971,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1001,7 +1000,9 @@ I'm going to use &lt;a href="https://github.com/dib-lab/nullgraph"&gt;nullgraph&
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;usage: make-random-genome.py [-h] [-l LENGTH] [-s SEED] [--name NAME]
@@ -1042,7 +1043,9 @@ optional arguments:
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Using random seed: 42
@@ -1084,7 +1087,9 @@ sys	0m0.143s
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;usage: make-reads.py [-h] [-e ERROR_RATE] [-r READ_LENGTH] [-C COVERAGE]
@@ -1130,7 +1135,9 @@ optional arguments:
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;genome size: 2500000
@@ -1152,8 +1159,7 @@ sys	0m0.283s
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1186,7 +1192,9 @@ bwa index bogus-genome.fa
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[bwa_index] Pack FASTA... 0.03 sec
@@ -1206,8 +1214,7 @@ bwa index bogus-genome.fa
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1234,7 +1241,9 @@ The &lt;code&gt;-f 4&lt;/code&gt; flag will pull out all reads that are marked a
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1260,8 +1269,7 @@ The &lt;code&gt;-f 4&lt;/code&gt; flag will pull out all reads that are marked a
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1292,7 +1300,9 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1335,7 +1345,9 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1361,8 +1373,7 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1400,7 +1411,9 @@ bwa mem bogus-genome.fa bogus-reads.fa &lt;span class="p"&gt;|&lt;/span&gt; grep
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1426,8 +1439,7 @@ bwa mem bogus-genome.fa bogus-reads.fa &lt;span class="p"&gt;|&lt;/span&gt; grep
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1466,7 +1478,9 @@ comm -23 test-one.txt test-two.txt &lt;span class="p"&gt;|&lt;/span&gt; gshuf &l
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1510,8 +1524,7 @@ read306338r
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1537,7 +1550,9 @@ read306338r
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&amp;gt;read5193r start=1764079,mutations=2
@@ -1553,8 +1568,7 @@ aaTTCGCGATTCTAAGGCGCGGGGTCACCATTTAATAACCTCGCACTCGGTACTGAAGTAGCGGCCGTTCGTTTGTGGGC
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1583,7 +1597,9 @@ bwa mem bogus-genome.fa bogus-reads.fa &lt;span class="m"&gt;2&lt;/span&gt;&amp;
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;read5193r	16	bogusgenome	1764085	60	5S120M	*	0	0	AATCCATGATATATGTTCTCAAAACGTTGTACAAAAACAGGAGGTTAAATAAAACACTCTGTTCGGCATCGTGTAGTTTTTTGATTTGGCTACATACACTGAGTATCGCGTGGATCTATCGCTTC	*	NM:i:0	MD:Z:120	AS:i:120	XS:i:0
@@ -1596,8 +1612,7 @@ read43849r	16	bogusgenome	2013629	60	123M2S	*	0	0	TAAAGTTTCGTCTATAAAACGCGCCACGGG
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1631,7 +1646,9 @@ The first approach is lazier, but is also more concise and less cryptic to those
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1657,8 +1674,7 @@ The first approach is lazier, but is also more concise and less cryptic to those
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -1685,7 +1701,9 @@ This comes at the cost of introducing more complexity and verbosity in the Perl 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[M::bwa_idx_load_from_disk] read 0 ALT contigs
@@ -1711,8 +1729,7 @@ This comes at the cost of introducing more complexity and verbosity in the Perl 
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2727,8 +2744,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2816,8 +2832,7 @@ The ability of a function to retain its state between --&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2875,8 +2890,7 @@ After 5 calls, the generator is fully depleted.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2905,7 +2919,9 @@ Now, consider the behavior we observe when these generators are all composed.&lt
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;[1, &amp;#39;t1&amp;#39;, &amp;#39;t2&amp;#39;, &amp;#39;t3&amp;#39;]
@@ -2921,8 +2937,7 @@ Now, consider the behavior we observe when these generators are all composed.&lt
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -3937,8 +3952,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -3974,7 +3988,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
@@ -4005,7 +4021,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;119186497
@@ -4040,7 +4058,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;5
@@ -4079,7 +4099,9 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;26541
@@ -4113,7 +4135,9 @@ cat &lt;span class="nv"&gt;$annotfiles&lt;/span&gt; &lt;span class="p"&gt;|&lt;/
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;CDS
@@ -4163,7 +4187,9 @@ transcript
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;769
@@ -4198,7 +4224,9 @@ transcript
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;37299
@@ -4238,7 +4266,9 @@ transcript
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
@@ -5279,8 +5309,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5301,8 +5330,7 @@ Using this tool, it should be fairly easy to compare the RefSeq GFF3 with the la
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5329,7 +5357,9 @@ I followed the &lt;code&gt;Download --&amp;gt; FTP Archive&lt;/code&gt; link on 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;--2016-02-04 21:15:05--  ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
@@ -5355,8 +5385,7 @@ TAIR10_GFF3_genes.g 100%[===================&amp;gt;]  42.09M  3.55MB/s    in 14
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5382,7 +5411,9 @@ TAIR10_GFF3_genes.g 100%[===================&amp;gt;]  42.09M  3.55MB/s    in 14
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Chr1	TAIR10	chromosome	1	30427671	.	.	.	ID=Chr1;Name=Chr1
@@ -5403,8 +5434,7 @@ Chr1	TAIR10	exon	4486	4605	.	+	.	Parent=AT1G01010.1
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5431,7 +5461,9 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Chr1
@@ -5449,8 +5481,7 @@ ChrM
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5477,7 +5508,9 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
@@ -5488,8 +5521,7 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5516,7 +5548,9 @@ Once you locate the &lt;code&gt;/genomes/refseq/&lt;/code&gt; directory, finding
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;--2016-02-04 21:15:32--  ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
@@ -5542,8 +5576,7 @@ GCF_000001735.3_TAI 100%[===================&amp;gt;]  12.06M  3.56MB/s    in 3.
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5569,7 +5602,9 @@ GCF_000001735.3_TAI 100%[===================&amp;gt;]  12.06M  3.56MB/s    in 3.
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;##gff-version 3
@@ -5590,8 +5625,7 @@ NC_003070.9	RefSeq	mRNA	3631	5899	.	+	.	ID=rna0;Parent=gene0;Dbxref=Genbank:NM_0
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5621,7 +5655,9 @@ It looks like &lt;code&gt;region&lt;/code&gt; entries with a &lt;code&gt;chromos
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;NC_003070.9	RefSeq	region	1	30427671	.	+	.	ID=id0;Dbxref=taxon:3702;Name=1;chromosome=1;ecotype=Columbia;gbkey=Src;genome=chromosome;mol_type=genomic DNA
@@ -5637,8 +5673,7 @@ NC_003076.8	RefSeq	region	1	26975502	.	+	.	ID=id164622;Dbxref=taxon:3702;Name=5;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5667,7 +5702,9 @@ Let's check whether there are any trans-spliced genes annotated in this file.&lt
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;NC_001284.2	RefSeq	gene	79740	81297	.	-	.	ID=gene33323;Dbxref=GeneID:3371312;Name=nad2;exception=trans-splicing;gbkey=Gene;gene=nad2;gene_biotype=protein_coding;locus_tag=ArthMp026;part=1/2
@@ -5686,8 +5723,7 @@ NC_000932.1	RefSeq	gene	139856	140650	.	+	.	ID=gene33521;Dbxref=GeneID:844801;Na
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5725,7 +5761,9 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
@@ -5736,8 +5774,7 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5764,7 +5801,9 @@ Let's use the &lt;code&gt;--summary&lt;/code&gt; flag to suppress the locus-leve
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;============================================================
@@ -5873,8 +5912,7 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6918,8 +6956,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -6949,7 +6986,9 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Random seed: 1234
@@ -6961,8 +7000,7 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -7034,7 +7072,9 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -7329,7 +7369,9 @@ kqTCDOWSJElSYYZySZIkqTBDuSRJklSYoVySJEkq7P8Dd3Pg4qyw8f4AAAAASUVORK5CYII=
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -7604,8 +7646,7 @@ AElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -8616,8 +8657,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -8640,8 +8680,7 @@ Which statistics are relevant here (I've been working on this), and what can the
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -8692,8 +8731,7 @@ Which statistics are relevant here (I've been working on this), and what can the
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -8741,8 +8779,7 @@ Interval &lt;code&gt;B&lt;/code&gt; is represented as &lt;code&gt;[8, 14]&lt;/co
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -8798,8 +8835,7 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -8829,7 +8865,9 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -9150,7 +9188,9 @@ QmCC
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -9483,7 +9523,9 @@ aYICaRERERGRJiiQFhERERFpggJpEREREZEmKJAWEREREWnC35meu6pIOf+NAAAAAElFTkSuQmCC
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -9810,8 +9852,7 @@ pEYUXIuIiIiI1IiCaxERERGRGnkDzpVi+cwHoqIAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -9876,7 +9917,9 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt output_prompt"&gt;Out[9]:&lt;/div&gt;
+
 
 
 
@@ -9912,7 +9955,9 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Collisions: 0
@@ -9921,7 +9966,9 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -10250,7 +10297,9 @@ kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Collisions: 0
@@ -10259,7 +10308,9 @@ kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -10596,7 +10647,9 @@ rkJggg==
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Collisions: 0
@@ -10605,7 +10658,9 @@ rkJggg==
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -11993,8 +12048,7 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12028,7 +12082,9 @@ I'll go ahead and do so here.&lt;/p&gt;
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;&lt;/pre&gt;
@@ -12039,8 +12095,7 @@ I'll go ahead and do so here.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12070,7 +12125,9 @@ I'll go ahead and do so here.&lt;/p&gt;
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Length_mean	Length_p50	Length_min	Length_max
@@ -12095,8 +12152,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12127,7 +12183,9 @@ Length_mean	Length_p50	Length_min	Length_max
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;13139.40	3557	105	904366
@@ -12145,8 +12203,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12179,7 +12236,9 @@ Length_mean	Length_p50	Length_min	Length_max
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Species	Mean	Median	Min	Max
@@ -12198,8 +12257,7 @@ Nvit	9917.48	2979	105	600051
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12240,7 +12298,9 @@ Rather than retyping the command two more times, let's just wrap the command in 
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
@@ -12281,8 +12341,7 @@ Nvit	0.40	0.40	0.20	0.74
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12293,8 +12352,7 @@ Had we been using LaTeX to typeset the supplement, I might have taken a few more
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12328,7 +12386,9 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Length_p5	Length_p95
@@ -12341,8 +12401,7 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12372,7 +12431,9 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt; 5% quantile: 66
@@ -12385,8 +12446,7 @@ We also make sure that exons and introns contain no more than 25% ambiguous nucl
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12419,7 +12479,9 @@ We have to be careful to escape field names and shell variables, since both begi
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
@@ -12444,8 +12506,7 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12480,7 +12541,9 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;Species	Mean	Median	Min	Max
@@ -12499,8 +12562,7 @@ Nvit	0.46	0.45	0.15	0.79
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -12558,7 +12620,9 @@ Nvit	0.46	0.45	0.15	0.79
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
 &lt;pre&gt;
@@ -12615,8 +12679,7 @@ Nvit	0.32	0.30	0.06	0.81
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13711,7 +13774,9 @@ h6:hover .anchor-link {
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -13814,7 +13879,9 @@ JakQBr4kFcLAl6RCGPiSVIj/A0lj3av7gje1AAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -13903,7 +13970,9 @@ wnCe/r2CAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14010,7 +14079,9 @@ FcCwl6QC/F+8KPd32bqc0QAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14101,7 +14172,9 @@ YS9JBTDsJakAhr0kFcCwl6QCGPaSVID/B02rUo8ILuYpAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14216,7 +14289,9 @@ AAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14331,7 +14406,9 @@ VDEGuyRVjMEuSRVjsEtSxRjsklQxBrskVcz/B9ZljQ8+6JMVAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14446,7 +14523,9 @@ LkkVY7BLUsUY7JJUMf8f1nCChKxfysoAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14561,7 +14640,9 @@ AABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14655,7 +14736,9 @@ YS9JBfh/99GN8EyXO6gAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14749,7 +14832,9 @@ QmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14867,7 +14952,9 @@ RU5ErkJggg==
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -14963,7 +15050,9 @@ YII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15078,7 +15167,9 @@ wCrgrogYX8tfm5lvdrGm2fQYsC0inqH6JMRtmXmsyzWpfV8A/iAidtWPb+iX1YPM3BERl0TEHqoD
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15182,7 +15273,9 @@ RK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15271,7 +15364,9 @@ JKnLDHxJKoSBL0mFMPAlqRAGviQVwsCXpEIY+JJUCANfkgrxf4/i1t2VFgccAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15383,7 +15478,9 @@ KsD/Bwbler1WltyCAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15484,7 +15581,9 @@ AQx7SSqAYS9JBTDsJakAhr0kFcCwl6QCGPaSVID/B7hdZG0xNFeOAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15576,7 +15675,9 @@ BTDsJakAhr0kFcCwl6QCGPaSVADDXpIKYNhLUgH+D3lqZWuzQd2yAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15668,7 +15769,9 @@ e0kqwP8BTox3UPRmAuUAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15759,7 +15862,9 @@ Ahj2klQAw16SCmDYS1IBDHtJKoBhL0kFMOwlqQD/B6K3eEIkb4+eAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15850,7 +15955,9 @@ VK6TXezbGiofZnPqiNk4lLOGTi+uTbEdGALuj4iLY/c3Z+bZNtbUSPuAvRHxFJUZD9sy840216TF
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -15965,7 +16072,9 @@ kgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AMHiXlPb/U5QAAAAAElFTkSuQmCC
 
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16081,7 +16190,9 @@ IQx8SSqEgS9Jhfi/IIm5oB72IoMAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16177,7 +16288,9 @@ SYUw8CWpEAa+JBXi/wB4ohMAcXcTQgAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16260,7 +16373,9 @@ viQVwuBLUiEMviQVwuBLUiH+D3sA/74CGMSDAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16361,7 +16476,9 @@ WkvEREQwAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16451,7 +16568,9 @@ T+8AAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16559,7 +16678,9 @@ rkJggg==
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16666,7 +16787,9 @@ kgpjsEtSYQx2SSqMwS5Jhfl/ykajBaztZEUAAAAASUVORK5CYII=
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16773,7 +16896,9 @@ YJek4hjsklQYg12SCmOwS1JhDHZJKozBLkmFMdglqTD/H2GUvdTXqeIUAAAAAElFTkSuQmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16880,7 +17005,9 @@ VcPFjgAAAABJRU5ErkJggg==
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -16986,7 +17113,9 @@ QmCC
 &lt;/div&gt;
 
 &lt;div class="output_area"&gt;
+
 &lt;div class="prompt"&gt;&lt;/div&gt;
+
 
 
 
@@ -17086,19 +17215,6 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
 
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[&amp;nbsp;]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
