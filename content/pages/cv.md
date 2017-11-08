@@ -89,7 +89,7 @@ Brigham Young University
 
 ### Publications
 
-**Standage DS**, Crusoe MR, Joslin SEK, Kingsley NB, Murray KD, Neches R, Scott C, Shean R, Steinbiss S, Sydney C, Brown CT (2017). khmer release v2.1: software for biological sequence analysis. *The Journal of Open Source Software*, [doi:10.21105/joss.00272](http://dx.doi.org/10.21105/joss.00272).
+**Standage DS**, Crusoe MR, Joslin SEK, Kingsley NB, Murray KD, Neches R, Scott C, Shean R, Steinbiss S, Sydney C, Brown CT (2017). khmer release v2.1: software for biological sequence analysis. *The Journal of Open Source Software*, 2(15), 272, [doi:10.21105/joss.00272](http://dx.doi.org/10.21105/joss.00272).
 
 **Standage DS**, Berens AJ, Glastad KM, Severin AJ, Brendel VP, Toth AL (2016) Genome, transcriptome, and methylome sequencing of a primitively eusocial wasp reveal a greatly reduced DNA methylation system in a social insect. *Molecular Ecology*, [doi:10.1111/mec.13578](http://dx.doi.org/10.1111/mec.13578).
 
@@ -166,6 +166,9 @@ As TA I held independent review sessions and graded reports of student experimen
 ## Professional Activities
 
 ### Journal Review
+
+**International Journal of Molecular Sciences**  
+October 2017
 
 **Science**  
 May 2013
