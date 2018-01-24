@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "drafts/thoughts-on-bioinformatics-teaching.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/cv.html">CV</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software.html">Software</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				University of California, Davis<br />
+				Population Health and Reproduction<br />
+				1 Shields Ave<br />
+				Davis, CA 95616<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://ivory.idyll.org/lab/">Lab for Data Intensive Biology</a></li>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Thoughts on bioinformatics teaching</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/drafts/thoughts-on-bioinformatics-teaching.html">2018-01-23</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/software.html">software</a> <a href="https://standage.github.io/tag/teaching.html">teaching</a> </div>
+		<div><p>Over the last few months, applying and interviewing for academic jobs has given me an opportunity to reflect more deeply on my vision of bioinformatics teaching.
+This has brought some of the non-trivial challenges of teaching bioinformatics to the fore.</p>
+<ul>
+<li>Bioinformatics skills are in high demand across many careers and career stages:
+  among academics from undergraduate to graduate to postdoctoral to professor, as well as junior and senior scientists in government and industry.
+  A decrease in this demand doesn't seem likely in the near future, and will likely continue to increase.
+  Accordingly, chances are good when teaching bioinformatics that the audience will be fairly heterogenous.</li>
+<li>The diversity of backgrounds and interests reflected in the learners is also a challenge.
+  How can one meet the needs of the geneticist without doing a disservice to the computer scientist, the biophysicist, or the microbiologist?</li>
+<li>Another challenge is how to sequence the material (haha, see what I did there?).
+  Is it best to motivate the biology and then cover the relevant quantitative and computational material?
+  Or is it better to get the learners up to speed with computation before trying to solve biological questions?
+  Or should we just teach both aspects simultaneously?</li>
+</ul>
+<p>I'm not the first person to think about these problems, nor can I claim to have any particularly brilliant solution that works in all circumstances.
+In fact, the more I think about it the more I'm convinced that <em>any</em> solution is by necessity going to be highly dependent on context.
+The optimal instruction strategy and material organization will be different depending on whether I'm giving a two-day workshop to scientists from all over campus, teaching an intro bioinformatics course to first year biology Ph.D. students, or training undergraduates in a bioinformatics major track where I have influence over the entire curriculum.</p>
+<p>There is one point, however, that I feel strongly about and that is in my opinion fairly universal, and that is the idea that <em>biologists-in-training are best served when their introduction to computing comes from computationally expert biologists.</em></p>
+<hr />
+<p>During some recent work-related travel I had a chance to discuss bioinformatics teaching with a colleague.
+This professor felt a strong obligation to train bioinformatics Masters and Ph.D. students with more than the baseline skills in scripting and sequential programming that they'll need to be successful in the current job market.
+He was especially concerned about designing the curriculum so that students gain experience with object-oriented programming (inheritance, interfaces, etc.), threaded/parallel programming, and other programming concepts more advanced than those familiar to the average scientist.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>

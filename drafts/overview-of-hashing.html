@@ -82,19 +82,22 @@
 by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
  in <a href="https://standage.github.io/category/blog.html">blog</a>
 tags: <a href="https://standage.github.io/tag/hashing.html">hashing</a> <a href="https://standage.github.io/tag/k-mers.html">k-mers</a> <a href="https://standage.github.io/tag/khmer.html">khmer</a> </div>
-		<div><p>Recently I've been digging into the internals of the <a href="https://github.com/dib-lab/khmer/">khmer package</a> and how it handles DNA sequences.
+		<div><p>Prior to my current position, I was a casual and occasional user of the <a href="https://github.com/dib-lab/khmer/">khmer library</a> for DNA sequence analysis.
+In the past year and a half or so in my current position, I have become a core contributor and taken some responsibility for khmer's management and release.
+During this time, we've been discussing (and to a lesser extent implementing) the integration of different <em>k</em>-mer hashing functions.
+I've wanted to write blah blah.</p>
+<h2>What is a hash function?</h2>
+<p>The simplest useful definition of a hash function I can think of is <em>a mathematical operation that converts an arbitrary piece of data into a numerical representation</em>.
+In the context of sequence analysis, the "arbitrary piece of data" is a molecular sequence (typically of a fixed length <em>k</em>; a <em>k</em>-mer) and the "numerical representation" is typically an integer value.
+Several data structures common in bioinformatics use hashing to index <em>k</em>-mers for efficient storage and retrieval.</p>
+<h2>Two-bit encoding</h2>
+<h2>H</h2>
+<p>Recently I've been digging into the internals of the <a href="https://github.com/dib-lab/khmer/">khmer package</a> and how it handles DNA sequences.
 While this is all fresh on my mind, I wanted to take a moment to discuss the topic from the layman's perspective.
 This post reviews the two-bit encoding scheme used by khmer, <em>k</em>-mer hashing in general, the reason khmer is limited to <em>k</em>-mers ≤ 32 nucleotides in length, and the implications of our plan to support larger (possibly arbitrary) values of <em>k</em>.</p>
 <h2>Two-bit representation of DNA sequences</h2>
 <p>The most common convention for</p>
 <p>The letters A, C, G, and T have long been used as shorthand for the nucleotides from which DNA sequences are composed.</p>
-<p>Many research questions in genomics and bioinformatics ignore the fascinating biochemical properties and molecular structure of DNA and focus on its <em>primary sequence</em>.</p>
-<p>DNA has many fascinating biochemical and biophysical properties</p>
-<p>It is common practice in bioinformatics to ignore the biochemical and biophysical</p>
-<p>Although DNA has a complex and intricate 3-dimensional structure,</p>
-<p>a lot of genomics and bioinformatics research ignores this level of detail.
- the information stored in DNA depends</p>
-<p>For a variety of (extremely uninteresting) reasons</p>
 <p>When stored as text, DNA sequences require 8 bits (1 byte) per nucleotide: a 32 base pair sequence requires 256 bits of storage, a 1 kilobase sequence requires 8,000 bits (1,000 bytes or 1 kilobyte), and 1 megabase requires 8,000,000 bits (1,000,000 bytes or 1 megabyte) of storage.
 This has to do with how computers store information.
 Each character of text requires 8 bits of information.
