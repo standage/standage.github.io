@@ -7,3 +7,4 @@ content/*/.ipynb_checkpoints/
 content/*/*/.ipynb_checkpoints/
 content/scratch/
 .DS_Store
+env/
