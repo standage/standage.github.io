@@ -1,4 +1,4 @@
-Title: Overview of hashing
+Title: Thoughts on bioinformatics teaching
 Date: 2018-01-23
 Author: Daniel S. Standage
 Category: blog
