@@ -25,7 +25,6 @@ The optimal instruction strategy and material organization will be different dep
 
 There is one point, however, that I feel strongly about and that is in my opinion fairly universal, and that is the idea that *biologists-in-training are best served when their introduction to computing comes from computationally expert biologists.*
 
-
 ---
 
 During some recent work-related travel I had a chance to discuss bioinformatics teaching with a colleague.
