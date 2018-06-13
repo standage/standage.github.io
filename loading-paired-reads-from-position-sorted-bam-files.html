@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "loading-paired-reads-from-position-sorted-bam-files.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/cv.html">CV</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software.html">Software</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				University of California, Davis<br />
+				Population Health and Reproduction<br />
+				1 Shields Ave<br />
+				Davis, CA 95616<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://ivory.idyll.org/lab/">Lab for Data Intensive Biology</a></li>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Loading paired reads from position-sorted BAM files</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/loading-paired-reads-from-position-sorted-bam-files.html">2018-06-12</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/ngs.html">ngs</a> <a href="https://standage.github.io/tag/bam.html">bam</a> </div>
+		<div><p>BAM files with sequence alignments sorted by genomic position seem to be the new currency of exchange for large-scale human genome sequencing projects.
+This is convenient and practical in many ways for many people.
+But in my current research I work a lot with tools that only want/need the sequence information and, for whatever reasons, support only FASTA or FASTQ input.</p>
+<p>A quick Google search will identify several freely available tools for extracting read sequences and base qualities from a BAM file and writing them out in FASTQ format.
+I have used several of these tools during the last couple of years.
+The catch is that if one wants to retain pairing information, all of these tools require the reads in the BAM file to be sorted by read name.
+BAMs are more commonly sorted by genomic position–this is certainly the case for all the data sets I've work with–and for BAMs occupying more than 100G of storage space each, re-sorting requires a non-trivial amount of compute and disk I/O.</p>
+<p>Today as I was waiting yet again for a <code>samtools sort -n</code> job to finish, I gave this problem some thought.
+If read alignments in a BAM file are sorted by genomic position, then we would expect paired reads to occur pretty close to each other.
+If this expectation holds true, then position-sorted BAM files lend themselves to a fairly simple and efficient strategy for conversion to paired FASTQ format–or more generally, to loading read pairs–without the need for sorting by read name.</p>
+<h2>The experiment</h2>
+<p>To assess my intuition, I hastily threw together a little experiment, implemented as the following Python program.
+In brief, it:</p>
+<ul>
+<li>iterates over read alignments in the specified inpyt BAM file</li>
+<li>skips the first million entries (this is probably unnecessary, but it's a habit from working with FASTQ files which often have a bunch of junk reads at the beginning of the file)</li>
+<li>stores the next 10,000 entries in a hashtable (a dictionary, for you Python folks)</li>
+<li>continues iterating over the entries in the BAM file; when the pair of a read stored in the hashtable is found, the program notes the number of entries that separate the paired reads and prints this out</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">pysam</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--out&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">))</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;bam&#39;</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="n">reads</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">bam</span> <span class="o">=</span> <span class="n">pysam</span><span class="o">.</span><span class="n">AlignmentFile</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">bam</span><span class="p">)</span>
+<span class="n">storedreads</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">pairsfound</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">record</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bam</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">readname</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">query_name</span>
+    <span class="k">if</span> <span class="n">storedreads</span> <span class="o">&lt;</span> <span class="mi">10000</span> <span class="ow">and</span> <span class="n">readname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">reads</span><span class="p">:</span>
+        <span class="n">reads</span><span class="p">[</span><span class="n">readname</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
+        <span class="n">storedreads</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">readname</span> <span class="ow">in</span> <span class="n">reads</span><span class="p">:</span>
+        <span class="n">other_i</span><span class="p">,</span> <span class="n">other_record</span> <span class="o">=</span> <span class="n">reads</span><span class="p">[</span><span class="n">readname</span><span class="p">]</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">other_i</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">readname</span><span class="p">,</span> <span class="n">other_i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">del</span><span class="p">(</span><span class="n">reads</span><span class="p">[</span><span class="n">readname</span><span class="p">])</span>
+        <span class="n">pairsfound</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">storedreads</span> <span class="o">==</span> <span class="mi">10000</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">reads</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;processed&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;reads&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">readname</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span> <span class="ow">in</span> <span class="n">reads</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">readname</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;inf&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+
+
+<p>So in the end, this gives a distribution of distances between paired BAM alignment records.</p>
+<p>I ran this experiment on a BAM file with nearly 1 billion reads and got the following results.</p>
+<p><img src="https://standage.github.io/images/bam-read-dist.png" alt="Distances between paired read entries in a BAM file" width="750px" /></p>
+<p>Out of the 10,000 arbitrarily selected reads, 60 mysteriously had no pair anywhere in the entire file.
+For another 27, the pair was separated by tens or hundreds of millions of entries, presumably due to a misalignment or one of the pairs aligning to an alternate or decoy sequence that sort to the end of the BAM file.
+But for the reamining 99.13% of the reads, pairs were separated only by dozens of entries.</p>
+<h2>The strategy</h2>
+<p>Based on this observation, my proposed strategy is to load BAM entries into memory while iterating through the file.
+Assuming the trend observed in my experiment holds throughout the entire file, then we can be assured that most BAM entries will not remain in memory long.
+Once their pair has been found (usually within a few dozen entries), the reads can be sent to the output and removed from memory.
+If there are any entries left in memory after traversing the entire BAM file, these mateless reads can be output as singletons.</p>
+<p>So just how much memory do we expect this to require?
+Let's consider the data set we examined above with about 991 million reads, and let's assume 0.87% of the reads will need to be kept in memory for most or all of the program's runtime.
+This amounts to about 8.5 million reads.
+In Python, storing this many BAM entries in a Python dictionary required about 9 GB or memory.
+This is doable on many laptops and desktops these days, and is certainly no chore for the systems running most genomics workflows.
+Plus, if this strategy were implemented in C++ or some other language with much less overhead than Python, we could expect the memory usage to be even less.</p>
+<h2>The implementation</h2>
+<p>I don't have the attention to implement a high-performance solution for this in C/C++ at the moment, but I'd like to get something down while this is all still fresh in my head.
+Throwing together something in Python with the pysam module should be pretty straightforward, so watch this space for updates!</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
