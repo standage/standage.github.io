@@ -98,24 +98,7 @@ This is feasible on many laptops and desktops these days, and is peanuts for the
 Plus, if this strategy were implemented in C++ or some other language with less overhead than Python, we could expect the memory usage to be even less.&lt;/p&gt;
 &lt;h2&gt;The implementation&lt;/h2&gt;
 &lt;p&gt;I don't have the attention to implement a high-performance solution for this in C/C++ at the moment, but I'd like to get something down while this is all still fresh in my head.
-Throwing together something in Python with the pysam module should be pretty straightforward, so watch this space for updates!&lt;/p&gt;</summary><category term="ngs"></category><category term="bam"></category></entry><entry><title>Novel k-mers as signatures of germline mutation</title><link href="https://standage.github.io/novel-k-mers-as-signatures-of-germline-mutation.html" rel="alternate"></link><published>2018-05-15T00:00:00-07:00</published><updated>2018-05-15T00:00:00-07:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2018-05-15:novel-k-mers-as-signatures-of-germline-mutation.html</id><summary type="html">&lt;p&gt;My recent research has been motivated by two related questions.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Can we discover genetic variants without aligning reads to a reference genome?&lt;/li&gt;
-&lt;li&gt;Can we quickly find shared or unique variants that are unlikely to be found using any reference-based approach?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Both questions speak to pragmatic concerns as well as considerations of curiosity and novelty.
-On the pragmatic side, &lt;em&gt;poorly represented population diversity; non-model reference quality&lt;/em&gt;.
-On the curiosity side, we've suspected for a long time that variant discovery without read mapping is possible, but &lt;/p&gt;
-&lt;p&gt;These questions both address practical issues with variant discovery and analysis as well as &lt;/p&gt;
-&lt;p&gt;have an element of curiousity and novelty.
-On the practical side, &lt;/p&gt;
-&lt;p&gt;The first question speaks to a variety of practical problems.&lt;/p&gt;
-&lt;p&gt;Understanding the roles genetic variation plays in human disease, traits of agricultural interest, and in the process of evolution has become an area of intense research interest.
-An increasing number of fully sequ&lt;/p&gt;
-&lt;p&gt;Cataloging genetic variation within families and across populations has become an area of intense research interest in biomedicine, agriculture, ecology, and related fields.
-D&lt;/p&gt;
-&lt;p&gt;Databases of genetic variants play a critical role in biomedical research, and cataloging genetic variation within families and across populations is an area of intense interest and activity.
-Discovery of genetic variants is &lt;/p&gt;</summary><category term="kevlar"></category><category term="variant discovery"></category></entry><entry><title>Information content versus data volume and k-mer counting accuracy</title><link href="https://standage.github.io/information-content-versus-data-volume-and-k-mer-counting-accuracy.html" rel="alternate"></link><published>2017-10-06T00:00:00-07:00</published><updated>2017-10-06T00:00:00-07:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2017-10-06:information-content-versus-data-volume-and-k-mer-counting-accuracy.html</id><summary type="html">&lt;p&gt;Keeping track of &lt;em&gt;k&lt;/em&gt;-mers for simple operations has become a fundamental component of many bioinformatics techniques.
+Throwing together something in Python with the pysam module should be pretty straightforward, so watch this space for updates!&lt;/p&gt;</summary><category term="ngs"></category><category term="bam"></category></entry><entry><title>Information content versus data volume and k-mer counting accuracy</title><link href="https://standage.github.io/information-content-versus-data-volume-and-k-mer-counting-accuracy.html" rel="alternate"></link><published>2017-10-06T00:00:00-07:00</published><updated>2017-10-06T00:00:00-07:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2017-10-06:information-content-versus-data-volume-and-k-mer-counting-accuracy.html</id><summary type="html">&lt;p&gt;Keeping track of &lt;em&gt;k&lt;/em&gt;-mers for simple operations has become a fundamental component of many bioinformatics techniques.
 Two common operations on &lt;em&gt;k&lt;/em&gt;-mers include set membership queries ("is &lt;em&gt;k&lt;/em&gt;-mer &lt;em&gt;X&lt;/em&gt; present in data set &lt;em&gt;Y&lt;/em&gt;?") and abundance queries ("how many times does &lt;em&gt;k&lt;/em&gt;-mer &lt;em&gt;X&lt;/em&gt; occur in data set &lt;em&gt;Y&lt;/em&gt;").
 Several probabilistic data structures have been developed to support these types of operations in a memory-efficient manner, and this is still &lt;a href="https://doi.org/10.1093/bioinformatics/btx636"&gt;an active area of research&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In my recent work with variant discovery, I make extensive use of the Count-min sketch implementation available from the &lt;a href="http://dx.doi.org/10.21105/joss.00272"&gt;khmer library&lt;/a&gt;.
