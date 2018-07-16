@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "improvements-from-applying-filters-at-k-mer-counting-time-in-kevlar.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel Standage</a>
+			<ul class="nav">
+						<li><a href="https://standage.github.io/pages/cv.html">CV</a></li>
+						<li><a href="https://standage.github.io/pages/teaching.html">Teaching</a></li>
+						<li><a href="https://standage.github.io/pages/software.html">Software</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://standage.github.io/archives.html">[archives]</a> <a href="https://standage.github.io/categories.html">[categories]</a> <a href="https://standage.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				University of California, Davis<br />
+				Population Health and Reproduction<br />
+				1 Shields Ave<br />
+				Davis, CA 95616<br />
+			</p>
+			<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://ivory.idyll.org/lab/">Lab for Data Intensive Biology</a></li>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>Improvements from applying filters at k-mer counting time in kevlar</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/improvements-from-applying-filters-at-k-mer-counting-time-in-kevlar.html">2018-07-16</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/kevlar.html">kevlar</a> </div>
+		<div><p>One of the fundamental insights of the <a href="https://kevlar.readthedocs.io">kevlar <em>de novo</em> variant caller</a> is the framing of the variant discovery problem as a search for novel k-mers.
+In this case, "novel" means abundant in the focal sample and effectively absent from all control samples.
+In the early stages of creating kevlar, it quickly became clear that many k-mers satisfying these simple threshold criteria are not associated with a <em>de novo</em> variants.
+Some come from sample-specific contamination (bacteria, Illumina adapters, etc.), while others derive from alleles present in the reference genome but absent from the controls due to a combination of genetic variation and chance fluctuations in sequencing coverage.
+Thus, we introduced filters early on to weed out uninteresting k-mers to focus on those more likely to be associated with <em>de novo</em> variants.</p>
+<p>Up until very recently, the kevlar workflow applied k-mer filters after the initial pass over the data to find novel k-mers.
+Recently I began testing an alternative approach: apply the filters during the initial k-mer counting (enabled by <a href="https://github.com/dib-lab/kevlar/pull/277">this code update</a>).
+Using this strategy, if a k-mer is present in the reference genome or is contaminant in origin, its abundance is not tracked for later reference.
+The direct result is that these k-mers are not declared novel in the first pass over the data, and thus the filters do not need to be applied <em>post facto</em>.</p>
+<p>I've noticed two additional secondary benefits to this approach.
+First is a modest improvement in kevlar's memory efficiency.
+Since k-mers present in the reference genome and in contaminant databases aren't tracked at all, accurate k-mer counts are possible in a smaller amount of memory.
+The second is a substantial improvement (&gt;2x decrease) in runtime during the novel k-mer identification step.
+I don't know how much of this is due to better cache locality from the smaller k-mer counters versus fewer lookups overall—I'm guessing the latter is the more influential factor.
+In any case, this has been the most computationally expensive part of the kevlar workflow overall, and it's encouraging to see improvements of this magnitude.</p>
+<p>Initially I was worried that this approach might require k-mer counts to be recomputed for the final variant likelihood calculations.
+However, the likelihood scores are based exclusively on the abundances of the alternate allele k-mers which should not be affected by the filters.
+Reference allele k-mers <em>are</em> considered when computing the error rate, but this only requires abundance/copy number of these k-mers in the reference assembly, not their per-sample abundance.</p>
+<p>In summary, this modest and fairly obvious (in retrospect!) new approach looks like a win-win all around.</p>
+<ul>
+<li>Instead of applying k-mer filters in Python land <em>post facto</em>, they are applied <em>a priori</em> during k-mer counting using efficient procedures implemented entirely in C++.</li>
+<li>As a result, less memory is needed to get accurate k-mer counts for each sample.</li>
+<li>Also, the task of identifying novel k-mers is sped up substantially, probably due to a decrease in k-mer abundance queries and (to a lesser extent) better cache locality.</li>
+</ul></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2016 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
