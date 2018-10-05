@@ -1,5 +1,7 @@
 Title: CV
-navorder: 01
+url:
+save_as: cv.html
+status: hidden
 
 ## Education & Training
 

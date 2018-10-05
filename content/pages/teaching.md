@@ -1,5 +1,7 @@
 Title: Teaching
-navorder: 02
+url:
+save_as: teaching.html
+status: hidden
 
 My approach to teaching is inspired by the way I personally learn.
 Introducing fundamental principles along with very basic exercises provides students an opportunity to internalize the material and learn the necessary mechanics.

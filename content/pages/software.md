@@ -1,5 +1,7 @@
 Title: Software
-navorder: 03
+url:
+save_as: software.html
+status: hidden
 
 <div style="width: 42em;">
 

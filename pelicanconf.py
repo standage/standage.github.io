@@ -5,11 +5,11 @@ import glob
 
 # Basic config
 AUTHOR = 'Daniel S. Standage'
-SITENAME = 'Daniel Standage'
-TIMEZONE = 'US/Pacific'
+SITENAME = 'Daniel S. Standage'
+TIMEZONE = 'US/Eastern'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
-FOOTER_YEARS = '2015-2016'
+FOOTER_YEARS = '2015-2018'
 
 PATH = 'content'
 THEME = 'bootstrap'
@@ -33,10 +33,9 @@ INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'
 
 # Settings for left side well
-ADDRESS = ('University of California, Davis',
-           'Population Health and Reproduction',
-           '1 Shields Ave',
-           'Davis, CA 95616')
+ADDRESS = ('Assoc. Principal Investigator,',
+           'Bioinformatics',
+           'NBACC')
 
 # Affiliations (replaced "Blogroll" in theme)
 LINKS = (('Lab for Data Intensive Biology', 'http://ivory.idyll.org/lab/'),

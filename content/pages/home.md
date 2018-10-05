@@ -1,20 +1,17 @@
-Title: Welcome!
+Title: Hello!
 url:
 save_as: index.html
 status: hidden
 
 <div style="width: 42em; margin-bottom: 10px;">
-Hi, I'm Daniel, a research scientist with interests in genome informatics, specifically variant discovery and genome annotation.
+I'm Daniel, a bioinformatics scientist with interests in DNA, genes, genomes, and software.
+My current role focuses on microbial and human forensics.
+My prior experience covers a broad range of genomics research:
+developing methods and software for variant discovery;
+assembling, annotating, and profiling the genome of a model insect species;
+and developing methods and software to annotate genomes and investigate genome composition and organization.
 I am committed to open, transparent, and reproducible research, and to responsible research software engineering.
-I also enjoy mentoring and teaching, both in the classroom and in less structured settings.
+I also enjoy mentoring and teaching.
 </div>
 
------
-
-If you're interested in my research experience, take a look at my [CV](pages/cv.html).
-
-I've written a few notes here about [my teaching experience and philosopy](pages/teaching.html).
-
-Take a look at the [open source research software projects](pages/software.html) I've created and contributed to.
-
-Musings about research and computing are posted (infrequently) to [my notebook](notebook.html).
+<img alt="DNA helix" src="{filename}/images/dna.jpg" style="width: 40em" />
