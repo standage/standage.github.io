@@ -160,5 +160,9 @@ In the mean time, I'll be watching [the HULK repo](https://github.com/will-rowe/
 
 ----------
 
+Thanks to [Taylor Reiter (@ReiterTaylor)](https://twitter.com/ReiterTaylor) whose comments on a draft of this blog post improved it greatly!
+
+----------
+
 <sup>‡</sup>I'm not exactly sure why CountMin is not similarity-preserving, and the authors offer no explanation.
 Perhaps it's related to the fact that CountMin retains all data points and MinHash samples a respresentative subset of data points.
