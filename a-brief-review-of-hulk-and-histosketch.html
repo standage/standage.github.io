@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Daniel S. Standage</title>
+	<meta name="description" content="">
+	<meta name="author" content="Daniel S. Standage">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://standage.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://standage.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://standage.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://standage.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Daniel S. Standage Atom Feed" />
+
+
+	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel S. Standage RSS Feed" />
+
+
+<script type="text/javascript">
+	var disqus_identifier = "a-brief-review-of-hulk-and-histosketch.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+</head>
+<body>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://standage.github.io/">Daniel S. Standage</a>
+			<ul class="nav">
+				<li><a href="https://scholar.google.com/citations?user=OohLwhsAAAAJ&hl=en">Publications</a></li>
+				<li><a href="https://github.com/standage">Github</a></li>
+				<li><a href="https://twitter.com/byuhobbes">@byuhobbes</a></li>
+				<li><a href="https://standage.github.io/notebook.html">Notebook</a></li>
+			</ul>
+			<p class="pull-right">
+				<a href="https://standage.github.io/archives.html">[archives]</a>
+				<a href="https://standage.github.io/categories.html">[categories]</a>
+				<a href="https://standage.github.io/tags.html">[tags]</a>
+			</p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
+			<h3>Daniel S. Standage</h3>
+			<p>
+				Assoc. Principal Investigator,<br />
+				Bioinformatics<br />
+				NBACC<br />
+			</p>
+			<!--<h3>Affiliations</h3>
+			<ul>
+				<li><a href="http://ivory.idyll.org/lab/">Lab for Data Intensive Biology</a></li>
+				<li><a href="http://brendelgroup.org/">Brendel Group</a></li>
+				<li><a href="http://www.public.iastate.edu/~amytoth/Toth_lab/Home.html">Toth Lab</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="http://github.com/standage">GitHub</a></li>
+				<li><a href="https://twitter.com/byuhobbes">Twitter</a></li>
+				<li><a href="http://stackexchange.com/users/208980/daniel-standage?tab=accounts">StackExchange</a></li>
+			</ul>
+			</div>-->
+		</div>
+	  </div>
+	  <div class="content">
+	<div class='article'>
+		<div class="page-header"><h1>A brief review of HULK and histosketch</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/a-brief-review-of-hulk-and-histosketch.html">2018-10-12</a>
+by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
+ in <a href="https://standage.github.io/category/blog.html">blog</a>
+tags: <a href="https://standage.github.io/tag/sketching.html">sketching</a> <a href="https://standage.github.io/tag/metagenomics.html">metagenomics</a> <a href="https://standage.github.io/tag/journal-club.html">journal club</a> </div>
+		<div><p>About a month ago, I was intrigued to see a bit of Twitter activity around a new bioRxiv preprint.
+The <a href="https://www.biorxiv.org/content/early/2018/09/04/408070">manuscript</a> describes <a href="https://github.com/will-rowe/hulk">HULK</a>, a new bioinformatics tool that implements some useful comparison metrics and operations for analyzing (meta)genomes.
+HULK is based on a new algorithm called histogram sketching (HistoSketch for short), following the trend of related sketching algorithms (HyperLogLog, CountMin, MinHash, etc.) that have steadily captured the collective interest of the genome informatics community over the last several years.</p>
+<p>I recently led a journal club to discuss the histogram sketching algorithm and to discuss the claims and results discussed in the HULK paper.
+I'm posting some notes from the journal club here mostly for my own sake, but I'd be elated if they happen to be insightful to anyone else who is interested in learning more about the tool or the topic.</p>
+<p><strong>tl;dr</strong>: While a couple of the claims in the manuscript should be qualified, HULK's treatment of <em>k</em>-mer abundances and mismatched data set sizes is indeed novel, and incremental sketching + machine learning = awesome!</p>
+<h2>Background</h2>
+<p>The terms <em>sketch</em> and <em>sketching algorithm</em> seem to be used fairly frequently (at least over the last several years), but surprisingly I was unable to find an authoritative definition for them.
+My understanding is that a sketch is a compact approximation of some characteristic of a large data set, just as a pencil sketch approximates a photograph or a painting.
+Different kinds of sketches approximate different characteristics of the data set: the HyperLogLog approximates the cardinality (size, or number of distinct elements) of the dataset; the Bloom filter can provide approximate membership queries ("<em>Is this element in the data set?</em>"); the CountMin sketch provides approximate frequency queries ("<em>How many times does this element occur in the data set?</em>"); and the MinHash sketch selects a representative sample of set elements to...well, represent the data set! The number of shared elements between two MinHash sketches, it turns out, is an excellent proxy for the "distance" or similarity between the data sets.</p>
+<p>While all of these sketches have useful bioinformatics applications, I think it's safe to say that MinHash in particular is making big splashes in the genomics community.
+MinHash sketches require a negligible amount of storage, can be computed extremely quickly, and permit similarity calculations that can enable or improve metagenome analysis, genome assembly, sample ID, and more.
+In addition to the <a href="https://doi.org/10.1186/s13059-016-0997-x">trend-setting Mash paper</a> and <a href="https://github.com/marbl/mash">corresponding tool</a>, MinHash sketching has been re-implemented in <a href="https://github.com/dib-lab/sourmash">sourmash</a> and <a href="https://github.com/onecodex/finch-rs">Finch</a> (and probably others) to facilitate research into additional (meta)genomics applications of this class of algorithms.</p>
+<h2>Histogram sketching</h2>
+<p>The histogram sketching algorithm was first published in the <a href="https://doi.org/10.1109/ICDM.2017.64">proceedings of the 2017 IEEE data mining conference</a>.
+Like most sketching algorithms, it was not originally developed with biology applications in mind.
+The authors sought a way to efficiently compare and classify <em>continuous streams</em> of histogram data, such as from customer visits to a restaurant or other business.
+In particular, the authors wanted to account for <em>concept drift</em>, in which "the underlying distribution of a streaming histogram changes over time in unforseen ways."</p>
+<p>The authors of this work developed HistoSketch to address these needs.
+A HistoSketch is similar to MinHash in that it stores a small, fixed number of histogram elements.
+A weight is assigned to each histogram element in the sketch using an approach termed <em>Consistent Weighted Sampling (CWS)</em>.
+The math that defines CWS is a bit above my pay grade, but it endows HistoSketch with some of the properties that sets it apart from alternative sketching algorithms.
+In particular, HistoSketch is a <em>similarity-preserving</em> data structure while CountMin, for example, is not<sup>‡</sup>.
+And while MinHash <em>is</em> similarity-preserving, it only accounts for the elements of the data set and not the histogram of the elements' frequencies.
+HistoSketch defines a similarity-preserving data structure that is frequency-sensitive, capturing the "best of both worlds" while also elegantly addressing the issue of concept drift that other algorithms do not account for.</p>
+<h2>HULK</h2>
+<p>Which brings us to the main event.
+HULK is a new bioinformatics tool that implements histogram sketching in the context of DNA sequence data.
+HULK computes a histosketch of the <em>k</em>-mer spectrum from a stream of data in Fastq or Fasta format.
+The histosketches computed by HULK can be used for similarity calculations based on the weighted variant of the Jaccard distance metric employed by Mash and company.
+Additionally, the authors demonstrate that histosketches can be integrated with machine learning models to classify microbiome samples based on the body site from which they were collected.
+The experiments described in the manuscript demonstrate that even incomplete/intermediate sketches of a data stream are sufficient to cluster and classify microbiome samples.</p>
+<p>HistoSketch and HULK are clearly a promising development in this area, but the million dollar question is what precise advantages they provide over alternative algorithms.
+The authors of the HULK preprint claim that histosketch comes with the following advantages.</p>
+<ul>
+<li>speed</li>
+<li>streaming support (incremental sketching)</li>
+<li>robustness for comparing samples of significantly different sizes</li>
+<li>sensitivity to <em>k</em>-mer frequencies</li>
+<li>machine learning integration</li>
+<li>elegant handling of "concept drift"</li>
+</ul>
+<p>Based on a careful study of the manuscript, a bit of email correspondence with the primary author, a partial code review, and discussion in our journal club, I'd like to provide my assessment of each of these claims.</p>
+<h3>Speed</h3>
+<p>The superior speed of HULK is not something that was emphasized <em>too much</em> in the preprint.
+It was mentioned in passing in the manuscript, as well as on the README included in the source code distribution.
+It's not clear whether HULK's performance is due to characteristics of the histogram sketching algorithm or the language of implementation, Go.</p>
+<p>The only hard data offered in the manuscript is a comparison of HULK and <a href="https://github.com/GATB/simka">Simka</a>.
+HULK positively spanks Simka with an order-of-magnitude improvement in runtime while acheiving comparable (slightly better) accuracy.
+Is this a good speed benchmark? I'm not sure.
+I wasn't familiar with Simka prior to reading the HULK preprint, although that may reflect a personal deficiency more than anything else.
+However, I do think it would have been appropriate to compare against Mash at the very least, as the trend-setter in sketch-based comparisons of metagenomes.</p>
+<h3>Streaming support (incremental sketching)</h3>
+<p>Much is made of histogram sketching being a streaming algorithm both in the original HistoSketch paper and in the HULK preprint.
+At first, this didn't seem like a helpful distinction since there is nothing preventing MinHash or CountMin (for example) from sketching data streams just as easily.
+When and how to output the sketch is an implementation decision, not a limitation of the algorithm.</p>
+<p>That said, I am unaware of any other sketching tools that output snapshots of a sketch at intermediate intervals while processing the data stream.
+This is a Big Deal.
+The kind of <em>incremental sketching</em> HULK supports opens up a new realm of possibilities for dynamic control of the entire pipeline, from sequencing to sketching to analysis.
+And unless I'm mistaken, the HULK preprint was also the first bioinformatics study to investigate the accuracy of sketches computed from partial data streams.</p>
+<h3>Robustness for relative data set size</h3>
+<p>There are known issues when using MinHash to compare data sets of significantly different size.
+The HULK preprint references the issue twice: one brief mention in the Introduction section...</p>
+<blockquote>
+<p><em>there remain limitations to standard MinHash techniques; such as the loss of k-mer frequency information and the impact of relative set size on Jaccard similarity estimates.</em></p>
+</blockquote>
+<p>...and another in the Discussion section.</p>
+<blockquote>
+<p><em>In particular, it addresses the main limitations of traditional MinHash for certain microbiome analyses.
+These being: (i) histogram sketching is not impacted by mismatched set size and (ii), histogram sketching accounts for weighted sets (e.g. k-mer frequency).</em></p>
+</blockquote>
+<p>This topic is discussed in depth <a href="https://doi.org/10.1101/184150">in this preprint</a> and by the Mash authors themselves in <a href="https://genomeinformatics.github.io/mash-screen/">a blog post</a>, both posted about a year ago.
+HULK claims to be the first tool to solve this problem for (meta)genome analytics.
+I don't think this is true...as an unqualified statement at least.
+Mash is capable of performing "containment" queries with <code>mash screen</code> as described in the blog post above.
+And while Mash doesn't support similarity calculations for metagenomes of mismatched size, sourmash does with its <code>--scaled</code> mode.
+In both cases, a sampling rate is defined, so a fixed sketch size can no longer be guarantee like it is with HULK.</p>
+<p>How exactly <em>is</em> HistoSketch robust to differences in relative set sizes? I'm actually not clear on this.
+The only discussion of mismatched set sizes I could find in the manuscript are the two shown above.
+It's possible there's more information in there for an astute reader who can read between the lines, but I think it would improve the manuscript considerably if the authors clarified this point.</p>
+<p>But even giving the authors the benefit of the doubt, I still think it's a bit of a stretch to claim that HULK is the first tool to address mismatched data set sizes.
+I <em>would</em> fully agree with the sentiment that HistoSketch is the first sketching algorithm that treats comparison of data sets of mismatched size <em>as a primary algorithm design consideration</em> rather than a bonus feature or alternative mode.
+It's admittedly a subtle point, but an important one in my opinion.</p>
+<h3>Sensitivity to <em>k</em>-mer frequencies</h3>
+<p>The HULK authors claim that standard MinHash tools do not take into account <em>k</em>-mer frequency information.
+I feel like this statement also needs qualification.
+It is true that Mash ignores <em>k</em>-mer abundance completely, but sourmash has supported a <code>--track-abundance</code> mode for some time.
+Assuming all sketches in question were computed with <code>--track-abundance</code>, the distance calculations with <code>sourmash compare</code> integrate the <em>k</em>-mer abundance information.</p>
+<p>However, even in the case of sourmash, <em>k</em>-mer frequencies don't have any influence on which <em>k</em>-mers are chosen to occupy the sketch, whereas the <em>Consistent Weighted Sampling</em> scheme employed in histosketching is sensitive to <em>k</em>-mer frequencies.
+Like the previous point, I'd suggest it's more accurate to say that HistoSketch is novel in including this as a primary design consideration rather than an afterthought.</p>
+<h3>Machine learning integration</h3>
+<p>The authors don't claim that this is the only sketching algorithm that can be integrated with machine learning downstream, but HULK is the first to demonstrate it in the context of bioinformatics.
+HULK's support for incremental sketching is also relevant here, as successful classification of a data stream (above some confidence threshold) can terminate processing early.</p>
+<h3>Elegant handling of <em>concept drift</em></h3>
+<p><em>Concept drift</em> refers to the phenomenon that occurs when a continuous data stream measures qualitatively different things at different points in time.
+By "gradually forgetting" earlier observations, more recent observations can carry more influence and provide a more accurate reflection of what is currently being measured.</p>
+<p>I can't say I fully grok the CWS scheme used by HistoSketch, but the CWS-computed weights do provide a simple and elegant mechanism for handling concept drift in a data stream.
+With each new observation, the existing weights are scaled so that they are slightly more likely to be replaced by an updated histogram element.
+Over time, these slight adjustments accumulate and older observations are replaced with newer observations.</p>
+<p>So what is the relevance of this to DNA sequence data? I could imagine a few scenarios where this approach might be useful.</p>
+<ul>
+<li>arrays of sensors continuously collecting sequence data from different locations to profile soil, marine, or human microbiome composition</li>
+<li>stategically placed sensors continuously monitoring for the presence of pathogens</li>
+<li>a strategy for dynamic control of the DNA sequencer that is sensitive to what has been sequenced "recently" (for some value of "recently")</li>
+</ul>
+<p>In each case, changes to a sensor's environment over time would muddle its signal without accounting for shifts in what is being observed.</p>
+<p>I don't think that DNA sequencing technology has quite "made it" yet to the extent needed to make these types of strategy feasible.
+And it's hard to estimate when the tech might be ready.
+But I think the HULK authors make a great contribution here in helping us imagine what might be possible.</p>
+<h2>Summary</h2>
+<p>In conclusion, I think HULK and HistoSketch are great contributions to this area of research.
+It's notable that HistoSketch accounts for <em>k</em>-mer frequency and mismatched data set sizes as primary design considerations.
+HULK's demonstration that histosketches are suitable substrates for machine learning approaches is also promising.</p>
+<p>I <em>do</em> think some of the claims the authors make in the preprint are weakly supported or need to be qualified.
+But hey, it's a preprint! Hopefully the HULK authors get some constructive feedback from multiple sources so that their final paper is that much stronger.
+In the mean time, I'll be watching <a href="https://github.com/will-rowe/hulk">the HULK repo</a> closely.</p>
+<hr>
+<p><sup>‡</sup>I'm not exactly sure why CountMin is not similarity-preserving, and the authors offer no explanation.
+Perhaps it's related to the fact that CountMin retains all data points and MinHash samples a respresentative subset of data points.</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
+	</div>
+		<footer>
+		  <p>
+			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
+		    &copy; 2015-2018 Daniel S. Standage.<br />
+			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
+		  <p></p>
+		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		</footer>
+	  </div>
+
+	</div>
+</body>
+</html>
