@@ -90,124 +90,9 @@ tags: <a href="https://standage.github.io/tag/bash.html">bash</a> <a href="https
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -286,20 +171,12 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -312,39 +189,27 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
   border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
+  div.cell.selected {
     border-color: transparent;
   }
 }
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -540,9 +405,7 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
+  padding: 0.4em;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -552,24 +415,11 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
   border: 0;
   border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
 }
 /*
 
@@ -817,9 +667,6 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
-div.output_area .mglyph > img {
-  max-width: none;
-}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -858,7 +705,7 @@ div.output_area .mglyph > img {
 }
 div.output_area pre {
   margin: 0;
-  padding: 1px 0 1px 0;
+  padding: 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -980,10 +827,6 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
 
 
 
@@ -1000,24 +843,16 @@ div.output_unrecognized a:hover {
 }
 
 
-
-
-
 .rendered_html pre,
-
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
+.rendered_html td,
 
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
+
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -1033,11 +868,6 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
-
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -1088,15 +918,8 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1235,7 +1058,8 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Today I was wondering, given a set of reads and a genome sequence, how I could filter out all of the reads that align to the genome perfectly.
 I'll explore this idea a bit here.
@@ -1253,7 +1077,7 @@ I'm going to use <a href="https://github.com/dib-lab/nullgraph">nullgraph</a> to
 <div class=" highlight hl-bash"><pre><span></span>make-random-genome.py -h
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1263,7 +1087,7 @@ I'm going to use <a href="https://github.com/dib-lab/nullgraph">nullgraph</a> to
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1296,7 +1120,7 @@ optional arguments:
 <span class="k">done</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1306,7 +1130,7 @@ optional arguments:
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1340,7 +1164,7 @@ sys	0m0.143s
 <div class=" highlight hl-bash"><pre><span></span>make-reads.py -h
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1350,7 +1174,7 @@ sys	0m0.143s
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1388,7 +1212,7 @@ optional arguments:
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">time</span> make-reads.py --error-rate <span class="m">0</span>.005 --read-length <span class="m">125</span> --coverage <span class="m">20</span> --seed <span class="m">54321</span> bogus-genome.fa &gt; bogus-reads.fa
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1398,7 +1222,7 @@ optional arguments:
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1422,7 +1246,8 @@ sys	0m0.283s
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ok, so we have 400k reads, 125 bp each and 186,317 of these reads have one or more "mutations" (representing single-nucleotide sequencing errors).</p>
 <h2 id="Take-Un">Take Un<a class="anchor-link" href="#Take-Un">&#182;</a></h2><p>My first thought was to take the "minimum seed length" parameter to the extreme.
@@ -1444,7 +1269,7 @@ The remainder of the reads should be reported as unaligned.</p>
 bwa index bogus-genome.fa
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1454,7 +1279,7 @@ bwa index bogus-genome.fa
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1476,7 +1301,8 @@ bwa index bogus-genome.fa
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I'll pipe the output of <code>bwa</code> directly to <code>samtools</code>.
 The <code>-f 4</code> flag will pull out all reads that are marked as unaligned, and the <code>-c</code> flag will count the records instead of printing them.</p>
@@ -1492,7 +1318,7 @@ The <code>-f 4</code> flag will pull out all reads that are marked as unaligned,
 <div class=" highlight hl-bash"><pre><span></span>bwa mem -k <span class="m">125</span> bogus-genome.fa bogus-reads.fa <span class="p">|</span> samtools view -f <span class="m">4</span> -c
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1502,7 +1328,7 @@ The <code>-f 4</code> flag will pull out all reads that are marked as unaligned,
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1530,7 +1356,8 @@ The <code>-f 4</code> flag will pull out all reads that are marked as unaligned,
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Great, it worked!
 We have 186,317 reads marked as unaligned, which matches the number of reads containing errors from our simulation.</p>
@@ -1550,7 +1377,7 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 <div class=" highlight hl-bash"><pre><span></span>bwa mem -B <span class="m">100</span> -O <span class="o">[</span><span class="m">100</span>,100<span class="o">]</span> -E <span class="o">[</span><span class="m">100</span>,100<span class="o">]</span> bogus-genome.fa bogus-reads.fa <span class="p">|</span> samtools view -f <span class="m">4</span> -c
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1560,7 +1387,7 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1595,7 +1422,7 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 <div class=" highlight hl-bash"><pre><span></span>bwa mem -B <span class="m">1000</span> -O <span class="o">[</span><span class="m">1000</span>,1000<span class="o">]</span> -E <span class="o">[</span><span class="m">1000</span>,1000<span class="o">]</span> bogus-genome.fa bogus-reads.fa <span class="p">|</span> samtools view -f <span class="m">4</span> -c
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1605,7 +1432,7 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1633,7 +1460,8 @@ If I set the minimum seed length to high, some reads will not make the cut simpl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Not sure what's going on here, but clearly it didn't work as intended.</p>
 <h2 id="Take-Trois">Take Trois<a class="anchor-link" href="#Take-Trois">&#182;</a></h2><p>My next thought was to process the alignments "normally" (with default parameters) and examine each alignment's CIGAR string to distinguish perfect matches from imperfect alignments.
@@ -1660,7 +1488,7 @@ Any perfect alignment is going to have an edit distance of 0, while any imperfec
 bwa mem bogus-genome.fa bogus-reads.fa <span class="p">|</span> grep -v <span class="s1">&#39;NM:i:0&#39;</span> <span class="p">|</span> wc -l
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1670,7 +1498,7 @@ bwa mem bogus-genome.fa bogus-reads.fa <span class="p">|</span> grep -v <span cl
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1698,7 +1526,8 @@ bwa mem bogus-genome.fa bogus-reads.fa <span class="p">|</span> grep -v <span cl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Huh, that's close, but not exactly our target.
 We should be seeing 186,317 reads.
@@ -1726,7 +1555,7 @@ cut -f <span class="m">1</span> test-two.sam <span class="p">|</span> sort <span
 comm -23 test-one.txt test-two.txt <span class="p">|</span> gshuf <span class="p">|</span> head -n <span class="m">5</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1736,7 +1565,7 @@ comm -23 test-one.txt test-two.txt <span class="p">|</span> gshuf <span class="p
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1782,7 +1611,8 @@ read306338r
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ok let's take a closer look at a couple of these reads.</p>
 
@@ -1797,7 +1627,7 @@ read306338r
 <div class=" highlight hl-bash"><pre><span></span>grep -A <span class="m">1</span> -e read43849r -e read5193r bogus-reads.fa
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1807,7 +1637,7 @@ read306338r
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1825,7 +1655,8 @@ aaTTCGCGATTCTAAGGCGCGGGGTCACCATTTAATAACCTCGCACTCGGTACTGAAGTAGCGGCCGTTCGTTTGTGGGC
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Interesting.
 Both have a couple of sequencing errors near the end of the read (shown as lowercase symbols).
@@ -1843,7 +1674,7 @@ Now let's take a look at the alignments without any filtering.</p>
 bwa mem bogus-genome.fa bogus-reads.fa <span class="m">2</span>&gt; /dev/null <span class="p">|</span> grep -e read43849r -e read5193r
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1853,7 +1684,7 @@ bwa mem bogus-genome.fa bogus-reads.fa <span class="m">2</span>&gt; /dev/null <s
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1868,7 +1699,8 @@ read43849r	16	bogusgenome	2013629	60	123M2S	*	0	0	TAAAGTTTCGTCTATAAAACGCGCCACGGG
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Ahh, ok.
 As the CIGAR strings show, both of these alignments are soft-clipped at the ends.
@@ -1891,7 +1723,7 @@ The first approach is lazier, but is also more concise and less cryptic to those
 <div class=" highlight hl-bash"><pre><span></span>bwa mem bogus-genome.fa bogus-reads.fa <span class="p">|</span> samtools view <span class="p">|</span> perl -ne <span class="s1">&#39;print if !/\t\d+M\t/ || !/NM:i:0/&#39;</span> <span class="p">|</span> wc -l
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1901,7 +1733,7 @@ The first approach is lazier, but is also more concise and less cryptic to those
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1929,7 +1761,8 @@ The first approach is lazier, but is also more concise and less cryptic to those
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The second approach is more explicit, avoiding any unintended off-target matches for the <code>\d+M</code> regex.
 This comes at the cost of introducing more complexity and verbosity in the Perl code, and honestly I don't know if an off-target match for that regex is even possible for well-formatted SAM alignments.</p>
@@ -1945,7 +1778,7 @@ This comes at the cost of introducing more complexity and verbosity in the Perl 
 <div class=" highlight hl-bash"><pre><span></span>bwa mem bogus-genome.fa bogus-reads.fa <span class="p">|</span> samtools view <span class="p">|</span> perl -ne <span class="s1">&#39;@v = split; print if $v[5] =~ /S/ || !/NM:i:0/&#39;</span> <span class="p">|</span> wc -l
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1955,7 +1788,7 @@ This comes at the cost of introducing more complexity and verbosity in the Perl 
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1983,7 +1816,8 @@ This comes at the cost of introducing more complexity and verbosity in the Perl 
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In any case, both approaches see to work correctly and give us just the reads that do not align perfectly to the reference.</p>
 <h2 id="Fin">Fin<a class="anchor-link" href="#Fin">&#182;</a></h2><p>One thing I haven't considered much here is performance.

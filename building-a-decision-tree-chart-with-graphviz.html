@@ -120,7 +120,7 @@ tags: <a href="https://standage.github.io/tag/visualization.html">visualization<
 
 
 <p>Saved as <code>take1.dot</code> and rendered with the command <code>dot -Tpng -o take1.png take.dot</code>, we get this.</p>
-<p><img alt="Chart, take 1" src="https://standage.github.io/images/take1.png"></p>
+<p><img alt="Chart, take 1" src="https://standage.github.io/images/take1.png" /></p>
 <p>It's not bad for a first pass, but let's adjust the style a bit to distinguish between iLocus designations and branching logic.</p>
 <div class="highlight"><pre><span></span>digraph
 {
@@ -156,7 +156,7 @@ tags: <a href="https://standage.github.io/tag/visualization.html">visualization<
 
 
 <p>That gives us the following.</p>
-<p><img alt="Chart, take 2" src="https://standage.github.io/images/take2.png"></p>
+<p><img alt="Chart, take 2" src="https://standage.github.io/images/take2.png" /></p>
 <p>Now, let's see if we can get the <code>giLocus</code> and <code>piLocus</code> nodes on the same level as in the sketch, using <code>rank=same</code>.</p>
 <div class="highlight"><pre><span></span>digraph
 {
@@ -195,7 +195,7 @@ tags: <a href="https://standage.github.io/tag/visualization.html">visualization<
 
 
 <p>That gives us the following.</p>
-<p><img alt="Chart, take 3" src="https://standage.github.io/images/take3.png"></p>
+<p><img alt="Chart, take 3" src="https://standage.github.io/images/take3.png" /></p>
 <p>Getting there!
 Now, let's use the <code>compass_pt</code> feature to specify which side of the diamonds we want the arrows to come from.</p>
 <div class="highlight"><pre><span></span>digraph
@@ -235,7 +235,7 @@ Now, let's use the <code>compass_pt</code> feature to specify which side of the 
 
 
 <p>We end up with this.</p>
-<p><img alt="Chart, take 4" src="https://standage.github.io/images/take4.png"></p>
+<p><img alt="Chart, take 4" src="https://standage.github.io/images/take4.png" /></p>
 <p>Everything looks good here except for the edges.
 Is there any way we can force straight edges with corners, like in the sketch, rather than the curved edges?
 The <code>splines=ortho</code> setting seems to be designed just for that.
@@ -279,7 +279,7 @@ Let's try it out (also requires setting edge labels to <code>xlabel</code>).</p>
 
 
 <p>Which gives us this.</p>
-<p><img alt="Chart, take 5" src="https://standage.github.io/images/take5.png"></p>
+<p><img alt="Chart, take 5" src="https://standage.github.io/images/take5.png" /></p>
 <p>Whoa, definitely not what I had in mind.
 I haven't been able to figure this last step out.
 If I can't figure out how to force straight edges with corners, then I think I'll have to go with "take 3" above, the last figure before the <code>compass_pt</code> feature was used.</p></div>

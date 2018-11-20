@@ -86,7 +86,7 @@ by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.h
  in <a href="https://standage.github.io/category/blog.html">blog</a>
 tags: <a href="https://standage.github.io/tag/mapping.html">mapping</a> <a href="https://standage.github.io/tag/bam.html">bam</a> </div>
 		<div><p>tl;dr? It's fine, just ignore secondary/supplementary alignments and don't disable reporting of unaligned reads.</p>
-<hr>
+<hr />
 <p>I recently started my first <em>real</em> foray into human genomics, and if I thought I was overwhelmed with data before, I'm much more so now.
 (Thank goodness I'm not <strike>stupid</strike> ambitious enough to work on marine or soil metagenomics!)
 One challenge I've encountered already is that this field seems to be moving toward BAM files<sup>1</sup> for distributing not only read alignments against a reference genome but also the original read sequences themselves.
@@ -271,7 +271,7 @@ diff -q test.fastq.seq.txt test.bt2.seq.txt
 A lot of this is probably very elementary stuff to guys and gals that work with mappers and BAM file internals on a daily basis.
 Even so, I hope I've demonstrated clearly and comprehensively that even if you're interested only in the original read sequence, BAM files are a suitable data format.
 Of course...there are some caveats:</p>
-<p><img alt="Caveats" src="https://standage.github.io/images/genie.gif"></p>
+<p><img alt="Caveats" src="https://standage.github.io/images/genie.gif" /></p>
 <ul>
 <li>Some mappers give you the option to not report unmapped reads.
   Enabling these settings is problematic if the Fastq files are not published alongside the BAM files.</li>
@@ -280,9 +280,9 @@ Of course...there are some caveats:</p>
 </ul>
 <p>Other than that, it looks like you're just fine grabbing the segment sequence from each alignment except those marked as secondary or supplementary.</p>
 <p>But let me open this up: is there anything I've missed, any potential pitfalls that I've overlooked?</p>
-<hr>
+<hr />
 <p>A big thanks to Carrie Ganote, Ali Berens, Titus Brown, and Fereydoun Hormozdiari for discussions on the topic and feedback on a draft of this blog post.</p>
-<hr>
+<hr />
 <p><sup>1</sup>Or, in the longer term, CRAM files, which are different but supposedly backwards compatible with BAM.</p>
 <p><sup>2</sup><a href="http://seqanswers.com/forums/showthread.php?t=7061">This thread</a> on SEQanswers discusses a variety of BAM-to-Fastq converters that exist or have existed.</p>
 <p><sup>3</sup>I haven't discussed pairing information since it's not important for the current analysis I'm doing, but it should also be simple to extract by examining the read ID and bitwise flag(s) related to pairing.

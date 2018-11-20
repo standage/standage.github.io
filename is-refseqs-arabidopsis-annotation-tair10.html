@@ -90,124 +90,9 @@ tags: <a href="https://standage.github.io/tag/bash.html">bash</a> <a href="https
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
+/* CSS font colors for translated ANSI colors. */
 .ansibold {
   font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -286,20 +171,12 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
 }
 div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -312,39 +189,27 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
   border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
 }
 @media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
+  div.cell.selected {
     border-color: transparent;
   }
 }
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -540,9 +405,7 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
+  padding: 0.4em;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -552,24 +415,11 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
   border: 0;
   border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
 }
 /*
 
@@ -817,9 +667,6 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
-div.output_area .mglyph > img {
-  max-width: none;
-}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -858,7 +705,7 @@ div.output_area .mglyph > img {
 }
 div.output_area pre {
   margin: 0;
-  padding: 1px 0 1px 0;
+  padding: 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -980,10 +827,6 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
 
 
 
@@ -1000,24 +843,16 @@ div.output_unrecognized a:hover {
 }
 
 
-
-
-
 .rendered_html pre,
-
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
+.rendered_html td,
 
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
+
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -1033,11 +868,6 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
-
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -1088,15 +918,8 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1235,7 +1058,8 @@ h6:hover .anchor-link {
 .ansi-bold { font-weight: bold; }
 </style>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>On my slate of work this week is a comparison of two versions of the <em>Arabidopsis thaliana</em> genome: the TAIR6 version (2005ish) and the latest TAIR10 version (2010).
 I figure using <a href="https://github.com/standage/genhub">GenHub</a> is the best way to make the process of retrieving and pre-processing the data reproducible.
@@ -1255,7 +1079,8 @@ Using this tool, it should be fairly easy to compare the RefSeq GFF3 with the la
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="TAIR">TAIR<a class="anchor-link" href="#TAIR">&#182;</a></h2><p>First, let's take a look at the latest annotation from TAIR.
 I followed the <code>Download --&gt; FTP Archive</code> link on the <a href="https://www.arabidopsis.org/">TAIR homepage</a> to their FTP site, and poked around until I found the URL of the appropriate GFF3 file.</p>
@@ -1271,7 +1096,7 @@ I followed the <code>Download --&gt; FTP Archive</code> link on the <a href="htt
 <div class=" highlight hl-bash"><pre><span></span>wget ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes.gff
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1281,7 +1106,7 @@ I followed the <code>Download --&gt; FTP Archive</code> link on the <a href="htt
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1309,7 +1134,8 @@ TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The file is uncompressed, so a simple <code>head</code> command will give us a look at the first few lines.</p>
 
@@ -1324,7 +1150,7 @@ TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s
 <div class=" highlight hl-bash"><pre><span></span>head TAIR10_GFF3_genes.gff
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1334,7 +1160,7 @@ TAIR10_GFF3_genes.g 100%[===================&gt;]  42.09M  3.55MB/s    in 14s
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1357,7 +1183,8 @@ Chr1	TAIR10	exon	4486	4605	.	+	.	Parent=AT1G01010.1
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It looks like TAIR doesn't use <code>##sequence-region</code> pragmas or any other metadata, just basic feature entries with 9 tab-delimited values.
 Let's take a look at how the sequences are labeled by cutting out the first column of each entry and then pulling out unique values.</p>
@@ -1373,7 +1200,7 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 <div class=" highlight hl-bash"><pre><span></span>cut -f <span class="m">1</span> TAIR10_GFF3_genes.gff <span class="p">|</span> sort -u
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1383,7 +1210,7 @@ Let's take a look at how the sequences are labeled by cutting out the first colu
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1403,7 +1230,8 @@ ChrM
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I'm not really interested in organellar genomes, and the way they're annotated (especially by NCBI) is often problematic.
 Let's go ahead and remove the chloroplast genome and the mitochondrial genome from the GFF3 file, leaving the 5 chromosomes of the nuclear genome.</p>
@@ -1419,7 +1247,7 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 <div class=" highlight hl-bash"><pre><span></span>grep -v -e <span class="s1">&#39;^ChrM&#39;</span> -e <span class="s1">&#39;^ChrC&#39;</span> TAIR10_GFF3_genes.gff &gt; tair10.gff3
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1429,7 +1257,7 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1442,7 +1270,8 @@ Let's go ahead and remove the chloroplast genome and the mitochondrial genome fr
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="NCBI/RefSeq">NCBI/RefSeq<a class="anchor-link" href="#NCBI/RefSeq">&#182;</a></h2><p>The <a href="ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq">NCBI FTP site</a> is a bit easier to navigate.
 Once you locate the <code>/genomes/refseq/</code> directory, finding the <em>Arabidopsis</em> data is trivial: <code>plant/ --&gt; Arabidopsis_thaliana --&gt; all_assembly_versions</code>.</p>
@@ -1458,7 +1287,7 @@ Once you locate the <code>/genomes/refseq/</code> directory, finding the <em>Ara
 <div class=" highlight hl-bash"><pre><span></span>wget ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/plant/Arabidopsis_thaliana/all_assembly_versions/GCF_000001735.3_TAIR10/GCF_000001735.3_TAIR10_genomic.gff.gz
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1468,7 +1297,7 @@ Once you locate the <code>/genomes/refseq/</code> directory, finding the <em>Ara
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1496,7 +1325,8 @@ GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This file is compressed, so we combine <code>head</code> with <code>gunzip</code> to take a quick peak.</p>
 
@@ -1511,7 +1341,7 @@ GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s
 <div class=" highlight hl-bash"><pre><span></span>gunzip -c GCF_000001735.3_TAIR10_genomic.gff.gz <span class="p">|</span> head
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1521,7 +1351,7 @@ GCF_000001735.3_TAI 100%[===================&gt;]  12.06M  3.56MB/s    in 3.6s
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1544,7 +1374,8 @@ NC_003070.9	RefSeq	mRNA	3631	5899	.	+	.	ID=rna0;Parent=gene0;Dbxref=Genbank:NM_0
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It looks like the RefSeq GFF3 file refers to the chromosome sequences by their accession number rather than the simple <em>Chr1</em>-style labels used by TAIR.
 If we want to compare this data to the TAIR data, we'll need to convert these accession numbers to chromosome numbers.
@@ -1563,7 +1394,7 @@ It looks like <code>region</code> entries with a <code>chromosome</code> attribu
     <span class="p">|</span> grep <span class="s1">&#39;chromosome=&#39;</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1573,7 +1404,7 @@ It looks like <code>region</code> entries with a <code>chromosome</code> attribu
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1591,7 +1422,8 @@ NC_003076.8	RefSeq	region	1	26975502	.	+	.	ID=id164622;Dbxref=taxon:3702;Name=5;
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>I also know (based on personal experience) that trans-spliced genes can cause issues with ParsEval and the GenomeTools  library it links to.
 Let's check whether there are any trans-spliced genes annotated in this file.</p>
@@ -1609,7 +1441,7 @@ Let's check whether there are any trans-spliced genes annotated in this file.</p
     <span class="p">|</span> grep <span class="s1">&#39;trans-splicing&#39;</span>
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1619,7 +1451,7 @@ Let's check whether there are any trans-spliced genes annotated in this file.</p
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1640,7 +1472,8 @@ NC_000932.1	RefSeq	gene	139856	140650	.	+	.	ID=gene33521;Dbxref=GeneID:844801;Na
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are indeed a few.
 So, in addition to converting sequence accession numbers to chromosome numbers, we need to filter out these trans-spliced genes so that they don't cause trouble for our comparison.</p>
@@ -1667,7 +1500,7 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
     &gt; ncbi.gff3
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1677,7 +1510,7 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1690,7 +1523,8 @@ So, in addition to converting sequence accession numbers to chromosome numbers, 
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we should be ready to compare the two annotations using ParsEval.
 Let's use the <code>--summary</code> flag to suppress the locus-level reports and print out only the aggregate report.</p>
@@ -1706,7 +1540,7 @@ Let's use the <code>--summary</code> flag to suppress the locus-level reports an
 <div class=" highlight hl-bash"><pre><span></span>parseval --summary tair10.gff3 ncbi.gff3 <span class="m">2</span>&gt; stderr.txt
 </pre></div>
 
-    </div>
+</div>
 </div>
 </div>
 
@@ -1716,7 +1550,7 @@ Let's use the <code>--summary</code> flag to suppress the locus-level reports an
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+<div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1827,7 +1661,8 @@ Executing command:      parseval --summary tair10.gff3 ncbi.gff3
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Well, other than a couple hundred UTRs that RefSeq appears to have trimmed, the annotations are identical.
 That's good enough for me!
