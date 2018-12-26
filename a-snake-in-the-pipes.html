@@ -23,6 +23,14 @@
 	<link href="https://standage.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Daniel S. Standage RSS Feed" />
 
 
+<script type="text/javascript">
+	var disqus_identifier = "a-snake-in-the-pipes.html";
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'https://standage-github-io.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
 </head>
 <body>
 	<div class="topbar">
@@ -71,22 +79,27 @@
 		</div>
 	  </div>
 	  <div class="content">
-<div class="page-header"><h1>Notebook <small>variant discovery</small></h1></div>
-<p>Psst! I've posted some details about my notebook setup <a href="https://standage.github.io/pages/notebook-setup.html">here</a>.</p>
-
-<div class='article'>
-	<h2><a href="https://standage.github.io/information-content-versus-data-volume-and-k-mer-counting-accuracy.html">Information content versus data volume and <em>k</em>-mer counting accuracy</a></h2>
-	<div class="well small">Permalink: <a class="more" href="https://standage.github.io/information-content-versus-data-volume-and-k-mer-counting-accuracy.html">2017-10-06</a>
+	<div class='article'>
+		<div class="page-header"><h1>A snake in the pipes!</h1></div>
+		<div class="well small">Permalink: <a class="more" href="https://standage.github.io/a-snake-in-the-pipes.html">2018-12-26</a>
 by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.html">Daniel S. Standage </a>
  in <a href="https://standage.github.io/category/blog.html">blog</a>
-tags: <a href="https://standage.github.io/tag/kevlar.html">kevlar</a> <a href="https://standage.github.io/tag/variant-discovery.html">variant discovery</a> <a href="https://standage.github.io/tag/error-correction.html">error correction</a> </div>
-	<div class="summary"><p>Keeping track of <em>k</em>-mers for simple operations has become a fundamental component of many bioinformatics techniques.
-Two common operations on <em>k</em>-mers include set membership queries ("is <em>k</em>-mer <em>X</em> present in data set <em>Y</em>?") and abundance queries ("how many times does <em>k</em>-mer <em>X</em> occur in data set <em>Y</em>").
-Several probabilistic data structures have been developed to support …</p> <a class="btn primary xsmall" href="https://standage.github.io/information-content-versus-data-volume-and-k-mer-counting-accuracy.html">more…</a>
+tags: <a href="https://standage.github.io/tag/snakemake.html">snakemake</a> <a href="https://standage.github.io/tag/pipes.html">pipes</a> <a href="https://standage.github.io/tag/python.html">python</a> </div>
+		<div><p>Recently while consulting the <a href="https://snakemake.readthedocs.io">Snakemake documentation</a> (a common occurrence for me these days) I noticed a <a href="https://snakemake.readthedocs.io/en/v5.4.0/snakefiles/rules.html#piped-output">new feature</a> I had never encountered before.</p>
+<blockquote>
+<p><em>From Snakemake 5.0 on, it is possible to mark output files as pipes, via the <code>pipe</code> flag...If an output file is marked to be a pipe, then Snakemake will first create a <a href="https://en.wikipedia.org/wiki/Named_pipe">named pipe</a> with the given name and then execute the creating job simultaneously with the consuming job...</em></p>
+</blockquote>
+<p>Named pipes are much less commonly used than the pipe (or <code>|</code>) character in UNIX land, but they serve the same purpose: rather than writing the output of one command to the terminal or to file on disk, send it to another command. The difference is that named pipes have a user-specified filename on the file system. But if you have <code>command1</code> printing to a named pipe and <code>command2</code> reading from it, it will act just as if you had executed <code>command1 | command2</code>.</p>
+<p>Since discovering this new feature, I've tried it in a few workflows. It has proven useful in a couple of scenarios.</p>
+<ul>
+<li><strong>Streaming non-<code>stdout</code> output</strong>: Some programs do not provide the option to write output to <code>stdout</code>, which makes it more difficult to execute in a streaming fashion. However, if you mark a rule's output files with <code>pipe</code> and then provide these as input to another rule, the data will be passed from rule to rule via the named pipes and will never touch disk.</li>
+<li><strong>Breaking up complex pipelines</strong>: Snakemake will happily execute shell commands with several subcommands piped together. But when each command has a handful of parameters, configuring this pipeline in a single rule can become cumbersome. I've found in some cases that things are much cleaner and more decipherable when the pipeline is split across multiple rules using <code>pipe</code>'d files as data intermediates.</li>
+</ul>
+<p>What do you use the <code>pipe</code> flag for?</p></div>
+		<div>
+			<h2>Comments</h2>
+<div id="disqus_thread"></div>		<div>
 	</div>
-</div>	
-
-
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />

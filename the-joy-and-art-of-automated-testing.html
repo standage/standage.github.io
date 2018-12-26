@@ -86,14 +86,14 @@ by <a class="url fn" href="https://standage.github.io/author/daniel-s-standage.h
  in <a href="https://standage.github.io/category/blog.html">blog</a>
 tags: <a href="https://standage.github.io/tag/software.html">software</a> <a href="https://standage.github.io/tag/testing.html">testing</a> </div>
 		<div><p><center>
-<img alt="Retro tea cup advert: Serve up your software hot, fresh, and reliable with AUTOMATED TESTING!" src="https://i.imgflip.com/2lbq54.jpg" />
+<img alt="Retro tea cup advert: Serve up your software hot, fresh, and reliable with AUTOMATED TESTING!" src="https://i.imgflip.com/2lbq54.jpg">
 </center></p>
 <p>If you're in the business of writing software, one of your primary concerns is whether your software does its intended job correctly. If, like me, you're in the business of writing software in a research or science context, ensuring the reliability of the software is of <em>critical</em> importance. Peer review of changes or updates to the code, in chunks of manageable size, is one of the best ways to find bugs and improve software quality. But sooner or later, you're going to need to <strong>test</strong> your software.</p>
 <p>The purpose of this post is not to convince you that testing is an important professional obligation. If writing software is your daily bread, then this should already be a given. If, instead, you're a scientist or researcher that finds themself spending an increasing amount of time dabbling in code, think of testing as the positive and negative controls you design to ensure your experimental results are reliable. It's just not something you can compromise on without threatening the integrity of the entire process. (Note: you're likely engaged in some amount of testing already! If you execute code and evaluate its behavior or compare a result against your expectations, that's testing. Good for you!)</p>
 <p>Rather, the purpose of this post is to persuade you that you can and probably should be testing more frequently and more comprehensively, and that automation is your friend. I discuss some of the concepts and strategies that make testing effective and that make it possible to test frequently without becoming overwhelmed. Perhaps, <em>you too</em> may come to more fully appreciate the joy and art of automated testing! :-)</p>
 <h2>What is "correct"?</h2>
 <blockquote>
-<p><em>"Physicists worry about decimal places. Astronomers worry about exponents. Economists are happy if they've got the sign right."</em><br />
+<p><em>"Physicists worry about decimal places. Astronomers worry about exponents. Economists are happy if they've got the sign right."</em><br>
 --Someone wise</p>
 </blockquote>
 <p>The purpose of testing is to verify that your software does its job correctly. Of course, what <em>correct</em> means will depend on the nature of the problems you work on and the types of tests you're writing. If your research focus is incrementally improving solutions to well-understood problems, then there are likely "gold standard" reference data sets that have been studied extensively by your community and where the "answers" are well known. If you're working on poorly understood cutting-edge problems in a novel discipline, you may have to rely more on deriving correct answers from first principles. Most researchers fall somewhere between these two extremes, and you should use your judgement and experience (and suggestions from trusted colleagues, if unsure) to determine what inputs to use for your tests and what results should be declared correct. For some problems an exact answer is required, while in other cases an exact solution is not feasible and an answer within a small numerical range is acceptable. This range defines the tolerance for error (or simply <em>tolerance</em>) of your test.</p>
@@ -109,7 +109,7 @@ tags: <a href="https://standage.github.io/tag/software.html">software</a> <a hre
 <p>Many programming languages have testing frameworks that provide convenient features and eliminate a lot of the pain associated with writing and running tests. I'll discuss these a bit in the <strong>Testing Frameworks</strong> section below.</p>
 <h2>Types of tests</h2>
 <blockquote>
-<p><em>"Computers are useless. They can only give you answers."</em><br />
+<p><em>"Computers are useless. They can only give you answers."</em><br>
 --Pablo Picasso</p>
 </blockquote>
 <p>There are a few different testing strategies you can use to evaluate different aspects of your software. These are not competitive or exclusive: sometimes a test doesn't fit cleanly into just one of these categories, and you'll want to use a combination of these approaches in your test suite.</p>
@@ -142,7 +142,7 @@ tags: <a href="https://standage.github.io/tag/software.html">software</a> <a hre
 <p>If these concepts seem new and overwhelming, don't be intimidated. Start with small tests to understand the mechanics of your chosen framework, and then escalate gradually to more complex tests as you gain experience and confidence.</p>
 <h2>Test coverage</h2>
 <blockquote>
-<p><em>QA Engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard. Orders -1 beers. Orders a sfdeljknesv.</em><br />
+<p><em>QA Engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 999999999 beers. Orders a lizard. Orders -1 beers. Orders a sfdeljknesv.</em><br>
 -- Bill Sempf (<a href="https://twitter.com/sempf/status/514473420277694465">@sempf</a>)</p>
 </blockquote>
 <p>Many testing frameworks can report <em>test coverage</em>, or the precise lines of code that are (and are not) invoked during test execution. This valuable information will help you identify potentially risky regions of your codebase. If a line of code is never run during test execution, you can't really be confident it works correctly. In fact, you can't even be sure it won't cause a runtime error and halt program execution right away. The higher your test coverage, the more confidence you can have that your software is going to 1) run; and 2) do its job correctly. If there are large blocks of important code that have no test coverage, you should consider writing tests that will invoke these lines of code.</p>
@@ -152,7 +152,7 @@ tags: <a href="https://standage.github.io/tag/software.html">software</a> <a hre
 <p><strong>ANOTHER NOTE</strong>: If you're feeling particularly adventurous, property-based testing strategies provide an effective means to address software quality in a fairly rigorous way without resorting to formal engineering methods. The idea is that you write a test not knowing what the input data will be, instead testing that the output has certain properties that should be true <em>in every case</em> (i.e. a numerical operation should be commutative, or the number of distinct outputs depends on an easily computed characteristic of the input). You then invoke the test with a large number of (possibly randomly generated) inputs and see whether the code you're testing works correctly on each input—see the joke above about the QA engineer. To the extent you use property-based testing in your test suite, your test coverage will be a much better reflection of the true accuracy of your software. To learn more, do a Google search for "property based testing python", replacing "python" with your favorite language, of course!</p>
 <h2>Test-driven development</h2>
 <blockquote>
-<p><em>"Technology is a word that describes something that doesn't work yet."</em><br />
+<p><em>"Technology is a word that describes something that doesn't work yet."</em><br>
 --Douglas Adams</p>
 </blockquote>
 <p>The idea behind <em>test-driven development (TDD)</em> is to write tests that don't pass or even run initially because the code they are intended to test doesn't exist yet. This might seem like a backwards approach to writing software, but TDD advocates claim it is a more responsible strategy. They claim it forces you to formulate the correctness tests <em>a priori</em>, and thus help avoid confirmation bias. They also claim that it forces you spend more time upfront considering how code will be structured and how data will be passed around, since tests cannot be written without these considerations.</p>
@@ -163,7 +163,7 @@ tags: <a href="https://standage.github.io/tag/software.html">software</a> <a hre
 <p>If you're lucky enough to have colleagues or collaborators contributing to your software, you've probably established some kind of protocol for peer review of code, even if it's informal and <em>ad hoc</em>. Code review is big and important topic and out of scope for this post, so I'll just briefly mention that CI can be an extremely valuable asset in the code review process. The Github "pull request" mechanism allows you to review any proposed changes to your code before you finalize them, and will also trigger a CI build. In addition to your typical review process, you should require at a minimum that all tests pass before you accept any proposed changes.</p>
 <h2>Compromise</h2>
 <blockquote>
-<p><em>"Given the pace of technology, I propose we leave math to the machines and go play outside."</em><br />
+<p><em>"Given the pace of technology, I propose we leave math to the machines and go play outside."</em><br>
 --Bill Watterson (Calvin from <em>Calvin and Hobbes</em>)</p>
 </blockquote>
 <p>As a concluding thought, I'll just re-emphasize the sentiment that we write software <em>to solve problems</em> and <em>to more clearly understand the world</em>. Within any project, some of the code you write is directly related to the software's purpose, while much of the rest is involved in sundry routine and uninteresting operations: opening files, reading data into memory, parsing arguments or config files, and so on. I'm not going to say that these other bits of code are unimportant, but if one is not careful it's possible to spend an inordinate amount of time applying and re-applying all kinds of software engineering best practices to portions of the code that, at the end of the day, contribute very little to science. When time and resources and experience are limited, it's important that we focus our energy on the most important priorities.</p>
