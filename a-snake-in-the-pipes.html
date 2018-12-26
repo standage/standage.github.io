@@ -93,7 +93,7 @@ tags: <a href="https://standage.github.io/tag/snakemake.html">snakemake</a> <a h
 <p>Since discovering this new feature, I've tried it in a few workflows. It has proven useful in a couple of scenarios.</p>
 <ul>
 <li><strong>Streaming non-<code>stdout</code> output</strong>: Some programs do not provide the option to write output to <code>stdout</code>, which makes it more difficult to execute in a streaming fashion. However, if you mark a rule's output files with <code>pipe</code> and then provide these as input to another rule, the data will be passed from rule to rule via the named pipes and will never touch disk.</li>
-<li><strong>Breaking up complex pipelines</strong>: Snakemake will happily execute shell commands with several subcommands piped together. But when each command has a handful of parameters, configuring this pipeline in a single rule can become cumbersome. I've found in some cases that things are much cleaner and more decipherable when the pipeline is split across multiple rules using <code>pipe</code>'d files as data intermediates.</li>
+<li><strong>Breaking up complex pipelines</strong>: Snakemake will happily execute shell commands with several subcommands piped together. But when each command has a handful of parameters, configuring this pipeline in a single rule can become cumbersome. I've found in some cases that things are much cleaner and more decipherable when the pipeline is split across multiple rules using <code>pipe</code>'d files as data intermediates. I've successfully connected 3 commands using pipe intermediates, so presumable there should be no issues in piping together any arbitrary number of rules with this mechanism.</li>
 </ul>
 <p>What do you use the <code>pipe</code> flag for?</p></div>
 		<div>
