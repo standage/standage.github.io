@@ -170,7 +170,7 @@ I concluded that the only way to ease my unsettled mind was to do a test where I
 </ul>
 <p>I decided to test both BWA and Bowtie2 with default settings, figuring that &gt;95% of human genome stuff is going to involve data mapped by of these two tools.</p>
 <div class="highlight"><pre><span></span>bwa index hg.fasta
-bwa mem -t 4 hg.fasta reads-subset.fastq | samtools view b -o test.bwa.bam
+bwa mem -t 4 hg.fasta reads-subset.fastq | samtools view -b -o test.bwa.bam
 
 bowtie2-build hg.fasta hg.fasta.bt2
 bowtie2 -p 4 -x hg.fasta.bt2 -U reads-subset.fastq | samtools view -b -o test.bt2.bam
@@ -180,11 +180,11 @@ bowtie2 -p 4 -x hg.fasta.bt2 -U reads-subset.fastq | samtools view -b -o test.bt
 <p>Now let's extract all of the sequences corresponding to primary alignments—not marked as secondary (256 or 0x100) or supplementary (2048 or 0x800)—from each BAM file.
 If we sort the sequences, they should be identical right?</p>
 <div class="highlight"><pre><span></span># 2048 + 256 = 2304
-samtools -F 2304 test.bwa.bam \
+samtools view -F 2304 test.bwa.bam \
     | cut -f 10 \
     | sort \
     &gt; test.bwa.seq.txt
-samtools -F 2304 test.bt2.bam \
+samtools view -F 2304 test.bt2.bam \
     | cut -f 10 \
     | sort \
     &gt; test.bt2.seq.txt
@@ -238,12 +238,12 @@ To this end, I wrote a simple C++ program that would print out each sequence it 
 <p>We can now use this to confirm that the ≈16% of sequences that don't match between BWA and Bowtie are simply reverse complements of each other.
 If we compile this program and re-run the pipeline with it included, we should get identical output.</p>
 <div class="highlight"><pre><span></span>g++ -Wall -O3 --std=c++11 -o rc rc.cpp
-samtools -F 2304 test.bwa.bam \
+samtools view -F 2304 test.bwa.bam \
     | cut -f 10 \
     | ./rc \
     | sort \
     &gt; test.bwa.seq.txt
-samtools -F 2304 test.bt2.bam \
+samtools view -F 2304 test.bt2.bam \
     | cut -f 10 \
     | ./rc \
     | sort \
