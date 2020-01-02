@@ -111,6 +111,19 @@ These same skills will also come in handy if you ever want to contribute to an o
 In short: it doesn't take much extra time, especially once you've made a habit of using skills that will serve you well in a variety of contexts in the future.
 
 
+## But won't I get scooped?
+
+Statistically, the likelihood that your software will go largely unrecognized is much higher than the likelihood that someone will follow your GitHub repo closely, steal your ideas, and publish a paper describing your work before you can.
+I certainly think that, as a general rule, scientists are best served by developing software in the open from the start.
+
+But if you think you have valid concerns about making your software public at first, GitHub allows you to keep your repository private.
+You can use all of the strategies discussed here, and for private repos visibility will be limited to you and those you specifically choose (if any).
+Then, when you are ready to share your software more broadly, you can mark the repo as public.
+
+If you publish a paper describing or referencing the software, you should definitely make the repo public by manuscript submission time at the latest.
+Links to a private repository do not allow anonymous peer review, and "software available upon request" statements are completely inappropriate.
+
+
 ## Recommendations
 
 To summarize, let me just clarify and reiterate a few recommendations for solo software development projects.
