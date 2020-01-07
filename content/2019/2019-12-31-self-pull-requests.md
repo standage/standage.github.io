@@ -2,8 +2,8 @@ Title: Developer, pull request thyself
 Date: 2019-12-31
 Author: Daniel S. Standage
 Category: blog
-Status: draft
 Tags: software; social
+Summary: I contend that you should be treating your solo software projects like a collaborative project and using pull requests, an issue tracker, and other social development tools.
 
 **TL;DR** I contend that you should be treating your solo software projects like a collaborative project and using pull requests, an issue tracker, and other social development tools.
 
