@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel S. Standage - blog</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2018-12-26T00:00:00-05:00</updated><entry><title>A snake in the pipes!</title><link href="https://standage.github.io/a-snake-in-the-pipes.html" rel="alternate"></link><published>2018-12-26T00:00:00-05:00</published><updated>2018-12-26T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2018-12-26:/a-snake-in-the-pipes.html</id><summary type="html">&lt;p&gt;A few comments on the new "pipe" output flag in Snakemake.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently while consulting the &lt;a href="https://snakemake.readthedocs.io"&gt;Snakemake documentation&lt;/a&gt; (a common occurrence for me these days) I noticed a &lt;a href="https://snakemake.readthedocs.io/en/v5.4.0/snakefiles/rules.html#piped-output"&gt;new feature&lt;/a&gt; I had never encountered before.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Daniel S. Standage - blog</title><link href="https://standage.github.io/" rel="alternate"></link><link href="https://standage.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://standage.github.io/</id><updated>2019-12-31T00:00:00-05:00</updated><entry><title>Developer, pull request thyself</title><link href="https://standage.github.io/developer-pull-request-thyself.html" rel="alternate"></link><published>2019-12-31T00:00:00-05:00</published><updated>2019-12-31T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2019-12-31:/developer-pull-request-thyself.html</id><summary type="html">&lt;p&gt;I contend that you should be treating your solo software projects like a collaborative project and using pull requests, an issue tracker, and other social development tools.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; I contend that you should be treating your solo software projects like a collaborative project and using pull requests, an issue tracker, and other social development tools.&lt;/p&gt;
+&lt;h2&gt;Preamble&lt;/h2&gt;
+&lt;p&gt;I'm a huge fan of using &lt;a href="https://git-scm.com/"&gt;Git&lt;/a&gt; to maintain a versioned history of my software and research projects.
+As an undergraduate I flirted briefly with &lt;a href="https://subversion.apache.org/"&gt;Subversion&lt;/a&gt;, but by the time I was taking version control seriously as a first-year grad student this new upstart company &lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt; was driving rapid adoption of Git across the tech and science industries.
+To anyone who has gotten into software more recently, it's difficult to effectively communicate the impact Git and GitHub have had on the practice of software development.
+Leveraging Git's distributed design, GitHub provides a variety of collaborative development tools:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;one-click "forking" to create your own personal copy of any public project,  over which you have full control&lt;/li&gt;
+&lt;li&gt;"pull requests" for submitting proposed changes from your personal fork back to the original repository (for example, to fix a bug or add a new feature); alternatively, for repositories to which you have write access, you can make a pull request to merge a feature branch into the main "master" branch&lt;/li&gt;
+&lt;li&gt;an integrated issue tracker that scans commit messages and to link issue threads to relevant commits and automagically close issues once they're resolved&lt;/li&gt;
+&lt;li&gt;various other project management features like &lt;a href="https://help.github.com/en/github/managing-your-work-on-github/about-project-boards"&gt;project boards&lt;/a&gt; and &lt;a href="https://github.com/features/actions"&gt;continuous integration&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The creators of Git and GitHub didn't invent any of these terms/concepts/strategies, but they deserve a lot of credit for creating an intuitive system that propelled their nearly universal adoption into the programmer's lexicon and daily practice.&lt;/p&gt;
+&lt;p&gt;My own habits with respect to Git and GitHub have evolved in the last ~10 years.
+This is due to a few factors: I was entirely self-taught at first; I gained experience over time contributing to a variety of open source software projects; and I began noticing and using some more recently introduced features of the GitHub platform itself.
+In general, I don't claim any special expertise or profound insights into the &lt;em&gt;way of Git&lt;/em&gt;.
+But there is one way I use GitHub that seems uncommon, and that is &lt;strong&gt;to make full use of its collaborative and social tools on projects to which I am the sole contributor&lt;/strong&gt;.
+In other words, &lt;strong&gt;I collaborate with myself on solo projects&lt;/strong&gt;.
+I contend that GitHub's collaborative development features are underused in solo software development projects, and that these projects have a lot to gain by adopting them.&lt;/p&gt;
+&lt;h2&gt;Basically, an electronic lab notebook for software&lt;/h2&gt;
+&lt;p&gt;My impression is that software developers don't generally make an active choice &lt;em&gt;not&lt;/em&gt; to use GitHub's collaborative tools for solo projects.
+Rather, these tools are always taught and discussed in the context of communicating with others to coordinate updates to some central code base.
+For projects with only a single contributor there's nobody else to coordinate or communicate with, so most folks will default to the simplest strategy and just commit &amp;amp; push directly to the master branch.
+If someone is particularly careful or responsible, they might use branches to isolate new features or bug fixes from the master branch until they have been well tested.
+But even then, merging a feature branch to master locally and then pushing directly to master on Github seems to be the common practice for solo projects.&lt;/p&gt;
+&lt;p&gt;But let's consider for a moment what benefits GitHub's collaborative tools provide.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the ideal scenario, the need for each change (bug fix, refactoring, new feature, etc.) will first be described in a dedicated thread using the project's issue tracker.
+This thread creates a dedicated space for project contributors to discuss the merits of different potential solutions.
+If there is general consensus, somebody can make the proposed changes on a fork or branch and submit those changes as a pull request (PR).
+The main text of the PR refers to the problem described in the issue thread (GitHub automatically detects this and adds hyperlinks to each thread), and describes how the proposed changes were made and/or how they will affect the software's behavior.
+If there is &lt;em&gt;not&lt;/em&gt; consensus, alternative solutions can be implemented, described, and submitted for consideration simultaneously in separate PRs.
+The discussion will continue as long as needed on the issue thread and any associated PR threads.
+This sometimes requires back-and-forth communication with a PR contributor and the collaborators reviewing the PR, and multiple updates to a PR before it is approved (or rejected).
+Once a PR is approved and merged into the master branch, the issue thread and PR threads are put into a "closed" or "resolved" state, but they remain a permanent searchable part of the GitHub repo.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So what benefits do GitHub's collaborative tools provide?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;They document changes to the project.&lt;/strong&gt; In all areas, but especially in science, it's important to know how a software package's implementation and behavior have evolved over time. Keeping a change log is a common way this is done, but change logs are a very concise and limited summary of the changes. GitHub's issue threads and PRs capture the much richer context around each change—what motivated it, what solutions were considered, and how the solution was implemented. Even after the relevant threads are closed, they remain a browsable and searchable part of the repo's permanent record, available for future reference to anyone with interest and access.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;They force the developers to reflect on proposed changes in the context of the project's status and trajectory.&lt;/strong&gt; If a contributor can't clearly describe a bug or the need for a new feature, it's unlikely they will be able to convince their collaborators to approve a set of proposed changes to the software. Communicating clearly about issues and proposed solutions requires contributors to think holistically about the project, which goes a long way to preventing half-baked ill-advised changes to the code that end up creating more problems down the road than they solve.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;They foster transparency in the development process.&lt;/strong&gt; When all updates to the software are submitted as PRs, and when each PR refers to a specific problem described in sufficient detail, and when each PR must be reviewed before it is approved and merged, there are multiple layers of defense against a single contributor making unilateral changes without consulting collaborators.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I don't think I have to work hard to convince anybody that these benefits are just as important for solo projects as they are for collaborative projects.
+It's common for scientists to work on multiple projects at a time, and for each project to span months or years.
+A scientist displays a lot of hubris when they claim that they can responsibly stay on top of this without &lt;strong&gt;documenting changes&lt;/strong&gt;, &lt;strong&gt;reflecting on proposed changes in the context of the project's status and trajectory&lt;/strong&gt;, and &lt;strong&gt;fostering transparency in their development process&lt;/strong&gt;.
+Many colleagues and acquaintances can relate when I share my frustration that I routinely struggle to understand code I wrote 2 months ago.
+So if you ever plan on using your software on a continuous basis, or using it again some time in the near future, or reusing portions of it later for a new project, or, you know, re-analyzing your data when the reviewers raise concerns about the Methods section of your research manuscript, it's important to have something to fall back on.&lt;/p&gt;
+&lt;p&gt;For scientists working in a lab, keeping a detailed lab notebook is a professional (and, depending on the field, sometimes a legal) obligation.
+But for some reason, this doesn't often get translated into the realm of scientific software.
+I suggest that using GitHub's collaborative features as described above is a great way to maintain an electronic lab notebook for a software project, even if you are the only contributor.&lt;/p&gt;
+&lt;h2&gt;How about some examples?&lt;/h2&gt;
+&lt;p&gt;Here are a few examples from solo projects I've worked on recently.
+In each case, a dedicated issue thread was created to describe a bug or new feature, and later a PR to resolve that issue was submitted, reviewed (by myself!), and merged.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Example 1: &lt;a href="https://github.com/kevlar-dev/kevlar/issues/360"&gt;issue&lt;/a&gt; and &lt;a href="https://github.com/kevlar-dev/kevlar/pull/361"&gt;PR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Example 2: &lt;a href="https://github.com/bioforensics/MicroHapDB/issues/43"&gt;issue&lt;/a&gt; and &lt;a href="https://github.com/bioforensics/MicroHapDB/pull/46"&gt;PR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Example 3: &lt;a href="https://github.com/bioforensics/MicroHapulator/issues/52"&gt;issue&lt;/a&gt; and &lt;a href="https://github.com/bioforensics/MicroHapulator/pull/53"&gt;PR&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Occasionally I'll notice a bug, begin investigating it, and start implementing a fix before documenting the bug in a dedicated issue thread.
+In these cases, I'll just provide a description of the bug in the main PR text.
+Here's &lt;a href="https://github.com/bioforensics/MicroHapulator/pull/70"&gt;an example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Make it collaborative!&lt;/h2&gt;
+&lt;p&gt;For solo projects where you're the only one doing the coding, it's still likely that your project is influenced directly or indirectly by interactions with your colleagues, advisors, and/or trainees.
+Very little scientific work is done in total isolation.&lt;/p&gt;
+&lt;p&gt;So if you're using GitHub's issue tracker to describe bugs to be fixed and features to be implemented, and if you're using pull requests (PRs) to describe and evaluate updates to the code, it's very easy to turn your solo project into a collaborative project!
+Here are a few ideas about how you might do that.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You've created a new branch in your git repo to implement and test a new feature for your software. You've submitted a PR to merge this branch into the master branch. &lt;strong&gt;Send a link to this PR to your collaborator and ask if she has any feedback on your proposed changes.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;You recently noticed a bug in your software's behavior. You briefly described the bug in a new thread in the issue tracker, but you haven't had time to go back and fix it yet. &lt;strong&gt;Send a link to the bug report to your rotation student, give him access to your repo, and invite him to create a new branch to fix the bug and then submit changes as a pull request.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;In your last meeting with your advisor, she expressed concerns with some details of your software's core algorithm. &lt;strong&gt;Take time to consider her concerns, write them down in a new issue thread, and then send her a link to the thread and ask if you've understood her concerns correctly.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Is it worth it?&lt;/h2&gt;
+&lt;p&gt;Scientific software comes in many shapes and sizes.
+You might implement software as a proof-of-concept, tailored for a specific task unique to a study you're conducting.
+Alternatively, you might write a program that implements a method that you think would be useful to numerous scientists in a variety of similarly designed studies.
+Or perhaps you implement your software as a library, intended to help other scientists write their own scripts and programs for simulating and analyzing data.&lt;/p&gt;
+&lt;p&gt;If your aspiration is for your solo software project to become widely used, then treating it like it's already a collaborative project is a no-brainer.
+(Whether it is &lt;em&gt;actually&lt;/em&gt; widely used depends on a variety of factors, some beyond your control: how easy it is to install; how helpful the documentation is; the journal(s) in which you've published papers describing it, and the results/findings described in those papers; who notices, uses, and cites it, or discusses it on social media.)&lt;/p&gt;
+&lt;p&gt;But even if you &lt;em&gt;don't&lt;/em&gt; aspire for a particular solo software project to become widely used, I still propose that it is worth your time to treat it as a collaborative project.
+There are a few good reasons for this.
+While it may require a bit of time and deliberate effort at first, this time and effort will decrease as it becomes a habit.
+And becoming comfortable with Git and GitHub's collaborative features will make it much easier for current or future projects that you &lt;em&gt;do&lt;/em&gt; hope will be widely used and recognized.
+These same skills will also come in handy if you ever want to contribute to an open source software project, science related or not.&lt;/p&gt;
+&lt;p&gt;In short: it doesn't take much extra time, especially once you've made a habit of using skills that will serve you well in a variety of contexts in the future.&lt;/p&gt;
+&lt;h2&gt;But won't I get scooped?&lt;/h2&gt;
+&lt;p&gt;Statistically, the likelihood that your software will go largely unrecognized is much higher than the likelihood that someone will follow your GitHub repo closely, steal your ideas, and publish a paper describing your work before you can.
+I certainly think that, as a general rule, scientists are best served by developing software in the open from the start.&lt;/p&gt;
+&lt;p&gt;But if you think you have valid concerns about making your software public at first, GitHub allows you to keep your repository private.
+You can use all of the strategies discussed here, and for private repos visibility will be limited to you and those you specifically choose (if any).
+Then, when you are ready to share your software more broadly, you can mark the repo as public.&lt;/p&gt;
+&lt;p&gt;If you publish a paper describing or referencing the software, you should definitely make the repo public by manuscript submission time at the latest.
+Links to a private repository do not allow anonymous peer review, and "software available upon request" statements are completely inappropriate.&lt;/p&gt;
+&lt;h2&gt;Recommendations&lt;/h2&gt;
+&lt;p&gt;To summarize, let me just clarify and reiterate a few recommendations for solo software development projects.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Use GitHub's issue tracker liberally.&lt;/strong&gt; Describe bugs to be fixed, features to be implemented, questions to ponder, and so on. You don't have to be verbose, just make sure that what you've written is clear.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Don't push changes directly to the master branch.&lt;/strong&gt; You can even have GitHub prevent you from doing this with your repository's &lt;a href="https://help.github.com/en/github/administering-a-repository/configuring-protected-branches"&gt;Branch Protection Rules&lt;/a&gt;. Instead, whenever you need to make an update, create a new branch, commit changes to that branch, push the branch to your GitHub repo, and submit the changes as a pull request (PR).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Review your own PRs before you merge them.&lt;/strong&gt; The PR thread has a "diff" view that displays the differences between your new branch and the master branch. Examine these differences carefully. Did any changes sneak through that shouldn't have been included? Did you forget to remove temporary &lt;code&gt;print&lt;/code&gt;, &lt;code&gt;assert&lt;/code&gt;, or other debugging statements? GitHub PRs also allow you to &lt;a href="https://stackoverflow.com/a/58190804/459780"&gt;select several lines of code in the diff and comment on those lines&lt;/a&gt;. Use these to:&lt;ul&gt;
+&lt;li&gt;highlight the most important changes in a PR; i.e. "&lt;em&gt;this change fixes the integer underflow bug&lt;/em&gt;"&lt;/li&gt;
+&lt;li&gt;mark problems to be resolved; i.e. "&lt;em&gt;whoops, this needs to be fixed before the PR is merged&lt;/em&gt;")&lt;/li&gt;
+&lt;li&gt;call out particularly messy or complicated code blocks; i.e., "&lt;em&gt;this works for now, but I should probably go back and clean this up when I have time&lt;/em&gt;"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compile an automated test suite.&lt;/strong&gt; I've &lt;a href="https://standage.github.io/the-joy-and-art-of-automated-testing.html"&gt;written previously about my strong opinions on testing scientific software&lt;/a&gt;. All the better if you can configure GitHub to run the automated test suite for you each time you create or update a PR. You can even configure GitHub to prevent PRs from being merged until the test suite passes—I highly recommend!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Try to find ways to involve others in your project.&lt;/strong&gt; Trainees, advisors, colleagues, and even acquaintances are often willing to respond favorably to a considerate and clearly communicated request to provide feedback, perform a brief review, or a collaborate on a software development task.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Postscript&lt;/h2&gt;
+&lt;p&gt;I've focused my discussion here entirely on GitHub, since it is by far the most popular platform for open source software and scientific software.
+Alternatives exist however, such as GitLab and BitBucket.
+All of the strategies discussed here should work regardless of what platform you're using.
+In some cases, the terminology may be slightly different.
+For example, GitLab uses the term &lt;strong&gt;merge request&lt;/strong&gt; instead of &lt;strong&gt;pull request&lt;/strong&gt;.&lt;/p&gt;</content><category term="software"></category><category term="social"></category></entry><entry><title>A snake in the pipes!</title><link href="https://standage.github.io/a-snake-in-the-pipes.html" rel="alternate"></link><published>2018-12-26T00:00:00-05:00</published><updated>2018-12-26T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2018-12-26:/a-snake-in-the-pipes.html</id><summary type="html">&lt;p&gt;A few comments on the new "pipe" output flag in Snakemake.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently while consulting the &lt;a href="https://snakemake.readthedocs.io"&gt;Snakemake documentation&lt;/a&gt; (a common occurrence for me these days) I noticed a &lt;a href="https://snakemake.readthedocs.io/en/v5.4.0/snakefiles/rules.html#piped-output"&gt;new feature&lt;/a&gt; I had never encountered before.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;From Snakemake 5.0 on, it is possible to mark output files as pipes, via the &lt;code&gt;pipe&lt;/code&gt; flag...If an output file is marked to be a pipe, then Snakemake will first create a &lt;a href="https://en.wikipedia.org/wiki/Named_pipe"&gt;named pipe&lt;/a&gt; with the given name and then execute the creating job simultaneously with the consuming job...&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
