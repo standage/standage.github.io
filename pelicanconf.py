@@ -34,9 +34,9 @@ INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'
 
 # Settings for left side well
-ADDRESS = ('Principal Investigator,',
+ADDRESS = ('Principal Investigator',
            'Bioinformatics',
-           'NBACC')
+           'National Bioforensic Analysis Center (NBFAC)')
 
 # Affiliations (replaced "Blogroll" in theme)
 LINKS = (('Lab for Data Intensive Biology', 'http://ivory.idyll.org/lab/'),
