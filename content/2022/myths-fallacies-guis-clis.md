@@ -1,0 +1,73 @@
+Title: Myths and Fallacies: GUIs versus CLIs in Bioinformatics
+Date: 2022-09-09
+Author: Daniel S. Standage
+Category: blog
+Tags: software; cli; gui
+
+
+Bioinformatics Twitter is having...*a moment*. What began as [one man's exasperated rant](https://twitter.com/patrick_diep/status/1566291960528257025) against poorly documented and distributed code has bloomed into a [protracted debate](https://twitter.com/kenbwork/status/1566880524924174336) about [what](https://twitter.com/strnr/status/1567852597150683137) constitutes ["good" bioinformatics software](https://twitter.com/jomarnz/status/1567440848211611649) and [which kind(s) of interfaces](https://twitter.com/nilshomer/status/1566894494485733376) developers should be expected to provide if they ["really" want people to use their software](https://twitter.com/Psy_Fer_/status/1566620932701310976). For those that have been around a while, this dialogue has a familiar tenor. I don't remember ever seeing a big controversy *specifically about GUIs versus CLIs*, but the dynamics on either side of the debate seem to play out again and again. Barring significant structural changes, we should expect to repeat variations of this argument with each new generation.
+
+Since before the term "bioinformatics" was in common use, developers of bioinformatics software have become accustomed to having their contributions trivialized ("they're just glorified techs; we at the bench are the *real* scientists") and their expertise exoticized ("they're geniuses, wizards, masters of the arcane; I could *never* learn that"). These attitudes are frankly insulting, both to bioinformaticians and to bench scientists.
+
+It is true---to an extent, when requirements are well understood and clearly articulated---that implementing bioinformatics software can be primarily a technical exercise (although the tendency to use "technical" as the opposite of "intellectual" is also mildly insulting). But the same can be said of bench work: when protocols are well established and the study system well understood, lab work is "just technical." The important intellectual component of bench work comes in the design and interpretation of experiments. The parallel in bioinformatics is the development of models and the design of software components and notation to guide implementation and build intuition, and the structuring and formatting of outputs to facilitate interpretation. Of course, when studying any sufficiently interesting or novel question, software requirements will be poorly understood at the onset and elastic throughout development. Crafting accurate and stable software under such conditions requires considerable training, experience, agility, and creativity. Insinuating that if bioinformaticians *really* cared they would provide a "simple" GUI is a fallacy that perpetuates a dismissive attitude toward the work that goes into bioinformatics software engineering.
+
+It's almost more uncomfortable when a biologist with a bench background introduces me to their friends as "a bioinformatician" with raised eyebrows and knowing glances, as if I'm an acolyte of some forbidden mystic art. Bench biologists routinely bring extensive domain expertise and technical competence to bear in the laboratory, interfacing with complex instrumentation and equipment to perform tasks of no small complexity. No bench scientist expects that they should be able to proficiently perform a sophisticated multi-stage lab procedure and interpret the outcome without a fair amount of time spent in reading, preparation, and trial & error. So it's a wonder that anyone regards bench scientists as incapable of using bioinformatics software for which menus, tabs, buttons, and drop-downs have not been provided. Nobody should pretend that this isn't condescending.
+
+Both sides of the ongoing debate can probably agree on the sad state of bioinformatics software, too much of which is poorly documented, not very portable, difficult to install, and unreliable. The disagreement lies, at least partially, in the role that GUIs can or should play in addressing this issue, and how the attitudes described above are reflected, implicitly and unwittingly, in the debate. With all that as context, I want to respond to a handful of common myths and fallacies about bioinformatics software, GUIs, CLIs, and related topics that have featured in the ongoing debate. (And just in case any reader is unfamiliar, a GUI is a graphical user interface, and a CLI is a purely textual command line interface.)
+
+GUIs are better than CLIs because they are visually self-documenting.
+---------------------------------------------------------------------
+
+It's true that, out of necessity, GUIs use menus and other visual elements to disclose all supported operations and configurable settings for the underlying software. Any operation or setting that's not visible to the user may as well not exist.
+
+But ideally, CLIs operate under the same principle. Printing a "usage statement" describing all available operations and settings when a command is run without arguments, or with a `-h` or `--help` argument, is widely adopted in scientific software. Alternatively, a user manual, in the form of a document (in Markdown, Word, PDF, or HTML format), is sometimes provided instead of or in addition to the usage statement.
+
+Did the programmer forget to document or expose an important parameter or setting? Sure, that can happen, but I don't see any reason to suspect this is an inherent problem for CLIs and not for GUIs.
+
+Did the programmer fail to provide a clear usage statement or user manual? This one really is frustrating, but it may be more related to a lack of experience and unfamiliarity with conventions than to an unwillingness to provide an easy-to-use interface: more on that below.
+
+Bioinformatics programmers that *really* care provide at least a simple GUI for their tool.
+-------------------------------------------------------------------------------------------
+
+This sentiment is predicated, at least in part, on the assumption that adding a GUI to a bioinformatics software tool requires only marginal additional skill and effort. I dispute that fallacy a few paragraphs below.
+
+Here, I'll just add that using command line software requires a few very basic skills that turn out to be quite portable and genuinely useful for understanding data analysis more broadly.
+
+We can hide the complexity of a bioinformatics workflow from bench scientists by providing a simple point-and-click GUI.
+------------------------------------------------------------------------------------------------------------------------
+
+For any bioinformatics workflow, the user needs to specify inputs and configure relevant parameters and settings. Any sufficiently advanced workflow is likely to have numerous parameters and settings. For many of these, the author of the workflow can select a reasonable default value, which relieves the user of the tedious task of explicitly specifying every single value each time the software is run.
+
+But provision of default values does not free the user from the responsibility of understanding which parameters values are appropriate for a given input data set and what the impact of various settings might be. This has very little to do with the interface and much more to do with good documentation and responsible testing. As a hypothetical example, clicking the "Fast" radio button under the "Mode" menu on a GUI frankly isn't very different from typing `--mode=fast` in a terminal window. What's more important is whether you as a user understand the tradeoffs between speed and accuracy that the various modes provide. Nobody can do that kind of thinking for you, and to the extent that GUIs are used to side-step that thinking, they are a hindrance rather than a help.
+
+It's not that much more work for a bioinformatician to add a GUI to their software. Anyone that writes bioinformatics code can do it.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Many bioinformatics tools begin as a few lines of messy code, often used to run other programs, possibly formatting the intermediate and final outputs as needed. In these early stages, only God and the author knows exactly what the code is intended to do. If neglected for more than a month or two, only God knows (as the saying goes). But with a modest amount of effort, the author can clean up the code, implement a simple CLI (there are easy-to-use libraries for this in every common programming language), and document it with a usage statement and/or a user manual. This is often the only hope that any other human will ever be able to make use of the software.
+
+Providing a GUI for the software requires an entirely separate (and much more extensive and esoteric) set of skills and design decisions. A particular library for building GUIs may require writing code in an unfamiliar programming language, or may only be suitable for deployment on a specific operating system. One can expect an even higher level of difficulty if the goal is cross-platform (Windows + Mac + Linux) compatibility. The GUI implementation itself is much more complex than a CLI implementation: in addition to binding user-provided values to core variables, the programmer must specify which visual elements to create and how to organize them in a visual layout that is appropriate for a variety of screen sizes and resolutions.
+
+Deployment on cloud system such as mybinder or Google Colab might alleviate some of these concerns, but that requires familiarity with yet another unrelated set of skills and concepts.
+
+In other words, implementing a GUI requires more than an incremental increase in effort. It's something that requires explicit institutional support in terms of dedicated funding and/or services of professional software engineers. Most bioinformaticians I know would rather focus on maintaining and improving the core features of the software. Absent the right incentive structure, implementing a GUI could easily overwhelm the time and resources devoted to that work. 
+
+If someone doesn't have enough skills to write a GUI on their own, shouldn't they be collaborating with a more experienced bioinformatics expert?
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Someone making this argument might be surprised at how much bioinformatics software is written by biologists who have only recently taken the plunge to learn programming and software engineering. But I suspect even they know that experienced bioinformaticians are in high demand that for many labs, hiring a resident bioinformatics expert (or team of experts) is out of the question; that staff providing services through a bioinformatics core, even if available at the institution, are overworked and under-resourced; and that stable permanent positions and career tracks for aspiring bioinformatics experts are lacking; that the lure of working in the broader tech industry for much higher pay is a huge factor, and is not a sign of "selling out." Bioinformaticians are often enthusiastic about opportunities to collaborate, but this is not the solution to the problem of "not enough GUIs", even if one is convinced that's a problem that needs to be solved.
+
+Better learning resources are needed to support budding bioinformaticians at every stage of education and employment, so they can learn to leverage best practices and common conventions to improve their software. Let's be reasonable about our expectations that they also gain proficiency with GUI and/or cloud deployment at their current level of experience.
+
+Throwing your code up on GitHub is a dodge, a cop-out, an excuse for not distributing a *real* software application.
+--------------------------------------------------------------------------------------------------------------------
+
+In most contexts, I'd have a lot of sympathy for this argument. Honestly, whether the code is hosted on GitHub is...kind of irrelevant to the GUIs vs CLIs debate. In fact, I expect that most packages I install from a registry like PyPI or Bioconda are also going to be hosted on a platform like GitHub or GitLab. The collaborative communication and project management tools provided by these platforms are too useful to ignore, and have become ubiquitous in the daily practice of many bioinformatics software developers.
+
+Alas, I digress. In the context of this debate, I find the argument unfair. It's based on the same premises, already discussed, that bench biologists shouldn't have to be bothered with pesky concerns like software compilation, installation, and setup, and that if bioinformaticians *really* cared, they would handle all this effort upfront and distribute their tool as a graphical application that is easily run on the user's preferred platform. At the same time, there's a somewhat contradictory disposition---prevalent in academic circles---to treat algorithms published in papers as "research" but algorithms implemented in easy-to-use GUIs as "just" an engineering problem. Both attitudes simultaneously trivialize the bioinformatician's work and place unreasonable expectations on them, while also infantilizing the bench biologist.
+
+However, pushing back against this idea does not require excusing software that is insufficiently documented, unnecessarily difficult to install, or that does not follow common conventions because of ignorance or apathy. It has never been easier to package software for distribution with registries like PyPI, CRAN, Bioconductor, Bioconda, and Crates. Anyone capable of writing bioinformatics software in language X intended for use by a general audience should be capable of learning language X's packaging and distribution system. In the year 2022, I'll certainly look at any bioinformatics package whose installation instructions begin with "download code from GitHub" with a bit of skepticism. It's just that...choosing to distribute a package with a CLI rather than a GUI is a totally defensible choice. In many cases it is the most responsible choice, given resource constraints and the [variety, velocity, and volume of biological data](https://twitter.com/jermdemo/status/1566987265922199552).
+
+Acknowledgments
+---------------
+
+I'd like to thank Jennifer Chang, Taylor Raborn, Titus Brown, Taylor Reiter, Wei Shen, and others whose constructive feedback on an early draft helped hone and clarify the text of this post.

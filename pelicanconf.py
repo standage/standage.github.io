@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 import glob
+from pelican_jupyter import markup as nb_markup
 
 # Basic config
 AUTHOR = 'Daniel S. Standage'
@@ -9,7 +10,7 @@ SITENAME = 'Daniel S. Standage'
 TIMEZONE = 'US/Eastern'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
-FOOTER_YEARS = '2015-2018'
+FOOTER_YEARS = '2015-2022'
 
 PATH = 'content'
 THEME = 'bootstrap'
@@ -33,7 +34,7 @@ INDEX_SAVE_AS = 'notebook.html'
 PAGE_ORDER_BY = 'navorder'
 
 # Settings for left side well
-ADDRESS = ('Assoc. Principal Investigator,',
+ADDRESS = ('Principal Investigator,',
            'Bioinformatics',
            'NBACC')
 
@@ -56,6 +57,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Plugin config
-PLUGIN_PATHS = ['plugins']
-PLUGINS = ['ipynb']
+PLUGINS = [nb_markup]
 IPYNB_USE_META_SUMMARY = True
+MARKUP = ("md", "ipynb")
+IGNORE_FILES = [".ipynb_checkpoints"]
