@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -103,11 +103,11 @@ Secondly, this is bound to create problems for cluster/HPC users all over the pl
 <p>Fortunately, the SRA Toolkit allows you to configure this behavior.
 The <a href="https://github.com/ncbi/sra-tools/wiki/Toolkit-Configuration">officially-sanctioned approach</a> is to fire up a config program, which will allow you to disable caching behavior and/or remote network access of any kind.
 The unofficial unsanctioned approach would be to make the config file yourself with a couple of shell commands.</p>
-<div class="highlight"><pre><span></span>mkdir -p ~/.ncbi
+<div class="highlight"><pre><span></span><code>mkdir -p ~/.ncbi
 <span class="nb">echo</span> <span class="s1">&#39;/repository/user/main/public/root = &quot;/scratch/standage/sra-cache&quot;&#39;</span> &gt; ~/.ncbi/user-settings.mkfg
 <span class="c1"># Uncomment the next command if you want to disable network access altogether</span>
 <span class="c1"># echo &#39;/repository/user/cache-disabled = &quot;true&quot;&#39; &gt; ~/.ncbi/user-settings.mkfg</span>
-</pre></div></div>
+</code></pre></div></div>
 		<div>
 			<h2>Comments</h2>
 <div id="disqus_thread"></div>		<div>
@@ -115,7 +115,7 @@ The unofficial unsanctioned approach would be to make the config file yourself w
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -96,84 +96,72 @@ In short, the shell is great for interactive computing and automating simple tas
 <p>You don't typically get much bioinformatics work done with a single command without arguments.
 Anything substantial will involve data files, parameters, and so on, that are typically specified using arguments on the command line (you don't have these hard coded in a script, do you?!?!).
 But just for sake of completeness, it's very straightforward to execute shell commands this way in Python.</p>
-<div class="highlight"><pre><span></span>ls
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>ls
+</code></pre></div>
 
 <p>The Python equivalent is as follows.</p>
-<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 <p>There is even the simpler <code>call</code> function...</p>
-<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 <p>...but for most situations I find the <code>check_call</code> more useful, since it will halt the Python code immediately if the subprocess returns a non-zero status.</p>
 <h2>Command with arguments</h2>
-<div class="highlight"><pre><span></span>ls -lhp
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>ls -lhp
+</code></pre></div>
 
 <p>Commands with arguments cannot simply be dropped in to the <code>check_call</code> command as-is.
 The following code will fail.</p>
-<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls -lhp&#39;</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls -lhp&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 <p>There are two ways you can fix this: the convenient (and wrong and insecure) way...</p>
-<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls -lhp&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="s1">&#39;ls -lhp&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
 
 <p>...and The Right Way.</p>
-<div class="highlight"><pre><span></span><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="s1">&#39;-lhp&#39;</span><span class="p">])</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span> <span class="s1">&#39;-lhp&#39;</span><span class="p">])</span>
+</code></pre></div>
 
 <p>The convenience of the first method comes at the cost of security: the <code>shell=True</code> setting introduces vulnerability to <a href="https://security.openstack.org/guidelines/dg_use-subprocess-securely.html">shell injections</a>.
 This isn't the type of thing you expect to encounter much in the research setting, but it's an important consideration nonetheless, and exceptions should be made with caution.</p>
 <p>This example is pretty silly, since you'll probably never need to call the <code>ls</code> command from Python.
 Let's do a different example you're much more likely to encounter in bioinformatics.</p>
-<div class="highlight"><pre><span></span>blastx -db /opt/ncbi/nr -query tsa.fasta <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>blastx -db /opt/ncbi/nr -query tsa.fasta <span class="se">\</span>
        -evalue 1e-4 -num_threads <span class="nv">$numthreads</span> <span class="se">\</span>
        -out tsa-vs-nr.blastx
-</pre></div>
-
+</code></pre></div>
 
 <p>The Python equivalent is as follows.</p>
-<div class="highlight"><pre><span></span><span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blastx&#39;</span><span class="p">,</span> <span class="s1">&#39;-db&#39;</span><span class="p">,</span> <span class="s1">&#39;/opt/ncbi/nr&#39;</span><span class="p">,</span> <span class="s1">&#39;-query&#39;</span><span class="p">,</span> <span class="s1">&#39;tsa.fasta&#39;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="n">command</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blastx&#39;</span><span class="p">,</span> <span class="s1">&#39;-db&#39;</span><span class="p">,</span> <span class="s1">&#39;/opt/ncbi/nr&#39;</span><span class="p">,</span> <span class="s1">&#39;-query&#39;</span><span class="p">,</span> <span class="s1">&#39;tsa.fasta&#39;</span><span class="p">,</span>
            <span class="s1">&#39;-evalue&#39;</span><span class="p">,</span> <span class="s1">&#39;1e-4&#39;</span><span class="p">,</span> <span class="s1">&#39;-num_threads&#39;</span><span class="p">,</span> <span class="n">numthreads</span><span class="p">,</span>
            <span class="s1">&#39;-out&#39;</span><span class="p">,</span> <span class="s1">&#39;tsa-vs-nr.blastx&#39;</span><span class="p">]</span>
 <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Redirect stdin and stdout</h2>
 <p>Many programs and commands allow you to specify input and output files as arguments, as in the <code>blastx</code> command above.
 However, sometimes your only options are <code>stdin</code> and/or <code>stdout</code>.</p>
-<div class="highlight"><pre><span></span>sed s/^scaffold_/PcanScaf/ &lt; pcan-in.gff3 &gt; pcan-out.gff3
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>sed s/^scaffold_/PcanScaf/ &lt; pcan-in.gff3 &gt; pcan-out.gff3
+</code></pre></div>
 
 <p>Here is the Python equivalent.</p>
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pcan-in.gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">instream</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pcan-out.gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outstream</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pcan-in.gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">instream</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pcan-out.gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outstream</span><span class="p">:</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">([</span><span class="s1">&#39;sed&#39;</span><span class="p">,</span> <span class="s1">&#39;s/^scaffold_/PcanScaf/&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">instream</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">outstream</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>The main event: pipelines</h2>
 <p>Handling input and output for single commands is great and all, but the real power of the shell is piping commands together like so.</p>
-<div class="highlight"><pre><span></span>grep -v <span class="s1">$&#39;\tintron\t&#39;</span> loci.gff3 <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>grep -v <span class="s1">$&#39;\tintron\t&#39;</span> loci.gff3 <span class="se">\</span>
     <span class="p">|</span> pmrna --locus --accession --map<span class="o">=</span>map.txt <span class="se">\</span>
     <span class="p">|</span> canon-gff3 --outfile<span class="o">=</span>locus.mrnas.gff3 
-</pre></div>
-
+</code></pre></div>
 
 <p>Unless we want to introduce security vulnerabilities, we cannot simply run these commands with a single call to the <code>check_call</code> function.
 For this use case, we want to use the <code>Popen</code> constructor and the <code>communicate</code> method.</p>
-<div class="highlight"><pre><span></span><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">intron</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;loci.gff3&#39;</span><span class="p">],</span>
+<div class="highlight"><pre><span></span><code><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">intron</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;loci.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="n">pmrnaproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;pmrna&#39;</span><span class="p">,</span> <span class="s1">&#39;--locus&#39;</span><span class="p">,</span> <span class="s1">&#39;--accession&#39;</span><span class="p">,</span> <span class="s1">&#39;--map=map.txt&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">grepproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
@@ -181,11 +169,10 @@ For this use case, we want to use the <code>Popen</code> constructor and the <co
 <span class="n">canonproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;canon-gff3&#39;</span><span class="p">,</span> <span class="s1">&#39;--outfile=locus.mrnas.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">pmrnaproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
 <span class="n">canonproc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>If needed, it is trivial to capture the terminal output like so.</p>
-<div class="highlight"><pre><span></span><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">intron</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;loci.gff3&#39;</span><span class="p">],</span>
+<div class="highlight"><pre><span></span><code><span class="n">grepproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">intron</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;loci.gff3&#39;</span><span class="p">],</span>
                              <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="n">pmrnaproc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;pmrna&#39;</span><span class="p">,</span> <span class="s1">&#39;--locus&#39;</span><span class="p">,</span> <span class="s1">&#39;--accession&#39;</span><span class="p">,</span> <span class="s1">&#39;--map=map.txt&#39;</span><span class="p">],</span>
                              <span class="n">stdin</span><span class="o">=</span><span class="n">grepproc</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
@@ -197,8 +184,7 @@ For this use case, we want to use the <code>Popen</code> constructor and the <co
 <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">canonproc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stderr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
     <span class="c1"># process the terminal warnings</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>Coda</h2>
 <p>That's it!</p>
@@ -212,7 +198,7 @@ I will not cover this here, but the Internet is full of blog posts and StackOver
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

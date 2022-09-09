@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -96,10 +96,10 @@ In fact, with a few settings tweaks <code>fastq-dump</code> can stream data dire
    Include the options <code>--defline-seq '@$ac.$si.$sg/$ri' --defline-qual '+'</code> to append a <code>/1</code> or <code>/2</code> to the end of each read ID for pairing information, and to throw away all of the superfluous and redundant info in the 3rd line of each Fastq record.</li>
 </ol>
 <p>The following example pipes the SRA data set with the accession ERR612477 into a processing pipeline.</p>
-<div class="highlight"><pre><span></span>fastq-dump --split-files --defline-seq &#39;@$ac.$si.$sg/$ri&#39; --defline-qual &#39;+&#39; -Z ERR612477 \
-    | trim-low-abund.py --ksize 25 --max-memory-usage 2G --variable-coverage - \
-    | my-favorite-mapper-or-assembler &gt; out.dat
-</pre></div></div>
+<div class="highlight"><pre><span></span><code><span class="n">fastq</span><span class="o">-</span><span class="n">dump</span><span class="w"> </span><span class="o">--</span><span class="n">split</span><span class="o">-</span><span class="n">files</span><span class="w"> </span><span class="o">--</span><span class="n">defline</span><span class="o">-</span><span class="n">seq</span><span class="w"> </span><span class="s1">&#39;@$ac.$si.$sg/$ri&#39;</span><span class="w"> </span><span class="o">--</span><span class="n">defline</span><span class="o">-</span><span class="n">qual</span><span class="w"> </span><span class="s1">&#39;+&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">Z</span><span class="w"> </span><span class="n">ERR612477</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">trim</span><span class="o">-</span><span class="n">low</span><span class="o">-</span><span class="n">abund</span><span class="o">.</span><span class="n">py</span><span class="w"> </span><span class="o">--</span><span class="n">ksize</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">memory</span><span class="o">-</span><span class="n">usage</span><span class="w"> </span><span class="mi">2</span><span class="n">G</span><span class="w"> </span><span class="o">--</span><span class="n">variable</span><span class="o">-</span><span class="n">coverage</span><span class="w"> </span><span class="o">-</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">my</span><span class="o">-</span><span class="n">favorite</span><span class="o">-</span><span class="n">mapper</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">assembler</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">out</span><span class="o">.</span><span class="n">dat</span><span class="w"></span>
+</code></pre></div></div>
 		<div>
 			<h2>Comments</h2>
 <div id="disqus_thread"></div>		<div>
@@ -107,7 +107,7 @@ In fact, with a few settings tweaks <code>fastq-dump</code> can stream data dire
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

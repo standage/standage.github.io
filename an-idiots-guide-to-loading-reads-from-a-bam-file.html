@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -109,47 +109,42 @@ Those more familiar with SAM/BAM could probably have given an immediate answer, 
 <li>Are multi-mapped reads reported multiple times?</li>
 </ul>
 <p>In short, is it possible to extract all input read sequences non-redundantly from a BAM file?</p>
-<p><em>(I should note at this point that I wasn't <strong>completely</strong> unaware that BAM-to-Fastq converters exist<sup>2</sup>, so I probably should have approached this question with a bit more confidence.)</em></p>
+<p><em>(I should note at this point that I wasn't </em><em>completely</em><em> unaware that BAM-to-Fastq converters exist<sup>2</sup>, so I probably should have approached this question with a bit more confidence.)</em></p>
 <h2>Some probing</h2>
 <p>To satisfy my curiousity, I did a bit of detective work on the BAM files I'm analyzing in my current project.
 Since the files are huge (&gt;100GB per) and stored on a busy cluster, I selected only the first 5 million-ish reads from the file for testing (processing the whole file would have required submitting a job request to the queue).</p>
-<div class="highlight"><pre><span></span>samtools view -h mysample.bam \
-    | head -n 5000000 \
-    | samtools view -b -o mysample.1st5mil.bam
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="mi">5000000</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"></span>
+</code></pre></div>
 
 <p>Checking whether the file contains unmapped reads is quite simple.</p>
-<div class="highlight"><pre><span></span>samtools view -f 4 -c mysample.1st5mil.bam
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"></span>
+</code></pre></div>
 
 <p>Checking whether multimapped reads are reported multiple times took a bit more command-line fu.
 The following command cuts out the read ID from each alignment, sorts, reports the counts of each uniq read ID, sorts again by counts, and then reports the top 10 reads by count.</p>
-<div class="highlight"><pre><span></span>samtools view mysample.1st5mil.bam \
-    | cut -f 1 \
-    | sort \
-    | uniq -c \
-    | sort -rn \
-    | head -n 10
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">uniq</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">-</span><span class="n">rn</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+</code></pre></div>
 
 <p>All of the top 10 read IDs occurred four times in the input.
 I suspected that two times would simply mean both the read and its pair were found, but four times means that both the read and its pair were each reported twice.
 To confirm, I searched the file for several of the duplicated read IDs.</p>
-<div class="highlight"><pre><span></span>samtools view mysample.1st5mil.bam | grep ReadIdHere
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="n">ReadIdHere</span><span class="w"></span>
+</code></pre></div>
 
 <p>Sure enough, in each case, both of the read pairs were reported once in full, and a second time as a hard-clipped secondary alignment (256 or 0x100 in the bitwise flag).
 The SAM specification is a bit sparse on when hard and soft clipping are intended to be used, but the point is moot since these are marked as secondary alignments.</p>
 <p>I then used the following commands to ensure that all hard-clipped alignments are marked as secondary (and that all secondary alignments are hard-clipped).</p>
-<div class="highlight"><pre><span></span>samtools view -f 256 -c mysample.1st5mil.bam
-samtools view -f 256 mysample.1st5mil.bam | cut -f 6 | grep -c H
-samtools view -F 256 mysample.1st5mil.bam | cut -f 6 | grep -c H
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">256</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"></span>
+<span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">256</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">H</span><span class="w"></span>
+<span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="w"> </span><span class="mi">256</span><span class="w"> </span><span class="n">mysample</span><span class="o">.</span><span class="mi">1</span><span class="n">st5mil</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">H</span><span class="w"></span>
+</code></pre></div>
 
 <p>So far so good.
 The only point remaining is to verify that the sequences in the BAM file actually correspond to the read and not the reference or some kind of alignment consensus.
@@ -169,101 +164,94 @@ I concluded that the only way to ease my unsettled mind was to do a test where I
 <li>extract read sequences from the BAM file, compare to contents of Fastq file</li>
 </ul>
 <p>I decided to test both BWA and Bowtie2 with default settings, figuring that &gt;95% of human genome stuff is going to involve data mapped by of these two tools.</p>
-<div class="highlight"><pre><span></span>bwa index hg.fasta
-bwa mem -t 4 hg.fasta reads-subset.fastq | samtools view -b -o test.bwa.bam
+<div class="highlight"><pre><span></span><code><span class="n">bwa</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">hg</span><span class="o">.</span><span class="n">fasta</span><span class="w"></span>
+<span class="n">bwa</span><span class="w"> </span><span class="n">mem</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">hg</span><span class="o">.</span><span class="n">fasta</span><span class="w"> </span><span class="n">reads</span><span class="o">-</span><span class="n">subset</span><span class="o">.</span><span class="n">fastq</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">bam</span><span class="w"></span>
 
-bowtie2-build hg.fasta hg.fasta.bt2
-bowtie2 -p 4 -x hg.fasta.bt2 -U reads-subset.fastq | samtools view -b -o test.bt2.bam
-</pre></div>
-
+<span class="n">bowtie2</span><span class="o">-</span><span class="n">build</span><span class="w"> </span><span class="n">hg</span><span class="o">.</span><span class="n">fasta</span><span class="w"> </span><span class="n">hg</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">bt2</span><span class="w"></span>
+<span class="n">bowtie2</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">hg</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">bt2</span><span class="w"> </span><span class="o">-</span><span class="n">U</span><span class="w"> </span><span class="n">reads</span><span class="o">-</span><span class="n">subset</span><span class="o">.</span><span class="n">fastq</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">bam</span><span class="w"></span>
+</code></pre></div>
 
 <p>Now let's extract all of the sequences corresponding to primary alignments—not marked as secondary (256 or 0x100) or supplementary (2048 or 0x800)—from each BAM file.
 If we sort the sequences, they should be identical right?</p>
-<div class="highlight"><pre><span></span># 2048 + 256 = 2304
-samtools view -F 2304 test.bwa.bam \
-    | cut -f 10 \
-    | sort \
-    &gt; test.bwa.seq.txt
-samtools view -F 2304 test.bt2.bam \
-    | cut -f 10 \
-    | sort \
-    &gt; test.bt2.seq.txt
-diff -q test.bwa.seq.txt test.bt2.seq.txt
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="c1"># 2048 + 256 = 2304</span><span class="w"></span>
+<span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="w"> </span><span class="mi">2304</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"></span>
+<span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="w"> </span><span class="mi">2304</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"></span>
+<span class="n">diff</span><span class="w"> </span><span class="o">-</span><span class="n">q</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"></span>
+</code></pre></div>
 
 <p>Ruh, roh!
 It looks like they're not the same!
 What's going on?
 Both files contain exactly 1,000,000 lines, as expected.</p>
-<div class="highlight"><pre><span></span>wc -l test.bwa.seq.txt test.bt2.seq.txt
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>wc -l test.bwa.seq.txt test.bt2.seq.txt
+</code></pre></div>
 
 <p>How many are shared between them?</p>
-<div class="highlight"><pre><span></span>comm -12 test.bwa.seq.txt test.bt2.seq.txt | wc -l
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>comm -12 test.bwa.seq.txt test.bt2.seq.txt | wc -l
+</code></pre></div>
 
 <p>It looks like only about 84% are shared in this case.
 After a bit more investigation, I discovered that in some cases the mapper will report the reverse complement of the read sequence instead of the original read sequence.
 This of course is not at all problematic for BAM paring in general, but it complicated my rudimentary evaluation using the <code>diff</code> command.
 To this end, I wrote a simple C++ program that would print out each sequence it was given <em>as well as its reverse complement</em>.</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
-<span class="kt">char</span> <span class="nf">comp</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;A&#39;</span> <span class="o">?</span> <span class="sc">&#39;T&#39;</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;T&#39;</span> <span class="o">?</span> <span class="sc">&#39;A&#39;</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;C&#39;</span> <span class="o">?</span> <span class="sc">&#39;G&#39;</span> <span class="o">:</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;G&#39;</span> <span class="o">?</span> <span class="sc">&#39;C&#39;</span> <span class="o">:</span> <span class="sc">&#39;N&#39;</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">char</span><span class="w"> </span><span class="nf">comp</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sc">&#39;T&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;T&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sc">&#39;G&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;G&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sc">&#39;N&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">seq</span><span class="p">,</span> <span class="n">revcomp</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">seq</span><span class="p">))</span> <span class="p">{</span>
-        <span class="n">revcomp</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">seq</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">seq</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span> <span class="n">seq</span><span class="p">.</span><span class="n">rend</span><span class="p">(),</span> <span class="n">revcomp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">comp</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">seq</span> <span class="o">&lt;</span> <span class="n">revcomp</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">seq</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\t&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">revcomp</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">revcomp</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\t&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">seq</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">seq</span><span class="p">,</span><span class="w"> </span><span class="n">revcomp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span><span class="w"> </span><span class="n">seq</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">revcomp</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">seq</span><span class="p">.</span><span class="n">length</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">seq</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span><span class="w"> </span><span class="n">seq</span><span class="p">.</span><span class="n">rend</span><span class="p">(),</span><span class="w"> </span><span class="n">revcomp</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">comp</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">seq</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">revcomp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">seq</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\t&#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">revcomp</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">revcomp</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\t&#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">seq</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>We can now use this to confirm that the ≈16% of sequences that don't match between BWA and Bowtie are simply reverse complements of each other.
 If we compile this program and re-run the pipeline with it included, we should get identical output.</p>
-<div class="highlight"><pre><span></span>g++ -Wall -O3 --std=c++11 -o rc rc.cpp
-samtools view -F 2304 test.bwa.bam \
-    | cut -f 10 \
-    | ./rc \
-    | sort \
-    &gt; test.bwa.seq.txt
-samtools view -F 2304 test.bt2.bam \
-    | cut -f 10 \
-    | ./rc \
-    | sort \
-    &gt; test.bt2.seq.txt
-diff -q test.bwa.seq.txt test.bt2.seq.txt
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">g</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">Wall</span><span class="w"> </span><span class="o">-</span><span class="n">O3</span><span class="w"> </span><span class="o">--</span><span class="n">std</span><span class="o">=</span><span class="n">c</span><span class="o">++</span><span class="mi">11</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="n">rc</span><span class="o">.</span><span class="n">cpp</span><span class="w"></span>
+<span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="w"> </span><span class="mi">2304</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="o">./</span><span class="n">rc</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"></span>
+<span class="n">samtools</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="w"> </span><span class="mi">2304</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">bam</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">cut</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="o">./</span><span class="n">rc</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span>\<span class="w"></span>
+<span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"></span>
+<span class="n">diff</span><span class="w"> </span><span class="o">-</span><span class="n">q</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bwa</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">bt2</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">txt</span><span class="w"></span>
+</code></pre></div>
 
 <p>Woohoo, success!
 Of course, this only checks that the mappers give identical results.
 What we're <em>really</em> interested in is whether they both match the contents of the original Fastq file.</p>
-<div class="highlight"><pre><span></span>paste - - - - &lt; reads-subset.fastq \
+<div class="highlight"><pre><span></span><code>paste - - - - &lt; reads-subset.fastq \
     | cut -f 2 \
     | ./rc \
     | sort \
     &gt; test.fastq.seq.txt
 diff -q test.fastq.seq.txt test.bwa.seq.txt
 diff -q test.fastq.seq.txt test.bt2.seq.txt
-</pre></div>
-
+</code></pre></div>
 
 <p>It is indeed a match, and I think I can confidently mark this case closed.</p>
 <h2>Epilogue</h2>
@@ -299,7 +287,7 @@ I'm not sure I have a good answer for this, but it's an important conversation.<
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

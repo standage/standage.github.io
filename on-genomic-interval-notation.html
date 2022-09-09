@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -98,13 +98,12 @@ BED allows for a single level of feature decomposition (a feature can be broken 
 GFF3 and GTF both inherited, through their common heritage with older GFF variants, 1-based indexing and closed interval notation.
 BED on the other hand uses 0-based indexing and <em>half-closed</em> interval notation.
 Consider the DNA sequence below.</p>
-<div class="highlight"><pre><span></span>        1    2    3    4    5    6    7      &lt;-- GFF3 style
+<div class="highlight"><pre><span></span><code>        1    2    3    4    5    6    7      &lt;-- GFF3 style
         |    |    |    |    |    |    |
         G    A    T    T    A    C    A
         |    |    |    |    |    |    |
         0    1    2    3    4    5    6      &lt;-- BED style
-</pre></div>
-
+</code></pre></div>
 
 <p>Using 1-based indexing and closed interval notation <em>a la</em> GFF3, the interval containing the subsequence <code>ATTA</code> would be represented as <code>[2, 5]</code>.
 With BED's 0-based indexing and half-closed interval notation, the same subsequence would be represented as <code>[1, 5)</code>.</p>
@@ -112,11 +111,10 @@ With BED's 0-based indexing and half-closed interval notation, the same subseque
 Don't worry: off-by-one errors with interval arithmetic are very common in bioinformatics, striking newcomers and old-timers alike.</p>
 <p>An alternative and useful way to conceptualize the BED-style notation is to shift the indices slightly so that they correspond to the spaces <em>between</em> nucleotides, rather than the nucleotides themselves.
 Then, the two integers defining an interval are the ones that bound the nucleotides in question.</p>
-<div class="highlight"><pre><span></span>        G    A    T    T    A    C    A
+<div class="highlight"><pre><span></span><code>        G    A    T    T    A    C    A
      |    |    |    |    |    |    |    |
      0    1    2    3    4    5    6    7
-</pre></div>
-
+</code></pre></div>
 
 <p>So, the big question is: are there any compelling reasons to choose one convention over the other?
 Or is it simply a matter of preference?</p>
@@ -172,7 +170,7 @@ If I understand correctly, many of the GMOD tools (which are responsible in larg
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

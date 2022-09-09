@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -90,12 +90,11 @@ This has become a core technique I use almost on a daily basis in my data work i
 It has many uses, but I want to highlight a particular one here.</p>
 <h2>Use case</h2>
 <p>Imagine you have a shell script with the following commands</p>
-<div class="highlight"><pre><span></span>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
     <span class="p">|</span> second_command one two three <span class="se">\</span>
     <span class="p">|</span> third_command --abc xyz <span class="se">\</span>
     &gt; outfile.txt
-</pre></div>
-
+</code></pre></div>
 
 <p>Each of these commands will print to stderr in case of a warning or an error.
 However, <code>second_command</code> prints an irrelevant warning (<code>cannot find "foo"</code>) message over and over again, filling up the terminal with thousands of lines of noise and making it more difficult to find warnings or error messages we might actually care about.
@@ -103,28 +102,24 @@ How can we filter the stderr of <code>second_command</code> so that the <code>ca
 <h2>Solution</h2>
 <p>Process substitutions can be used not only as pseudo input files using the <code>&lt;()</code> syntax, but also as pseudo output files using the <code>&gt;()</code> syntax.
 If we redirect a program's output to a process, we can then filter the data within that process, like so.</p>
-<div class="highlight"><pre><span></span>some_program &gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>some_program &gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
+</code></pre></div>
 
 <p>Extending this to stderr requires only two changes.
 First, we replace <code>&gt;</code> with <code>2&gt;</code> so that we are redirecting the correct output stream.</p>
-<div class="highlight"><pre><span></span>some_program <span class="m">2</span>&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>some_program <span class="m">2</span>&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c<span class="o">)</span>
+</code></pre></div>
 
 <p>Secondly, we add <code>1&gt;&amp;2</code> to the end of the process so that its stdout is redirected back to stderr, which is where the data was intended to go in the first place (cue Ghostbusters quote about not crossing the streams).</p>
-<div class="highlight"><pre><span></span>some_program <span class="m">2</span>&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="o">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>some_program <span class="m">2</span>&gt; &gt;<span class="o">(</span>sort <span class="p">|</span> uniq -c <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="o">)</span>
+</code></pre></div>
 
 <p>Putting this all together and going back to our original use case, we can remove the unwanted <code>cannot find "foo"</code> messages from our terminal like so.</p>
-<div class="highlight"><pre><span></span>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>first_command --arg1<span class="o">=</span>foo --arg2<span class="o">=</span>bar --flag3 infile.txt <span class="se">\</span>
     <span class="p">|</span> second_command one two three <span class="m">2</span>&gt; &gt;<span class="o">(</span>grep <span class="s1">&#39;cannot find &quot;foo&quot;&#39;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="o">)</span> <span class="se">\</span>
     <span class="p">|</span> third_command --abc xyz <span class="se">\</span>
     &gt; outfile.txt
-</pre></div>
-
+</code></pre></div>
 
 <p>That's it!</p></div>
 		<div>
@@ -134,7 +129,7 @@ First, we replace <code>&gt;</code> with <code>2&gt;</code> so that we are redir
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

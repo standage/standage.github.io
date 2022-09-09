@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -88,151 +88,147 @@ tags: <a href="https://standage.github.io/tag/visualization.html">visualization<
 		<div><p>I'm preparing a manuscript, and I sketched out the following chart I would like to include.</p>
 <p><img src="https://standage.github.io/images/ilocus-decision-tree.jpg" alt="Chart" style="width: 450px" /></p>
 <p>With my rudimentary <a href="http://www.graphviz.org/">graphviz</a> experience, I threw together the following representation.</p>
-<div class="highlight"><pre><span></span>digraph
-{
-    ilocus [label=&quot;iLocus&quot;]
-    gilocus [label=&quot;giLocus&quot;]
-    pilocus [label=&quot;piLocus&quot;]
-    nilocus [label=&quot;niLocus&quot;]
-    silocus [label=&quot;siLocus&quot;]
-    cilocus [label=&quot;ciLocus&quot;]
-    filocus [label=&quot;fiLocus&quot;]
-    iilocus [label=&quot;iiLocus&quot;]
+<div class="highlight"><pre><span></span><code><span class="n">digraph</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;giLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;piLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;niLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;siLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;ciLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;fiLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iiLocus&quot;</span><span class="p">]</span><span class="w"></span>
 
-    containgene [label=&quot;Contains gene(s)?&quot;]
-    proteincoding [label=&quot;Protein coding?&quot;]
-    multiplegenes [label=&quot;Multiple genes?&quot;]
-    geneflank [label=&quot;Flanked by genes on both sides?&quot;]
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Contains gene(s)?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Protein coding?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Multiple genes?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Flanked by genes on both sides?&quot;</span><span class="p">]</span><span class="w"></span>
 
-    ilocus -&gt; containgene
-    containgene -&gt; geneflank [label=&quot;No&quot;]
-    geneflank -&gt; filocus [label=&quot;No&quot;]
-    geneflank -&gt; iilocus [label=&quot;Yes&quot;]
-    containgene -&gt; gilocus [label=&quot;Yes&quot;]
-    gilocus -&gt; proteincoding
-    proteincoding -&gt; nilocus [label=&quot;No&quot;]
-    proteincoding -&gt; pilocus [label=&quot;Yes&quot;]
-    pilocus -&gt; multiplegenes
-    multiplegenes -&gt; silocus [label=&quot;No&quot;]
-    multiplegenes -&gt; cilocus [label=&quot;Yes&quot;]
-}
-</pre></div>
-
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">containgene</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">proteincoding</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">multiplegenes</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>Saved as <code>take1.dot</code> and rendered with the command <code>dot -Tpng -o take1.png take.dot</code>, we get this.</p>
 <p><img alt="Chart, take 1" src="https://standage.github.io/images/take1.png"></p>
 <p>It's not bad for a first pass, but let's adjust the style a bit to distinguish between iLocus designations and branching logic.</p>
-<div class="highlight"><pre><span></span>digraph
-{
-    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
-    ilocus [label=&quot;iLocus&quot;]
-    gilocus [label=&quot;giLocus&quot;]
-    pilocus [label=&quot;piLocus&quot;]
-    nilocus [label=&quot;niLocus&quot;]
-    silocus [label=&quot;siLocus&quot;]
-    cilocus [label=&quot;ciLocus&quot;]
-    filocus [label=&quot;fiLocus&quot;]
-    iilocus [label=&quot;iiLocus&quot;]
+<div class="highlight"><pre><span></span><code><span class="n">digraph</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">oval</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;giLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;piLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;niLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;siLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;ciLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;fiLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iiLocus&quot;</span><span class="p">]</span><span class="w"></span>
 
-    node [color=Blue,fontcolor=Blue,shape=diamond]
-    containgene [label=&quot;Contains gene(s)?&quot;]
-    proteincoding [label=&quot;Protein coding?&quot;]
-    multiplegenes [label=&quot;Multiple genes?&quot;]
-    geneflank [label=&quot;Flanked by genes\non both sides?&quot;]
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">diamond</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Contains gene(s)?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Protein coding?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Multiple genes?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Flanked by genes\non both sides?&quot;</span><span class="p">]</span><span class="w"></span>
 
-    ilocus -&gt; containgene
-    containgene -&gt; geneflank [label=&quot;No&quot;]
-    geneflank -&gt; filocus [label=&quot;No&quot;]
-    geneflank -&gt; iilocus [label=&quot;Yes&quot;]
-    containgene -&gt; gilocus [label=&quot;Yes&quot;]
-    gilocus -&gt; proteincoding
-    proteincoding -&gt; nilocus [label=&quot;No&quot;]
-    proteincoding -&gt; pilocus [label=&quot;Yes&quot;]
-    pilocus -&gt; multiplegenes
-    multiplegenes -&gt; silocus [label=&quot;No&quot;]
-    multiplegenes -&gt; cilocus [label=&quot;Yes&quot;]
-}
-</pre></div>
-
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">containgene</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">proteincoding</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">multiplegenes</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>That gives us the following.</p>
 <p><img alt="Chart, take 2" src="https://standage.github.io/images/take2.png"></p>
 <p>Now, let's see if we can get the <code>giLocus</code> and <code>piLocus</code> nodes on the same level as in the sketch, using <code>rank=same</code>.</p>
-<div class="highlight"><pre><span></span>digraph
-{
-    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
-    ilocus [label=&quot;iLocus&quot;]
-    gilocus [label=&quot;giLocus&quot;]
-    pilocus [label=&quot;piLocus&quot;]
-    nilocus [label=&quot;niLocus&quot;]
-    silocus [label=&quot;siLocus&quot;]
-    cilocus [label=&quot;ciLocus&quot;]
-    filocus [label=&quot;fiLocus&quot;]
-    iilocus [label=&quot;iiLocus&quot;]
+<div class="highlight"><pre><span></span><code><span class="n">digraph</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">oval</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;giLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;piLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;niLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;siLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;ciLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;fiLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iiLocus&quot;</span><span class="p">]</span><span class="w"></span>
 
-    node [color=Blue,fontcolor=Blue,shape=diamond]
-    containgene [label=&quot;Contains gene(s)?&quot;]
-    proteincoding [label=&quot;Protein coding?&quot;]
-    multiplegenes [label=&quot;Multiple genes?&quot;]
-    geneflank [label=&quot;Flanked by genes\non both sides?&quot;]
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">diamond</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Contains gene(s)?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Protein coding?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Multiple genes?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Flanked by genes\non both sides?&quot;</span><span class="p">]</span><span class="w"></span>
 
-    {rank = same; containgene; gilocus}
-    {rank = same; proteincoding; pilocus}
+<span class="w">    </span><span class="p">{</span><span class="nf">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">same</span><span class="p">;</span><span class="w"> </span><span class="n">containgene</span><span class="p">;</span><span class="w"> </span><span class="n">gilocus</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="nf">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">same</span><span class="p">;</span><span class="w"> </span><span class="n">proteincoding</span><span class="p">;</span><span class="w"> </span><span class="n">pilocus</span><span class="p">}</span><span class="w"></span>
 
-    ilocus -&gt; containgene
-    containgene -&gt; geneflank [label=&quot;No&quot;]
-    geneflank -&gt; filocus [label=&quot;No&quot;]
-    geneflank -&gt; iilocus [label=&quot;Yes&quot;]
-    containgene -&gt; gilocus [label=&quot;Yes&quot;]
-    gilocus -&gt; proteincoding
-    proteincoding -&gt; nilocus [label=&quot;No&quot;]
-    proteincoding -&gt; pilocus [label=&quot;Yes&quot;]
-    pilocus -&gt; multiplegenes
-    multiplegenes -&gt; silocus [label=&quot;No&quot;]
-    multiplegenes -&gt; cilocus [label=&quot;Yes&quot;]
-}
-</pre></div>
-
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">containgene</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">proteincoding</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">multiplegenes</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>That gives us the following.</p>
 <p><img alt="Chart, take 3" src="https://standage.github.io/images/take3.png"></p>
 <p>Getting there!
 Now, let's use the <code>compass_pt</code> feature to specify which side of the diamonds we want the arrows to come from.</p>
-<div class="highlight"><pre><span></span>digraph
-{
-    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
-    ilocus [label=&quot;iLocus&quot;]
-    gilocus [label=&quot;giLocus&quot;]
-    pilocus [label=&quot;piLocus&quot;]
-    nilocus [label=&quot;niLocus&quot;]
-    silocus [label=&quot;siLocus&quot;]
-    cilocus [label=&quot;ciLocus&quot;]
-    filocus [label=&quot;fiLocus&quot;]
-    iilocus [label=&quot;iiLocus&quot;]
+<div class="highlight"><pre><span></span><code><span class="n">digraph</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">oval</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;giLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;piLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;niLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;siLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;ciLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;fiLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iiLocus&quot;</span><span class="p">]</span><span class="w"></span>
 
-    node [color=Blue,fontcolor=Blue,shape=diamond]
-    containgene [label=&quot;Contains gene(s)?&quot;]
-    proteincoding [label=&quot;Protein coding?&quot;]
-    multiplegenes [label=&quot;Multiple genes?&quot;]
-    geneflank [label=&quot;Flanked by genes\non both sides?&quot;]
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">diamond</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Contains gene(s)?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Protein coding?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Multiple genes?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Flanked by genes\non both sides?&quot;</span><span class="p">]</span><span class="w"></span>
 
-    {rank = same; containgene; gilocus}
-    {rank = same; proteincoding; pilocus}
+<span class="w">    </span><span class="p">{</span><span class="nf">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">same</span><span class="p">;</span><span class="w"> </span><span class="n">containgene</span><span class="p">;</span><span class="w"> </span><span class="n">gilocus</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="nf">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">same</span><span class="p">;</span><span class="w"> </span><span class="n">proteincoding</span><span class="p">;</span><span class="w"> </span><span class="n">pilocus</span><span class="p">}</span><span class="w"></span>
 
-    ilocus -&gt; containgene
-    containgene:w -&gt; geneflank [label=&quot;No&quot;]
-    geneflank:e -&gt; filocus [label=&quot;No&quot;]
-    geneflank:w -&gt; iilocus [label=&quot;Yes&quot;]
-    containgene:e -&gt; gilocus [label=&quot;Yes&quot;]
-    gilocus -&gt; proteincoding
-    proteincoding:w -&gt; nilocus [label=&quot;No&quot;]
-    proteincoding:e -&gt; pilocus [label=&quot;Yes&quot;]
-    pilocus -&gt; multiplegenes
-    multiplegenes:e -&gt; silocus [label=&quot;No&quot;]
-    multiplegenes:w -&gt; cilocus [label=&quot;Yes&quot;]
-}
-</pre></div>
-
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">containgene</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">proteincoding</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">multiplegenes</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>We end up with this.</p>
 <p><img alt="Chart, take 4" src="https://standage.github.io/images/take4.png"></p>
@@ -240,43 +236,42 @@ Now, let's use the <code>compass_pt</code> feature to specify which side of the 
 Is there any way we can force straight edges with corners, like in the sketch, rather than the curved edges?
 The <code>splines=ortho</code> setting seems to be designed just for that.
 Let's try it out (also requires setting edge labels to <code>xlabel</code>).</p>
-<div class="highlight"><pre><span></span>digraph
-{
-    graph [splines=ortho]
+<div class="highlight"><pre><span></span><code><span class="n">digraph</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nf">graph</span><span class="w"> </span><span class="p">[</span><span class="n">splines</span><span class="o">=</span><span class="n">ortho</span><span class="p">]</span><span class="w"></span>
 
-    node [color=Limegreen,fontcolor=Limegreen,shape=oval]
-    ilocus [label=&quot;iLocus&quot;]
-    gilocus [label=&quot;giLocus&quot;]
-    pilocus [label=&quot;piLocus&quot;]
-    nilocus [label=&quot;niLocus&quot;]
-    silocus [label=&quot;siLocus&quot;]
-    cilocus [label=&quot;ciLocus&quot;]
-    filocus [label=&quot;fiLocus&quot;]
-    iilocus [label=&quot;iiLocus&quot;]
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Limegreen</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">oval</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;giLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;piLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;niLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;siLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;ciLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;fiLocus&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;iiLocus&quot;</span><span class="p">]</span><span class="w"></span>
 
-    node [color=Blue,fontcolor=Blue,shape=diamond]
-    containgene [label=&quot;Contains gene(s)?&quot;]
-    proteincoding [label=&quot;Protein coding?&quot;]
-    multiplegenes [label=&quot;Multiple genes?&quot;]
-    geneflank [label=&quot;Flanked by genes\non both sides?&quot;]
+<span class="w">    </span><span class="n">node</span><span class="w"> </span><span class="p">[</span><span class="n">color</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">fontcolor</span><span class="o">=</span><span class="n">Blue</span><span class="p">,</span><span class="n">shape</span><span class="o">=</span><span class="n">diamond</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Contains gene(s)?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Protein coding?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Multiple genes?&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;Flanked by genes\non both sides?&quot;</span><span class="p">]</span><span class="w"></span>
 
-    {rank = same; containgene; gilocus}
-    {rank = same; proteincoding; pilocus}
+<span class="w">    </span><span class="p">{</span><span class="nf">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">same</span><span class="p">;</span><span class="w"> </span><span class="n">containgene</span><span class="p">;</span><span class="w"> </span><span class="n">gilocus</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="nf">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">same</span><span class="p">;</span><span class="w"> </span><span class="n">proteincoding</span><span class="p">;</span><span class="w"> </span><span class="n">pilocus</span><span class="p">}</span><span class="w"></span>
 
-    ilocus -&gt; containgene
-    containgene:w -&gt; geneflank [xlabel=&quot;No&quot;]
-    geneflank:e -&gt; filocus [xlabel=&quot;No&quot;]
-    geneflank:w -&gt; iilocus [xlabel=&quot;Yes&quot;]
-    containgene:e -&gt; gilocus [xlabel=&quot;Yes&quot;]
-    gilocus -&gt; proteincoding
-    proteincoding:w -&gt; nilocus [xlabel=&quot;No&quot;]
-    proteincoding:e -&gt; pilocus [xlabel=&quot;Yes&quot;]
-    pilocus -&gt; multiplegenes
-    multiplegenes:e -&gt; silocus [xlabel=&quot;No&quot;]
-    multiplegenes:w -&gt; cilocus [xlabel=&quot;Yes&quot;]
-}
-</pre></div>
-
+<span class="w">    </span><span class="n">ilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">containgene</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">geneflank</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">filocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">geneflank</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">iilocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">containgene</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">gilocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">gilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">proteincoding</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nilocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">proteincoding</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">pilocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">pilocus</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">multiplegenes</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="o">:</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">silocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;No&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">multiplegenes</span><span class="o">:</span><span class="n">w</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">cilocus</span><span class="w"> </span><span class="p">[</span><span class="n">xlabel</span><span class="o">=</span><span class="s">&quot;Yes&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>Which gives us this.</p>
 <p><img alt="Chart, take 5" src="https://standage.github.io/images/take5.png"></p>
@@ -290,7 +285,7 @@ If I can't figure out how to force straight edges with corners, then I think I'l
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

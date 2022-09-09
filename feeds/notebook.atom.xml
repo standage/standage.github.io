@@ -1044,113 +1044,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Today I was wondering, given a set of reads and a genome sequence, how I could filter out all of the reads that align to the genome perfectly.
@@ -1206,7 +1173,7 @@ optional arguments:
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Generating the bogus chromosome in 10 smaller pieces is quicker than in one big piece.&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;gt;bogusgenome&amp;#39;&lt;/span&gt; &amp;gt; bogus-genome.fa
-&lt;span class="nb"&gt;time&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; i in &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;..10&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;time&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; i &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;..10&lt;span class="o"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;do&lt;/span&gt;
     make-random-genome.py --length &lt;span class="m"&gt;250000&lt;/span&gt; --seed &lt;span class="k"&gt;$((&lt;/span&gt;&lt;span class="m"&gt;42&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep -v &lt;span class="s1"&gt;&amp;#39;^&amp;gt;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; bogus-genome.fa
 &lt;span class="k"&gt;done&lt;/span&gt;
@@ -1917,7 +1884,7 @@ Again, I'd be happy to be proven wrong!&lt;/p&gt;
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -1934,13 +1901,14 @@ Again, I'd be happy to be proven wrong!&lt;/p&gt;
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="bash"></category><category term="sam"></category><category term="bam"></category><category term="mapping"></category></entry><entry><title>Composing generator functions in Python</title><link href="https://standage.github.io/composing-generator-functions-in-python.html" rel="alternate"></link><published>2016-11-23T00:00:00-05:00</published><updated>2016-11-23T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-11-23:/composing-generator-functions-in-python.html</id><summary type="html">&lt;p&gt;In which I briefly motivate the utility of generator functions and
+</content><category term="notebook"></category><category term="bash"></category><category term="sam"></category><category term="bam"></category><category term="mapping"></category></entry><entry><title>Composing generator functions in Python</title><link href="https://standage.github.io/composing-generator-functions-in-python.html" rel="alternate"></link><published>2016-11-23T00:00:00-05:00</published><updated>2016-11-23T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-11-23:/composing-generator-functions-in-python.html</id><summary type="html">&lt;p&gt;In which I briefly motivate the utility of generator functions and
 demonstrate that they can be nested to create a data processing stream.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -2984,113 +2952,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Generators have long been one of my favorite features of the Python programming language.
@@ -3299,7 +3234,7 @@ Am I the late one to this party?&lt;/p&gt;
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -3316,13 +3251,14 @@ Am I the late one to this party?&lt;/p&gt;
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="python"></category><category term="generators"></category><category term="streaming"></category></entry><entry><title>Summary table for iLocus paper</title><link href="https://standage.github.io/summary-table-for-ilocus-paper.html" rel="alternate"></link><published>2016-03-01T00:00:00-05:00</published><updated>2016-03-01T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-03-01:/summary-table-for-ilocus-paper.html</id><summary type="html">&lt;p&gt;I created a table for my iLocus paper tonight, and wanted to capture
+</content><category term="notebook"></category><category term="python"></category><category term="generators"></category><category term="streaming"></category></entry><entry><title>Summary table for iLocus paper</title><link href="https://standage.github.io/summary-table-for-ilocus-paper.html" rel="alternate"></link><published>2016-03-01T00:00:00-05:00</published><updated>2016-03-01T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-03-01:/summary-table-for-ilocus-paper.html</id><summary type="html">&lt;p&gt;I created a table for my iLocus paper tonight, and wanted to capture
 the commands used to populate it while everything is still fresh in my mind.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -4366,113 +4302,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Tonight I created the following table for my iLocus paper.&lt;/p&gt;
@@ -4526,7 +4429,7 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# First row of the table: genome size&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; file in &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; file &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     grep &lt;span class="s1"&gt;&amp;#39;^##sequence-region&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{ sum += $4 } END { print sum }&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -4563,7 +4466,7 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Second row: sequence count&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; file in &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; file &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     grep -c &lt;span class="s1"&gt;&amp;#39;^##sequence-region&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -4600,7 +4503,7 @@ The annotation files were created using &lt;a href="https://standage.github.io/g
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Third row: gene count&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; file in &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; file &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
      grep &lt;span class="s1"&gt;$&amp;#39;\tmRNA\t&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
          &lt;span class="p"&gt;|&lt;/span&gt; perl -ne &lt;span class="s1"&gt;&amp;#39;m/Parent=([^;\n]+)/ and print &amp;quot;$1\n&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
          &lt;span class="p"&gt;|&lt;/span&gt; sort -u &lt;span class="se"&gt;\&lt;/span&gt;
@@ -4687,7 +4590,7 @@ transcript
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Fourth row: non-coding gene count&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; file in &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; file &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
      grep -e &lt;span class="s1"&gt;$&amp;#39;\tmiRNA\t&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;$&amp;#39;\tncRNA\t&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;$&amp;#39;\trRNA\t&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;$&amp;#39;\tsnRNA\t&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
           -e &lt;span class="s1"&gt;$&amp;#39;\tsnoRNA\t&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;$&amp;#39;\ttRNA\t&amp;#39;&lt;/span&gt; -e &lt;span class="s1"&gt;$&amp;#39;\ttranscript\t&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
          &lt;span class="p"&gt;|&lt;/span&gt; perl -ne &lt;span class="s1"&gt;&amp;#39;m/Parent=([^;\n]+)/ and print &amp;quot;$1\n&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -4729,7 +4632,7 @@ transcript
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Fifth row: total iLocus count&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; file in &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; file &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     grep -c &lt;span class="s1"&gt;$&amp;#39;\tlocus\t&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
 &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -4766,10 +4669,10 @@ transcript
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Final rows: iLocus count breakdown&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; file in &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; file &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$annotfiles&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt; in piLocus iiLocus ciLocus fiLocus niLocus&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; piLocus iiLocus ciLocus fiLocus niLocus&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$type&lt;/span&gt;&lt;span class="s2"&gt;: &amp;quot;&lt;/span&gt;
         grep -c &lt;span class="nv"&gt;iLocus_type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$type&lt;/span&gt; &lt;span class="nv"&gt;$file&lt;/span&gt;
     &lt;span class="k"&gt;done&lt;/span&gt;
@@ -4833,7 +4736,7 @@ niLocus: 0
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -4850,13 +4753,14 @@ niLocus: 0
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="bash"></category><category term="iLoci"></category></entry><entry><title>Is RefSeq's Arabidopsis annotation TAIR10?</title><link href="https://standage.github.io/is-refseqs-arabidopsis-annotation-tair10.html" rel="alternate"></link><published>2016-02-04T00:00:00-05:00</published><updated>2016-02-04T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-04:/is-refseqs-arabidopsis-annotation-tair10.html</id><summary type="html">&lt;p&gt;Some notes on my data forensics to determine whether there are any
+</content><category term="notebook"></category><category term="bash"></category><category term="iLoci"></category></entry><entry><title>Is RefSeq's Arabidopsis annotation TAIR10?</title><link href="https://standage.github.io/is-refseqs-arabidopsis-annotation-tair10.html" rel="alternate"></link><published>2016-02-04T00:00:00-05:00</published><updated>2016-02-04T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-02-04:/is-refseqs-arabidopsis-annotation-tair10.html</id><summary type="html">&lt;p&gt;Some notes on my data forensics to determine whether there are any
 differences between the RefSeq &lt;em&gt;Arabidopsis&lt;/em&gt; annotation and TAIR10.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -5900,113 +5804,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;On my slate of work this week is a comparison of two versions of the &lt;em&gt;Arabidopsis thaliana&lt;/em&gt; genome: the TAIR6 version (2005ish) and the latest TAIR10 version (2010).
@@ -6615,7 +6486,7 @@ I'll add a recipe for TAIR6 to GenHub, and use the existing RefSeq recipe for TA
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -6632,13 +6503,14 @@ I'll add a recipe for TAIR6 to GenHub, and use the existing RefSeq recipe for TA
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="bash"></category><category term="annotation"></category></entry><entry><title>Group meeting feedback, 20 Jan 2015</title><link href="https://standage.github.io/group-meeting-feedback-20-jan-2015.html" rel="alternate"></link><published>2016-01-20T00:00:00-05:00</published><updated>2016-01-20T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-20:/group-meeting-feedback-20-jan-2015.html</id><summary type="html">&lt;p&gt;I gave another group meeting today, this time on random arrangements of iLoci. This entry records feedback I received from the group members.&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+</content><category term="notebook"></category><category term="bash"></category><category term="annotation"></category></entry><entry><title>Group meeting feedback, 20 Jan 2015</title><link href="https://standage.github.io/group-meeting-feedback-20-jan-2015.html" rel="alternate"></link><published>2016-01-20T00:00:00-05:00</published><updated>2016-01-20T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2016-01-20:/group-meeting-feedback-20-jan-2015.html</id><summary type="html">&lt;p&gt;I gave another group meeting today, this time on random arrangements of iLoci. This entry records feedback I received from the group members.&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;I went right on to the practical applications and the results, without spending enough time motivating.&lt;ul&gt;
 &lt;li&gt;First, we want a reliable set of benchmarks that we can run a genome annotation through to get a quick first look at a genome.
   Is it normal?
@@ -6669,7 +6541,7 @@ I'll add a recipe for TAIR6 to GenHub, and use the existing RefSeq recipe for TA
 &lt;li&gt;Better to randomly distribute giLoci with delta=0.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="group meeting"></category><category term="iloci"></category></entry><entry><title>Random gene distribution: follow up</title><link href="https://standage.github.io/random-gene-distribution-follow-up.html" rel="alternate"></link><published>2015-12-10T00:00:00-05:00</published><updated>2015-12-10T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-10:/random-gene-distribution-follow-up.html</id><summary type="html">&lt;p&gt;I recently sketched out some notes on random placement of genomic
+&lt;/ul&gt;</content><category term="notebook"></category><category term="group meeting"></category><category term="iloci"></category></entry><entry><title>Random gene distribution: follow up</title><link href="https://standage.github.io/random-gene-distribution-follow-up.html" rel="alternate"></link><published>2015-12-10T00:00:00-05:00</published><updated>2015-12-10T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-10:/random-gene-distribution-follow-up.html</id><summary type="html">&lt;p&gt;I recently sketched out some notes on random placement of genomic
 intervals. Here I show a more concrete implementation&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
@@ -7713,113 +7585,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;A couple of days ago, I quickly threw together a procedure for random placement of gene loci on a chromosome.
@@ -7876,7 +7715,7 @@ Today I implemented some code (&lt;code&gt;shuffle_iloci.py&lt;/code&gt;) that i
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;print_function&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt;
 &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;figure.figsize&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -8197,7 +8036,8 @@ D1uK7fSrbDcvy8z3UF2q8BCq63W/gOo63M9o2769nG6Wtd5+MvBRqssEnkY1B/uhbSdytrsIOIvq
 +N4EnAo8tdu21z+y9CiqDwHvpTrR9E+orkbTnDJzc5vrqTVvpfqwc2qH9b+iOtnz11TXQ/8A1ZVX
 HpCZrfPfZ+1zSZrr/EVPSRJw848H3TUzD97hxpKkvnKkXJIkSSrMUC5JkiQV5vQVSZIkqTBHyiVJ
 kqTCDOWSJElSYYZySZIkqTBDuSRJklSYoVySJEkq7P8Dd3Pg4qyw8f4AAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -8498,7 +8338,8 @@ XgDsTxmL/kngM5SQeP/M/HnbZrvdle2GaZn5XsqlCg+kXK/72ZTrcD+pY/nO7fQyrf3vxwCfoFwm
 /w+Ukz3/SLke+ocoV165R2a2j3+ftc0laaHzjp6SJOCGmwftlZkHzLmwJGmg7CmXJEmSKjOUS5Ik
 SZU5fEWSJEmqzJ5ySZIkqTJDuSRJklSZoVySJEmqzFAuSZIkVWYolyRJkir7/wKWo5+s6l8PAAAA
 AElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -8522,7 +8363,7 @@ AElFTkSuQmCC
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -8539,13 +8380,14 @@ AElFTkSuQmCC
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="iloci"></category><category term="intervals"></category><category term="python"></category><category term="genome architecture"></category></entry><entry><title>Some notes on random gene distribution</title><link href="https://standage.github.io/some-notes-on-random-gene-distribution.html" rel="alternate"></link><published>2015-12-08T00:00:00-05:00</published><updated>2015-12-08T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-08:/some-notes-on-random-gene-distribution.html</id><summary type="html">&lt;p&gt;I've been looking at statistics of gene spacing, but as of yet have
+</content><category term="notebook"></category><category term="iloci"></category><category term="intervals"></category><category term="python"></category><category term="genome architecture"></category></entry><entry><title>Some notes on random gene distribution</title><link href="https://standage.github.io/some-notes-on-random-gene-distribution.html" rel="alternate"></link><published>2015-12-08T00:00:00-05:00</published><updated>2015-12-08T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-12-08:/some-notes-on-random-gene-distribution.html</id><summary type="html">&lt;p&gt;I've been looking at statistics of gene spacing, but as of yet have
 not compared these to benchmarks of "randomly" distributed genes. Here I
 sketch out a few rough notes on the topic.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
@@ -9590,113 +9432,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;The spatial organization of genes in the eukaryotic genome is influenced by a variety of factors such as genome size, transposable element activity, and nucleotide composition constraints.
@@ -9750,16 +9559,16 @@ Which statistics are relevant here (I've been working on this), and what can the
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Boilerplate code for visualizations.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;plot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;plot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;bins&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Genomic position&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Frequency&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;seaborn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fontsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -9792,7 +9601,7 @@ Interval &lt;code&gt;B&lt;/code&gt; is represented as &lt;code&gt;[8, 14]&lt;/co
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Interval&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Simple implementation of a discrete closed interval.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;start&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;
@@ -9838,10 +9647,10 @@ Feature entries have 9 tab-separated values, with feature type stored in the thi
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;load_intervals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Load features of interest into Interval objects.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="n"&gt;seqreg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+    &lt;span class="n"&gt;seqreg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;
     &lt;span class="n"&gt;intervals&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;infile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;seqreg&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;seqreg&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="n"&gt;seqreg_pattern&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;^##sequence-region\s+(\S+)\s+(\d+)\s+(\d+)&amp;#39;&lt;/span&gt;
             &lt;span class="n"&gt;srmatch&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seqreg_pattern&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
             &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;srmatch&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -10192,7 +10001,8 @@ Zuanre8PwJVUbfUbwJtUYrc5M7/onHbYk66W2jJzG7Ut3dXUfsoPUPsk39Xr3z/POG3dz7cDO6gt
 4UFqv+rXqR07NmZmt5575JhL0krwyYaSJGDpgSwXZ+ZVp+0sSXJGWpIkSZqEibQkSZI0AUs7JEmS
 pAk4Iy1JkiRNwERakiRJmoCJtCRJkjQBE2lJkiRpAibSkiRJ0gT+BlINo0T/T9ZsAAAAAElFTkSu
 QmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -10527,7 +10337,8 @@ uyXu/nXWbL4E3ZQyd19PLEu3mFhPeRWxTvKKUv1yO/WU5Z/vADYSS8K9R+QUX1+aTFjWA3xEHN9a
 YANwV719Tw+uWUYE7q8Rkx0vI1YxKdJJJvuc0k6eJW5QNlT5fpCYcHiIWK/6LWLFjnnunudz1zzn
 IiInQ9uxY7rOiIjI5ANZLnX3RSesLCIiGpEWEREREWmGAmkRERERkSYotUNEREREpAkakRYRERER
 aYICaRERERGRJiiQFhERERFpggJpEREREZEmKJAWEREREWnC35meu6pIOf+NAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -10877,7 +10688,8 @@ vLOJ5z2PI57jPKpQv9hOJcfy318K3E08nu5+Ikd5SGHBYlEL8Efi+qYD84AvVdr3tNnO+UQwP5tY
 UHkS8fSULBVlX59TysoNxE3LvBLlm4lFjVuI52nfSTwpZKC75/PDy465iMiBoB0aRUSkU2kTmf7u
 Pni/lUVERDPXIiIiIiK1ouBaRERERKRGlBYiIiIiIlIjmrkWEREREakRBdciIiIiIjWi4FpERERE
 pEYUXIuIiIiI1IiCaxERERGRGnkDzpVi+cwHoqIAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -10976,7 +10788,7 @@ See &lt;a href="http://stackoverflow.com/q/33831442/459780"&gt;http://stackoverf
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;pd_randintervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random gene distribution (Polistes dominula scaffold 25)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pd_seqreg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;pd_seqreg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Collisions: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Collisions: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -11299,7 +11111,8 @@ E6lcIPYAAACgSURBVJZGgI+J+1sFrAXu7jT29OKam4jE/TVisuOFxComVTnJXMyp7OR54gFlbc32
 3cSEwwliveo3iRU7lrp7Xs/dts9FROaD3mwoIiLA3AtZLnD3ZcfcWURENCItIiIiItKEEmkRERER
 kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 9Hxm1W5wAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -11318,7 +11131,7 @@ kQZU2iEiIiIi0oBGpEVEREREGlAiLSIiIiLSgBJpEREREZEGlEiLiIiIiDSgRFpEREREpIF/AFIU
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tc_randintervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random gene distribution (Tribolium castaneum X chromosome)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tc_seqreg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;tc_seqreg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Collisions: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Collisions: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -11649,7 +11462,8 @@ eJcI7Abc/dui2XILunll7r6R2JZuFbGf8hPEPskP1+rX22mnrPx8H7CZ2BLuAyKn+JbaYsK6YeBj
 3XLMRUROh77ZWf2fERGRuQeyXO7uK09ZWURENCMtIiIiItINBdIiIiIiIl1QaoeIiIiISBc0Iy0i
 IiIi0gUF0iIiIiIiXVAgLSIiIiLSBQXSIiIiIiJdUCAtIiIiItKFvwEY+7Bg853M2AAAAABJRU5E
 rkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -11668,7 +11482,7 @@ rkJggg==
 &lt;span class="n"&gt;starts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;xt_randintervals&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;plot_hist_rug&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;starts&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Random gene distribution (Xenopus tropicalis scaffold 3b)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
               &lt;span class="n"&gt;xlim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xt_seqreg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;xt_seqreg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt; &lt;span class="n"&gt;ylim&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;160&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Collisions: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Collisions: &lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;collisions&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -12016,7 +11830,8 @@ uz+eq7bUil0Ht7n7bOIReecRz3seTzzHeXRh/2I9lWzL/34JcBfxeLp7iRzloYUJi0UtwG+J65sB
 zAc+WWnb02I75xPB/BxiQuWpxNNTslSUg21OKSvXEzct80uUbyMmNW4nnqd9B/GkkIHuns8PL9vn
 IiKHg1ZoFBGRTqVFZPq7++BD7iwiIhq5FhERERGpFgXXIiIiIiJVorQQEREREZEq0ci1iIiIiEiV
 KLgWEREREakSBdciIiIiIlWi4FpEREREpEoUXIuIiIiIVMl/AFmuslWqbOHkAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -12032,7 +11847,7 @@ KLgWEREREakSBdciIiIiIlWi4FpEREREpEoUXIuIiIiIVMl/AFmuslWqbOHkAAAAAElFTkSuQmCC
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -12049,13 +11864,14 @@ KLgWEREREakSBdciIiIiIlWi4FpEREREpEoUXIuIiIiIVMl/AFmuslWqbOHkAAAAAElFTkSuQmCC
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="iloci"></category><category term="intervals"></category><category term="python"></category><category term="genome architecture"></category></entry><entry><title>A model invited speaker</title><link href="https://standage.github.io/a-model-invited-speaker.html" rel="alternate"></link><published>2015-11-19T00:00:00-05:00</published><updated>2015-11-19T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-19:/a-model-invited-speaker.html</id><summary type="html">&lt;p&gt;Today I had the privilege of attending an excellent departmental seminar from an invited speaker.
+</content><category term="notebook"></category><category term="iloci"></category><category term="intervals"></category><category term="python"></category><category term="genome architecture"></category></entry><entry><title>A model invited speaker</title><link href="https://standage.github.io/a-model-invited-speaker.html" rel="alternate"></link><published>2015-11-19T00:00:00-05:00</published><updated>2015-11-19T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-19:/a-model-invited-speaker.html</id><summary type="html">&lt;p&gt;Today I had the privilege of attending an excellent departmental seminar from an invited speaker.
 I've seen plenty of great seminars in grad school but I've also experienced my fair share of seminars that were...less than phenomenal.
 The content of the talk was interesting, and the speaker's presentation was engaging, but there were a couple of things on top …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I had the privilege of attending an excellent departmental seminar from an invited speaker.
 I've seen plenty of great seminars in grad school but I've also experienced my fair share of seminars that were...less than phenomenal.
@@ -12073,7 +11889,7 @@ The content of the talk was interesting, and the speaker's presentation was enga
   There was time for questions, and follow up questions, and some good discussion, and even after 15 minutes worth of &lt;em&gt;that&lt;/em&gt; we had just barely come to the end of the seminar's hour-long time slot.
   The speakers and audience just don't get that kind of engaging experience if the speaker doesn't manage his/her time well.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Just a couple of things to keep in mind when I am fortunate enough to give research talks.&lt;/p&gt;</content><category term="speaking"></category><category term="academics"></category></entry><entry><title>Group meeting feedback</title><link href="https://standage.github.io/group-meeting-feedback.html" rel="alternate"></link><published>2015-11-18T00:00:00-05:00</published><updated>2015-11-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-18:/group-meeting-feedback.html</id><summary type="html">&lt;p&gt;I gave a group meeting today on my iLocus work, and got some good feedback from the group.&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;p&gt;Just a couple of things to keep in mind when I am fortunate enough to give research talks.&lt;/p&gt;</content><category term="notebook"></category><category term="speaking"></category><category term="academics"></category></entry><entry><title>Group meeting feedback</title><link href="https://standage.github.io/group-meeting-feedback.html" rel="alternate"></link><published>2015-11-18T00:00:00-05:00</published><updated>2015-11-18T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-18:/group-meeting-feedback.html</id><summary type="html">&lt;p&gt;I gave a group meeting today on my iLocus work, and got some good feedback from the group.&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;Taylor&lt;ul&gt;
 &lt;li&gt;we might want to be more careful about terminology clashes&lt;ul&gt;
 &lt;li&gt;we use piLoci and miLoci to refer to protein-coding iLoci and merged iLoci, respectively&lt;/li&gt;
@@ -12111,7 +11927,7 @@ The content of the talk was interesting, and the speaker's presentation was enga
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="group meeting"></category><category term="iloci"></category></entry><entry><title>Cleanup: supplementary tables for our genome paper</title><link href="https://standage.github.io/cleanup-supplementary-tables-for-our-genome-paper.html" rel="alternate"></link><published>2015-11-17T00:00:00-05:00</published><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:/cleanup-supplementary-tables-for-our-genome-paper.html</id><summary type="html">&lt;p&gt;We submitted a genome paper to Genome Biology over the weekend. I'm going
+&lt;/ul&gt;</content><category term="notebook"></category><category term="group meeting"></category><category term="iloci"></category></entry><entry><title>Cleanup: supplementary tables for our genome paper</title><link href="https://standage.github.io/cleanup-supplementary-tables-for-our-genome-paper.html" rel="alternate"></link><published>2015-11-17T00:00:00-05:00</published><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:/cleanup-supplementary-tables-for-our-genome-paper.html</id><summary type="html">&lt;p&gt;We submitted a genome paper to Genome Biology over the weekend. I'm going
 through our repository and tidying things up, and I realized I have not had
 a chance to record my notes on several of the supplemental tables providing
 a comparison of genome features across seven species. I'll go ahead and do
@@ -13158,113 +12974,80 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We submitted a genome paper to &lt;em&gt;Genome Biology&lt;/em&gt; over the weekend.
@@ -13323,7 +13106,7 @@ I'll go ahead and do so here.&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv
@@ -13379,7 +13162,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
            scratch/species/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.pre-mrnas.tsv &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13430,7 +13213,7 @@ Length_mean	Length_p50	Length_min	Length_max
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
     mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13485,12 +13268,12 @@ Rather than retyping the command two more times, let's just wrap the command in 
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; field in Length ExonCount GCContent
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; field &lt;span class="k"&gt;in&lt;/span&gt; Length ExonCount GCContent
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$field&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+    &lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
     &lt;span class="k"&gt;do&lt;/span&gt;
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
         mlrcmd stats1 -a mean,p50,min,max -f &lt;span class="nv"&gt;$field&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13668,7 +13451,7 @@ We have to be careful to escape field names and shell variables, since both begi
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     mlrcmd filter &lt;span class="se"&gt;\&lt;/span&gt;
            &lt;span class="s2"&gt;&amp;quot;\$Length &amp;gt;= &lt;/span&gt;&lt;span class="nv"&gt;$p5&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$Length &amp;lt;= &lt;/span&gt;&lt;span class="nv"&gt;$p95&lt;/span&gt;&lt;span class="s2"&gt; &amp;amp;&amp;amp; \$NContent &amp;lt; 0.25&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13727,7 +13510,7 @@ GCContent_mean	GCContent_p50	GCContent_min	GCContent_max
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+&lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
     mlrcmd filter &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13781,7 +13564,7 @@ Nvit	0.46	0.45	0.15	0.79
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[10]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; featuretype in exons introns
+&lt;div class=" highlight hl-bash"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; featuretype &lt;span class="k"&gt;in&lt;/span&gt; exons introns
 &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt;
@@ -13791,7 +13574,7 @@ Nvit	0.46	0.45	0.15	0.79
     &lt;span class="nb"&gt;echo&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Length&amp;quot;&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+    &lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
     &lt;span class="k"&gt;do&lt;/span&gt;
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
         mlrcmd stats1 -a mean,p50,min,max -f Length &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13804,7 +13587,7 @@ Nvit	0.46	0.45	0.15	0.79
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;$&amp;#39;Species\tMean\tMedian\tMin\tMax&amp;#39;&lt;/span&gt;
     &lt;span class="nv"&gt;p5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
     &lt;span class="nv"&gt;p95&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;mlrcmd stats1 -a p5,p95 -f Length scratch/data/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;featuretype&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.tsv &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;for&lt;/span&gt; species in Amel Bter Hsal Cflo Pdom Pcan Nvit
+    &lt;span class="k"&gt;for&lt;/span&gt; species &lt;span class="k"&gt;in&lt;/span&gt; Amel Bter Hsal Cflo Pdom Pcan Nvit
     &lt;span class="k"&gt;do&lt;/span&gt;
         &lt;span class="nb"&gt;echo&lt;/span&gt; -n &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;species&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\t&amp;#39;&lt;/span&gt;
         mlrcmd filter &lt;span class="se"&gt;\&lt;/span&gt;
@@ -13899,7 +13682,7 @@ Nvit	0.32	0.30	0.06	0.81
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -13916,13 +13699,14 @@ Nvit	0.32	0.30	0.06	0.81
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="wasp"></category><category term="publication"></category><category term="mlr"></category><category term="bash"></category></entry><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><published>2015-11-17T00:00:00-05:00</published><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:/notebook-test.html</id><summary type="html">&lt;p&gt;Testing Jupyter notebook integration!&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+</content><category term="notebook"></category><category term="wasp"></category><category term="publication"></category><category term="mlr"></category><category term="bash"></category></entry><entry><title>Notebook test</title><link href="https://standage.github.io/notebook-test.html" rel="alternate"></link><published>2015-11-17T00:00:00-05:00</published><updated>2015-11-17T00:00:00-05:00</updated><author><name>Daniel S. Standage</name></author><id>tag:standage.github.io,2015-11-17:/notebook-test.html</id><summary type="html">&lt;p&gt;Testing Jupyter notebook integration!&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -14965,119 +14749,86 @@ h6:hover .anchor-link {
   font-style: italic;
 }
 &lt;/style&gt;
-&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
-&lt;style type="text/css"&gt;
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-&lt;/style&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;style type="text/css"&gt;pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+ .highlight pre  .hll { background-color: #ffffcc }
+ .highlight pre  { background: #f8f8f8; }
+ .highlight pre  .c { color: #3D7B7B; font-style: italic } /* Comment */
+ .highlight pre  .err { border: 1px solid #FF0000 } /* Error */
+ .highlight pre  .k { color: #008000; font-weight: bold } /* Keyword */
+ .highlight pre  .o { color: #666666 } /* Operator */
+ .highlight pre  .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+ .highlight pre  .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+ .highlight pre  .cp { color: #9C6500 } /* Comment.Preproc */
+ .highlight pre  .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+ .highlight pre  .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+ .highlight pre  .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+ .highlight pre  .gd { color: #A00000 } /* Generic.Deleted */
+ .highlight pre  .ge { font-style: italic } /* Generic.Emph */
+ .highlight pre  .gr { color: #E40000 } /* Generic.Error */
+ .highlight pre  .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+ .highlight pre  .gi { color: #008400 } /* Generic.Inserted */
+ .highlight pre  .go { color: #717171 } /* Generic.Output */
+ .highlight pre  .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+ .highlight pre  .gs { font-weight: bold } /* Generic.Strong */
+ .highlight pre  .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+ .highlight pre  .gt { color: #0044DD } /* Generic.Traceback */
+ .highlight pre  .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+ .highlight pre  .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+ .highlight pre  .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+ .highlight pre  .kp { color: #008000 } /* Keyword.Pseudo */
+ .highlight pre  .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+ .highlight pre  .kt { color: #B00040 } /* Keyword.Type */
+ .highlight pre  .m { color: #666666 } /* Literal.Number */
+ .highlight pre  .s { color: #BA2121 } /* Literal.String */
+ .highlight pre  .na { color: #687822 } /* Name.Attribute */
+ .highlight pre  .nb { color: #008000 } /* Name.Builtin */
+ .highlight pre  .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+ .highlight pre  .no { color: #880000 } /* Name.Constant */
+ .highlight pre  .nd { color: #AA22FF } /* Name.Decorator */
+ .highlight pre  .ni { color: #717171; font-weight: bold } /* Name.Entity */
+ .highlight pre  .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+ .highlight pre  .nf { color: #0000FF } /* Name.Function */
+ .highlight pre  .nl { color: #767600 } /* Name.Label */
+ .highlight pre  .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+ .highlight pre  .nt { color: #008000; font-weight: bold } /* Name.Tag */
+ .highlight pre  .nv { color: #19177C } /* Name.Variable */
+ .highlight pre  .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+ .highlight pre  .w { color: #bbbbbb } /* Text.Whitespace */
+ .highlight pre  .mb { color: #666666 } /* Literal.Number.Bin */
+ .highlight pre  .mf { color: #666666 } /* Literal.Number.Float */
+ .highlight pre  .mh { color: #666666 } /* Literal.Number.Hex */
+ .highlight pre  .mi { color: #666666 } /* Literal.Number.Integer */
+ .highlight pre  .mo { color: #666666 } /* Literal.Number.Oct */
+ .highlight pre  .sa { color: #BA2121 } /* Literal.String.Affix */
+ .highlight pre  .sb { color: #BA2121 } /* Literal.String.Backtick */
+ .highlight pre  .sc { color: #BA2121 } /* Literal.String.Char */
+ .highlight pre  .dl { color: #BA2121 } /* Literal.String.Delimiter */
+ .highlight pre  .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+ .highlight pre  .s2 { color: #BA2121 } /* Literal.String.Double */
+ .highlight pre  .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+ .highlight pre  .sh { color: #BA2121 } /* Literal.String.Heredoc */
+ .highlight pre  .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+ .highlight pre  .sx { color: #008000 } /* Literal.String.Other */
+ .highlight pre  .sr { color: #A45A77 } /* Literal.String.Regex */
+ .highlight pre  .s1 { color: #BA2121 } /* Literal.String.Single */
+ .highlight pre  .ss { color: #19177C } /* Literal.String.Symbol */
+ .highlight pre  .bp { color: #008000 } /* Name.Builtin.Pseudo */
+ .highlight pre  .fm { color: #0000FF } /* Name.Function.Magic */
+ .highlight pre  .vc { color: #19177C } /* Name.Variable.Class */
+ .highlight pre  .vg { color: #19177C } /* Name.Variable.Global */
+ .highlight pre  .vi { color: #19177C } /* Name.Variable.Instance */
+ .highlight pre  .vm { color: #19177C } /* Name.Variable.Magic */
+ .highlight pre  .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[8]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
@@ -15254,7 +15005,8 @@ fDgzN3V5OHMuIs6sNsYAdgP7qj99ITPXZObx1ckE/wX8aWb2y295P4dqTzAifo3makI/LVvdS3Pf
 bKK+X6H5oTatRXGWDmXdb6cf72WxDlgJXB4RE2v5J2fm810c01y6FdgUEffQPBPi4szc0+UxaWY+
 B3whIrZUj8/pp9WDzLwjIo6LiPtoTuDfn5n7zRjvpSNJhVgsSzqSpHlm4EtSIQx8SSqEgS9JhTDw
 JakQBr4kFcLAl6RCGPiSVIj/A0lj3av7gje1AAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -15345,7 +15097,8 @@ X8jM0zLz9GoxwX8Af5iZ36+7rg5ZS3VNMCJeQnM2oZ+mre6led1scnw/TvOH2oy6YpUOZe230497
 WawHBoErImJyLv+szHyuxpo66Tbgxoi4h+ZKiEsyc3/NNWluPgV8JiK2VM/X9tPsQWbeGRGnRsR9
 NE/g35OZs2aMe+lIUiG6ZUpHkrTIDHxJKoSBL0mFMPAlqRAGviQVwsCXpEIY+JJUCANfkgrxv2Em
 wnCe/r2CAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -15454,7 +15207,8 @@ fBZ4FfgHPa2oc14BHsvMU83rLG9ExN9fqHO/hP1B4GqA5h46f9nbctSqZjA8Btyamff2uJyOi4h/
 L1bjUM4eOsO4N8UOYD1we0Scnbvflplv9LCmTnoAuDcinqSx4uGWzDzZ45rUut8Cfici9jefXz8s
 swaZuS8iNkfEIRon7p/KzAUzxr1xJKkA/TKNI0nqIsNekgpg2EtSAQx7SSqAYS9JBTDsJakAhr0k
 FcCwl6QC/F+8KPd32bqc0QAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -15547,7 +15301,8 @@ FqoWDI8C92Tm7g6X03QR8fu1i2AALwNTtT99ITM3Zuam2o0D3wH+IDOf63RdTXQbtWuAEfF6qqMI
 /TJc9XWq18ku9O0Sqr/MZtUVd+NQzhw6/Tg3xRZgBLg3Ii6M3d+UmWc6WFMz7QF2R8TjVO942JyZ
 r3S4Ji3c3wFfiIj9tfe39cuoQWbujYgNEXGI6on7nZk5Z8Y4N44kFaBbhnEkSS1k2EtSAQx7SSqA
 YS9JBTDsJakAhr0kFcCwl6QCGPaSVID/B02rUo8ILuYpAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -15664,7 +15419,8 @@ eIDqmFhEvIfKb9+91KX0HJVxpcv1v4vKm1MvWQ8cbHRSx2fFUK71ZHpxPYbtwDDwSERc7mvflJlv
 F1hTs/YD+yLiEJVZDdsy83zBNV1L/hD4ckQcrj5+oJd+287MAxGxPiKOUbmp/XRm9tr/w7cDDWcR
 ulaMJJVMLw18SJKaYLBLUskY7JJUMga7JJWMwS5JJWOwS1LJGOySVDIGuySVzP8HprN4mOif2oYA
 AAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -15781,7 +15537,8 @@ mYdLLmdWIuLTxc0vgHeAqeJPV8jMTZm5uegj/TPgX2Xmm2XXNQuPU9wTi4j3U//tu5u6lL5H/b7S
 9fpvp/7DqZtsBI61OqiMpfGqNJ9MN87HsAvoB56KiOt97Vsy81KJNbXrCHA4Io5TH9WwMzMvl1zT
 UvI14BsRcaLYfrybftvOzKMRsTEiTlO/qP1sZnbbv+H7gJajCJ0rRpIqpptufEiS2mCwS1LFGOyS
 VDEGuyRVjMEuSRVjsEtSxRjsklQxBrskVcz/B9ZljQ8+6JMVAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -15898,7 +15655,8 @@ t4DZ4k9PyMwtmbm16CP9W+DfZuZrZde1AA9SjIlFxAeo//bdS11K36c+rnS5/vdR/+HUSzYDx1qd
 VMbWeFVaT6YX12PYDQwBj0bE5b72bZn5dok1tesIcDgijlOf1bArM98puaaV5I+Bb0TEieLxg730
 23ZmHo2IzRFxmvpF7ecys9f+Dd8OtJxF6FoxklQxvTTwIUlqg8EuSRVjsEtSxRjsklQxBrskVYzB
 LkkVY7BLUsUY7JJUMf8f1nCChKxfysoAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16015,7 +15773,8 @@ CPYjwL8CaKwn838rqGHRagTJM8BDmbm34nJmJSK+0Bj8AngLuNj40xMyc31mbmj0kf4t8G8zs5d2
 7Qpratc+YG9EHKQ+q2FrZr5TcU2LyZ8A34yIQ43H9/XSb9uZuT8i1kXEUeoXtV/MzF77N3wr0HIW
 oWvFSFJhemngQ5LUBoNdkgpjsEtSYQx2SSqMwS5JhTHYJakwBrskFcZgl6TC/H/v0XVFYVm0ZgAA
 AABJRU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16111,7 +15870,8 @@ V2Tmpvq4638Bv5uZnXTJrZuoH2OLiDdS+5beScNR36R2rOp0/edS+8DqFBuBPWezYVvMxqF71tDp
 xLUntgCDwJ0RcXrs/trMPF5hTc14ENgVEXupzabYnJmvVFxTSf4K+FJE7Kvfv6mTvpVn5sMRsTEi
 nqC28/uxzOyk/8eXAGc1c9G1cSSpAO0yjCNJWkSGvSQVwLCXpAIY9pJUAMNekgpg2EtSAQx7SSqA
 YS9JBfh/99GN8EyXO6gAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16207,7 +15967,8 @@ nf+qtpxy1IPlMeCOzNxZcTkti4jfr59gA/glMFn/6QqZeUVmbqz3u/4n8OnM7Ka7sNxE/RxbRLyD
 RDxBbTTFpsx8veKaSvLXwDciYk/9+U3d9K08Mx+JiA0R8RS1g9/PZ2Y3/T++BJjTyEXnxpGkAnRK
 N44kaQEZ9pJUAMNekgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AF82kMContjTAAAAAElFTkSu
 QmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16303,7 +16064,8 @@ xxYRb6X2Lb2buqO+Q+1c1an630jtA6tbbAT2zGfDjhiNw/KZQ6cb557YCgwAd0TEqb77qzPzWIU1
 teJ+YHdE7KU2mmJLZr5WcU0l+RvgaxHxWH35hm76Vp6ZD0XExoh4gtrB76cys5v+H18CzGvkonPj
 SFIBOqUbR5K0iAx7SSqAYS9JBTDsJakAhr0kFcCwl6QCGPaSVADDXpIK8P+v7JmelUqgSQAAAABJ
 RU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16425,7 +16187,8 @@ z0wtHBuo1gQj4nU0ZhN6ZerqBzTWzcZrO53GAW1K8+YqHcp55k4vPstiI7AcuDkixufy12fmsS6O
 qZ3uAXZExB4aV0LclJkjXR6TWvdl4KsRsbd6v6FXZg8y876IWB0R+2mcwH8sM6fNGJ+lI0mFmE9T
 OpKkDjLwJakQBr4kFcLAl6RCGPiSVAgDX5IKYeBLUiEMfEkqxP8DJ6wRsGjIj2cAAAAASUVORK5C
 YII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16542,7 +16305,8 @@ ITPXZOal9YcJvgv828zspxsH3EB9TjAifpJqNaFflq6epTpvNt7bCqod2pQWzKd0KOeaO/14LYsN
 wCrgrogYX8tfm5lvdrGm2fQYsC0inqH6JMRtmXmsyzWpfV8A/iAidtWPb+iX1YPM3BERl0TEHqoD
 +I9l5kkzxmvpSFIhFtKSjiRpDhn4klQIA1+SCmHgS1IhDHxJKoSBL0mFMPAlqRAGviQV4v8A7Mbj
 9DtUp0UAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16648,7 +16412,8 @@ zcx++V2Q51HtCUbEy2iuJvTTstW9NPfNxuobpPmhNqkFcZUOZd1vpx/vZbEWWAVcGRFja/mnZuZz
 XZxTO90GbIyIe2heCXFpZu7r8pw0M58HvhgRm6vn5/XT6kFm3hkRJ0TEfTRP4N+XmVNmjPfSkaRC
 LJQlHUlShxn4klQIA1+SCmHgS1IhDHxJKoSBL0mFMPAlqRAGviQV4v8AfSH1FXxvSiAAAAAASUVO
 RK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16739,7 +16504,8 @@ Evg7gXMAqvN2/rvecrQQVTjcBVyemTfWXE7HRcR7qoUxgOeAyerPUMjM0zLz9GozwX8Bf56ZP627
 rg7ZQLUmGBGvpjWbMEzTVvfSWjebGt/LaP2nNqu+2KVDWeftDONZFpuANcCVETE1l392Zv68xpo6
 6Tbgxoi4h9ZOiEsz80DNNWl+vgB8MSK2V683DNPsQWbeGRGnRsR9tG7gP5CZh80Yz9KRpEL0y5SO
 JKnLDHxJKoSBL0mFMPAlqRAGviQVwsCXpEIY+JJUCANfkgrxf4/i1t2VFgccAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16853,7 +16619,8 @@ k8D5+r+hkJnrM3NDfeHA/wben5nf6nVdXXQ79TnAiPgBqlmEYZmuepbqPNmFsb2Z6sNsRn1xNQ7l
 rKEzjGtTbANWAw9ExIW5+82ZeaqHNXXTk8BjEfEM1RUP92Tm6R7XpLn7LeB3IuJA/fj2YZk1yMy9
 EbEuIg5RHbh/KDMvmjGujSNJBeiXaRxJ0iIy7CWpAIa9JBXAsJekAhj2klQAw16SCmDYS1IBDHtJ
 KsD/Bwbler1WltyCAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -16956,7 +16723,8 @@ znc7W46mqx4MdwNXZObNHS6n5SLij+snwQBeAg7Vf/WFzDw9M9fULxz4DvDezHy203W10IXUzwFG
 xCupHUXol8NV91M7T3Z4bIuobcwm1BVX41DOHDr9ODfFWmApcFVEHD52f05mvtzBmlrpduDmiLiP
 2hUPl2Xm3g7XpOn7HPCFiNhSf39hvxw1yMzNEbE6Ih6gtuP+kcycNGOcG0eSCtAth3EkSW1k2EtS
 AQx7SSqAYS9JBTDsJakAhr0kFcCwl6QCGPaSVID/B7hdZG0xNFeOAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17050,7 +16818,8 @@ HDr/1dlytFLVYHgIuC0zD3S4nKaLiN+vDoIB/AyYr371hczckZk7qzcO/AD4g8x8udN1NdENVMcA
 I+JCKr0I/dJd9R0q42Rnz+18Kh9mNXXF3TiUM4dOP85NsRsYBW6PiLN999dk5msdrKmZ7gcORMSj
 VO542JWZJztck1bu74CvRsRj1dc39EuvQWYeiojtEfEElQv3T2bmkhnj3DiSVIBu6caRJLWQYS9J
 BTDsJakAhr0kFcCwl6QCGPaSVADDXpIKYNhLUgH+D3lqZWuzQd2yAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17144,7 +16913,8 @@ MIAfArPVPz0hM6/JzC3VEwf+C/idzHyt3XU10C1U5wAj4i1URhF6ZbjqWSrzZGf7tpbKh9mCOuJs
 HMpZQ6cX16bYBgwD90TE2bH7GzLzZBtraqTHgF0RsZfKGQ9bM/NUm2vS8v018MWI2Fd9fkuvjBpk
 5u6IuDoinqNy4P6JzFw0Y1wbR5IK0CnDOJKkJjLsJakAhr0kFcCwl6QCGPaSVADDXpIKYNhLUgEM
 e0kqwP8BTox3UPRmAuUAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17237,7 +17007,8 @@ e+h8r73laKGqwfA0cH9m7mpzOQ0XEb9XPQkG8GNgqvqrJ2TmhszcWL1w4L+A38/MV9tdVwPdSfUc
 YES8hcoqQq8sVz1H5TzZxbldTuXNbFYdcTUO5fTQ6cXeFJuBIeDBiLi4dn9rZp5pY02NtBvYFRHP
 UrniYVNmnm1zTVq4vwG+HBH7qo/v7JVVg8zcExHrI+IglQP3j2fmnBljbxxJKkCnLONIkprIsJek
 Ahj2klQAw16SCmDYS1IBDHtJKoBhL0kFMOwlqQD/B6K3eEIkb4+eAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17330,7 +17101,8 @@ AO7NzL1tLqfhIuJ3qhfBAH4MTFd/9YTM3JyZW6oTB/4N+N3MfKXddTXQHVSvAUbEW6mMIvTKcNXT
 VK6TXezbGiofZnPqiNk4lLOGTi+uTbEdGALuj4iLY/c3Z+bZNtbUSPuAvRHxFJUZD9sy840216TF
 +wvgqxFxsPr6jl4ZNcjM/RFxQ0QcoXLi/qnMnDdjXBtHkgrQKcM4kqQmMuwlqQCGvSQVwLCXpAIY
 9pJUAMNekgpg2EtSAQx7SSrA/wC4MGU5nL6UaQAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17423,7 +17195,8 @@ ucv9CeCdwMMR8bY219RIz1INwcz8IXAC+Jm2VtQ4LwGPZ+a56jzLmYj46bkad0rYHwI+CFBdQ+c/
 yihCrwxXfYvKPNmFvl1K5YfZrDriahzKWUOnF9em2AoMAvdFxIWx+5sy80wba2qkvcCeiHiSyhUP
 WzLztTbXpIX7C+DLEXGg+v62Xhk1yMx9EbEhIg5TOXH/ZGbOmTGujSNJBeiUYRxJUhMZ9pJUAMNe
 kgpg2EtSAQx7SSqAYS9JBTDsJakAhr0kFeD/AMHiXlPb/U5QAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17565,7 +17338,8 @@ LiIuqU+MARwEjtR/+kJmrsvMs+uLCf4H8K8z82fdHtc8upz6nGBE/BLVbEK/TF09TnXebKK2t1Lt
 0Ka1ZK7SoZx77vTjvSw2AquBGyNiYi7//Mzs3dua/m33Atsj4jGqKyGuzcxDXR6TOvdl4E8jYmf9
 /PJ+mT3IzAci4qyIeILqAP7jmXnUjPFeOpJUiKU0pSNJWkAGviQVwsCXpEIY+JJUCANfkgph4EtS
 IQx8SSqEgS9Jhfi/IIm5oB72IoMAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17663,7 +17437,8 @@ l9NyEXFpdWEM4AXgYPWnK2TmWZl5drWY4L+Av8rMZ9pdV4tcTnVNMCJeS2M2oZumrR6icd1seHxH
 0PhQG9OsWKVDWfvtdONeFiuBJcD1ETE8l39+Zr7Yxppa6S5gfUQ8SGMlxDWZua/NNWlivgB8KSI2
 Vo8v76bZg8y8NyLOjIgtNE7gP5iZ42aMe+lIUiFmy5SOJGmaGfiSVAgDX5IKYeBLUiEMfEkqhIEv
 SYUw8CWpEAa+JBXi/wB4ohMAcXcTQgAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17748,7 +17523,8 @@ wLWZua7Dw2m5iPhUdWEM4C3gQPWnL2TmOZl5bnUzwX8Bf5yZr3V6XC2yjOqaYES8k9pqQj8tWz1J
 7brZxPwWUfumNqWuuEuHsvbb6ce9LFYAg8B1ETGxln9BZu7u4Jha6V5gXUQ8Tu1OiKszc0+Hx6Tp
 +Srw9YjYUH2+rJ9WDzLzoYg4OyKeovYC/jOZecjGuJeOJBWiW5Z0JEmzzOBLUiEMviQVwuBLUiEM
 viQVwuBLUiEMviQVwuBLUiH+D3sA/74CGMSDAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17851,7 +17627,8 @@ EzLznMxcVV848C3gnZn5RKfraqFLqV8DjIgXUptF6JXpqq9Ru052dGyLqX2YTWherMahnD10enFv
 irXAUuC6iDg6d786M5/rYE2tdDuwOSLuo7bi4arM3N/hmjR9nwE+FxFb688v7ZVZg8zcEhErI2IH
 tRP392fmpBnj3jiSVID5Mo0jSWojw16SCmDYS1IBDHtJKoBhL0kFMOwlqQCGvSQVwLCXpAL8L7XL
 WkvEREQwAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -17943,7 +17720,8 @@ M7fULxz4D+C3MvP5qutqoZuonwOMiNdSG0XoleGqx6mdJzvft7XUvszm1BFX41DOHDq9ODfFNmAY
 uCsizo/dX5+ZpyqsqZX2Ansi4jFqVzxszczTFdekxfsr4DMRcaD+/KZeGTXIzH0RsSkiDlM7cP9w
 Zs6bMc6NI0kF6JRhHElSGxn2klQAw16SCmDYS1IBDHtJKoBhL0kFMOwlqQCGvSQV4H8BDL1yl664
 T+8AAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18053,7 +17831,8 @@ MvP1XtfVQQ/QOGcXER+gPjtQ0pTTD6if17p8fO+l/sPrH+jFR+OtpvVkSlyvYQwYAR6LiMtz7dsy
 8+0e1tQpB4D9EXGY+lUHj2bmhR7XpPb9DvDNiDjS2H6gpNmAzDwYEZsj4hj1QfnnM3PBjHGtGEkq
 TEknFiRJGOySVByDXZIKY7BLUmEMdkkqjMEuSYUx2CWpMAa7JBXm/wPCbsygxOdbQgAAAABJRU5E
 rkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18162,7 +17941,8 @@ qxHx/i7X1EnfpxF2mfkycBH4W12tqLN+BDybmVONsZG3I+Lnmm3YjWA/C/xDgMZ8Mv+3CzVogRpB
 oj6ude343kf9y+undOPReKtpPpkS52s4AAwCj0XEtb72PZn5dhdr6pQTwPGIOE39qoP9mflOl2tS
 +34X+EpEnGks319Sb0BmnoyInRFxjvpJ+ecys2nGOFeMJBWmpIEFSRIGuyQVx2CXpMIY7JJUGINd
 kgpjsEtSYQx2SSqMwS5Jhfl/ykajBaztZEUAAAAASUVORK5CYII=
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18271,7 +18051,8 @@ DfwSQGM9mf/bgxq0SI0geA74QmYe7XE5HRURn2kMTgG8Bcw2/hQhM3dl5u7GgP7/Af5VZr7R67o6
 6CEaY3YR8QHqvQMldTl9h/q41rXzew/1X17/QC8ejbea1pMpcb2GEWAIeCwirvW135+Zb/ewpk45
 BhyNiJPUZx3sz8wf97gmte/3ga9FxKnG+4dK6g3IzOMRsTMizlC/KP9sZjbNGNeKkaTClDSwIEnC
 YJek4hjsklQYg12SCmOwS1JhDHZJKozBLkmFMdglqTD/H2GUvdTXqeIUAAAAAElFTkSuQmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18380,7 +18161,8 @@ ITO3Z+aO+oT+/wb+RWa+2eu6OugB6nN2EfEhaqMDJQ05PU9tXutq/95P7ZfX39GLR+NdS+vJlLhe
 wxAwCDwaEVfH2ndm5qUe1tQpR4EjEXGC2lUHezLzRz2uSe37feCrEXGyvv1ASaMBmXksIrZFxGlq
 J+Wfz8yGGeNaMZJUmJImFiRJGOySVByDXZIKY7BLUmEMdkkqjMEuSYUx2CWpMAa7JBXm/wOxlrIm
 VcPFjgAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18488,7 +18270,8 @@ wC9mZklP5n6Q5phdRLyTRu9ASV1O36QxrnX1/N5G48Prx/Ti0XjX03oyJa7XMAaMAI9GxNW+9t2Z
 +UYPa+qWY8DRiDhJY9bBvsx8s8c1qXO/BXwpIk41Xz9YUm9AZh6PiB0RcYbGRfknM7NlxrhWjCQV
 pqSBBUkSBrskFcdgl6TCGOySVBiDXZIKY7BLUmEMdkkqjMEuSYX5v64Sudcd83bcAAAAAElFTkSu
 QmCC
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18591,7 +18374,8 @@ jWA/BvwKQHM9mf/oQg1apGYQPAV8LDMPdLmcWkXEh5uDUwA/BGaaf4qQmdsyc3tzQP9bwG9mZkmf
 83cPzTG7iHgTjd6BkrqcnqExrnWpfT9J48Xrx3TjM09X03oyJa7XsBMYAj4eEZf62u/IzPNdrKku
 B4EDEXGExqyDHZn5apdrUvv+CvibiDjafHxPSb0BmXkoIm6OiOM0Lso/kpktM8a1YiSpMCUNLEiS
 MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
-"&gt;
+"
+&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;
@@ -18620,7 +18404,7 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -18637,10 +18421,11 @@ MNglqTgGuyQVxmCXpMIY7JJUGINdkgpjsEtSYQx2SSrM/wLvcVRjkzZixwAAAABJRU5ErkJggg==
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="meta"></category><category term="iloci"></category></entry></feed>
+</content><category term="notebook"></category><category term="meta"></category><category term="iloci"></category></entry></feed>

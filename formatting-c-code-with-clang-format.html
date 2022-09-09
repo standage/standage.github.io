@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -105,18 +105,16 @@ See <a href="http://www.terminally-incoherent.com/blog/2009/04/10/the-only-corre
 <p>So in some <a href="https://matt.sh/howto-c">recent reading</a> I came across a tool called <code>clang-format</code> that will automatically format C code based on your preferred style.
 All of my C code formatting has previously been self-enforced, but after using <code>pep8</code> and <code>autopep8</code> on my Python code for a few years now I thought it was time to let an automated tool do the work for me.
 Here's my config file (<code>.clang-format</code>).</p>
-<div class="highlight"><pre><span></span><span class="n">BasedOnStyle</span><span class="o">:</span> <span class="n">llvm</span>
-<span class="n">IndentWidth</span><span class="o">:</span> <span class="mi">4</span>
-<span class="n">AllowShortFunctionsOnASingleLine</span><span class="o">:</span> <span class="n">None</span>
-<span class="n">KeepEmptyLinesAtTheStartOfBlocks</span><span class="o">:</span> <span class="kc">false</span>
-<span class="n">BreakBeforeBraces</span><span class="o">:</span> <span class="n">Allman</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">BasedOnStyle</span><span class="o">:</span><span class="w"> </span><span class="n">llvm</span><span class="w"></span>
+<span class="n">IndentWidth</span><span class="o">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="n">AllowShortFunctionsOnASingleLine</span><span class="o">:</span><span class="w"> </span><span class="n">None</span><span class="w"></span>
+<span class="n">KeepEmptyLinesAtTheStartOfBlocks</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="n">BreakBeforeBraces</span><span class="o">:</span><span class="w"> </span><span class="n">Allman</span><span class="w"></span>
+</code></pre></div>
 
 <p>And here's the command I use to reformat a file.</p>
-<div class="highlight"><pre><span></span>clang-format -i -style=file src/locuspocus.c
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>clang-format -i -style=file src/locuspocus.c
+</code></pre></div>
 
 <p>Credits.</p>
 <ul>
@@ -132,7 +130,7 @@ Here's my config file (<code>.clang-format</code>).</p>
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>

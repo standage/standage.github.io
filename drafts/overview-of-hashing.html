@@ -58,7 +58,7 @@
 			<img src="https://www.gravatar.com/avatar/55b2cca3b7a11df3a961d57a68705503?size=180" alt="Daniel Standage" />
 			<h3>Daniel S. Standage</h3>
 			<p>
-				Assoc. Principal Investigator,<br />
+				Principal Investigator,<br />
 				Bioinformatics<br />
 				NBACC<br />
 			</p>
@@ -105,10 +105,9 @@ This post reviews the two-bit encoding scheme used by khmer, <em>k</em>-mer hash
 This has to do with how computers store information.
 Each character of text requires 8 bits of information.
 Consider the text.</p>
-<div class="highlight"><pre><span></span>|   G    |   A    |   T    |   T    |   A    |   C    |   A    |
-|01000111|01000001|01010100|01010100|01000001|01000011|01000001|
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="n">|</span><span class="w">   </span><span class="n">G</span><span class="w">    </span><span class="n">|</span><span class="w">   </span><span class="n">A</span><span class="w">    </span><span class="n">|</span><span class="w">   </span><span class="n">T</span><span class="w">    </span><span class="n">|</span><span class="w">   </span><span class="n">T</span><span class="w">    </span><span class="n">|</span><span class="w">   </span><span class="n">A</span><span class="w">    </span><span class="n">|</span><span class="w">   </span><span class="n">C</span><span class="w">    </span><span class="n">|</span><span class="w">   </span><span class="n">A</span><span class="w">    </span><span class="n">|</span><span class="w"></span>
+<span class="n">|01000111|01000001|01010100|01010100|01000001|01000011|01000001|</span><span class="w"></span>
+</code></pre></div>
 
 <p>However, if we hash each of these sequences to an integer value, we only require 64 bits (8 bytes) at most to store each one.
 Recall that computers store information in binary format.</p>
@@ -118,10 +117,9 @@ The scheme used by khmer is based on the observation that each individual nucleo
 For example, if we map the nucleotides adenine (A), thymine (T), cytosine (C), and guanine (G) to the numbers 0, 1, 2, and 3</p>
 <p>nice property: perfect hash</p>
 <p>When working with</p>
-<div class="highlight"><pre><span></span>  G  |  A  |  T  |  T  |  A  |  C  |  A  |
+<div class="highlight"><pre><span></span><code>  G  |  A  |  T  |  T  |  A  |  C  |  A  |
  1 1 | 0 0 | 0 1 | 0 1 | 0 0 | 1 0 | 0 0 |
-</pre></div>
-
+</code></pre></div>
 
 <p>Currently, khmer only supports</p>
 <p>The bulk of the <a href="https://github.com/dib-lab/khmer/">khmer package</a>'s functionality is devoted to data structures designed for querying the presence and abundance of <em>k</em>-mers (DNA sequences of a set length <em>k</em>).
@@ -152,7 +150,7 @@ Here I discuss khmer's hashing function, the reasons for the 32 bp limit, and di
 		<footer>
 		  <p>
 			<a href="http://creativecommons.org/licenses/by/4.0/"><img src="https://standage.github.io/images/cc-by-88x31.png" alt="CC BY 4.0" /></a><br />
-		    &copy; 2015-2018 Daniel S. Standage.<br />
+		    &copy; 2015-2022 Daniel S. Standage.<br />
 			Unless otherwise noted, all content on this site is posted under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY license</a>.</p>
 		  <p></p>
 		  <p>This site is powered by <a href="http://getpelican.com/">Pelican</a>, its theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
